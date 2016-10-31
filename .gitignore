@@ -1,5 +1,5 @@
 #Ignore everything except source code!
 /*
-/*/
-/Assets/
+!/Assets
+/Assets/*
 !/Assets/Source
