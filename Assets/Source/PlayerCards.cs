@@ -4,11 +4,12 @@ using System.Collections;
 public class PlayerCards : MonoBehaviour {
 
     public int ownerID; // Fix so we know who picked it up.
-    public bool showAll = false; // Card shouldn't be viewed to everyone.
+    public bool showAll = false; // Card shouldn't be viewed to everyone, but if a rule tell you too, this will be used to show the card for everyone.
     public bool inspectCard = false;
 
     private Vector3 mousePosition;
-    public float moveSpeed = 0.1f;
+    public Vector3 normCardSize, bigCardSize;
+    public float moveSpeed = 1.1f;
 
     void Start ()
     {
@@ -21,11 +22,11 @@ public class PlayerCards : MonoBehaviour {
         if (inspectCard)
         {
             MoveCard2D();
-            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            transform.localScale = bigCardSize;
         }
         else
         {
-            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            transform.localScale = normCardSize;
         }
     }
 
