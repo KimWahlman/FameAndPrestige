@@ -7,6 +7,6 @@ Kim Wahlman - Programmer
 Bernard H. Modic - UX Designer  
 Iann Fitamant- Programmer  
 Luigi Giugliano - Programmer  
-Rosario Di Florio - Programmer  
-Emilia Andersson - Game Writer  
+Rosario Di Florio - Programmer  
+Emilia Andersson - Game Writer  
 Marcus Hellkvist - Sound designer  
