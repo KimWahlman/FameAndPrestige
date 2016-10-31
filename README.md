@@ -2,7 +2,7 @@
 For the game project in the course Project Serious Games autumn 2016.
 
 # Members in the project
-Ting Xu - Programmer  
+Ting Xu - Programmer  
 Kim Wahlman - Programmer  
 Bernard H. Modic - UX Designer  
 Iann Fitamant- Programmer  
