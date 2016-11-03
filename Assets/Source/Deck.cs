@@ -5,12 +5,15 @@ public class Deck : MonoBehaviour {
 
     public GameObject prefab;
     public bool mouseOver = false;
+    
+    /*
+     * TODO: Make the drawn card random
+     * Hold an array that keep track of how many 
+     * of a specific card is still in the deck.
+     */
 
     // Use this for initialization
-    void Start ()
-    {
-        Debug.Log(mouseOver);
-    }
+    void Start () { }
 	
 	// Update is called once per frame
 	void Update ()
@@ -23,8 +26,10 @@ public class Deck : MonoBehaviour {
     {
         if(Input.GetMouseButtonDown(0))
         {
+            int randomNum = Random.Range(1, 3); // returns a random number between 1 and 2.
             Instantiate(prefab, new Vector3(0.0f, -5.0f, 0.0f), Quaternion.identity);
-        }
+            prefab.GetComponent<SpriteRenderer>().sprite = Resources.Load("Images/Card" + randomNum, typeof(Sprite)) as Sprite;
+        }        
     }
 
     void OnMouseOver()
