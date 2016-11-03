@@ -32,15 +32,6 @@ public class Deck : MonoBehaviour {
         }        
     }
 
-    void OnMouseOver()
-    {
-        if (!mouseOver) mouseOver = true;
-        Debug.Log(mouseOver);
-    }
-
-    void OnMouseExit()
-    {
-        if (mouseOver) mouseOver = false;
-        Debug.Log(mouseOver);
-    }
+    void OnMouseOver() { if (!mouseOver) mouseOver = true; }
+    void OnMouseExit() { if (mouseOver) mouseOver = false; }
 }
