@@ -13,7 +13,8 @@ public class PlayerCards : MonoBehaviour {
 
     void Start ()
     {
-       
+        normCardSize = new Vector3(0.25f, 0.25f, 0);
+        bigCardSize = new Vector3(1.0f, 1.0f, 0);
 	}
 	
 	// Update is called once per frame
