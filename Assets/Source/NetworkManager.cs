@@ -2,14 +2,23 @@
 using System.Collections;
 
 public class NetworkManager : MonoBehaviour {
+   
+    public GameManager gameManager;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public int debugcardID;
+    public int debugplayerID;
+
+    void messageReceived(string message)
+    {
+        
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+            gameManager.drawCard(debugcardID, debugplayerID);
+    }
+
+
+
 }
