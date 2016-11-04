@@ -9,5 +9,5 @@ Iann Fitamant - Programmer
 Luigi Giugliano - Programmer  
 Rosario Di Florio - Programmer/Graphics  
 Emilia Andersson - Game Writer  
-Marcus Hellkvist - Sound designer 
+Marcus Hellkvist - Sound designer  
 Zhaozan - Graphical designer  
