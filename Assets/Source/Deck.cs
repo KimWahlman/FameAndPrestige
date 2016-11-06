@@ -51,13 +51,9 @@ public class Deck : MonoBehaviour {
     {
         if(Input.GetMouseButtonDown(0) && deck.Count > 0)
         {
-            Debug.Log("1. deck size before: " + deck.Count + " deck size after: " + deck.Count);
             Instantiate(prefab, new Vector3(0.0f, -5.0f, 0.0f), Quaternion.identity);
-            Debug.Log("2. deck size before: " + deck.Count + " deck size after: " + deck.Count);
             prefab.GetComponent<SpriteRenderer>().sprite = Resources.Load("Images/Card" + deck[deck.Count - 1], typeof(Sprite)) as Sprite;
-            Debug.Log("3. deck size before: " + deck.Count + " deck size after: " + deck.Count);
             deck.RemoveAt(deck.Count - 1);
-            Debug.Log("4. deck size before: " + deck.Count + " deck size after: " + deck.Count);
         }
         else if (deck.Count == 0)
             Debug.Log("We are out of cards!");
