@@ -37,10 +37,10 @@ public class EventCard : Card {
     }
 
 
-    public void Dynamite() { }
-    public void ChangeMind() { }
-    public void CopyCard() { }
-    public void Storm() { }
-    public void ChangeTheme() { }
+    public void Dynamite(){print("Event - Dynamite card has been played");}
+    public void ChangeMind() { print("Event - ChangeMind card has been played"); }
+    public void CopyCard() { print("Event - CopyCard card has been played"); }
+    public void Storm() { print("Event - Storm card has been played"); }
+    public void ChangeTheme() { print("Event - ChangeTheme card has been played"); }
 
 }

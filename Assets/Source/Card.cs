@@ -8,6 +8,7 @@ public abstract class Card : MonoBehaviour
     public int cost;
     public bool hasBeenPlayed;
     public int ownerID;
+    public Vector3 startPosition;
     
     public Sprite faceUpSprite;
     public Sprite faceDownSprite;
@@ -58,6 +59,8 @@ public abstract class Card : MonoBehaviour
         this.gameObject.transform.position = posTransform.position;
         this.gameObject.transform.rotation = posTransform.rotation;
 
+        startPosition = posTransform.position;
+
         ownerID = playerID;
 
         this.gameObject.SetActive(true);
@@ -97,6 +100,22 @@ public abstract class Card : MonoBehaviour
             }
         }
     }
+
+    public void putInFront(bool inFront)
+    {
+        if (inFront)
+            currentSprite.sortingOrder = 1;
+        else
+            currentSprite.sortingOrder = 0;
+    }
+
+    public void returnBackToHand()
+    {
+        this.transform.position = startPosition;
+    }
+
+
+
 
 
 

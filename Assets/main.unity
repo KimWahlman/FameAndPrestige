@@ -98,10 +98,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 11327307}
-  - 114: {fileID: 11327309}
   - 212: {fileID: 11327308}
   - 65: {fileID: 11327310}
   - 114: {fileID: 11327311}
+  - 114: {fileID: 11327309}
   m_Layer: 0
   m_Name: Card (13)
   m_TagString: Untagged
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 11327306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db055d01a17786448c590db575b874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 12
@@ -171,10 +171,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardEvent: 0
 --- !u!65 &11327310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -206,10 +207,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 41023677}
-  - 114: {fileID: 41023679}
   - 212: {fileID: 41023678}
   - 65: {fileID: 41023680}
   - 114: {fileID: 41023681}
+  - 114: {fileID: 41023679}
   m_Layer: 0
   m_Name: Card (11)
   m_TagString: Untagged
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 41023676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db055d01a17786448c590db575b874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10
@@ -279,10 +280,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardEvent: 0
 --- !u!65 &41023680
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -342,10 +344,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 106891699}
-  - 114: {fileID: 106891701}
   - 212: {fileID: 106891700}
   - 65: {fileID: 106891702}
   - 114: {fileID: 106891703}
+  - 114: {fileID: 106891701}
   m_Layer: 0
   m_Name: Card (9)
   m_TagString: Untagged
@@ -407,7 +409,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 106891698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db055d01a17786448c590db575b874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 8
@@ -415,10 +417,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardEvent: 0
 --- !u!65 &106891702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -652,6 +655,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -793,10 +797,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 381583433}
-  - 114: {fileID: 381583435}
   - 212: {fileID: 381583434}
   - 65: {fileID: 381583436}
   - 114: {fileID: 381583437}
+  - 114: {fileID: 381583435}
   m_Layer: 0
   m_Name: Card (14)
   m_TagString: Untagged
@@ -858,7 +862,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 381583432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db055d01a17786448c590db575b874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 13
@@ -866,10 +870,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardEvent: 0
 --- !u!65 &381583436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -944,10 +949,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400049136}
-  - 114: {fileID: 400049138}
   - 212: {fileID: 400049137}
   - 65: {fileID: 400049139}
   - 114: {fileID: 400049140}
+  - 114: {fileID: 400049138}
   m_Layer: 0
   m_Name: Card (16)
   m_TagString: Untagged
@@ -1009,7 +1014,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 400049135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: e63eda4d47648db458f4e8fb3902c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15
@@ -1017,10 +1022,12 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  value: 0
+  MyCardThemes: 
 --- !u!65 &400049139
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1237,10 +1244,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardAction: 3
 --- !u!65 &580491397
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1373,10 +1381,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardAction: 3
 --- !u!65 &602907727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1450,6 +1459,34 @@ MonoBehaviour:
   - {fileID: 1845601218}
   - {fileID: 1642075986}
   amountOfCards: 0
+--- !u!1 &702141881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 702141882}
+  m_Layer: 0
+  m_Name: slot3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &702141882
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702141881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1100256757}
+  m_RootOrder: 2
 --- !u!1 &708133198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1609,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1708,10 +1746,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardAction: 1
 --- !u!65 &867237296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1833,10 +1872,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 931664618}
-  - 114: {fileID: 931664620}
   - 212: {fileID: 931664619}
   - 65: {fileID: 931664621}
   - 114: {fileID: 931664622}
+  - 114: {fileID: 931664620}
   m_Layer: 0
   m_Name: Card (18)
   m_TagString: Untagged
@@ -1898,7 +1937,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 931664617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: e63eda4d47648db458f4e8fb3902c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 17
@@ -1906,10 +1945,12 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  value: 0
+  MyCardThemes: 
 --- !u!65 &931664621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1941,10 +1982,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 943310886}
-  - 114: {fileID: 943310888}
   - 212: {fileID: 943310887}
   - 65: {fileID: 943310889}
   - 114: {fileID: 943310890}
+  - 114: {fileID: 943310888}
   m_Layer: 0
   m_Name: Card (19)
   m_TagString: Untagged
@@ -2006,7 +2047,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 943310885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: e63eda4d47648db458f4e8fb3902c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 18
@@ -2014,10 +2055,12 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  value: 0
+  MyCardThemes: 
 --- !u!65 &943310889
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2122,10 +2165,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardAction: 1
 --- !u!65 &965427809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2254,13 +2298,14 @@ GameObject:
   - 4: {fileID: 1100256757}
   - 65: {fileID: 1100256756}
   - 212: {fileID: 1100256755}
+  - 114: {fileID: 1100256758}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PlayableZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1100256755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2316,9 +2361,27 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 1.5, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 1518219731}
+  - {fileID: 1568545691}
+  - {fileID: 702141882}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1100256758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1100256754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96be9612111c1114a8072c102a9e3bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotList:
+  - {fileID: 1518219731}
+  - {fileID: 1568545691}
+  - {fileID: 702141882}
 --- !u!1 &1121904934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,10 +2491,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardAction: 0
 --- !u!65 &1297903861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2491,10 +2555,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1435005317}
-  - 114: {fileID: 1435005319}
   - 212: {fileID: 1435005318}
   - 65: {fileID: 1435005320}
   - 114: {fileID: 1435005321}
+  - 114: {fileID: 1435005319}
   m_Layer: 0
   m_Name: Card (17)
   m_TagString: Untagged
@@ -2556,7 +2620,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1435005316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: e63eda4d47648db458f4e8fb3902c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 16
@@ -2564,10 +2628,12 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  value: 0
+  MyCardThemes: 
 --- !u!65 &1435005320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2599,10 +2665,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1438526348}
-  - 114: {fileID: 1438526350}
   - 212: {fileID: 1438526349}
   - 65: {fileID: 1438526351}
   - 114: {fileID: 1438526352}
+  - 114: {fileID: 1438526350}
   m_Layer: 0
   m_Name: Card (12)
   m_TagString: Untagged
@@ -2664,7 +2730,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438526347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db055d01a17786448c590db575b874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 11
@@ -2672,10 +2738,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardEvent: 0
 --- !u!65 &1438526351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2699,6 +2766,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5722c0fc88ff78a4ea25621111933062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1518219730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1518219731}
+  m_Layer: 0
+  m_Name: slot1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518219731
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518219730}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.75, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1100256757}
+  m_RootOrder: 0
 --- !u!1 &1562030505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,6 +2834,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1568545690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1568545691}
+  m_Layer: 0
+  m_Name: slot2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1568545691
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1568545690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1100256757}
+  m_RootOrder: 1
 --- !u!1 &1613730938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,10 +2870,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1613730939}
-  - 114: {fileID: 1613730941}
   - 212: {fileID: 1613730940}
   - 65: {fileID: 1613730942}
   - 114: {fileID: 1613730943}
+  - 114: {fileID: 1613730941}
   m_Layer: 0
   m_Name: Card (10)
   m_TagString: Untagged
@@ -2812,7 +2935,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1613730938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db055d01a17786448c590db575b874c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 9
@@ -2820,10 +2943,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardEvent: 0
 --- !u!65 &1613730942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2855,10 +2979,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1633081810}
-  - 114: {fileID: 1633081812}
   - 212: {fileID: 1633081811}
   - 65: {fileID: 1633081813}
   - 114: {fileID: 1633081814}
+  - 114: {fileID: 1633081812}
   m_Layer: 0
   m_Name: Card (15)
   m_TagString: Untagged
@@ -2920,7 +3044,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1633081809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: e63eda4d47648db458f4e8fb3902c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 14
@@ -2928,10 +3052,12 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  value: 0
+  MyCardThemes: 
 --- !u!65 &1633081813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3059,10 +3185,11 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  MyCardAction: 0
 --- !u!212 &1842557489
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3155,10 +3282,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1866836721}
-  - 114: {fileID: 1866836723}
   - 212: {fileID: 1866836722}
   - 65: {fileID: 1866836724}
   - 114: {fileID: 1866836725}
+  - 114: {fileID: 1866836723}
   m_Layer: 0
   m_Name: Card (20)
   m_TagString: Untagged
@@ -3220,7 +3347,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1866836720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 718981160bdcb3e4bbcc38c9d43ee001, type: 3}
+  m_Script: {fileID: 11500000, guid: e63eda4d47648db458f4e8fb3902c54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 19
@@ -3228,10 +3355,12 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
-  MyCardAction: 2
+  value: 0
+  MyCardThemes: 
 --- !u!65 &1866836724
 BoxCollider:
   m_ObjectHideFlags: 0

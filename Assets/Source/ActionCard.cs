@@ -29,7 +29,7 @@ public class ActionCard : Card {
         }       
     }
 
-    public void Shame() { }
-    public void GhostWriting() {}
-    public void Duel() { }
+    public void Shame() { print("Action - Shame card has been played"); }
+    public void GhostWriting() { print("Action - GhostWriting card has been played"); }
+    public void Duel() { print("Action - Duel card has been played"); }
 }

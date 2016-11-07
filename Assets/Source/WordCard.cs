@@ -16,5 +16,7 @@ public class WordCard : Card {
     };
 
     public override void useCard()
-    { }
+    {
+        print("Word card has been played");
+    }
 }
