@@ -17,10 +17,4 @@ public class Hands : MonoBehaviour {
     {
         return posList[amountOfCards--];
     }
-
-
-    
-
-    
-
 }
