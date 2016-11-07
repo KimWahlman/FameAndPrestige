@@ -8,51 +8,71 @@ public class GameManager : MonoBehaviour {
     private Hands[] playerHands = new Hands[4];
     public GameObject[] handsGO;
 
+    void Start()
+    {
+        initGame(0);
+        StartCoroutine("firstDrawToEveryone", 0);
+    }
+
     void initGame(int playerID)
     {
         //assign the playerID 0 to 3
-        myPlayer.idPlayer = playerID;
+        Player.idPlayer = playerID;
 
         //assign the hand position relative to the gameobject    
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             playerHands[playerID] = handsGO[i].GetComponent<Hands>();
 
-            if (playerID > 3)
+            if (playerID > 2)
                 playerID = 0;
             else
                 playerID++;
         }
     }
 
-    void Start()
+    IEnumerator firstDrawToEveryone(int drawerID)
     {
-        initGame(1);
-    }
 
+        for(int amountOfCards = 0; amountOfCards < 16; ++amountOfCards)
+        {
+            int rdmCard;
+            do
+            {
+                rdmCard = Random.Range(0, Deck.Length-1);
+            }
+            while (Deck[rdmCard].gameObject.activeSelf);
+
+            drawCard(rdmCard, drawerID++);
+            
+            if (drawerID > 3)
+                drawerID = 0;
+
+            yield return new WaitForSeconds(.1f);
+        }
+    }
+    
     void endTurn() {}
 
     void startTurn() {}
  
     public void drawCard(int cardID, int playerID)
     {
-        if(playerID == myPlayer.idPlayer)
+        if(playerID == Player.idPlayer)
         {
             //add the card in the player hand
             myPlayer.cardsHeld.Add(cardID, Deck[cardID]);
 
-            //spawn the card
-            Deck[cardID].popCard(true, playerHands[playerID].newCard());
-
-            Deck[cardID].ownerID = playerID;
-
+            //spawn the card, add it the the hand array, set the owner id
+            Deck[cardID].popCard(true, playerHands[playerID].newCard(), playerID);
         }
         else
         {
-            Deck[cardID].popCard(false, playerHands[playerID].newCard());
+            Deck[cardID].popCard(false, playerHands[playerID].newCard(), playerID);
         }
-
     }
+
+
 
     void opponentdrawCard(int cardID)
     {

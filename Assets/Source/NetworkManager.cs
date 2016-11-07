@@ -13,6 +13,11 @@ public class NetworkManager : MonoBehaviour {
         
     }
 
+    public static void sendMessage(string message)
+    {
+
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
