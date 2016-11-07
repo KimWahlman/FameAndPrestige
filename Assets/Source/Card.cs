@@ -15,6 +15,7 @@ public abstract class Card : MonoBehaviour
     SpriteRenderer currentSprite;
 
     GameObject CardZoomed;
+
     public bool isBeingDragged = false;
 
 
@@ -25,7 +26,7 @@ public abstract class Card : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if(ownerID == Player.idPlayer && !Input.GetKey(KeyCode.Mouse0))
+        if(currentSprite.sprite == faceUpSprite && !Input.GetKey(KeyCode.Mouse0))
         {
             ZoomCard(true);
         }
@@ -47,23 +48,39 @@ public abstract class Card : MonoBehaviour
 
     abstract public void useCard();
 
+    public void playCard()
+    {
+        hasBeenPlayed = true;
+        useCard();
+    }
+
     public void popCard(bool isMine, Transform posTransform, int playerID)
     {
+        //activate the card
         this.gameObject.SetActive(true);
 
+        //show it faceup if it's mine
         if (isMine)
             currentSprite.sprite = faceUpSprite;
         else
             currentSprite.sprite = faceDownSprite;
 
+
+        AssignNewPosition(posTransform);
+
+        //assign the ownerID of the card
+        ownerID = playerID;
+    }
+
+    public void AssignNewPosition(Transform posTransform)
+    {
+        
+        //assign it to the hands position
         this.gameObject.transform.position = posTransform.position;
         this.gameObject.transform.rotation = posTransform.rotation;
 
+        //save the starting position of the card (if it has to return to owner hand)
         startPosition = posTransform.position;
-
-        ownerID = playerID;
-
-        this.gameObject.SetActive(true);
     }
 
     void ZoomCard(bool zoomed)
@@ -82,7 +99,13 @@ public abstract class Card : MonoBehaviour
 
             //set the new position and scal of the zoomed card
             Transform goTransform = this.gameObject.transform;
-            CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z);
+
+            //if card has been played then zoom it but without the offset on Y axis
+            if(!hasBeenPlayed)
+                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z);
+            else
+                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z);
+
             CardZoomed.transform.localScale = goTransform.localScale * 2;
 
             //hide the real card sprite
@@ -101,6 +124,7 @@ public abstract class Card : MonoBehaviour
         }
     }
 
+    //change the layer order of the card
     public void putInFront(bool inFront)
     {
         if (inFront)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
@@ -72,7 +73,23 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    //should be called when a card is played/discarded
+    public void ReOrderPlayerHand(int cardID, int playerID)
+    {
+        if(playerID == Player.idPlayer)
+        {
+            myPlayer.cardsHeld.Remove(cardID);
+            playerHands[playerID].deadCard();
 
+            int id = 0;
+            foreach (KeyValuePair<int, Card> entry in myPlayer.cardsHeld)
+            {
+                entry.Value.AssignNewPosition(playerHands[playerID].posList[id++]);
+            }
+        }
+
+    }
+    
 
     void opponentdrawCard(int cardID)
     {
