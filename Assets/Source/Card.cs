@@ -8,8 +8,9 @@ public abstract class Card : MonoBehaviour
     public int cost;
     public bool hasBeenPlayed;
     public int ownerID;
+
     public Vector3 startPosition;
-    
+
     public Sprite faceUpSprite;
     public Sprite faceDownSprite;
     SpriteRenderer currentSprite;
@@ -34,10 +35,7 @@ public abstract class Card : MonoBehaviour
 
     void OnMouseExit()
     {
-        if (ownerID == Player.idPlayer)
-        {
-            ZoomCard(false);
-        } 
+        ZoomCard(false);
     }
 
     void OnMouseDown()
@@ -51,7 +49,14 @@ public abstract class Card : MonoBehaviour
     public void playCard()
     {
         hasBeenPlayed = true;
+        revealCard();
         useCard();
+    }
+
+    public void revealCard()
+    {
+        currentSprite.sprite = faceUpSprite;
+        this.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     public void popCard(bool isMine, Transform posTransform, int playerID)

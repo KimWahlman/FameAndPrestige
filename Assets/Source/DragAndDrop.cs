@@ -43,7 +43,7 @@ public class DragAndDrop : MonoBehaviour
         draggedCard = gameObject.GetComponent<Card>();
 
         //if it's mine allow the player to drag it
-        if (draggedCard.ownerID == Player.idPlayer && !draggedCard.hasBeenPlayed)
+        if (!draggedCard.hasBeenPlayed)
         {
             dragging = true;
             draggedCard.isBeingDragged = true;
@@ -58,7 +58,7 @@ public class DragAndDrop : MonoBehaviour
     //when the card is dropped
     void releaseCard()
     {
-        if (draggedCard.ownerID == Player.idPlayer && !draggedCard.hasBeenPlayed)
+        if ( !draggedCard.hasBeenPlayed)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -68,6 +68,8 @@ public class DragAndDrop : MonoBehaviour
                 //if the card is dropped on the zone
                 if (hit.transform.gameObject.name == "PlayableZone")
                 {
+                    
+
                     //get the script of the zone (contain the slots position)
                     PlayableZone pz = hit.transform.gameObject.GetComponent<PlayableZone>();
                     //assign the free slot position to the card
@@ -75,7 +77,11 @@ public class DragAndDrop : MonoBehaviour
                     //increment the slots
                     pz.addCard();
 
-                    //use the dropped card (should request to the server)
+                    //(should request to the server if i can play)
+                    //if yes, use the card
+                    //else, put the card back
+
+                    //use the dropped card 
                     draggedCard.playCard();
                     gameManager.ReOrderPlayerHand(draggedCard.id, draggedCard.ownerID);
                 }

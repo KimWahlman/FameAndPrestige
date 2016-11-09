@@ -16,13 +16,5 @@ public class Hands : MonoBehaviour {
     public void deadCard()
     {
         amountOfCards--;
-        posList.RemoveAt(amountOfCards);
-        
     }
-
-
-    
-
-    
-
 }
