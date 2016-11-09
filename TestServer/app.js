@@ -2,7 +2,7 @@ var app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-var clients = [];
+var clients = {};
 var cards = {};
 
 cards["1"]= {
@@ -34,9 +34,27 @@ cards["5"]= {
 var available_cards = JSON.parse(JSON.stringify(cards));
 var discard_cars = {};
 
+function findCustomRooms() {
+    var availableRooms = [];
+    var rooms = io.sockets.adapter.rooms;
+    if (rooms) {
+        for (var room in rooms) {
+            if (!rooms[room].sockets.hasOwnProperty(room)) {
+                availableRooms.push(room);
+            }
+        }
+    }
+    return availableRooms;
+}
+
 io.on('connection', function(socket){ 
 
 	var currentUser;
+
+	socket.on("HI ROOM",function(){
+
+		socket.broadcast.to("pippo").emit("HI");
+	});
 
 	socket.on("USER_CONNECT", function(){
 		console.log("-----On USER_CONNECT-----");
@@ -49,7 +67,7 @@ io.on('connection', function(socket){
   		currentUser = {
   			name: data.name
   		};
-  		clients.push(currentUser)
+  		clients[socket.client.id]= currentUser;
     	console.log("his name is " + currentUser.name);
     	socket.emit("USER_CONNECTED", currentUser);
     	socket.broadcast.emit("USER_CONNECTED", currentUser);
@@ -90,6 +108,7 @@ io.on('connection', function(socket){
     	console.log("Sending");
     	console.log(JSON.stringify(send_card));
     	socket.emit("SEND_CARDS", send_card);
+    	socket.broadcast.to(clients[socket.id]).emit("SEND_CARDS", send_card);
     	console.log("--------SEND_CARDS_DONE-------");
     });
 
@@ -107,6 +126,32 @@ io.on('connection', function(socket){
     		socket.emit("CHECK_CARD",{check: "false"});
     	}
 
+
+    });
+
+    socket.on("LIST_ROOMS", function(){
+    	console.log("LIST ROOM");
+    	//console.log(JSON.stringify(io.sockets.adapter.rooms));
+    	socket.emit("ROOMS",{rooms: findCustomRooms()})
+
+    });
+
+    socket.on("CREATE_ROOM", function(data){
+    	console.log("CREATE ROOM");
+    	//console.log(data);
+    	socket.join(data.name);
+    	clients[socket.id].room = data.name;
+    	console.log(clients[socket.id]);
+    	//console.log(JSON.stringify(io.sockets.adapter.rooms));
+    	//console.log(findCustomRooms());
+
+    });
+
+    socket.on("JOIN_ROOM", function(data){
+    	console.log("JOIN ROOM");
+    	socket.join(data.name);
+    	clients[socket.id].room = data.name;
+    	console.log(clients[socket.id]);
 
     });
 

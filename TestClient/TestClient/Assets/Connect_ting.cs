@@ -21,7 +21,7 @@ public class Connect_ting : MonoBehaviour {
 		socket.On("ROLL_DICE", OnRollDice);
 		socket.On("SEND_CARDS", OnReceiveCards);
         socket.On("CHECK_CARD", OnReceiveCheck);
-
+		socket.On("ROOMS", OnReceiveRooms);
 
 
     }
@@ -31,7 +31,7 @@ public class Connect_ting : MonoBehaviour {
 		yield return new WaitForSeconds(0.5f);
 		socket.Emit("USER_CONNECT");
 		Dictionary<string,string> data = new Dictionary<string, string>();
-		data ["name"] = "luigi";
+		data ["name"] = "UNITY";
 		JSONObject jso = new JSONObject(data);
 
 		yield return new WaitForSeconds(1f);
@@ -59,6 +59,11 @@ public class Connect_ting : MonoBehaviour {
         socket.Emit("PLAY_CARD", cardjso);
 
     }
+
+
+	public void ListRoom() {
+		socket.Emit ("LIST_ROOMS");
+	}
 
 	public void OnUserConnected(SocketIOEvent e)
 	{
@@ -103,6 +108,11 @@ public class Connect_ting : MonoBehaviour {
         */
 
     }
+
+	public void  OnReceiveRooms(SocketIOEvent e){
+
+		Debug.Log("[SocketIO] OnReceiveListRoom:" + e.data);
+	}
 
     // Update is called once per frame
     void Update () {
