@@ -5,6 +5,12 @@ var io = require('socket.io')(server);
 var clients = {};
 var cards = {};
 
+cards["0"]= {
+    name: "0",
+    description: "1",
+    type: "word"
+}
+
 cards["1"]= {
 	name: "1",
 	description: "1",
@@ -31,6 +37,12 @@ cards["5"]= {
 	type: "event"
 }
 
+var cards_id = [];
+
+for (var i = 0; i < 40; i++) {
+    cards_id.push(i);
+};
+
 var available_cards = JSON.parse(JSON.stringify(cards));
 var discard_cars = {};
 
@@ -47,6 +59,21 @@ function findCustomRooms() {
     return availableRooms;
 }
 
+function drawInitialCards (socket, number) {
+    
+    for (var i = 0; i < number; i++) {
+
+        var rdmID = Math.floor(Math.random() * (cards_id.length-1));
+        var tosend = {id : cards_id[rdmID], playerId : i%4};
+        socket.emit("DRAW_CARD", tosend);
+        socket.broadcast.emit("DRAW_CARD", tosend);
+        console.log(rdmID);
+        console.log(cards_id.length);
+        console.log(tosend);
+        cards_id.splice(rdmID, 1);
+    };
+}
+
 io.on('connection', function(socket){ 
 
 	var currentUser;
@@ -54,16 +81,41 @@ io.on('connection', function(socket){
 	socket.on("HI ROOM",function(){
 
 		socket.broadcast.to("pippo").emit("HI");
+
+
 	});
 
-	socket.on("USER_CONNECT", function(){
+	socket.on("USER_CONNECT", function (data){
 		console.log("-----On USER_CONNECT-----");
 		console.log("User Connected ");
 		console.log(socket.client.id);
+
+        currentUser = {
+            name: data.name
+        };
+
+        clients[socket.client.id]= currentUser;
+        socket.emit("ASSIGN_ID", {id : Object.keys(clients).indexOf(socket.client.id)});
+
+        if(Object.keys(clients).length == 4)
+        {
+            console.log("4 connections");
+            socket.emit("INIT_GAME");
+            socket.broadcast.emit("INIT_GAME");
+            drawInitialCards(socket, 16);
+
+        }
 	});
 
-  	socket.on('PLAY', function (data) {
+    socket.on('EVERYONE_READY', function()
+    {
+        //initGame for everyone with their ID
+        //give everyone cards (loop with draw function)
+    });
+
+  	/*socket.on('PLAY', function (data) {
   		console.log("-----On PLAY-----");
+        console.log(data);
   		currentUser = {
   			name: data.name
   		};
@@ -73,7 +125,9 @@ io.on('connection', function(socket){
     	socket.broadcast.emit("USER_CONNECTED", currentUser);
 
     	socket.emit("ROLL_DICE",{roll: Math.floor(Math.random() * 20)+""})
-  	});
+  	});*/
+
+
 
   	/*
 	socket.on('disconnect', function(){

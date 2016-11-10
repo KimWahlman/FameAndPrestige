@@ -1,0 +1,187 @@
+Mono path[0] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Managed'
+Mono path[1] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono'
+Mono config path = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono/etc'
+PlayerConnection initialized from E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55088
+Multi-casting "[IP] 192.168.56.1 [Port] 55088 [Flags] 2 [Guid] 1152841556 [EditorId] 2733884862 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.56.1:55088]
+Initialize engine version: 5.4.0f3 (a6d8d714de6f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 560M (ID=0x1251)
+    Vendor:   NVIDIA
+    VRAM:     2000 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.084 seconds
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Mono path[0] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Managed'
+Mono path[1] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono'
+Mono config path = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono/etc'
+PlayerConnection initialized from E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55091
+Multi-casting "[IP] 192.168.56.1 [Port] 55091 [Flags] 2 [Guid] 1622595437 [EditorId] 2733884862 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.56.1:55091]
+Initialize engine version: 5.4.0f3 (a6d8d714de6f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 560M (ID=0x1251)
+    Vendor:   NVIDIA
+    VRAM:     2000 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.070 seconds
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Mono path[0] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Managed'
+Mono path[1] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono'
+Mono config path = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono/etc'
+PlayerConnection initialized from E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55117
+Multi-casting "[IP] 192.168.56.1 [Port] 55117 [Flags] 2 [Guid] 3869993704 [EditorId] 2733884862 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.56.1:55117]
+Initialize engine version: 5.4.0f3 (a6d8d714de6f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 560M (ID=0x1251)
+    Vendor:   NVIDIA
+    VRAM:     2000 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.075 seconds
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Mono.Security.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+UnloadTime: 0.875645 ms
+<RI> Initialized touch support.
+UnloadTime: 0.890424 ms
+UnloadTime: 1.177380 ms
+11/10/2016 5:25:06 PM|Fatal|WebSocket.acceptException:524|System.IO.IOException: EndRead failure ---> System.Net.Sockets.SocketException: Une connexion existante a dû être fermée par l’hôte distant.
+                            
+                              at System.Net.Sockets.Socket+SocketAsyncResult.CheckIfThrowDelayedException () [0x00041] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:148 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult asyncResult, System.Net.Sockets.SocketError& errorCode) [0x00093] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2087 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult result) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2061 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00017] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:326 
+                              --- End of inner exception stack trace ---
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x0002a] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:328 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStoreyF.<>m__2 (IAsyncResult ar) [0x00000] in E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\WebsocketSharp\Ext.cs:618 
+11/10/2016 5:25:06 PM|Fatal|WebSocket.acceptException:524|System.IO.IOException: EndRead failure ---> System.Net.Sockets.SocketException: Une connexion existante a dû être fermée par l’hôte distant.
+                            
+                              at System.Net.Sockets.Socket+SocketAsyncResult.CheckIfThrowDelayedException () [0x00041] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:148 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult asyncResult, System.Net.Sockets.SocketError& errorCode) [0x00093] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2087 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult result) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2061 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00017] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:326 
+                              --- End of inner exception stack trace ---
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x0002a] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:328 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStoreyF.<>m__2 (IAsyncResult ar) [0x00000] in E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\WebsocketSharp\Ext.cs:618 
+11/10/2016 5:25:06 PM|Fatal|WebSocket.acceptException:524|System.IO.IOException: EndRead failure ---> System.Net.Sockets.SocketException: Une connexion existante a dû être fermée par l’hôte distant.
+                            
+                              at System.Net.Sockets.Socket+SocketAsyncResult.CheckIfThrowDelayedException () [0x00041] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:148 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult asyncResult, System.Net.Sockets.SocketError& errorCode) [0x00093] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2087 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult result) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2061 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00017] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:326 
+                              --- End of inner exception stack trace ---
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x0002a] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:328 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStoreyF.<>m__2 (IAsyncResult ar) [0x00000] in E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\WebsocketSharp\Ext.cs:618 
+11/10/2016 5:25:07 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:07 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:07 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:08 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:08 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:08 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:09 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:09 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10/2016 5:25:09 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/10//10/2016 5:25:09 PM|Error|WebSocket.Send:|911|The WebSocket connection has already been ceo.ed
+.
+11/10/2016 5:25:09 PM|Error|WebSocket.Send:1911|The WebSocket connection has already been closed.
+
+Settinggtipn1up 1 worker threados fer rhrngliehd. e
+n.
+Enlighten.
+  Thread -> id: 137c -> priority: 1 
+  Thread -Thread -> id: 2af4 -> priority: 1 
+> id: 30c0 -> priority: 1 

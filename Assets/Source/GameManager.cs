@@ -11,12 +11,13 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
-        initGame(0);
-        StartCoroutine("firstDrawToEveryone", 0);
+        //initGame(0);
+        //StartCoroutine("firstDrawToEveryone", 0);
     }
 
-    void initGame(int playerID)
+    public void initGame(int playerID)
     {
+        Debug.Log("game initialization");
         //assign the playerID 0 to 3
         myPlayer.idPlayer = playerID;
 
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < 4; i++)
         {
             playerHands[playerID] = handsGO[i].GetComponent<Hands>();
+            playerHands[playerID].textPlayerID.text = playerID.ToString();
 
             //assign the opponents to the player
             if(playerID != myPlayer.idPlayer)
