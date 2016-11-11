@@ -39,6 +39,7 @@ cards["5"]= {
 
 var cards_id = [];
 
+
 for (var i = 0; i < 40; i++) {
     cards_id.push(i);
 };
@@ -60,19 +61,34 @@ function findCustomRooms() {
 }
 
 function drawInitialCards (socket, number) {
-    
     for (var i = 0; i < number; i++) {
-
-        var rdmID = Math.floor(Math.random() * (cards_id.length-1));
-        var tosend = {id : cards_id[rdmID], playerId : i%4};
-        socket.emit("DRAW_CARD", tosend);
-        socket.broadcast.emit("DRAW_CARD", tosend);
-        console.log(rdmID);
-        console.log(cards_id.length);
-        console.log(tosend);
-        cards_id.splice(rdmID, 1);
+        sendDrawCard(socket, i%4);
     };
 }
+
+
+
+function sendDrawCard (socket, playerId) {
+
+        var rdmID = Math.floor(Math.random() * (cards_id.length-1));
+        var tosend = {id : cards_id[rdmID], playerId : playerId};
+
+
+        for (var id in clients){
+            if(clients[id].id == playerId){
+                clients[id].cards.push(cards_id[rdmID]);
+            }
+        }
+
+        socket.emit("DRAW_CARD", tosend);
+        socket.broadcast.emit("DRAW_CARD", tosend);
+
+       /* console.log(rdmID);
+        console.log(cards_id.length);
+        console.log(tosend);*/
+        cards_id.splice(rdmID, 1);
+}
+
 
 io.on('connection', function(socket){ 
 
@@ -90,11 +106,12 @@ io.on('connection', function(socket){
 		console.log("User Connected ");
 		console.log(socket.client.id);
 
-        currentUser = {
-            name: data.name
-        };
 
-        clients[socket.client.id]= currentUser;
+        clients[socket.client.id] = {};
+        clients[socket.client.id].name = data.name;
+        clients[socket.client.id].id = Object.keys(clients).indexOf(socket.client.id);
+        clients[socket.client.id].cards = [];
+
         socket.emit("ASSIGN_ID", {id : Object.keys(clients).indexOf(socket.client.id)});
 
         if(Object.keys(clients).length == 4)
@@ -103,7 +120,6 @@ io.on('connection', function(socket){
             socket.emit("INIT_GAME");
             socket.broadcast.emit("INIT_GAME");
             drawInitialCards(socket, 16);
-
         }
 	});
 
@@ -169,18 +185,33 @@ io.on('connection', function(socket){
 
     socket.on("PLAY_CARD", function(data){
     	console.log("-----On PLAY_CARDS-----");
-    	console.log("play card event");
-    	card_id = data.id;
-    	if(Math.random()>= 0.5){
-    		console.log("--------CHECK_CARD-------");
-    		socket.emit("CHECK_CARD",{check: "true"});
-    	}
-    	else{
-    		console.log("--------CHECK_CARD-------");
-    		socket.emit("CHECK_CARD",{check: "false"});
-    	}
+    	card_id = data.cardID;
+
+        console.log("Played card id : " + card_id);
+
+        for (var id in clients){
+            if(clients[id].id == data.playerID){
+
+                var indexCard = clients[id].cards.indexOf(Number(card_id));
+
+                console.log("Player id : " + clients[id].id);
+                console.log("Player cards : " + clients[id].cards)
+                console.log("indexCard : " + indexCard);
 
 
+                if(indexCard != -1)
+                {
+                    socket.emit("PLAY_CARD", data);
+                    socket.broadcast.emit("PLAY_CARD", data);
+                    clients[id].cards.splice(card_id, 1);
+                }
+                else
+                {
+                    socket.emit("INVALID_PLAY_CARD", data);
+                    socket.broadcast.emit("INVALID_PLAY_CARD", data);
+                }
+            }
+        }
     });
 
     socket.on("LIST_ROOMS", function(){
@@ -206,6 +237,21 @@ io.on('connection', function(socket){
     	socket.join(data.name);
     	clients[socket.id].room = data.name;
     	console.log(clients[socket.id]);
+
+    });
+
+    socket.on("END_TURN", function(){
+
+        var id = socket.client.id;
+        var playerId = Object.keys(clients).indexOf(socket.client.id);
+        if(clients[id].cards.length<4){
+            /*Draw Cads function*/
+            console.log("less then 4 cards")
+        }
+        console.log("NEW TURN");
+        currentTurn = (currentTurn+1)%4;
+        socket.emit("PLAYER_TURN", {playerId: currentTurn});
+        socket.broadcast.emit("PLAYER_TURN", {playerId: currentTurn});
 
     });
 

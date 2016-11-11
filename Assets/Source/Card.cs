@@ -8,6 +8,7 @@ public abstract class Card : MonoBehaviour
     public int cost;
     public bool hasBeenPlayed;
     public int ownerID;
+    public bool isMine;
 
     public Vector3 startPosition;
 
@@ -48,6 +49,7 @@ public abstract class Card : MonoBehaviour
 
     public void playCard()
     {
+        print("card played");
         hasBeenPlayed = true;
         revealCard();
         useCard();
@@ -59,25 +61,27 @@ public abstract class Card : MonoBehaviour
         this.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
-    public void popCard(bool isMine, Transform posTransform, int playerID)
+    public void popCard(bool cardIsMine, Transform posTransform, int playerID)
     {
         //activate the card
         this.gameObject.SetActive(true);
 
         //show it faceup if it's mine
-        if (isMine)
+        if (cardIsMine)
             currentSprite.sprite = faceUpSprite;
         else
             currentSprite.sprite = faceDownSprite;
 
 
-        AssignNewPosition(posTransform);
+        AssignNewPosition(posTransform, false);
 
         //assign the ownerID of the card
         ownerID = playerID;
+
+        isMine = cardIsMine;
     }
 
-    public void AssignNewPosition(Transform posTransform)
+    public void AssignNewPosition(Transform posTransform, bool onPlayableZone)
     {
         
         //assign it to the hands position
@@ -85,7 +89,8 @@ public abstract class Card : MonoBehaviour
         this.gameObject.transform.rotation = posTransform.rotation;
 
         //save the starting position of the card (if it has to return to owner hand)
-        startPosition = posTransform.position;
+        if(!onPlayableZone)
+            startPosition = posTransform.position;
     }
 
     void ZoomCard(bool zoomed)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using SocketIO;
+using System.Text.RegularExpressions;
 
 public class NetworkManager : MonoBehaviour {
    
@@ -32,6 +33,8 @@ public class NetworkManager : MonoBehaviour {
         socket.On("ASSIGN_ID", OnReceiveAssignID);
         socket.On("INIT_GAME", OnReceiveInitGame);
         socket.On("DRAW_CARD", OnReceiveDrawCard);
+        socket.On("PLAY_CARD", OnReceivePlayCard);
+        socket.On("INVALID_PLAY_CARD", OnReceiveInvalidPlayCard);
     }
 
     IEnumerator ConnectToServer()
@@ -44,6 +47,36 @@ public class NetworkManager : MonoBehaviour {
         socket.Emit("USER_CONNECT", jso);
 
         yield return new WaitForSeconds(1f);
+    }
+
+    public void PlayCard(int playerID, int cardID)
+    {
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        data["playerID"] = playerID.ToString();
+        data["cardID"] = cardID.ToString();
+
+        JSONObject jso = new JSONObject(data);
+        socket.Emit("PLAY_CARD", jso);
+    }
+
+    public void OnReceivePlayCard(SocketIOEvent e)
+    {
+        string card = JsonToString(e.data.GetField("cardID").ToString(), "\"");
+        string player = JsonToString(e.data.GetField("playerID").ToString(), "\"");
+        
+        int cardID;
+        int.TryParse(card, out cardID);
+        int playerID;
+        int.TryParse(player, out playerID);
+        
+        gameManager.playCard(cardID);
+        gameManager.ReOrderPlayerHand(playerID, cardID);
+    }
+
+    public void OnReceiveInvalidPlayCard(SocketIOEvent e)
+    {
+        print("INVALID PLAY CARD RECEIVED");
+        gameManager.InvalidCardPlayed(int.Parse(e.data["cardID"].ToString()));
     }
 
     public void OnReceiveAssignID(SocketIOEvent e)
@@ -60,6 +93,13 @@ public class NetworkManager : MonoBehaviour {
     {
         print(e.data);
         gameManager.drawCard(int.Parse(e.data["id"].ToString()), int.Parse(e.data["playerId"].ToString()));
+    }
+
+    string JsonToString(string target, string s)
+    {
+        string[] newString = Regex.Split(target, s);
+
+        return newString[1];
     }
 
     void messageReceived(string message)
@@ -86,18 +126,7 @@ public class NetworkManager : MonoBehaviour {
             }
         }
     }
-
-
-    public static void sendMessage(string message)
-    {
-
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            messageReceived(msg);
-    }
+    
 
 
 
