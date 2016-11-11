@@ -9,11 +9,11 @@ public class DragAndDrop : MonoBehaviour
     private float distance;
     private Card draggedCard;
 
-    private GameManager gameManager;
+    private NetworkManager networkManager;
 
     void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
     }
 
     void OnMouseDown()
@@ -38,12 +38,13 @@ public class DragAndDrop : MonoBehaviour
 
     void grabCard()
     {
+
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
 
         draggedCard = gameObject.GetComponent<Card>();
 
         //if it's mine allow the player to drag it
-        if (!draggedCard.hasBeenPlayed)
+        if (!draggedCard.hasBeenPlayed && draggedCard.isMine)
         {
             dragging = true;
             draggedCard.isBeingDragged = true;
@@ -58,7 +59,7 @@ public class DragAndDrop : MonoBehaviour
     //when the card is dropped
     void releaseCard()
     {
-        if ( !draggedCard.hasBeenPlayed)
+        if (!draggedCard.hasBeenPlayed && draggedCard.isMine)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -68,22 +69,19 @@ public class DragAndDrop : MonoBehaviour
                 //if the card is dropped on the zone
                 if (hit.transform.gameObject.name == "PlayableZone")
                 {
-                    
-
                     //get the script of the zone (contain the slots position)
                     PlayableZone pz = hit.transform.gameObject.GetComponent<PlayableZone>();
                     //assign the free slot position to the card
-                    draggedCard.transform.position = pz.getSlot();
-                    //increment the slots
-                    pz.addCard();
+                    draggedCard.AssignNewPosition(pz.getSlot(), true);
 
+                    networkManager.PlayCard(draggedCard.ownerID, draggedCard.id);
                     //(should request to the server if i can play)
                     //if yes, use the card
                     //else, put the card back
 
                     //use the dropped card 
-                    draggedCard.playCard();
-                    gameManager.ReOrderPlayerHand(draggedCard.id, draggedCard.ownerID);
+                    //draggedCard.playCard();
+                    //gameManager.ReOrderPlayerHand(draggedCard.ownerID, draggedCard.id);
                 }
                 else
                 {

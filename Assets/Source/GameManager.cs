@@ -8,11 +8,16 @@ public class GameManager : MonoBehaviour {
     public Card[] Deck;
     private Hands[] playerHands = new Hands[4];
     public GameObject[] handsGO;
+    public bool debugMode;
+    public PlayableZone playableZone;
 
     void Start()
     {
-        //initGame(0);
-        //StartCoroutine("firstDrawToEveryone", 0);
+        if(debugMode)
+        {
+            initGame(0);
+            StartCoroutine("firstDrawToEveryone", 0);
+        }
     }
 
     public void initGame(int playerID)
@@ -72,6 +77,7 @@ public class GameManager : MonoBehaviour {
     {
         if(playerID == myPlayer.idPlayer)
         {
+            print("player iD : " + playerID + " card id :  " + cardID);
             //add the card in the player hand
             myPlayer.cardsHeld.Add(cardID, Deck[cardID]);
 
@@ -80,23 +86,28 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
+            print("player iD : " + playerID + " card id :  " + cardID);
             myPlayer.opponents[playerID].cardsHeld.Add(cardID, Deck[cardID]);
 
             Deck[cardID].popCard(false, playerHands[playerID].newCard(), playerID);
         }
+
+
     }
 
     //should be called when a card is played/discarded
     public void ReOrderPlayerHand(int playerID, int cardID)
     {
-        if(playerID == myPlayer.idPlayer)
+        print(" in reorderhand ");
+
+        if (playerID == myPlayer.idPlayer)
         {
             myPlayer.cardsHeld.Remove(cardID);
 
             int id = 0;
             foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
             {
-                card.Value.AssignNewPosition(playerHands[playerID].posList[id++]);
+                card.Value.AssignNewPosition(playerHands[playerID].posList[id++], false);
             }
         }
         else
@@ -106,7 +117,7 @@ public class GameManager : MonoBehaviour {
             int id = 0;
             foreach (KeyValuePair<int, Card> card in myPlayer.opponents[playerID].cardsHeld)
             {
-                card.Value.AssignNewPosition(playerHands[playerID].posList[id++]);
+                card.Value.AssignNewPosition(playerHands[playerID].posList[id++], false);
             }
         }
         playerHands[playerID].deadCard();
@@ -115,8 +126,18 @@ public class GameManager : MonoBehaviour {
     public void playCard(int cardID)
     {
         Deck[cardID].playCard();
+        
+        if(!Deck[cardID].isMine)
+            Deck[cardID].AssignNewPosition(playableZone.getSlot(), false);
+
+        playableZone.addCard();
     }
     
+    public void InvalidCardPlayed(int cardID)
+    {
+        Deck[cardID].returnBackToHand();
+        playableZone.removeCard();
+    }
 
     void opponentdrawCard(int cardID)
     {

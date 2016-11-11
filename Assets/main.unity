@@ -171,6 +171,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -280,6 +281,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -417,6 +419,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -708,6 +711,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -840,6 +844,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -949,6 +954,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -1194,6 +1200,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -1349,6 +1356,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -1482,6 +1490,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -1563,6 +1572,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -1728,6 +1738,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -1817,6 +1828,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 323495880}
   m_RootOrder: 1
+--- !u!1 &549214152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 549214153}
+  m_Layer: 0
+  m_Name: slot4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549214153
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 549214152}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1100256757}
+  m_RootOrder: 3
 --- !u!1 &580491393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,6 +1937,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -2035,6 +2075,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -2111,6 +2152,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -2380,6 +2422,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -2407,7 +2450,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702141881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 0, z: -0.1}
+  m_LocalPosition: {x: 0.5, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -2461,6 +2504,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -2612,6 +2656,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -2778,6 +2823,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -2864,6 +2910,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -3024,6 +3071,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -3110,6 +3158,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -3309,6 +3358,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -3419,6 +3469,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -3529,6 +3580,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -3605,6 +3657,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -3754,6 +3807,8 @@ MonoBehaviour:
   - {fileID: 323495879}
   - {fileID: 660194579}
   - {fileID: 201211088}
+  debugMode: 0
+  playableZone: {fileID: 1100256758}
 --- !u!1 &1075418277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +3914,7 @@ Transform:
   - {fileID: 1518219731}
   - {fileID: 1568545691}
   - {fileID: 702141882}
+  - {fileID: 549214153}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!114 &1100256758
@@ -3876,6 +3932,7 @@ MonoBehaviour:
   - {fileID: 1518219731}
   - {fileID: 1568545691}
   - {fileID: 702141882}
+  - {fileID: 549214153}
 --- !u!1 &1121904934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,6 +4009,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -4094,6 +4152,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -4226,6 +4285,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -4340,6 +4400,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -4450,6 +4511,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -4500,7 +4562,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1518219730}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0, z: -0.1}
+  m_LocalPosition: {x: -1, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -4554,6 +4616,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -4685,7 +4748,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1568545690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1}
+  m_LocalPosition: {x: -0.5, y: 0, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -4772,6 +4835,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -4881,6 +4945,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -5042,6 +5107,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -5123,6 +5189,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -5279,6 +5346,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -5449,6 +5517,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -5526,6 +5595,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -5703,6 +5773,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
@@ -5899,6 +5970,7 @@ MonoBehaviour:
   cost: 0
   hasBeenPlayed: 0
   ownerID: 0
+  isMine: 0
   startPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
