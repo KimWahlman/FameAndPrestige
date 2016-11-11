@@ -81,13 +81,14 @@ function checkLinks(cards){
 
      });
 
-    console.log(what);
+    return what;
 }
 
 function countPoints(cards, theme){
     var number = cards.length;
 
     var comboPoint = 0;
+    var multi = 0;
 
     if (number == 1){
         if(cards[0].theme == theme)
@@ -108,13 +109,15 @@ function countPoints(cards, theme){
   									return Number(a) + Number(point_b)
 								}, 0);
 
+   /*
    console.log("------------NORMAL POINT---------");
    console.log(normalPoint);
+   */
 
     var mixed_cards = [];
     var pure_cards = []
     cards.forEach(function(element){
-    	console.log(element);
+    	//console.log(element);
     	if(element.type == 'mixed'){
     		mixed_cards.push(element);
     	}
@@ -123,21 +126,25 @@ function countPoints(cards, theme){
     	}
     });
 
+    /*
     console.log("------------MIXED CARDS---------");
     console.log(mixed_cards);
     console.log("------------PURE CARDS---------");
     console.log(pure_cards);
+    */
 
     if(number >= 2){
 
-    	/*TODO*/
-    	/*Not works (horror/nature)x2  (history/nature)x2*/
 		var result_mixed = true;
-		mixed_cards.forEach(function(f){
-			if(mixed_cards[0].theme != f.theme){
-				result_mixed = false;
-			}
-		});
+		for (var i = 0; i < mixed_cards.length; i++) {
+            for (var j = 1; j < mixed_cards.length; j++) {
+                if(mixed_cards[i].theme == mixed_cards[j].theme){
+                    mixed_cards.splice(i,1);
+                    mixed_cards.splice(j,1);
+                    multi ++;
+                }
+            }
+        }
 
 		var result_pure = true;
 		pure_cards.forEach(function(f){
@@ -146,11 +153,14 @@ function countPoints(cards, theme){
 			}
 		});
 
+        /*
 		console.log("MIXED " + result_mixed);
 		console.log("PURE " + result_pure);
+        */
 
-		if(result_mixed && mixed_cards.length != 0) 
-			(mixed_cards.length==2)? comboPoint += 1 : (number==3)? comboPoint += 3 : (number==4)? comboPoint += 5 : comboPoint = 0 ;
+		if(result_mixed && mixed_cards.length != 0)
+            comboPoint += 1 * multi;
+			/*(mixed_cards.length==2)? comboPoint += 1 : (number==3)? comboPoint += 3 : (number==4)? comboPoint += 5 : comboPoint = 0 */;
 		if(result_pure && pure_cards.length != 0)
 			(pure_cards.length==2)? comboPoint += 2 : (number==3)? comboPoint += 4 : (number==4)? comboPoint += 6 : comboPoint = 0 ;
     }
@@ -158,8 +168,7 @@ function countPoints(cards, theme){
     	return {normalPoint: normalPoint, comboPoint: comboPoint}
 }
 
-var c = [cards["3"],cards["3"],cards["1"],cards["1"]];
+var c = [cards["3"],cards["1"],cards["3"],cards["1"]];
 
-checkLinks(c);
-
-console.log(countPoints(c, "horror"))
+if(checkLinks(c))
+    console.log(countPoints(c, "horror"))
