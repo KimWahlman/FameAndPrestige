@@ -1,13 +1,39 @@
 var io_client = require('socket.io-client');
+
 var ipAddress = "localhost";
 var port = "3000";
 
 var socket = io_client.connect('http://' + ipAddress + ':' + port);
-socket.emit('USER_CONNECT');
-socket.emit('PLAY',{"name" : "NODE"});
+socket.emit('USER_CONNECT',{name : "NODE"});
+//socket.emit('PLAY', {name : "NODE"});
 socket.on('USER_CONNECTED', function (data) {
     console.log("Hello " + data.name);
    });
+
+var stdin = process.openStdin(); 
+stdin.setRawMode(true);
+const readline = require('readline');
+
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+
+process.stdin.on('keypress', (str, key) => {
+  if(str === 'a'){
+  	console.log("____END TURN_____");
+  	socket.emit("END_TURN");
+  }
+  if(str === 'c'){
+  	console.log("____BYE_____");
+  	process.exit();
+  }
+})
+
+socket.on("PLAYER_TURN",function(data){
+	console.log(data);
+
+});
+
+
 /*
 socket.emit('DRAW_CARDS', {"number": "2", "type":"word"});
 
@@ -25,6 +51,7 @@ socket.on('CHECK_CARD',function(data){
 });
 */
 
+/*
 var rooms;
 var room_name;
 socket.emit("LIST_ROOMS");
@@ -49,3 +76,4 @@ socket.on("HI",function(){
 	console.log("HI");
 });
 //socket.emit("LIST ROOMS");
+*/
