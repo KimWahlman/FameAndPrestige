@@ -20,21 +20,13 @@ public class NetworkManager : MonoBehaviour {
     void Start()
     {
         StartCoroutine("ConnectToServer");
-
-
-        /*socket.On("USER_CONNECTED", OnUserConnected);
-        socket.On("PLAY", OnUserPlay);
-        socket.On("USER_DISCONNECTED", OnUserDisconnected);
-        socket.On("ROLL_DICE", OnRollDice);
-        socket.On("SEND_CARDS", OnReceiveCards);
-        socket.On("CHECK_CARD", OnReceiveCheck);
-        socket.On("ROOMS", OnReceiveRooms);*/
-
+        
         socket.On("ASSIGN_ID", OnReceiveAssignID);
         socket.On("INIT_GAME", OnReceiveInitGame);
         socket.On("DRAW_CARD", OnReceiveDrawCard);
         socket.On("PLAY_CARD", OnReceivePlayCard);
         socket.On("INVALID_PLAY_CARD", OnReceiveInvalidPlayCard);
+        socket.On("CHANGE_TURN", OnReceiveChangeTurn);
     }
 
     IEnumerator ConnectToServer()
@@ -49,7 +41,7 @@ public class NetworkManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
     }
 
-    public void PlayCard(int playerID, int cardID)
+    public void SendPlayCard(int playerID, int cardID)
     {
         Dictionary<string, string> data = new Dictionary<string, string>();
         data["playerID"] = playerID.ToString();
@@ -57,6 +49,11 @@ public class NetworkManager : MonoBehaviour {
 
         JSONObject jso = new JSONObject(data);
         socket.Emit("PLAY_CARD", jso);
+    }
+
+    public void SendEndTurn()
+    {
+        socket.Emit("END_TURN");
     }
 
     public void OnReceivePlayCard(SocketIOEvent e)
@@ -89,9 +86,25 @@ public class NetworkManager : MonoBehaviour {
         gameManager.initGame(myPlayer.idPlayer);
     }
 
+    public void OnReceiveChangeTurn(SocketIOEvent e)
+    {
+        int playerIdTurn = int.Parse(e.data["playerId"].ToString());
+
+        print("Player Turn : " + playerIdTurn);
+
+        if (myPlayer.idPlayer == playerIdTurn)
+        {
+            gameManager.startTurn();
+        } else
+        {
+            gameManager.endTurn();
+        }
+
+        gameManager.cleanBoard();
+    }
+
     public void OnReceiveDrawCard(SocketIOEvent e)
     {
-        print(e.data);
         gameManager.drawCard(int.Parse(e.data["id"].ToString()), int.Parse(e.data["playerId"].ToString()));
     }
 
@@ -101,33 +114,4 @@ public class NetworkManager : MonoBehaviour {
 
         return newString[1];
     }
-
-    void messageReceived(string message)
-    {
-        if (message != "")
-        {
-            string[] msg = message.Split('|');
-            
-            if (msg[0] != "")
-            {
-                switch (msg[0])
-                {
-                    case "DRAW":
-                        // 1 player; 2 card
-                        gameManager.drawCard(Convert.ToInt32(msg[1]), Convert.ToInt32(msg[2]));
-                        break;
-
-                    case "PLAYCARD":
-                        // 1 player ; 2 card
-                        gameManager.playCard(Convert.ToInt32(msg[2]));
-                        gameManager.ReOrderPlayerHand(Convert.ToInt32(msg[1]), Convert.ToInt32(msg[2]));
-                        break;                        
-                }
-            }
-        }
-    }
-    
-
-
-
 }

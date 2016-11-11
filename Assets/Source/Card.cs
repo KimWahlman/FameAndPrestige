@@ -6,7 +6,7 @@ public abstract class Card : MonoBehaviour
     public int id;
     public string cardName;
     public int cost;
-    public bool hasBeenPlayed;
+    public bool hasBeenPlayed = false;
     public int ownerID;
     public bool isMine;
 
@@ -59,6 +59,12 @@ public abstract class Card : MonoBehaviour
     {
         currentSprite.sprite = faceUpSprite;
         this.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+    }
+
+    public void hideCard()
+    {
+        currentSprite.sprite = faceDownSprite;
+        this.gameObject.SetActive(false);
     }
 
     public void popCard(bool cardIsMine, Transform posTransform, int playerID)

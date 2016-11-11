@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public GameObject[] handsGO;
     public bool debugMode;
     public PlayableZone playableZone;
+
+    public Button EndTurnBt;
 
     void Start()
     {
@@ -30,7 +33,6 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < 4; i++)
         {
             playerHands[playerID] = handsGO[i].GetComponent<Hands>();
-            playerHands[playerID].textPlayerID.text = playerID.ToString();
 
             //assign the opponents to the player
             if(playerID != myPlayer.idPlayer)
@@ -67,10 +69,33 @@ public class GameManager : MonoBehaviour {
             yield return new WaitForSeconds(.1f);
         }
     }
-    
-    void endTurn() {}
 
-    void startTurn() {}
+    public bool checkPlayerTurn()
+    {
+        return myPlayer.canPlay;
+    }
+    
+    public void endTurn()
+    {
+        myPlayer.canPlay = false;
+        EndTurnBt.interactable = false;
+
+    }
+
+    public void cleanBoard()
+    {
+        playableZone.emptyZone();
+        foreach(var c in Deck)
+        {
+            if (c.hasBeenPlayed)
+                c.hideCard();
+        }
+    }
+    public void startTurn()
+    {
+        myPlayer.canPlay = true;
+        EndTurnBt.interactable = true;
+    }
  
     //server side
     public void drawCard(int cardID, int playerID)
@@ -91,9 +116,9 @@ public class GameManager : MonoBehaviour {
 
             Deck[cardID].popCard(false, playerHands[playerID].newCard(), playerID);
         }
-
-
     }
+
+
 
     //should be called when a card is played/discarded
     public void ReOrderPlayerHand(int playerID, int cardID)
@@ -134,7 +159,7 @@ public class GameManager : MonoBehaviour {
     }
     
     public void InvalidCardPlayed(int cardID)
-    {
+    {   
         Deck[cardID].returnBackToHand();
         playableZone.removeCard();
     }

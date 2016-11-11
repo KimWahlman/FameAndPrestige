@@ -120,6 +120,10 @@ io.on('connection', function(socket){
             socket.emit("INIT_GAME");
             socket.broadcast.emit("INIT_GAME");
             drawInitialCards(socket, 16);
+
+            currentTurn = Math.floor(Math.random() * 4)
+            socket.emit("CHANGE_TURN", {playerId: currentTurn});
+            socket.broadcast.emit("CHANGE_TURN", {playerId: currentTurn});
         }
 	});
 
@@ -203,7 +207,8 @@ io.on('connection', function(socket){
                 {
                     socket.emit("PLAY_CARD", data);
                     socket.broadcast.emit("PLAY_CARD", data);
-                    clients[id].cards.splice(card_id, 1);
+                    clients[id].cards.splice(indexCard, 1);
+
                 }
                 else
                 {
@@ -244,14 +249,17 @@ io.on('connection', function(socket){
 
         var id = socket.client.id;
         var playerId = Object.keys(clients).indexOf(socket.client.id);
-        if(clients[id].cards.length<4){
-            /*Draw Cads function*/
-            console.log("less then 4 cards")
-        }
-        console.log("NEW TURN");
+
+        console.log("player cards : " + clients[id].cards + "  amount : " + clients[id].cards.length);
+
+        for (var i = clients[id].cards.length; i < 4; i++) {
+            console.log("player id : " + playerId + "  card number : " + i);
+            sendDrawCard(socket, playerId)
+        };
+
         currentTurn = (currentTurn+1)%4;
-        socket.emit("PLAYER_TURN", {playerId: currentTurn});
-        socket.broadcast.emit("PLAYER_TURN", {playerId: currentTurn});
+        socket.emit("CHANGE_TURN", {playerId: currentTurn});
+        socket.broadcast.emit("CHANGE_TURN", {playerId: currentTurn});
 
     });
 

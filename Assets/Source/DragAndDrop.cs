@@ -10,10 +10,12 @@ public class DragAndDrop : MonoBehaviour
     private Card draggedCard;
 
     private NetworkManager networkManager;
+    private GameManager gameManager;
 
     void Awake()
     {
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void OnMouseDown()
@@ -44,7 +46,7 @@ public class DragAndDrop : MonoBehaviour
         draggedCard = gameObject.GetComponent<Card>();
 
         //if it's mine allow the player to drag it
-        if (!draggedCard.hasBeenPlayed && draggedCard.isMine)
+        if (!draggedCard.hasBeenPlayed && draggedCard.isMine && gameManager.checkPlayerTurn())
         {
             dragging = true;
             draggedCard.isBeingDragged = true;
@@ -59,7 +61,7 @@ public class DragAndDrop : MonoBehaviour
     //when the card is dropped
     void releaseCard()
     {
-        if (!draggedCard.hasBeenPlayed && draggedCard.isMine)
+        if (!draggedCard.hasBeenPlayed && draggedCard.isMine && gameManager.checkPlayerTurn())
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -74,7 +76,7 @@ public class DragAndDrop : MonoBehaviour
                     //assign the free slot position to the card
                     draggedCard.AssignNewPosition(pz.getSlot(), true);
 
-                    networkManager.PlayCard(draggedCard.ownerID, draggedCard.id);
+                    networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
                     //(should request to the server if i can play)
                     //if yes, use the card
                     //else, put the card back
