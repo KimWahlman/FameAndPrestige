@@ -172,7 +172,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -282,7 +283,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -420,7 +422,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -659,7 +662,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -792,7 +796,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -902,7 +907,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1095,7 +1101,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1251,7 +1258,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1385,7 +1393,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1467,7 +1476,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1633,7 +1643,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1832,7 +1843,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -1970,7 +1982,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -2169,7 +2182,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -2386,7 +2400,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -2468,7 +2483,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -2620,7 +2636,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -2787,7 +2804,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -2874,7 +2892,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -3035,7 +3054,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -3122,7 +3142,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -3322,7 +3343,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -3433,7 +3455,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -3544,7 +3567,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -3621,7 +3645,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -3974,7 +3999,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -4191,7 +4217,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -4324,7 +4351,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -4439,7 +4467,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -4550,7 +4579,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -4655,7 +4685,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -4875,7 +4906,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -4985,7 +5017,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -5147,7 +5180,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -5229,7 +5263,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -5386,7 +5421,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -5650,7 +5686,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -5728,7 +5765,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -5906,7 +5944,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0
@@ -6103,7 +6142,8 @@ MonoBehaviour:
   hasBeenPlayed: 0
   ownerID: 0
   isMine: 0
-  startPosition: {x: 0, y: 0, z: 0}
+  handPosition: {x: 0, y: 0, z: 0}
+  deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: 95fc98bc85d737c4daa1fc1157b3a435, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 361a4a3a7f5ed6a4f9a5c36141673f08, type: 3}
   isBeingDragged: 0

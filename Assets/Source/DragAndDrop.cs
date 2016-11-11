@@ -74,7 +74,7 @@ public class DragAndDrop : MonoBehaviour
                     //get the script of the zone (contain the slots position)
                     PlayableZone pz = hit.transform.gameObject.GetComponent<PlayableZone>();
                     //assign the free slot position to the card
-                    draggedCard.AssignNewPosition(pz.getSlot(), true);
+                    draggedCard.PositionOnTheBoard(pz.getSlot());
 
                     networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
                     //(should request to the server if i can play)

@@ -1,34 +1,35 @@
 Mono path[0] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Managed'
 Mono path[1] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono'
-Mono config path = 'E:/Unity_ProjecMs/nF aath[0] = 'EmeAndty_ProjPrestige/FameAndPrestige_Data/Mono/etc'
-a/Managed'
-Mono path[1] = 'E:/Unity_Projects/FameAndPrestige/FameAndPresPlayerConnection
- initialized from E:/Unity_Projects/FameAndPrestige/FamaAnAndPrestige_aData/Mono/etc'
+Mono config path = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono/etc'
 PlayerConnection initialized from E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data (debug = 0)
 Mono path[0] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Managed'
 Mono path[1] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono'
 Mono config path = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono/etc'
+PlayerConnection initialized from E:/Unity_PrMjects/Fo path[0] = 'E:/Unity_Prestige_Data (debug = e/F
+meAndPrestige_Data/Managed'
+Mono path[1] = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono'
+Mono config path = 'E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data/Mono/etc'
 PlayerConnection initialized from E:/Unity_Projects/FameAndPrestige/FameAndPrestige_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55145
-PlayerConnection initialized network socket : 0.0.0.0 55144
-Multi-casting "[IP] 192.168.56.1 [Port] 55145 [Flags] 2 [Guid] 1443983862 [EditorId] 4114103667 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
-Multi-casting "[IP] 192.168.56.1 [Port] 55144 [Flags] 2 [Guid] 832239572 [EditorId] 4114103667 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
-PlayerConnection already initialized - listening to [192.168.56.1:55144]
-PlayerConnection already initialized - listening to [192.168.56.1:55145]
+PlayerConnection initialized network socket : 0.0.0.0 55497
+PlayerConnection initialized network socket : 0.0.0.0 55065
+Multi-casting "[IP] 192.168.56.1 [Port] 55497 [Flags] 2 [Guid] 2191407743 [EditorId] 4114103667 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
+Multi-casting "[IP] 192.168.56.1 [Port] 55065 [Flags] 2 [Guid] 2215128859 [EditorId] 4114103667 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.56.1:55497]
+PlayerConnection already initialized - listening to [192.168.56.1:55065]
+PlayerConnection initialized network socket : 0.0.0.0 55393
+Multi-casting "[IP] 192.168.56.1 [Port] 55393 [Flags] 2 [Guid] 2516895153 [EditorId] 4114103667 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
 Initialize engine version: 5.4.0f3 (a6d8d714de6f)
 GfxDevice: creating device client; threaded=1
-PlayerConnection initialized network socket : 0.0.0.0 55336
+PlayerConnection alreitialize engine version: 5.4.0o [(a6d8d714d66f)
+55393]
+xDevice: creating device client; threaded=1
 Initialize engine version: 5.4.0f3 (a6d8d714de6f)
 GfxDevice: creating device client; threaded=1
-Multi-casting "[IP] 192.168.56.1 [Port] 55336 [Flags] 2 [Guid] 3970669617 [EditorId] 4114103667 [Version] 1048832 [Id] WindowsPlayer(Mini-Totem) [Debug] 0" to [225.0.0.222:54997]...
-PlayerConnection already initialized - listening to [192.168.56.1:55336]
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
     Renderer: NVIDIA GeForce GTX 560M (ID=0x1251)
     Vendor:   NVIDIA
     VRAM:     2000 MB
-Initialize engine version: 5.4.0f3 (a6d8d714de6f)
-GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
     Renderer: NVIDIA GeForce GTX 560M (ID=0x1251)
@@ -40,11 +41,11 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     2000 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Domain
 Begin MonoManager ReloadAssembly
-Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assemblly: E:\Unity_Projects\FFmeAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
+ameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Looainin
+g E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Domain
 Begin MonoManager ReloadAssembly
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -54,24 +55,24 @@ Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Manage
 Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.096 seconds
-Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\Fam-A dPmpleted reload, in d\Assembly-CSharp
+.dll (this message is harmless)
 Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_DataPMantfod\m ityEngine.UI.dll (this message is harmless)
-\FameAndPrestige_Data\Managed\Assembly-CSharp.dll (this message is harmlLss)
-ing E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\ManagLd\Udityg E:\UnEngine.UI.dll into UnitytChge\Faomain
-Prestige_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\MPnagefoUnityEnembly:etwo\kinityll rthis message in harelesi)
-e\FameAndPrestige_Data\Managed\UnityEngine.UI.dll (this mesoadgeg i:s hiar_Pless)t
-\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.NetwLrkining E :\to Unity Cjects\Fmamne
-AndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_DaLa\Managed\Assembly-CSharp.dll (this message is harmless)
+_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Assembly-CShPrlatform assembly: Eild Domain
+jects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndLoading E:\Unity_Projecns\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+ityEngine.UI.dll (this message is harmless)
+Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.134 seconds
-- Completed reload, in  0.102 seconds
+Loading E:\Unity_Projects\FameAndPrestige\Fam- Completed reload, in  0.109 seconds
+eAndPrestige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.122 seconds
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.dll (this message is harmless)
-Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity_Projects\FameAndPrestigl\Famerm assembly: ata\Manay_Projects\FameAndPrestige\FameAndPrestige
+_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\System.dll (this message is harmless)
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Mono.Security.dll (this message is harmless)
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Mono.Security.dll (this message is harmless)
@@ -80,22 +81,1516 @@ Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Manage
 Platform assembly: E:\Unity_Projects\FameAndPrestige\FameAndPrestige_Data\Managed\Mono.Security.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initialized touch support.
 <RI> Initializing input.
 <RI> Input initialized.
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initialized touch support.
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initialized touch support.
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
-<RI> Initialized touch support.
-<RI> Initialized touch support.
-UnloadTime: 1.171222 ms
-UnloadTime: 0.924497 ms
-UnloadTime: 1.039444 ms
+UnloadTime: 1.108412 ms
+UnloadTime: 1.126064 ms
+UnloadTime: 1.331326 ms
+game initialization
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameManager:initGame(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:28)
+NetworkManager:OnReceiveInitGame(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:86)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: E:/Unity_Projects/FameAndPrestige/Assets/Source/GameManager.cs Line: 28)
+
+player iD : 0 card id :  27
+UnityEngine.DebugLogHandleg:ame initialization
+Un itring, ObjeebugL
+ogHandler:IntebugrogHandler:LogFormat(LogType, Objec
+t,iStrintyEnginet[])
+UnityEnginer:ogger:Log(LogTTypee Objbecct)
+UnityE,giOb.Debug:Lo
+g(itject)
+UnityEner:L.MonLBehaviour:print(O
+bject) (at C:\buildslave\unity
+\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:d
+Networrd(InkManager:OnReceiveInitGame(Soects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(
+SocketIOEvecketIOComponent:EmitEvent(SocketIOEvent) (at E:sets\Source\NetworkManager.cs:108)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at 
+E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:4\Scr
+ipts\SocketIO\SocketIOComponent.cs:131) E
+ 
+(Fity_Projects\FameAndPrestige\Assets\SocketIO\Scrts/Source/GameManager.cs Line: 28)
+
+31)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+player iD : 0 card id :  27
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Intg2ame inE:\Unity_Proj
+ects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(SocketItEvent)n(a. E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkebugLogHManager.cs:108)
+SocketIOdSocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Proer:Int\FameAndPrestTige\Astrins, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogTyp
+e, Object, String, Object[])pd
+UnityEngin E.Loggety:Log(Locts\FameAndect)
+UnityEngine.DebketIO\ScObject)
+GaketIO\SocketIOComponentt.cs:131)
+ U
+(Filename: C\:/buildslave/unity/build/arceifGameManager.cs:28)
+NetworkManager:OnReciniveInitehaviourBindings.gen.cs Linenity107)
+
+cts\FameAndPrestige\Assets\Source\NetworkManager.cs:86)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: E:/Unity_Projects/FameAndPrestige/Assets/Source/GameManager.cs Line: 28)
+
+player iD : 1 card id :  14
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\compon\yer iD : 1 card id : onoBe
+haviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Int32) (at
+ E:\Unity_Projects\FameAndPreostige\Assets\Source\GameManager.cs:114)
+Net
+wortyEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBDhaawCour:print(Object) (at C:\buility_Projunity\build\artifacts\generated\common\runtime\UnityEngine
+MonoBehaviourBindiomponent:Es:107)
+GameManaIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIOeSocketIOComponent.cs:4
+00)
+SocketIOeSrcketIOComponenw:Upddt(So (attI:\Unent) (at E:\\FnmiAndPrestige\Assets\SocketIO\Scripts\Sockee\NetworkManager.cs:tIO\S
+ocketIOComponent.cs:131)
+t:E
+mitEvent(SocketIOEvent) (at E:\Unity_Projects\/generated/common/runtime/UnityEngineMonoBehaviourBindings.oemponent.cs:400)
+Soc
+k
+etIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filpnaayer iD : 2 card idunity/build
+/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindin
+gs.genngine.DebugLogHa
+n
+dler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(Lolayer iD : 2 card id :  11
+UnityEngine.DebugLogHandler:Internal_Log(LogType,gType, Object))
+nityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:105)
+NetworkManager:OnReceiveDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+player iD : 3 card id :  17
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SopklayerUin i 0y:EmitEvent(SocketIOEvent) Forma:\ U(aLd id :  2s\FameAndPrestige\Assets\S
+ocketIO\Scripts\SocketIO\SocketIOCject7
+UnityEngin
+UnityEngi.e.DebugLogHandlteebug:Log(Object)Un
+ity_ProjectsrFameAndPrestige\Assets\Sockett C:\buildslavketIO\SocketIOCompope\unity\bui
+,
+(Filename:\g:eneilrrlave/unity/bu\ld/mron)
+Uns\tuntime\UniotyEngine.DebugLogHandler:LogFormat(LogType, Object, Strmon/runtime/Uni
+tyEngineMonoBehaviourBindings.gen.cs Lin
+Unity7)
+
+neMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:114)p
+Netwire Deiug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\buiDd\artifacdsidOn\ ee3eer
+tndtyonrd(nonk.ttOEventH)md(arnIntinttE_gineLcg(Logav\Fe, Stdings.resti en.cs:107)
+oaree\
+nager:dgiwCard(Int3er, .nt31)8(
+t Ekendler:Logoorectsmat(Logpynen ObjeettiString, Object[]v
+entssets\Sourco\gareLag(LogType, Objec
+t)
+UnityEngiege.DebeeesveDOajCIO\Sc
+rnitsESockeOEvOnS)ckatnEB\hovionePrrprint(Obs\0ject)n
+dPrketIO.SbcieeIOComponentsyUebdsitSd(ua cta\fNetwsrginna_erojects\FameAndPr.cn:108)
+SocketIO.SockIh\vcoimponentnEsigEnettsSocketIOEvent) ent0c7E:
+sUmiM1na
+Pr
+jFcls\Fard(mAn3dCr/suige\Ass t:\SncketiOySrripls/SrciftIO\SocketIgs\Assonentats:400)
+Sd/commongrrntimS/cne4)
+EegwnrMMneBehavOoRrciiteDeawCard(SocketIOEvent
+ (at
+E:\Unity_Projects\FameAndPrestige\Assets\Socket\lOeytero kDa:a3ectrc id c e1IO
+C
+nmcoeeItine.ce:u3IO)g
+ 
+(HaneenaEli rvInternal_vo/(notT/tuOlv/aring, OtjEc\)
+UnytProject/DomeougrogHandler:Logts\SockeLIg\Spe, ObjEngin\ct, Serkng,oOrjict[])
+OnityEggnocentoc gger:Lo
+g(Lo
+g
+Type, Object)
+Unintny:Epdate() (at E:\Unity_Proj
+ects\FameAndPrestige\Assetp\SocketbO\Scripts\SocketiO\SocketIOComponenl.ds:131)
+ 
+(Filename:edC:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+player iD : 1 card id :  9
+UnityEngine.DebugLogHandler:Internal_Log(LogType, S\comg,oOb\ert)n
+time\Uniine.DebugLogHandler:LogFormat(LogType, Obje
+Gt, String, Object[])
+Unity,ngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+Unanyanger.cs:114)
+NetworkManat(ger:OnRe(ceiveDplwyar (D :k1 tyOEvend\arat 
+E:\Unityeratedcco\Fan\rAndPrentirte\A_LetsLooType\ eouriig,iObger.cs
+Un0:tyE
+ngi
+ke.De.uocoeHIOCompononFormi t(Lo3(SocketIOEUnit) (atjec\Unity_Pr)j
+enitygeameAetPresuice\AsseManao erjcst)S
+crit
+ys\SockMtIO\SocOnRIOeive)
+enityEngine.t
+IOEkethOvSouk:tIiUnmtyjProj)c(aa t:\bue() (aveE:\Unity_Projects\FameAndPreated\\Assets\\runtime\UnityEngiocketIO\SocketIOCompons.gen.:131)
+ 
+(Filename: C:/buildslave/u, Int32) (atrtifacts/generated\cFamon/runtime/UnityEngineMonoBGameManager.cs:s.gen
+.cs Line: 107)
+
+nReceiveDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAntPrestigAndPresti\Source\NetworkManager.cs:10ger.
+cs:108)
+SocketIO.SocketIOpoEmitEveDt( i cardtidvent3t 
+UniEyEn (at ErojeLtg\Fadler:IrtFstige\AssstigT\As, tO\Sock,ttIO\ocri
+ts\SockgtInOCSopketIo.csm4nd)
+SocketIO.at(LogType, Object,pString, Obje)t
+Soc
+UnityEngkne.Logger:Lng(LogType, Oaject)
+UntyyEngjne.DebugIO\goOkjtIOCAssetsEngine.Mono
+Br
+ipts\Same: CO\bSOldsctvOCot onebutilds1a1)
+un
+iFigeneratldtifommongeneride/Uve/onity/buinnily/antneMonoBehaviourBitedictym.men.rsontimhavii7ur
+BindingonoBehaviourBi
+naings.gen.cs Line: d(Int3
+2
+, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(SocketIOEvent) playpr iD : 2 card id :  28
+Unity
+Engine.DebugLogHandler:Internal_Log(LogType, String, ObjecObj
+ect)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, O[bje
+ct[])
+UnityEngine.Logger:Log(LogObject)
+UnityEn
+gine.Debug:Log(Object)O
+bject)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslty\build\artifacts\generated\nerated\common\runtimm\mon\runtime\UnityEngineMonoBehaviourBindings.
+G(meManager:d
+GameManager:drawCard(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Sourer.cs:114)
+Network105na
+ger:OnReceiveD:OnReceiveDrawCard(entke (at E:\Un(at E:\Unitys\FojecAs\FameAndPrestigtsAssets\Sourceorktwonager.cs:108)10
+8)
+SocIO.IOo.SocketIOComeonent:EmitEventocketIOEvent) (at t E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketEO\SocketIOrojects\FameAndPres
+tige\Assets\SocketIO\Scritt:Update() (at E:\Unity_Projects\F00)
+SocketIO.SocketIOComponent:\Sdate() (at E:\Unity_Projects\FameAndPrestig
+e\
+Assets\SocketIO\Scripts\SocketIO\SocketIOComponennera:131)
+ 
+(Filename: C:/bu:lnUnity_Projeatiourmindingsstene\sssatne: 107on
+/
+runtime/UnityEngineMon
+oBehaviourBindings.gen.cs Line: 107)
+
+ocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SockptIO\ScriD : 3 cketIO\S:  17
+Unityonent.cDeb00)
+Socketer:IntketIlCLmponegt:Update()n
+g, Object)
+UnityEnogne.DebugLInHasrltige\goso(LogTypc, SIring,jecje Stc
+UietIyEObjectDe)
+UnityEndln:131og
+ge
+rFilenameTyCe, Objectla
+vn/ug,ty/jui.d/arg
+ifactObgectra
+Ueie/y:Lmmon/runtime/bviour:p
+gnineMongjeeha (ou Cinbiild.gen.
+csniin\buildMo
+
+Behaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\com
+mon\runtime\UnityEng(neMInt32, Int32) (dlaye.\Units:Proje
+ctmeMameA
+ndPreswCane.Debus\ogHane2) (at ternal_LoProje
+TypworkMrnager:bjRet)
+UnityECardeSDebetLoEvent) (a14E:
+NUnity_Panaype, ObjectveDrawCige\Assets\So
+urce\NetwoE:Loggey_Log(Lots\
+SomeAndO.es)i
+etitCosetine.DrmitEvent(SocketI
+OEvent08)
+SoMkeUnityocker:pComp(mejec:Eei(tigeC:sSocis\SIocveent)ity\bEild\irtiProje\generateddcommt.ge\40see\Un)
+SEcgetIOonoBehtIOourBindings.gOC.cs:nen).c
+::400)
+SPro:drasSocrdtInd32, Int32) (atOC\S\UketIO\rojep() \So Ee\UnrestiretIOCompanent.Pre1mt1Mg
+ 
+ger.es:1e5 C:
+/Ouildslave/unkenReceivkeDtIOCorts/gentetI:d/comm
+on
+/rtlename: C:/buildslave/univyobuiiddenAssets\Source\Network
+M
+anaruntimp10aee
+U iDy:EO.SoeMonIBehapon
+UnrByEngEvent(Socks Line: 1:) nta
+t
+na:\Unity_Projec StringAndPrestig
+e\Assets\SocketIO\ScHandler:LogFormat(LokType, Object, String, O
+bject[])
+Unipelayer iD n ntcnUr.Logg:  (a
+ Ln:\Unpey Objectts\F)
+eAndyr:Igtegnalb\Asset(Obocc, S
+trScripts\ectk
+UIOtSvEcour:IrieOComponent.cs:13andl
+el
+dLolename: LogTbuildObject, Stringrv Obu\commobu
+iuntime\UnityEnger:Lag(L/coyimeun Biujdin)
+Unigty.ggineMDnou7e
+GvmeMrnage)
+:dityCareine.t32,ineh viour
+:
+print(Object) (at C:\buiAndPrestige\Assets\Source\GameManager.cs:common
+\runtime\UnityEngOnReceiveDrawCard(SocketIOEvent)lay)tr
+Game: 2 cPr:drawCa r28
+(Inty2,eInt3DesugLe\Assels\Sontee\Ne_LogkLogTypeanager.cg, Obje
+ct)
+UtIamengine.ODomucL:g1a)
+lerwLrgFanager:ogRece,veaj c:\UnirinProjects\Ft) 
+(aityEstinitALoggerScLoke(LogTnpe,rObject)
+ssets\SoureeckebIOCLogaOagenectject)
+U
+nit
+kengi.SocSocIehaOCoompoteEtiUEdett(S cae I:Eveity (atjeunstyate_Projesifac\A\generSteike\IO\ets\SockSocOitcripineMonoBeha\Socketnd1n1s.
+ 
+n.clen07)
+Ga
+:eManldIlaSe/anity/buioneard(ipdt32, Int3 E:\Un mmon/nuntimtyUnroyEngineMigeA\AssvdoueBtige\gssees.Ss rin\: tIOa)
+
+er.cs:114)
+NetworkMa1)
+ 
+(Filename: C:/buildslave/unityent) (at Eifacts/geProrated/common/runtime/Unisysets\Source\NetwprrBier iD : 1 card 
+id :etIO.
+S
+
+ketIOComponeugLogHandlnt(Socernal_Log(L (at E:\Unity_PrObject)
+UnityEngintigebugLogH\SocketIO\Scrmats\SocketIO\Sockt,IStOCompplayer iD40
+01 
+caErngin .  21e
+tnLog(LggTypeep Otee) (a
+t E:yInnity_Projec(oogTyject)
+esttge\gsse.s\
+UoBityEnoune.DentgLogHandleoc etIOComdsneov.e\un31)
+ 
+(FilertifacC:/generatave/unity/buntime\UnityEnggenernoeehcoObjn/runtimeigUn.csy1ngin
+Gao
+eMaehgvi:drainard(Ing32, s L32e (1t )
+
+U
+nity_Projee.Debug:Log(Object)
+UnityEngine.MonoBehaviour:prrni1(Ob 
+3ctward adage 3Ol
+UnceiveuniEwCard(ld\artifactnt) (at E:\ncomam_Log(Lon\Famtime\ini,yEngineet
+s\Soyunce\NrtworkManagen.csr:0ogF
+o
+rcke(LogSock, Object, Sn3:,mitOvjec (at 
+EnityEngiProjotcts\UnotyLPrTyectige\jectts
+restice\Gamets\Socket(:11Ori
+NetSo
+cketnangeoce.toOCBmpovint.crd(Soc(
+ObjeEtIentSocat EOi\Unity_Pt:Updave\) ity b:ilnitg_Projet\s\FameAnnerased\e\Amoets\:10ket
+SnOctSetIipto\SotketIm\Snent:EOComponent.cskerIinv
+en
+ts gan c::U0i)
+_areMlaeeger:FamwCndPrartifa Int32ne (aocke\UnitnrPruntimo\FUmeAndPreskMoge\Csmponent.cs:\Gamee
+Sa.ckgerics:110)
+N
+
+tworkMannt:Update() (at E:\UnityocketIOEvent) (at E:\tige\Assets\Sts\Fame\ScndPrestige\Assets\Source\NetworkManager.c
+s:
+10ilen
+plc: r etI: l caav id :  2ne
+it:EaitEvent(SocketIOEd/co) (atruntUme/U(Lrojncts\FameAngineMonbject)
+onrBiEkgtne.SebiptogHondltIOLSo
+F
+ormat(LogTnent.cs:400)
+SocketIO.Sject[])
+UnityEngine.Logge (at E:ogType_Projects\
+FameAndPrestige\Assets\SocketI
+O\Scripts\polketI iSock2rcard ri t  b2ec
+Un (ty 
+ng(Fiuendslg eogHandler:Inter\ityLyg(Log/artifSarts\generatedc
+Unommmn\runtime\UnitgHe/UnityEnanneleroBrBiviourBindinog.nype, Ob0ec
+: Strin7)Ob
+ject[])
+UnityEngine.Logger:Log(LogType, ObjectF
+ameAndngine.DebuA:Log(Object)
+UnityEngine.MonoBehav
+iour:print(ObjeOp) nRtcei\bu 0 caave\uniky30
+Unityrtiine.s\gniey_Projectson\tennal_LUn(togTgineMonoBehavOourBin
+Unitygegins:107
+u
+GogHandler:LogFormptnLnt3:,pmIntvent(a, StrUng, Objoject E:
+\Unity_Projects\FsmeAndPrrctige\Asject)
+UcietIO5Si
+NeDwbrkMLng(Or:OnRec
+UnitDragine.MonoBetIO
+Ever:priatocketeOCom(aot C:s\Famdslav(er\E:\Uniunity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:
+ 
+(Fi
+lenaManager:dildslave/ut32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManindrncs.ge4)\
+Network M0na)
+
+.cs:108)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvenmeAndPrE:\Unity_Projectosrce\NetworkManager.cs:108)
+SocketIp.Sycks\iD :empon\SocketIOCompo
+neckntn.OEvent) (
+aL E:\ndier_PnoernaspFaonent:Upd, String, Object)
+UnityEngine.Debugojects\FameAndPrestat(LogType,SocketIO\Scripts\SocketIO\)
+UnityEngipo.sengger:Log(L
+ 
+TFcriptme:ocke
+bniO\Sockne.Debtypoui(Otj.ct)
+00)
+Socgiated/comkehIOComp:prnntUpdaeineMonoBeh:\Unity_nrojes.s\F.meAndPe: ifac
+
+\gsets\SocketIO\Scripts\SocketIO\SocketIOComponent.csdings.
+g 
+(Fs:1name
+: C:/buildslave/unity/bt32,/art32) (at E:erated/common/s\Famme/UnityEpggeeMssets\Souocrd id : g1a.
+er.cs:114)
+NDebug
+
+ogHandler:Internal_Log(LogType, Strvent) (at Eject)
+UnityEngins\FameAndPrestige\Assets\St(LogType, Object, String, Ob
+jecte])
+iD : Engcard id :  21Coi
+Unent:EmitEvent(SockeLogType, Objet E:
+\UnitDebugLonjects\Famog(ernactig
+e\Assets\SocMotnO\Scbjets)
+UniteyOIngine.D(at LogHaneler:LogForm
+at(LogIy.SocketIOt, SonintdUpdaect[]r
+Unity\Ugine.Poggeo:Lcts\FomeypdPrebjege\A
+snity\nock
+etIOMbug:Log(\SjcCardI
+O\SocketIt32) nateha\Uni31)
+in
+((ileecame: at C:\ldilavlave\ty/by\buiad\artiterccs:114t
+N/common/nantiuntUni\iyEnginnMoneMohaviourBindinindgen.c.gLn.cs:107)
+Ga
+meManager:drawCard(Int32, Ince32) (at E:\Unir.cs:108)
+SocketIO.SocketIOComponent:ource\GameManager.cs:105)
+NetworkManager:OnReceiveDrawCard(SocketIOEvplayer iD : 0 card id : ts\F
+ameAndPgineige\Assets\Sourc:Internal_Log(Logcs:108)
+SocketIbject)
+tIOCymEonent:DebtEvent(SocketIOEForm) (at E:\UniObjProjects\FameAndPrestig
+e\Assets\SocketIO\Scrg(LogType, Object)
+tIOComponent.cs:400)
+SocketIO.
+SocketIOCompoEmoie:Evvdnte()p(at E:bject))_Pat C:\UniFydseAvdPrestygeuAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.socketIoifacts\gcrirtteS\ccommon\rcnetIeCrojetyeng.csM13oBe sa
+(iiouenase: n:/.gindcs:v0riun
+itSocuild/artcafetIrC/generated/:omm)
+ 
+(Filnnty_PrC:/giildsnovehanity/buildsaturBiource\.gen.csa/Leone:n/r7)
+
+me/workManngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SpcketIOComp: 2 card id :nt(9
+UnityEngint) (at E:\UnidleP:iDe: 0aca_LondPogsti
+Ue\AttyEngine.Debug
+LogHandler:Internal_Log(LogType, String,0 Op
+eoe ctIOc
+S,iSkettriog,oObjtct[])
+UnityEndgiEnr:LogForm:Locts\FameAnOgjeesgTyge\issejs\no,
+ ObteEtg]n
+.Debug:Log(Ob.eot)k
+:nityEngine.MonoBehav
+io
+ur:pLnng(O: C:/buildslavbuildsy/buiunity\b
+uild\artifad/artifarabted\cg(mgen\rate
+UnioUmit/runtiee/UnBhhyaviouriindiBgsaviourect)cs:107)n:
+cb iidna: 1:7rn
+
+wCaid(Int32, Int32) (at E:nerated\common\runtime\UnityEngineMoyo\Shurce\GameManager.cs:1
+cs)
+NetwonekMana
+ger:MaRegLogHanerer:Inte:orawCagd(LogEntent, (at E:\Unity_Pr
+onitysnFameAny_P.Doiee\AssetndSlareAndPtwstige\AsLMgts\e,urc:e\G,m
+eMringIO.Socke4])
+
+enioyEngineiLovenr:SockLoITEvee Sobjkett OE
+vent) (_tPE:jects\FProObjerestigee\Asr
+UetstSotEketIeiMe\ABtshas\ckut:p\\NetetIOCompone.cs:10uil
+)
+slckve\OSSocketIOComptifacts\dener) (:E E:\Unityn_ProjectsEFngeAeModPrestige\Assets\Sssk\n.msASd10es
+\SmcMesIOs\:dckeSoakdtIOCots\nenckecsO\So)
+eUn
+(Fi_Pprojeects\FauiAdsl
+avetigitAsbeis\Soutmpe\Gat:Upnete(.cs:114)
+UniworkManager:OnReceiveDrawCard(SocketocketIOcs Line: \Sni)yt
+_P
+rojects\FOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/
+build/artiocaets/iDm: nerttemit vmntn/
+runtime/Uni(SockineMoovHnn)l(rt nieUdangs.gol_.og(csmgLAyne: Stii)
+
+Assetect)
+UnityEngine.DebugLogHandler:LogFormat(Log.cs:400)
+Soct, Strinog, Objeocptnent:
+UpdatyeEn i(at E:\Urity_P(LogType, Object)
+UnityEngine.s\SocketIO\Scripts\
+SocketIO\SockonoBehaponenr.cs:13prin
+ 
+(Filename: C:/buildslave/unity/build/artifacts/genenerayer iDmmo1onard im : n2i
+UnnginnMonBehaaviurBindings.ggn.cn:1_L)
+GLogMana
+,
+ StrinwCard(Iect)
+ Int32) (at E:\Unity_Projects\FameAat(LogType, Object, StringameManager)
+U:114)
+gietworkManager:OnRecpe, Objeca)r
+d(SolayeIOEvent) (at E ijnity
+Uro
+jecnsina.eAnoBeehavioursprts\SObrcet\ (at CrType,adSst.ain:,0nit
+y\buil
+UIO.SEngetIOCts\generatdl\common:Eungior\Ue(L(STypketObEventh tvatnE, Uniey_s.gjn
+.ts:107gin
+GamLoggereLogsLotTypocketIO\Scri
+pts\Sot E:\Unibu_Projects\onme
+nt.cr:4tige\
+Asnetshaviour:print(Oanent:Up(ate()
+\bat E:lUvitunPto\jueciveDFawfacdsPSgestiaeeAscetmonockntIm\SUripyE\ginkMtIO\SocvetIrgBmponent.cs:131rc
+e
+(Filer
+amm: a:/bui:dslw
+SockniIO32b ilt/a) ifacEs/gniey_Prd/coms\n/muntdPe/stigy\nssetMonoBeceectmeManagin.cs:sti)
+setisees\a0ock
+
+IO\ScnReceiveDrawCa\rd(SocketIOEvent). (at E:\
+UnitetIO.SocketIOComponent:Update(sets\Sourcen\Netwoojects\FameAndP0esti
+ge\yer is\: cetIOO\mpoipts\S
+mnckeEngine.keeugLogHand er:InteUnit
+yL
+og(jecTy\FameArdnrestijecAni
+UnityEngine.Dacigs/ggHandler:Lommon/IOCoLoonype,cs:400)
+ Strieg, Soceet[])
+UpotyntgUs dane() (a)o
+g
+(LogType, t E:\Uni
+ty_Projects\FameAndPrestjlgc\)
+Un :yS2 card ionoB 3av
+ioockerinn(ocbject) (at C:\.cDeds1aLve\
+(FilenrmIl: C:nal_lts\lene/unity/build/arti\acts
+/geteEngine.DmEng/renonndler:oBehaviourBinTmepe,ngs.ject, String, gbject[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehavenuUcni107)(g
+injeMct) (aan ig:urbdndlnds.g(vet3 LiIy\bu10(a)
+E
+:\Unity_Projects\FameAndPrestige\AesetteSource\GameManager.cs:ptlme
+\et iD : n3 caaggr:O:  1B2
+avivyrrinnings.gen.es:10ent)a(aeaEndUni:InPrrnects\oa(Lt32dPrest3g)g(\As StriSo,urce\Nt)
+UnkMtyEnernesstibug
+AoceandIO.uSoce\eLomOComapoLogT:EmitE
+bject, SatIOEveOOnRecet)vE
+D:awCard(SocketIOE\Untty_Proje\Typey_mOrAjjdPres
+UFame\ndPites.SieceueA:IO\(Oriect)SUnetworkManagetIcs:108)
+enck.tIO:4ock
+t)ocComIo:.SotileslOComponityk\builv\are(tifacts\generaojectsmE:\m\eAnty_Proige\A\FameA\dPreshaO\icurBis\S\cketIO\SocketIO
+ComeMaent.cs:ra1)
+ 
+(Filename: C:/boil E:a\Unity_Project/crameAndPrestige\Assets\tsurce\Ga
+meMa/common/r1ntim
+ompnireEngiUer:Ote(ehaviourBiardingskagtIOEsULnt) (at7ni
+t
+y_Projects\cFameAndPrestige\Assets\SocketIO\Scrtpts\SocketIOrSocketIOCo
+mponent.cs:131)
+OCo
+mponent:EmitEvent(SockatIOnvent) (aa/ drtdfacts_P
+UjicyE\FameAnebrgLogga\Asnitts\SocketIoogSLogpys\SocketIO\SocketIOCn
+e: 107ngi
+n
+e:400)
+SocketIO.r:LckgFormat(LoeType, Object, String, Obj_Project
+s\FameAndPrestige\Assetsog(LogType, ripts\po
+cnetyEngoc ketebud iog(Objec
+t)
+Un)g En
+(FilenameoBeandler:Internanity/buildypC:ifactldgenee\ted/c
+Unitynlr\ntiifacnityengrneed\cBemon\ourtimd\ngs.yEn.cseMonoB 1avibj
+e
+ct[])
+UnityEngine.Logge
+r:Log(LogType, Object)
+Uni,yEngin2.) (at Log(Object)
+UnityEngine.MonoBehaviour:prinSoubjec\GameManager.cpta (rt
+ C : 0kMald edvO\un
+eivbDrawCaru(Sd\ockefaOtsent) (at E:\Uog(ty_Pype, ts\FameAndPneMon
+oBehaviousBindinegsNogegHanManr:
+Gog.orm108L
+Soype, ObSeccketIOComp)nentecmitEv
+inityEngknt.Lovenr) dPtes:gigpe, Object)u
+rce\GeAndPresti.cs:114)
+jeccke
+UO\tcyEp:gsnReceivtDrewCaretSrOcketIOEvnt.)s) 0at
+SocbutIdslavketIOCompuiePrestigeacts\gener\rcity_twojr\cts\Fgee.Uns:10en)
+iocketIBt.SockekIOiompngentsEmitEetIO\S
+ockketIOCermtd) (atrd(Int32,
+ P
+(Foject(at E:\ndPildtiojecsnitFabeAldParttSacts/genecketIO\SocketrOagime/sn1t5)n
+NeneM
+onokehaer:OnRendIOvemponC.cd:UpcaeeI Event 
+E
+:\Unity_Projects\FameAndPrestige\Asge\Ass\So\SotrIO\Setworks\MSnocketIO\Socke
+tIOComponSont.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generatedcketIOComponene/UniityEngineMonoBehaviourBindiplaygir is : 2 car0da)ie
+d
+ :  37
+UnityEngine.DebeuIgLogHiats\SocketIO\SocketIOComponent.cs:400)
+SocketI
+O.ityEngiOne.DoebugLogHandler:aogFormat(LogType, Object, Striesnige OPjett[])
+Ure tI E\SUintpts\SocketIO\gLckeHae, Objeen).
+cn:1yEng
+ine
+.Debug:Log(O, Obtje
+Ustit
+vEnuinty/buile/aviifr:psint(eratcd/ct(mmon/:\buildsecnv, StritgMbniBehaviou
+rartifacine.Loggge:LratLdgine:on07)
+
+ct)
+UnityEngine.Debug:Log(Object)
+aniryin : :107)
+GaocaMdaaid :  23
+UnityEngint) (at C:\buildsl32e\ .nnet3\LogHalt\art:nntitys\gLnerateTy\e,ameAnng, dtrme\tn
+gt\EsgensMSoDebug\aviaudlag:LogForerat(LogT)p
+e
+,ttOojecanagtr:OnReceiecDChan
+grd(uEcneiIe.Legt)vgertLogtUnity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SocketI(C:mTUpi, O_Pect)
+UniEvent(SockrtujOEve\F) (At P
+rei:tyUngisseMtsoBeeaviourtprint\Objtwork(an Ctig\bAsldsla
+Soe\keity\ScriptIOC\m\oocketEtitEvkstgenemaetnent.cs:400tnE
+:\e\UnityEngineMonoBehavntesUiodertAindi(gt.ge\Uci:107)o
+jec\SMaketIndPresttrd(Inp3o,\Inc3et:O0S)
+SptkityO.SocketIOComponemtoUpdate() ett Es:\31)
+ame
+(anleyaer.cs:/buil
+dslave/unity/buildecerveietIOsard(Sraked/IoEvent) (at E:\onpit_Projcs:131)
+ h
+(dPouernigmding:/ts\Sous Le/unit107e)wd
+/
+artifacts/generate
+d/common/runtime/Conitynennt:EmoitEvent(SocketIOEgv.gen.cs Line: 107)
+
+nity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\Soc: 3IO\SocketIOComp
+onent.cg:400)D
+eockegLogSocketIOComponent:Update() (at Et\Unity_ProricgtsOFameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buil
+UnsitveEngine.DebugLogHandler:LogFormat(LogType, Objeunity/build/aOrject[])
+UnintyEngine.Logger:ntime/Unitey Onjgit)e
+UninyoBgene.vibou:rBgiOnjdct)g
+Usityenninc.so oBinae:our:7)i
+(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NptlaryManager.cs:108)
+Sd cketIO
+.SocketIiCoe.DebugLogitEvent(SocketIOELog(LogType, String, Object)
+UnityEngine.DebugLogHandlertIogFormat(LogType, \bSock, String, Obt.ct[])
+Un
+ityketIO.SocketIOComponent:Update() (a
+t E:\Unity_Probjects\FameAnd)P
+resttige\Assets\SocketIO\Scripts\SocketIO\SocketIOCompone\unity\build
+\a
+rtifacts\geC:/buil\common\runtime\UnityEngfneMonogeenerateBindings.gen.cs:107)
+GameMneanageehavawCard(Int32, Int32) (at E:\U)
+
+y_Projects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\AssetsPlayer Turn : 0
+Unityr.cs:108)
+SocLoetIO.SocketIOComponent:EmitEvent(SocketIOEvent)
+ (at E:\Unity_Pugojects\Fer:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(Log
+Type, Object)
+tIOComponent:Update() (at E:\Un
+ity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SovcketIO\SbuildtIOartifacts\gs:nerat
+ d\
+commona\runtime\UnityEngineMonoBehadi/artifacts/gennrated/comm
+on/wortime/UnitOnngineMonoBehaviourBindings.gen.cs Line:\107)
+
+Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:93)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\Faplayer iD : e3 card id :  19
+UnityEngine.DsbugL\SgcHandler:Intes\SocketILogType, String, O\Soct)
+UnityEngine.ketIOCogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Objeco)
+mnityEnt.cs:400)bu
+g:LoegIO.SocketI
+OComyEngent:.Mdate() (at E:\Unity_Orojects\FameAndPrestige\Assets\Soc\build\aripts\SocketIO\SocketcOCompgeent.cs:131)
+on\
+rFnilename: C:/builMslaoBehaviourBilddings.gentifact.cgenerat)
+G/commonager:dr/ruard(nnt32, Int32) gineE:\Uniony_ProjoBehaviourBindings.gen.csts\Sourc107ameManager.cs:114)
+NetworkManager:OnRec
+
+veDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Player Turn : 0
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+NetworkManager:OnReceiveChangeTurn(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:93)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+card played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+Card:playCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Card.cs:54)
+GameManager:playCard(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:69)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Event - Dynamite card has been played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+EventCard:Dynamite() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:40)
+EventCard:useCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:22)
+Card:playCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Card.cs:57)
+GameManager:playCard(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:69)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+card p iyere
+orderhand 
+UnityELogHandlergLogHandler:Internape, String, O, Sct)
+UnityEngt)
+UnityEngine.DebugLogHandlt(LogType, Object,pString, Objecte, O
+bject, gire.L, Object[])
+UnityEngiject)
+UnityEngiogTDebug:Log(Obj
+ect)
+Unitye.Debug:LooBehaviour
+:pityEngbject) (at C:\buildslave\unect) (at ity\build\artifacts\generated\common\runtimed\come\UnityEngineMonoBeginhaviourBindings.gen.cs:10n.cs:7)
+Ca
+rdm:playCard() (at E:\Unity_Projec2s\, IntndPrestiEe\Assets\Sou:ce\CaUnitys:54)
+GameManeAndPrestigard(sets2) (at E:\Unity_Projects\FameAndP
+retwore\Assetsager:Oe\GameManager.cs:153)e
+tIOEvent)nager:OnReieityPlayCard(SoameAndEvent) (at E:\Unity_Pr\NetworkameAndPrestige\
+Assets\Source\NetworkMnent:EmitEven
+SocketIO.Soent)IOCt E:\ent:EmitEvent(SocketIOPrent) (at E:\Unity_etIO\Scripts\SocketIO\SocketIOComockent.cScripts
+\SocketIOSockettIOComponent.csate()
+SocketIOnity_PtIOComponent:Update() (at E:\U\Sockerojects\FameAndPresO\Sockesets\Sponent.\s:Scrip
+ts
+(Filename:SocketIOComponent.cy/build
+/a
+(Filename: C:/buildslave/unity/me/UnityEngineMonoBehated/commdinguntim.cs ityEng107)
+
+oBehaviourBindings.gen.cs Line: 107)
+
+Event - Dynamite card has been played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+EventCard:Dynamite() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:40)
+EventCard:useCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:22)
+Card:playCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Card.cs:57)
+GameManager:playCard(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:69)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+ in reorderhand 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:ReOrderPlayerHand(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:126)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:70)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 1c7ar
+d
+ played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+Card:playCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Card.cs:54)
+GameManager:playCard(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:69)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Event - Dynamite card has been played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+EventCard:Dynamite() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:40)
+EventCard:useCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:22)
+Card:playCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Card.cs:57)
+GameManager:playCard(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:69)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+ in reorderhand 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:ReOrderPlayerHand(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:126)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:70)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+card played
+UnityEngine.card played
+Uni:Inteine.Debu(LogTHpndlere, String, ObjLogTy
+pe, String, ObjecL)
+UnogHandine.lerugLogHandler:LogFormat(LogType, Object, String
+, Object[])
+UnityEngog(LogTypec abjectT
+Ueit
+ybject)g
+ine.De:gLug(ObgHug:L
+og(ObEngine
+UnioBenggvinerMotringhavieur:)
+Unit:bEbuilds(aveu:\build\build\arti\buildgenerated\common\rud\common\runtime\UnigyeoaviodlenoBLngs.genat(LogT)
+.ernd.ps:a0Ca
+C(t (at E:\Unity_Projectsity_Projects\FameAndPrestige\Assets\Source\
+Card.cs:54)
+GameManager:playCard(Int32) (at E:\Unity_Projectstige\AssessFaSourmeAndmeManagetigs:153)
+NetworkM\Gamer:OnRer.cs:153)
+NetworkManager:OnRecei E:\Unity_Projeers\FameAt)Pret ig\U
+nity_Projects\FamtwoLPranager.cs:69)
+Socket\NetworetIOComponent:Em
+itEketIO.SocketIOCompo (at E:\Unity_ProjketIOEvent) (at E:\Unity_Projects\FO\Scriptsstige\Assets\SocketIO\Scriptss:400)
+SocketIketIO\etIOCtIOComponepdate() (at
+ ocketIO.SocketIOComponentPrestige) (at E:\Unity_Projects\FamcketIO\SocketIOCets\SockeoIOpocripts\S131)
+ 
+(Filename: C:onuildsl:131av
+ 
+(Filename: C:/buildslage/unity/build/artifacts/time/UnityEngion/runtime/UnityEndingMonoB.cs LinrBi107)
+
+.gen.cs Line: 107)
+
+ActiAction - GhostWriting cars has been pla
+yed
+UnityEngine.DLogHandlendler:rnal_Log(LogType,ype, String, Obje
+ct)
+UnityEngine.DebugLogHan:Log:LogFormagType, Object, Strongg(ng, cTb[peet
+U ])
+Uecgi
+Unitygner:e.Debug(LogTObjjet)
+U
+nni
+UnngyEnginb.Bg:Lug(Lbg(Otije
+(nije
+Engine.MonoBuinoBehaviour:p\build) rti a(ts\generated\coity\build\artifacts\generated\common\runtime\UnityEngineMon
+oBehaviourBindings.gen.cs:107)
+ActionCard:GhostWriting() (at E:\Unity_Projects\F
+ameeMadPrestige\AssetsISot32e\ (ctionCard.cs:33)
+Actionaard:nseCrrd() (at C:\Unity_lavj\cnity\meAnd\cest15ige\Assets\Source\mmon\ruard.cs:24ty
+EngineMonoBehav (at E:\Unity_Projects7))
+eAecwtriMonngCraOrRdc:iGePlayCa.cs:oc7)tI
+OEvent) (at E:\Unity_Projects\FameAndPitestige\Ass\FameAndPrestige\Aksetsaooetr.ce\ing()
+ ana e:.cs:t5e_Pr
+NjectskManeAmidPee:tnge\AsvePlaSCurdeSActetICaventrd.a_tr jects\FameAndPcestige\Assets\Socke\AI:\Sc\ipts\SocketIO\SocketIOComponent69)
+Sock)
+SocketIO.SocketIOComponen:EmitEven() ocketIOEvent)_Pro eat E:\Unity_Projects\FameAndPrestige\Assetss\SocketIO\Soc\Scripts\SocketIO\Socket
+ 
+(Fmponent.cs:400)
+SocketIO.Socketuild/artifacts/gee() ted/commonitruntime/UcityEngineMonoBehavioAsrBindings.3IO\Ss Line: 107)
+
+IO\SocketIOComponent.cs:13))
+ 
+(Filename: C:/buildslave/uni
+ActionCard:uifacts/ge(atraE:ed/common/ojuntts\FameAndPrestige\Assets\Source\ActionCard.cs:24)
+Card:
+p
+layCard() (at E:\Unity_ProActtos - GhostWritiige\Assd hasSoeen played.c
+s:57)E
+nameManager:pgHyCard(:nnnreerdart Ed U
+UityyEe,inecDisbF, Leject)
+stigynterets_LourLe\Tape,antgerg, O1jt3co)
+
+Unit EMbjine.DebugLriaHandler:LogFormng(LogTyne, Object, 
+StrinEngine.LoR[e)e:
+veg(Logard(Soogetr:Ev
+ent)yEngiEne.Djtuy:)
+rojtbtsnFime
+AndbyPngoee.Monotet
+angtuE\gsne.M\Sojucr) (\t e:\bui:pslaveOojrctyanag Cld\aetiflcse:ug9nt
+Soatei\c\aStn\acntige\UrateEngcnemon\Bentiio\Unindingi.genn:Bs:107)ou
+ArBionCand:.heendPse1tig
+ amseanagec:etIrdSjrctay\F\HmoA(ket3O\tigeSocsetIOCom:rne\ActsonCa)cd
+.cc:3t)
+ndSrestaIdCuseonrdt)urpeaGame aitger.\se:istF)mP
+NAotdPctstigager:OnR\ceivePlAssitsd(od.ckI:tScEv
+ptt)S(ct E:\\Sock_tIroompon\Fa.eA:13r)s am
+(F\dlssame:SouA/csu\tNetlovkMunitde/s:cs)
+G)
+eMfnctsOgpSnaerCetdO(cnt3o)e/(a: Eime/UnntyPrngectseEvent) (Pv EurUiidings.gen.cs ainA:dP0es
+r.cs:153)
+NetcketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (a  E:\Uco\ydtPorkMd 
+UeimeAngines
+Dige\LogHtn\kleIOInteroSclitLEm\tEveye(tocSetrking,COmjoce)
+UninyE31)re.
+(ebFgLaegeAndPrer:LoeFosset(/unitp/b iljeapt, ftctkegenO\boececommo
+n/runtime/UnityEng:LegoLogehaviotOrje:4)i0
+UnityEng
+cs k.ene:g107)
+
+ocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\ALog(Object)
+UnityEngite.MonoBehaviour:prs\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: s:/buildsla\e/unitytbd\common\runtime\UnityEngineMonoBehaviourBindings.genucs:107)
+GameManager:ReOrderPlayerHand(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Gts/generar.ed/com)
+NetworkManager:EnReceivePlayCard(SrBckedIOnvent)e(n. E: Line: 107oj
+e
+cts\FameAndPrestige\Assets\Source\NetworkManager.cs:70)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\S cien OreookedtIhOCdom
+Upotnengi.ecDs:u40ogHa
+nocek:ettIOn.S_ocgkeotIyOC,oStponn,enbt:cUp
+Untte(n)i e(Dabt LEg:anUlertyo_PorojteLogsypF,ambeect, Stringe OAjsste]ts
+\SioyckgeteIL\Sgcr:Log(\Sgoype,eObjOct)
+cnkeytIgOCeomepogneog(Obse:1)
+Unit
+Eng
+inelMonoBehaviouruilidtsObjvet/u(ni ty\/biuislad/\arity\buits\/gtifertatgede/ctom\momnonrruntiieme/UtnintynEnogiBneaMoonoBindings.reBicnd107)
+Gaeen.ncser:inOr:e Play)Ha
+nd(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:126)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:70)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+plapelayer iD : 0 card id : 
+ 25
+Unigine.DebugLogHandlerdler:Internal_Log(LogType, String, ct)
+Unit
+yEngyEngine.DebugLogHandlerFormaormat(LogType, Object, String, Obje)
+U])yEnginEngine.Logger:Log(Le, Objectbj
+ect)
+Engine.Debug:Log(OLog(Obj
+ect)
+UnginEngine.MonoBehaviour:print(Object) (at C:\buildsle\unitity\build\tifacts\generated\common\runtime\e\UnityEngineMonoBeviourBindingngs.gen.cs:107
+)
+GameMager:drawCardrd(Int32, Int32) (at E:\Unity_Projec\FameAndPrestige\Assets\Source\GameManager.cs:s:114
+)
+NetworkManager:OececeiDrarawCard(SocketIOEvent) (at E:\Unity_Projects\FamndPresestigessets\Sourcece\NetworkManager.cs:108
+)
+SoctIO.SocketeIOComponent:EmmitEvent(SocketIOEvent) at E:\Unity_Prrojects\FaeAndPrestige\Assets\SocketIO\Scripts\SocketIO\\SocketIOCmponent.cs:400)
+S
+ockeetIO.SokeetIOComponent:Update() (at E:\Unity_Projects\FameAndPrestie\AAssts\SocketIO\\ScriptsSocketIO\SockeetIOComponent.s:131)
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+player iD : 0 card id :  38
+UnityEngine.DebugLogHandler:Intepnal_Log(LogType, String, Obj
+ect)
+UnityEngine.Debugndler:Internal_Logat(LogType, Object, String
+,nityecngtne.D
+ebugLogHine.Logger:Lomat(Logpe, Object)
+Unitring, Object[])
+UnityEngin
+e.Logger:Log(LooBehaviour:prin
+t(ObjEngine.D C:\buildsljec\un
+ity\build\artifactsaviour:princommon\runtime\C:\buildslaMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, onoBehaviourBindity_Pren.cs:107)
+GameManager:Assets\Source\G Int32) (r.cs:114)
+NetwojrkManager:OnRecstige\Assets\Source\OEvent) (at E:\Unity
+_Projects\ager:OnRrestige\Asserd(SocketINetworkManager.cs:108)
+SocketIO.SocketIOCtige\Assets\Source\NetketIOEvent) (at.cs:Unit
+Sockeects\FameAndComponentAssets\SocketIO\Scripts\SocketIO\SocketIOComponent.cAndPr)
+SocketIO.SocketIOtIOponent:UpdocketIO\Soc:\Unity_Ponent.cs:400)
+SocketIOe\A.Socs\SocketIO\Scripts\Soc) (at E:\ketIOComponent.Unity_Pr
+ 
+(Filename: C:/estige\Asseunity/build/artifacts/generated/common/mponime/UnityEng
+ 
+(Filename: C:rBindings.e/unity/bne: 107ti
+
+acts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Player Turn : 1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Objectp
+UanietyEDgine.Monon :avi
+our:pEngine.DebugLogHandleuildslanal_Log(LogType, Stfacts Ob:ect)
+ 0 cardon\runtim
+UnityEngenenigyErmgineMogoBpe, ehavicernaltriorBingings.gen
+.cs:107)
+ype, rSMraiLonagL,r:OnReceiject)
+UniTurn(ineODtIOEvLo
+t) bjtct)
+UnityEngine.MonoBehaviorr:aty_Project(\Fgayt AndPrestige\Assetsy\ouict\art
+ifactsnngger.acs:93)
+SocketIO.Sine.LtyEgngineMonotIOCompurBindings.gen.cs:107)
+NetworkManager:Ognent:EmceEvent(SgocketIOEvenec (
+tni:\Unity_Projects\FameAndPre
+snidPressnige\Assets\Soucripts\SocketIO\SocketIO.ompn
+oeehaviour:print(Object) (at iCt.cs:400)
+SocketI:.)S ckldsE:Com\oyent:Uy\build\artidfrate() (Assets\Sock_PrO\ScriptsoSockta\FameAnetIOscmponAtt.cs:Socke
+tIO\Scrips\gentIOCatedtecO\:mon\runt (e\UE:\tyEty_ineMont
+ 
+(Filedarens ing/bgessets\07)eGaa\e/annts\SocketIO\SocknutOl2d/ant3facts/ge:\
+ni
+ty_Peojects\FameAleslavestnity/builde\Asis/Uets\ioutce\GamemmonMruntianyUnr.cEEngi)
+NetworkMvaourBinOngs.geneDraw Lrd(e: 107)
+
+ 107)
+ 
+(at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+player iD : 0 card id :  38
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Player Turn : 1
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+NetworkManager:OnReceiveChangeTurn(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:93)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+card played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+Card:playCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Card.cs:54)
+GameManager:playCard(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:69)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Event - Dynamite card has been played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+EventCard:Dynamite() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:40)
+EventCard:useCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\EventCard.cs:22)
+Card:playCard() (at E:\Unity_Projects\FameAndPrestige\Assets\Source\Card.cs:57)
+GameManager:playCard(Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:69)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+card plcyerd
+UnityEngi
+ne.DebugLogHanbugLogHandler:Internal_Log(LogType  ingr,ngr  Object)
+U
+nit
+Unitne.Dgie.DogHaebuer:LgHandmer:Iogorpnat(OLog(ypgT Oe, String, ng]ec
+tni
+tt[])
+tnityEneiDe.uogoeHaonr:eegrLo ObjpegFObject)
+Unipe, Object, String, Object[
+])
+Unityine.
+U.oioehaviourgpLigTyObject) (tt 
+U:
+\byEldglave\ine.D\build\a:Obpeact
+\niteEngin\commoB\raviomrepriityObijild\n r(etaaCts\ueinirdaleden.cs:on\ru
+ntime\UnityEngineMonoBehaviourBindings.gen.cs:1e07ige
+\Asd:playCard() (at Ed.cs:54)
+GameManager:playCard(Int32) (at E:\Uni\Card.cscts\Fa
+meAndPrestige\Assets\Source\GameManager.cs:153)
+NetworkMaPresr:OnReceivePlayCard(SomeManIOEvents:153)
+Neawiey_Proj\cuild\ereivacts\geae\AsocketIOEvent)ntamr\Unnager.cs:69)
+SocFeamerndPrestOgemA.gen.cs:urEve
+nttworkaana:eent) (at 
+E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponPrerPlayer0)
+SoInec3Ie,.IIocketIntCompo(en E:pdatt() (aojponent.cs:400)
+Ss\FameAndPresttIOComponenStcketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ss
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/rentime/UnetyEngineMpnts\SocketIO\indiketIOComponent.cs:131)
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+Event - Dynamite card has been played
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogTEpe,ent - Dynamring, cbjrd has )
+UnityEngine
+.LoggEr:Log(LogTugLogHandler:
+InityEnats\.ambug:Log(Otiectng
+,nib\Sougin
+e.MonenBeaaviour:print(Object) (aormatbuildslave\unity\build\artifacts\gene
+rated\common\rgger:Log(LogType, ObjeBehav
+iourBindings.gen.cs:107)
+Event
+Card:Dyname.MonoBehav (at E:\Unm(Objectger (at C:\)u
+Ndslave\Prestork\Ansets:SoRets\generCarr.cs:c0)
+EvnEvtCard:ateC:\d(itonoBehavnouyBinoject.\Famces1ige\t
+ssets\Sou:rSourcete()MaCager.c::70
+
+Soc:pcts\ardeAndOtros:piUne\Ay_Pro\Eeourt(SocketIOEvent:40ass
+ets\nour_PrCaec.c\Fa7)
+Gam\Mantie_PrAssetss\FocketIOCard(ItsnSocketIOameAndPrestige\Assets\Sourc
+e\EvettCardScs:22)
+Card:playCard() (s:153)
+NetworkMjtncUgpea:On) (aiveP\aniar_PrtsketIOEv\Card.ces57)U
+nityManajer:playC\rd(IFameAndat E:\Unity_ProsjSource\Ietworkrestgge\AssetsScrur)
+SoametIanager.ceO:IOC3)
+ent:EmitMv31)
+er
+(FRoleeatve: C:atuilrd E:\UnitIOEvent) (at E:\Unity_Proestigse\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+Soc\etIO.SocketIOComponents:Spdatourc(e\Netwonity_Prageects\FameAndPrestige\Assets\SocketIO\Scripts\r.cs:6IO\S
+ockketIO./oouketI.cs:1oaet
+t/
+EeieEaeet(Soc/en/runtime/Uat yE/build/artifacts/generaded/common/Auntims/UnocyEngiO\SocrBehavioocBiedinO\SoecgineMiok: 107)
+
+urBindings.gen.cs Line: 107)
+
+ in reorderhand 
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, Somring, Object[)
+So
+cketIO.SocketIOCorponog(LogTypte() , Object)
+U(itt Egine:\ebugy_ProjecLog(Object)
+UnttyEigigeeMoAsBeetsi\ur:pcike(tIO\bjeitpt(s\ SocbkeldsOa\eSoncketbIOlCoartofnenstg.ces:t1d\c)mm
+ n
+r(nFimeeUnimyEngCneMbnoBlhdsloarBinuinit.yen.us:107)
+timfaactgs/:geOneeralteed/acdomnmo2n/Int32i met En\initE_nrojnceM\onmoBnehravtige\ABsind\Sousce\Gnm.casagerncs: 21)0
+Net
+
+rkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:70)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) ( tiE:nU iryePordecth\aameA
+UPnistyEengsinte.SDekbugO\SgriptdlSerk:IIntSerknaIlComooge(L.og:Ty0p
+eoc Sttr.iock,tIObjmecnt)t
+Unditty)Enat ne\UDetbuPgLjogtHaFnmeAnrPrestige\Assets\SocketbOjSerct, Stritng,ockbtjO\St[k])I
+UonitnyEtngi:n3e.
+L
+oFggeeare:LC:/(uilgsTayepueityObbildcattif
+UcnsiteyEragine.ed/bumg:nLoug(iOb/jnecyt)g
+UnMonyBEhavioneB.MdingsBgeh.av ionu: 1pr)i
+n
+t(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:ReOrderPlayerHand(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:126)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:70)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+card played
+UnityEngine.DebugLocHard pr:Ined
+UnityEngine.DypugLogHandle Object)
+UnityEngine.oebugLogHandler:LogFormat(LogType, Object(LogType, String,])bj
+ect)
+Engine.LoUnit:Loggne.DebugLogOabject)
+UnityEngine.Debe, Object, Strin
+g, Objecd[pla
+yed
+Unnvinur:pgint(ObjecogT(at C:bjecldsU_avgy\ungtypeuiStraitifaObs\gen
+er
+atitycommin\.Dnbehe\initydpren:M(onFBehav(LurBipe,nisOdglct, Sn0tygb
+uObjeartiCa
+ctd() (at E:\Unimy:Lrg(Lots\FameAndengiseMige\Assets\Source\Card.cs:54)
+Gam
+eaat)g
+UlityEngine:alCag:Lod(Object)
+UnityEnrd() (at E) (at E:\Unity_Projects\FadeAndPrestige\Assete\bs\Soue\Gamard.agen5.rs:
+1d\cMa
+NeteommManruerimnReceiyEngiEyCard(SockviourBtnt) (ae E:\UnitA_PP
+restiseFaCeAd() (astE:\Umety_as\Sjerce\Fate
+NetMronagerags:69)R
+SecketIO.CacketIOCe
+tImEvent: (at vent(StyketIOEvent) (at E:\Unity_ProFacPrm\jectsAndPresdissets\Source\GameManager.csor53)e
+Nger.co:ketI
+OComponent.cketInO)oe
+r:Oent:eiveElatIOComponent:UOEventat Eat E:\U_Prty(ProjeFameAnd_Projects\gameAnd\Ss\SigeetIOecSserSIptr\SocketIO\Socnager.csetInen
+t.cs:13..)S:
+ 
+(Fi
+SocOmemI pO/buildslave/unity/build/arti) (at E:\Urated/cojects\FameAn/UrestigeiCAosetn\et:UpSatckinIOngcrgen.cSoLtynero107)
+
+FameAndPrestige\Asset
+s\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/buiScripts\Sock/generated/cEmCeompo-ent.cmite c
+ 
+(Fal been: C:yed
+UinityEngine.cs LineogHandl
+e
+r:Internated/common/runtime/ng, Object)
+UnityEnviourBindings.gen.cs Lineormat(L)
+
+ype, Object, String, Object[])
+UnityEngine.Logger:Log(LogType,EObject)
+UnityEngine.Debug:Log(Object)
+UnityEngine.DebugLogHandler:Internal_LoE((agTy:\builrsla,ve\unhas\buil
+dplryEed
+UnityEuerinedDcbugLo\rundler:UnterEng_neMonogType,ing, in,ings.gt
+)
+Usi107n
+ine.DCargLognLondler:LogFormat
+(LogType,nebjectg Stgirng, Object[ts\
+SourcEOEgene.ao
+g.ets:40)
+EoeMTtpard:bjectrd
+()itytngi\enDebugrLogctsjeameA
+UnPrestign\l.s\oets\Source\EveraCardcommon\
+runti\buildslEne\utity\Unitd_Prtifatss\gmeAndPrestige\
+Assets\Sourceamiard.cs:t E)
+GameManager:playCard(IntyEngine E:\MonoBehaviours\FameAndPrestige\Ass
+ets\Sourd:DynamManager.cs:153it
+e() (at E:\Uni:y_ProjecOn\FameAivePlsti:y\AUardsSocketIOEvent) (at EventCard.cs:40)
+EFameAndPresniae\Ass(tt So\Fa:\Unityce\Net\AssFameAndPrestven
+tCar\.tsOetsck
+etrntCovponentdEmitEven
+t(SocketIOEven) (a(at eEaE:\Unity_Projecty_FameecdPresmgAndAreets\Sts\StIO\Sourctscvent)tC
+arSocketIO
+omlonpantars:I00)
+) c(e:tIO:SonietIOectmponent:UPFaaeteg() (aseige\AssetsCSodect:\GameMAnagee
+s.cg:15nas
+et:wSlakMataOIer:OnRecSocketIO\SocketIOCompEvent.cs:131)
+Un
+(Filename: C:/buildsl (e/un:\Units\ld/artifactorkManager.cs:69)n
+/runtimO.SocketnginmponeBehamiturBindings.gen.cs Line: 107)
+
+ity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update()  it ects\FatyAndPr
+Usti\FameAndPrestige\Gandleragnt.rnal53ri
+petwSyckeaetSt\SocketIOCot)
+nyCatyEngine.De
+ rd(SocketIe
+(FLongFo(at C:/buildslave/unitFtring, Obstifacts/
+gettyEangineommgg/ruLog(LogType, Oerect)
+oBih
+aEnoeirB.ndbngetIgen.conent
+: itE07nt
+
+SocketoBehaviour:print(Object) (att C:\beuildrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOCompon it.Enorder)
+Sd 
+UnityEngietiOCo.gonenas:107)
+Gt:InMeraae_\Ue(irderPlayerHand(Int32, Int
+32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:12
+6)
+NetworkManager:OnReceivePlayCard(Sock
+enIOEvent) (at E:Debug:LogPjrotstFa
+meitdPresnegeonosetavSour:e\Nnt(orjcranager.cs:70O\
+Sslket\unioy\etiOdomroifat
+ 
+mitEenrnt(SocketIiln\runtime\Uy/Unity_PrtjectssFameAndPre/coge\An.css\0eo)Uk
+GitmyO\anrger:\SocketIlayeckanI(Com32,eIn.c2) (at
+So
+c
+ketIO_PrcketIOComponent:Uptige\AssetsE:\Unity\GameMans\Fa.cs:126)
+NetworkManagSocketIO\Scripts\Srd(SocketIOEvein  (ptrnen\Unity_Pro
+je
+cts\Fname: C:/buildslave/s\Source\Netartifacts/generate
+Socmmon/runtime/UnotmpogineMonoBehaviourBindings.ge) (at E:\Un107)
+
+ojects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:40rhan
+d 
+UnityEngine.DebugLogHandlerate()rnal_Log(LogType, String, meAndPObestige
+\Assets\Sne.DebIO\Scripts\oocketIO\SocketIOComponent.cs:131)
+ , 
+Stirinng,: C:/buildsl
+avituyEngine.Lild/artifacts/geneogger:Lommon/runtime/UnityEn
+gineMEoninehaebug:rog(Object)
+Bindings.gen.cs Line: 107)
+
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:ReOrderPlayerHand(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:126)
+NetworkManager:OnReceivePlayCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:70)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+player iD : 1 card id :  26
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonoBehaviourBindings.gen.cs:107)
+GameManager:drawCard(Int32, Int32) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\GameManager.cs:114)
+NetworkManager:OnReceiveDrawCard(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:108)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+player iD : 1 card id :  2
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\UnityEngineMonpBehaviouD B: 1 cardg i.c :  26
+U
+nityManaEngine.DebugLIngHan Int32) (at E:\Unity_Projects\FameAndPrestig
+e\Assets\Source\GameHanager.cs:114)
+NetworkMpe, Or:OnReceiveDrawCard(Socket
+IOEvyEt) (at E:\Unity_Projects\F mpAjePrr t
+i : 1 cats iDebug2L
+gnibyect)
+enityE108)
+SocketIO.SocketIOComponent:EmitEventine.MonoBehvviour:print(Obnict) (at C:\buildelandPunity\buildsaetifacts\gener.DebugLomoa\rtlO\SockerIal_mponLogTcBeea Stu
+ing,dObjecgeetIO:107)
+Gnt:UpdgLog) rawCr:LogniormarInt32) e,aObEe\t,iStyge\os ects\FaceA
+ndPrestggn\Asoeger:Log(e\gTmeManabject):
+105ty
+Eet
+io
+(.Debug:r::g(O:/eiveDr
+lniCyEugine.bunld/arviour:pE:nUnObjePto (at C:\buildslave\yjuntty\buiAddPrtifact\\ssntrg\SodrcLine: 107)
+
+e\UnicsE1n8)
+SoonoBehaviourBindings.gnt:Emi107)
+GameManagOEvent) (at E:\Unity_Proje(at E:\Unity_Prtige\Assets\SdPketIO\Scripts\SocketI\\SocketIOCr.cs:114)c
+s:400)
+Sockeer:OnRePetveDomponent:UpdatIOEvent E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SoManagO\SocketIOC
+omponent.Soc131)
+ 
+(Filename: C:/buildslave/OEvent) (at E:\Unity_Projerated/commonreuntime/UnityEngineMonoBeripiourBindingsSocketI Line: 107)
+
+:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:13p)
+ 
+eFi inyer 1 rard id :  2
+nnityEn
+gnityEartifacts/geer:Internal_Log(LogType, StriEngineMonoBehavObject)
+UnityEngine.DebugLognga
+n
+dler:LgLogHrmat(LogType, Object, Stripge,  tring, Obje
+ct)
+Unigtne.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Oplayer 
+iD : 1 card id :  2
+UnityEngine.DebugLogHandler:uildrnal_Log(LogType, String, Objectr
+Unitcommon\runtimyEggine.DebneMonHandleiogLogFo Omjt.ge,.csrin7) 
+ObmeMct[,):Utring, (Int32, Int3gger:Log(L2)T (at E:\Unity_P)ojects\FameAndPresti
+ge\AyEets\Sour
+ce\GameManager.cs:105g(LogTy)nNetworcMa)
+erDOnReceiveDerng:togd(Socctte
+UnbutyEn((it E:\UnitynoBehavios\
+Faitinn(Onetitne Behaviour:print(Object) (at C:\buildsl
+ave\unity\buildmartifoctsngt:Ermtemovent(So\runtImOEvnityE giaeMonoBehavy_Projects\F.geeAndn.cs:107)
+Netno\SManagernenRIO\Scrime\UnityEngineMcketeOChmponent.cs:400)
+SocketIO.Soc)
+GameMaponent:Update() (at Et3:\Unity_Projects\FameAndPresatgg\TussFas\SomketeA\Sct) (ripts\SocketIO\SocketIOComat E:\.Unit3_Pst
+je
+c\A\FamsAndurce\Gae\Asnets\Scu/be\Net
+workfanas/gencrO:9ec
+SmmoeaIrCarocketkOCoOEvene) (at EEvent(SockdinesvtgetFacs LiE:: tig)y\
+AProjes\Source\NetwosrkManager.s\Socket
+IO\Scripts\SocketIomponent:EComponent.cs:400)
+SocketIO.SocketIOComponects\Plmyer Puat E:eUA2st
+UnityEogietIOebugLogH\Socer:IO\ernketIoCoLpgTent.cS:400),
+ OckecI)
+SoctyEnOioepDebu131)gn
+en
+t:UpdLogFormat E:gTypty_Projects\Famenn,iPrbjecg[]As
+Untsednockne.Loggen/runtimg/UtityEngkitIOo
+onmtenengics:D3b)
+ 
+(gen.namLin
+ :itybngi
+n
+s.MonoBehaviour:print(Object) (at C:\builmon/runtime/UnityEngintifacts\generatid\cndings.gen.ce\UnityEngine
+
+onoBehaviourBindings.gen.cs:107)
+NetworkManager:OnReceiveChangeTurn(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Ars ts\Source\NeTuorkM:nager.cs:93)
+ ocketIO2
+UnityEnCgine.DebugLoonent:EmitEvent(l_Log(LOEvent) (at Eg\Unity_P, Obcts\Fam
+eAndPrestige\ebugLsgHandketI:\Sgripts\Sock(LIogSTykpeI,C mpbject.cs:400)
+SocnketObject[])
+OnComponent:Update() (at gE:\Unity_ect)
+Uts\FameAndPrestige\Assets\S)
+UettO\Scripts\SocketIiour:print(Object) (at C:\)
+ 
+(Filename: y\:/buildstavi/fnity/build/artifacots/generated/common/rineMonoBehtyEngineMonoBgh.aviousrBindi
+ngs.gen.cs Line: 107)
+
+eChangeTurn(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\Source\NetworkManager.cs:93)
+SocketIO.SocketIOComponent:EmitEvent(SocketIOEvent) (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:400)
+SocketIO.SocketIOComponent:Update() (at E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\Scripts\SocketIO\SocketIOComponent.cs:131)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineMonoBehaviourBindings.gen.cs Line: 107)
+
+11/11/2016 6:05:50 PM|Fatal|WebSocket.acceptException:524|System.IO.IOException: EndRead failure ---> System.Net.Sockets.SocketException: Une connexion existante a dû être fermée par l’hôte distant.
+                            
+                              at System.Net.Sockets.Socket+SocketAsyncRes11/11/2016 6:05:50 PM|Fatal|WebSocket.acceptException:524|System.IO.IOException: EndRead failure ---> System.Net.Sockets.SocketException: Une connexion existante a dû être fermée par l’hôte distant.
+                            
+                              at System.Net.Sockets.Socket+SocketAsyncResult.CheckIfThrowDelayedException () [0x00041] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:148 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult asyncResult, System.Net.Sockets.SocketError& errorCode) [0x00093] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2087 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult result) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2061 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00017] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:326 
+                              --- End of inner exception stack trace ---
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x0002a] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:328 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey10.<>m__2 (IAsyncResult ar) [0x00000] in E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\WebsocketSharp\Ext.cs:618 
+t.CheckIfThrowDelayedException () [0x00041] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:148 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult asyncResult, System.Net.Sockets.SocketError& errorCode) [0x00093] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2087 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult result) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2061 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00017] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:326 
+                              --- End of inner exception stack trace ---
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x0002a] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:328 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey10.<>m__2 (IAsyncResult ar) [0x00000] in E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\WebsocketSharp\Ext.cs:618 
+11/11/2016 6:05:50 PM|Fatal|WebSocket.acceptException:524|System.IO.IOException: EndRead failure ---> System.Net.Sockets.SocketException: Une connexion existante a dû être fermée par l’hôte distant.
+                            
+                              at System.Net.Sockets.Socket+SocketAsyncResult.CheckIfThrowDelayedException () [0x00041] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:148 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult asyncResult, System.Net.Sockets.SocketError& errorCode) [0x00093] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2087 
+                              at System.Net.Sockets.Socket.EndReceive (IAsyncResult result) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket.cs:2061 
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x00017] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:326 
+                              --- End of inner exception stack trace ---
+                              at System.Net.Sockets.NetworkStream.EndRead (IAsyncResult ar) [0x0002a] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/NetworkStream.cs:328 
+                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey10.<>m__2 (IAsyncResult ar) [0x00000] in E:\Unity_Projects\FameAndPrestige\Assets\SocketIO\WebsocketSharp\Ext.cs:618 
+11/11/2016 6:05:51 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.1et/11/2016 int re5moPeMendaptalt| W0eb0So0ckiet/.aecc/epitEuxcreputidona:5/24n|/bustdemcsNelasS/ocskemtSysSeocNke.tEcxctepTtiCone:t As:c84 
+  o nn e x i     �      p   ê  e t Systlie car l�k�ts.TcpClier cioble t (�aysxtem.Net.IPAddressé].
+    dresse ,  nt   port) [0x000b
+   in               ser/builds  ate/mystebuildt.Sos/class/oystet.System.Ne(System.N/TcpCldieintcse355 EP
+ Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/11/2016 6:05:51 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/11/2016 6:05:52 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+       1  /11/2016 6:05:     M|Fatal|tebSocket.ockets.TcpCliion:524|SystemS.stem.Net.ePtdsr.Ssoc kpedtrEsxcs, Int32 port) [0xnn00b3n n’asers/�uilde ét/buile clavelm�no/brdinateus/class/ l�ta expystem.�mteSockrefusc�Ce.e
+n  cs:355   
+               
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/11/2016 6:05:52 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/11/2016 6:05:53 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                     1    1/2016 6:05:53 PM|Fatal|WebSocket.acceptExce(Sion:524|St.IPm.Net.Soc kets.SocketException: Aucune connexion n’a pu être établie car l’build/mcs/clasle l’a expressément kets/T�e.
+ient.cs:       
+             
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/11/2016 6:05:53 PM|Fatal|WebSocket.acceptException:524|System.Net.Sockets.SocketException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+                            
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x000fb] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:599 
+                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/Socket_2_1.cs:547 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:284 
+                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x000b3] in /Users/builduser/buildslave/mono/build/mcs/class/System/System.Net.Sockets/TcpClient.cs:355 
+11/11/2016 6:05:53 PM|Error|WebSocket.Send:1911|The WebSocket connection has already been closed.
+11/11/2016 6:05:53 PM|Error|WebSocket.Send:1911|The WebSocket connection has already been closed.
+11/11/2016 6:05:53 PM|Error|WebSocket.Send:1911|The WebSocket connection has already been closed.
+11/11/2016 6:05:53 PM|Error|WebSocket.Send:1911|The WebSocket connection has already been closed.
+11/11/2016 6:05:53 PM|Error|WebSocket.Send:1911|The WebSocket connection has already been closed.
+11/11/2016 6:05:53 PM|Error|WebSocket.Send:1911|The WebSocket connection has already been closed.
 Setting up 1 worker threads for Enlighten.
+  Thread -> id: 18dc -> priority: 1 
 Setting up 1 worker threads for Enlighten.
-Setting up 1 w  Thread -> id: 3994 ->hten.
- priority: 1 
-  Thread -> id: 3824 -> priority: 1 
--> id: 3504 -> priority: 1 
+  Thread -> id: 2dc0 -> priority: 1 
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2e5c -> priority: 1 

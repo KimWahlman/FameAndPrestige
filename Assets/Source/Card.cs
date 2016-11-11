@@ -10,7 +10,8 @@ public abstract class Card : MonoBehaviour
     public int ownerID;
     public bool isMine;
 
-    public Vector3 startPosition;
+    public Vector3 handPosition;
+    public Vector3 deckPosition;
 
     public Sprite faceUpSprite;
     public Sprite faceDownSprite;
@@ -24,6 +25,7 @@ public abstract class Card : MonoBehaviour
     void Awake()
     {
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
+        deckPosition = this.transform.position;
     }
 
     void OnMouseEnter()
@@ -79,7 +81,9 @@ public abstract class Card : MonoBehaviour
             currentSprite.sprite = faceDownSprite;
 
 
-        AssignNewPosition(posTransform, false);
+        //StartCoroutine("PositionOnTheHand", posTransform);
+
+        PositionOnTheHand(posTransform, true);
 
         //assign the ownerID of the card
         ownerID = playerID;
@@ -87,16 +91,34 @@ public abstract class Card : MonoBehaviour
         isMine = cardIsMine;
     }
 
-    public void AssignNewPosition(Transform posTransform, bool onPlayableZone)
+    public void PositionOnTheHand(Transform posTransform, bool whileDrawing = false)
     {
-        
-        //assign it to the hands position
-        this.gameObject.transform.position = posTransform.position;
         this.gameObject.transform.rotation = posTransform.rotation;
 
-        //save the starting position of the card (if it has to return to owner hand)
-        if(!onPlayableZone)
-            startPosition = posTransform.position;
+        if (!whileDrawing)
+            this.gameObject.transform.position = posTransform.position;
+        else
+            StartCoroutine("lerpCards", posTransform);
+
+
+        handPosition = posTransform.position;
+    }
+
+    IEnumerator lerpCards(Transform posTransform)
+    {
+        float duration = 0.4f;
+        for (float t = 0.0f; t < duration; t += Time.deltaTime)
+        {
+            this.gameObject.transform.position = Vector3.Lerp(deckPosition, posTransform.position, t / duration);
+            yield return null;
+        }
+        this.gameObject.transform.position = posTransform.position;
+    }
+
+    public void PositionOnTheBoard(Transform posTransform)
+    {
+        this.gameObject.transform.position = posTransform.position;
+        this.gameObject.transform.rotation = posTransform.rotation;
     }
 
     void ZoomCard(bool zoomed)
@@ -151,15 +173,6 @@ public abstract class Card : MonoBehaviour
 
     public void returnBackToHand()
     {
-        this.transform.position = startPosition;
+        this.transform.position = handPosition;
     }
-
-
-
-
-
-
-
-    
-    
 }

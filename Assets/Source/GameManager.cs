@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour {
             int id = 0;
             foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
             {
-                card.Value.AssignNewPosition(playerHands[playerID].posList[id++], false);
+                card.Value.PositionOnTheHand(playerHands[playerID].posList[id++]);
             }
         }
         else
@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour {
             int id = 0;
             foreach (KeyValuePair<int, Card> card in myPlayer.opponents[playerID].cardsHeld)
             {
-                card.Value.AssignNewPosition(playerHands[playerID].posList[id++], false);
+                card.Value.PositionOnTheHand(playerHands[playerID].posList[id++]);
             }
         }
         playerHands[playerID].deadCard();
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour {
         Deck[cardID].playCard();
         
         if(!Deck[cardID].isMine)
-            Deck[cardID].AssignNewPosition(playableZone.getSlot(), false);
+            Deck[cardID].PositionOnTheHand(playableZone.getSlot());
 
         playableZone.addCard();
     }
