@@ -7,7 +7,6 @@ public class Hands : MonoBehaviour {
     public List<Transform> posList = new List<Transform>();
     int playerID;
     public int amountOfCards = 0;
-    public TextMesh textPlayerID;
 
     public Transform newCard()
     {
