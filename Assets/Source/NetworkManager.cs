@@ -27,6 +27,7 @@ public class NetworkManager : MonoBehaviour {
         socket.On("PLAY_CARD", OnReceivePlayCard);
         socket.On("INVALID_PLAY_CARD", OnReceiveInvalidPlayCard);
         socket.On("CHANGE_TURN", OnReceiveChangeTurn);
+        socket.On("CHANGE_THEME", onChangeTheme);
     }
 
     IEnumerator ConnectToServer()
@@ -45,7 +46,7 @@ public class NetworkManager : MonoBehaviour {
     {
         Dictionary<string, string> data = new Dictionary<string, string>();
         data["playerID"] = playerID.ToString();
-        data["cardID"] = cardID.ToString();
+        data["cardID"] = cardID.ToString();       
 
         JSONObject jso = new JSONObject(data);
         socket.Emit("PLAY_CARD", jso);
@@ -54,6 +55,13 @@ public class NetworkManager : MonoBehaviour {
     public void SendEndTurn()
     {
         socket.Emit("END_TURN");
+    }
+
+    public void onChangeTheme(SocketIOEvent e)
+    {
+        print("Change theme received");
+        string a = e.data.GetField("theme").ToString();
+        gameManager.ChangeTheme(a);
     }
 
     public void OnReceivePlayCard(SocketIOEvent e)

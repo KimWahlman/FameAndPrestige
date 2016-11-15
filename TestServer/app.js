@@ -5,38 +5,9 @@ var counter = require('./pointCounter.js');
 
 var clients = {};
 var cards = {};
+var turns = 0;
+var theme = 1;
 
-cards["0"]= {
-    name: "0",
-    description: "1",
-    type: "word"
-}
-
-cards["1"]= {
-	name: "1",
-	description: "1",
-	type: "word"
-}
-cards["2"]= {
-	name: "2",
-	description: "2",
-	type: "word"
-}
-cards["3"]= {
-	name: "3",
-	description: "3",
-	type: "word"
-}
-cards["4"]= {
-	name: "4",
-	description: "4",
-	type: "action"
-}
-cards["5"]= {
-	name: "5",
-	description: "5",
-	type: "event"
-}
 
 var cards_id = [];
 
@@ -124,7 +95,8 @@ io.on('connection', function(socket){
 
             currentTurn = Math.floor(Math.random() * 4)
             socket.emit("CHANGE_TURN", {playerId: currentTurn});
-            socket.broadcast.emit("CHANGE_TURN", {playerId: currentTurn});
+            socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn });
+
         }
 	});
 
@@ -260,7 +232,15 @@ io.on('connection', function(socket){
 
         currentTurn = (currentTurn+1)%4;
         socket.emit("CHANGE_TURN", {playerId: currentTurn});
-        socket.broadcast.emit("CHANGE_TURN", {playerId: currentTurn});
+        socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn });
+
+        turns += 1;
+        if (turns == 8) {
+            socket.emit("CHANGE_THEME", { theme: theme % 4 });            
+            socket.broadcast.emit("CHANGE_THEME", { theme: theme % 4 });
+            theme++;
+            turns = 0;
+        }
 
     });
 

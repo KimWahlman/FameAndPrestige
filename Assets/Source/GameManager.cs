@@ -11,8 +11,9 @@ public class GameManager : MonoBehaviour {
     public GameObject[] handsGO;
     public bool debugMode;
     public PlayableZone playableZone;
-
     public Button EndTurnBt;
+    public Image currentImage;
+    public Sprite[] Sprites;
 
     void Start()
     {
@@ -21,7 +22,8 @@ public class GameManager : MonoBehaviour {
             initGame(0);
             StartCoroutine("firstDrawToEveryone", 0);
         }
-    }
+        currentImage.sprite = Sprites[0];
+     }
 
     public void initGame(int playerID)
     {
@@ -68,6 +70,13 @@ public class GameManager : MonoBehaviour {
 
             yield return new WaitForSeconds(.1f);
         }
+    }
+
+    public void ChangeTheme(string theme)
+    {
+
+        int a = int.Parse(theme);
+        currentImage.sprite = Sprites[a];
     }
 
     public bool checkPlayerTurn()
