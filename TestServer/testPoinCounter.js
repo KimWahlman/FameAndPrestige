@@ -56,5 +56,7 @@ cards["6"]= {
 
 var c = [cards["3"],cards["1"],cards["3"],cards["1"]];
 
-if(pc.checkLinks(c))
-    console.log(pc.countPoints(c, "horror"))
+//console.log(pC);
+
+if(pC.checkLinks(c))
+    console.log(pC.countPoints(c, "horror"))

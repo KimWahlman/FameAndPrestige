@@ -25,11 +25,10 @@ function loadDB(){
     
     tmp = JSON.parse(fs.readFileSync('./deck.json','utf-8'));
     tmp.forEach(function(line){
-        console.log(line);
+        //console.log(line);
         cards[line.id] = JSON.parse(JSON.stringify(line));
     });
 
-    
 }
 
 function findCustomRooms() {
@@ -55,13 +54,16 @@ function drawInitialCards (socket, number) {
 
 function sendDrawCard (socket, playerId) {
 
-        var rdmID = Math.floor(Math.random() * (cards_id.length-1));
-        var tosend = {id : cards_id[rdmID], playerId : playerId};
+        var rdmID = Math.floor(Math.random() * (Object.keys(cards).length-1));
+        var keyId = Object.keys(cards)[rdmID];
+        var tosend = {id : Number(cards[keyId].id), playerId : playerId};
+
+        console.log(tosend);
 
 
         for (var id in clients){
             if(clients[id].id == playerId){
-                clients[id].cards.push(cards_id[rdmID]);
+                clients[id].cards.push(Number(cards[keyId].id));
             }
         }
 
@@ -71,7 +73,7 @@ function sendDrawCard (socket, playerId) {
        /* console.log(rdmID);
         console.log(cards_id.length);
         console.log(tosend);*/
-        cards_id.splice(rdmID, 1);
+        delete cards[keyId];
 }
 
 
@@ -175,16 +177,21 @@ io.on('connection', function(socket){
 
     socket.on("PLAY_CARD", function(data){
     	console.log("-----On PLAY_CARDS-----");
-    	card_ids = data.cardID;
+    	var card_ids = data.cardID.split(",");
 
-        console.log("Played card id : " + card_ids);
+        var playerId; 
+        console.log("PlayedCards " + card_ids);
 
         var cards_toCheck = [];
 
-        for(card_id in card_ids){
+        card_ids.forEach(function(card_id){
 
             for (var id in clients){
                 if(clients[id].id == data.playerID){
+
+                    playerId = data.playerID;
+
+                    console.log("Played card id : " + card_id);
 
                     var indexCard = clients[id].cards.indexOf(Number(card_id));
 
@@ -195,8 +202,8 @@ io.on('connection', function(socket){
 
                     if(indexCard == -1){
 
-                        socket.emit("INVALID_PLAY_CARD", {error: invalid_card});
-                        socket.broadcast.emit("INVALID_PLAY_CARD", {error: invalid_card});
+                        socket.emit("INVALID_PLAY_CARD", {error: "invalid_card"});
+                        socket.broadcast.emit("INVALID_PLAY_CARD", {error: "invalid_card"});
                         return;
                     }
 
@@ -204,16 +211,28 @@ io.on('connection', function(socket){
 
                 }
             }
+        });
+
+        console.log(counter.checkLinks(cards_toCheck));
+        console.log(cards_toCheck);
+
+        if(counter.checkLinks(cards_toCheck)){
+            var point = counter.countPoints(cards_toCheck, "horror");
+            console.log(point);
+
+            socket.emit("PLAY_CARD", point);
+            socket.broadcast.emit("PLAY_CARD", point);
+            card_ids.forEach(function(c){
+                var indexCard = clients[playerId].cards.indexOf(Number(c));
+                clients[id].cards.splice(indexCard, 1)
+            })
+        }
+        else{
+            socket.emit("INVALID_PLAY_CARD", {error: "invalid_link"});
+            socket.broadcast.emit("INVALID_PLAY_CARD", {error: "invalid_card"});
         }
 
-        if(counter.checkLinks(cards_toCheck))
-            var point = counter.countPoints(cards_toCheck, "horror");
-        else
-            socket.emit("INVALID_PLAY_CARD", {error: invalid_link});
-
-        socket.emit("PLAY_CARD", data);
-        socket.broadcast.emit("PLAY_CARD", data);
-        clients[id].cards.splice(indexCard, 1)
+       
     });
 
     socket.on("LIST_ROOMS", function(){

@@ -47,7 +47,15 @@ public class NetworkManager : MonoBehaviour {
         
         Dictionary<string, string> data = new Dictionary<string, string>();
         data["playerID"] = playerID.ToString();
-        data["cardID"] = cardIDs.ToString();       
+		string st = "";
+		for (int i = 0; i < cardIDs.Count; i++) {
+			if (i == cardIDs.Count - 1)
+				st += cardIDs [i];
+			else
+				st += cardIDs [i] + ",";
+		}
+		//Debug.Log (st);
+        data["cardID"] = st;       
 
         JSONObject jso = new JSONObject(data);
         socket.Emit("PLAY_CARD", jso);
@@ -70,6 +78,9 @@ public class NetworkManager : MonoBehaviour {
 
     public void OnReceivePlayCard(SocketIOEvent e)
     {
+
+		Debug.Log ("PLAY CARD RECEVED " + e.data);
+
         string card = JsonToString(e.data.GetField("cardID").ToString(), "\"");
         string player = JsonToString(e.data.GetField("playerID").ToString(), "\"");
         

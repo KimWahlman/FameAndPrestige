@@ -162,6 +162,7 @@ public class GameManager : MonoBehaviour {
     public void storeCard(int cardID)
     {
         toPlay.Add(cardID);
+		playableZone.addCard ();
     }
 
     public void sendStoredCards()
@@ -176,7 +177,7 @@ public class GameManager : MonoBehaviour {
         if(!Deck[cardID].isMine)
             Deck[cardID].PositionOnTheHand(playableZone.getSlot());
 
-        playableZone.addCard();
+        //playableZone.addCard();
     }
     
     public void InvalidCardPlayed(int cardID)

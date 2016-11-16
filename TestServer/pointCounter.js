@@ -1,38 +1,4 @@
-
-module.exports = function checkLinks(cards){
-    if(cards.length <= 2){
-        return true;
-    }
-
-    cards.forEach(function(f){
-        if(f.theme.length == 1){
-            var index = cards.indexOf(f);
-            var tmp = cards[0];
-            cards[0] = cards[index];
-            cards[index] = tmp;
-            return;
-        }
-    });
-
-     var result = cards.every(function(element, index, arra){
-        var array = element.theme;
-        var array_base = cards[0].theme;
-
-        var flag =  false;
-        for (var i = 0; i < array_base.length; i++) {
-            for (var j = 0; j < array.length; j++) {
-                if(array_base[i] === array[j])
-                    return true;
-            }
-        }
-        return false;
-
-     });
-
-    return result;
-}
-
-module.exports = function countPoints(cards, theme){
+var countPoints = function countPoints(cards, theme){
     var number = cards.length;
 
     var comboPoint = 0;
@@ -114,4 +80,45 @@ module.exports = function countPoints(cards, theme){
     }
 
     	return {normalPoint: normalPoint, comboPoint: comboPoint}
+}
+
+
+
+var checkLinks = function checkLinks(cards){
+    if(cards.length <= 2){
+        return true;
+    }
+
+    cards.forEach(function(f){
+        if(f.theme.length == 1){
+            var index = cards.indexOf(f);
+            var tmp = cards[0];
+            cards[0] = cards[index];
+            cards[index] = tmp;
+            return;
+        }
+    });
+
+     var result = cards.every(function(element, index, arra){
+        var array = element.theme;
+        var array_base = cards[0].theme;
+
+        var flag =  false;
+        for (var i = 0; i < array_base.length; i++) {
+            for (var j = 0; j < array.length; j++) {
+                if(array_base[i] === array[j])
+                    return true;
+            }
+        }
+        return false;
+
+     });
+
+    return result;
+}
+
+
+module.exports = {
+   countPoints,
+   checkLinks
 }
