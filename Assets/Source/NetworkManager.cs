@@ -42,15 +42,19 @@ public class NetworkManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
     }
 
-    public void SendPlayCard(int playerID, int cardID)
+    public void SendPlayCard(int playerID, List<int> cardIDs)
     {
+        
         Dictionary<string, string> data = new Dictionary<string, string>();
         data["playerID"] = playerID.ToString();
-        data["cardID"] = cardID.ToString();       
+        data["cardID"] = cardIDs.ToString();       
 
         JSONObject jso = new JSONObject(data);
         socket.Emit("PLAY_CARD", jso);
     }
+
+    //Submit your play cards with your button
+
 
     public void SendEndTurn()
     {
@@ -73,7 +77,9 @@ public class NetworkManager : MonoBehaviour {
         int.TryParse(card, out cardID);
         int playerID;
         int.TryParse(player, out playerID);
-        
+
+
+        gameManager.toPlay = new List<int>();
         gameManager.playCard(cardID);
         gameManager.ReOrderPlayerHand(playerID, cardID);
     }

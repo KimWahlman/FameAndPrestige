@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public Player myPlayer;
     public Card[] Deck;
+    public List<int> toPlay;
     private Hands[] playerHands = new Hands[4];
     public GameObject[] handsGO;
     public bool debugMode;
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour {
     public Button EndTurnBt;
     public Image currentImage;
     public Sprite[] Sprites;
-
+    private NetworkManager networkManager;
     void Start()
     {
         if(debugMode)
@@ -23,7 +24,8 @@ public class GameManager : MonoBehaviour {
             StartCoroutine("firstDrawToEveryone", 0);
         }
         currentImage.sprite = Sprites[0];
-     }
+        networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+    }
 
     public void initGame(int playerID)
     {
@@ -155,6 +157,16 @@ public class GameManager : MonoBehaviour {
             }
         }
         playerHands[playerID].deadCard();
+    }
+
+    public void storeCard(int cardID)
+    {
+        toPlay.Add(cardID);
+    }
+
+    public void sendStoredCards()
+    {
+        networkManager.SendPlayCard(myPlayer.idPlayer, toPlay);
     }
 
     public void playCard(int cardID)

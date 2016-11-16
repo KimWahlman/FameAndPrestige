@@ -76,7 +76,9 @@ public class DragAndDrop : MonoBehaviour
                     //assign the free slot position to the card
                     draggedCard.PositionOnTheBoard(pz.getSlot());
 
-                    networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
+                    //networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
+                    gameManager.storeCard(draggedCard.id);
+
                     //(should request to the server if i can play)
                     //if yes, use the card
                     //else, put the card back
