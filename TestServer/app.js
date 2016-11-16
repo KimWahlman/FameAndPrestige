@@ -2,12 +2,13 @@ var app = require('express')();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var counter = require('./pointCounter.js');
+var fs = require('fs');
 
 var clients = {};
 var cards = {};
 var turns = 0;
 var theme = 1;
-
+var tmp ;
 
 var cards_id = [];
 
@@ -18,6 +19,18 @@ for (var i = 0; i < 40; i++) {
 
 var available_cards = JSON.parse(JSON.stringify(cards));
 var discard_cars = {};
+
+function loadDB(){
+
+    
+    tmp = JSON.parse(fs.readFileSync('./deck.json','utf-8'));
+    tmp.forEach(function(line){
+        console.log(line);
+        cards[line.id] = JSON.parse(JSON.stringify(line));
+    });
+
+    
+}
 
 function findCustomRooms() {
     var availableRooms = [];
@@ -162,34 +175,45 @@ io.on('connection', function(socket){
 
     socket.on("PLAY_CARD", function(data){
     	console.log("-----On PLAY_CARDS-----");
-    	card_id = data.cardID;
+    	card_ids = data.cardID;
 
-        console.log("Played card id : " + card_id);
+        console.log("Played card id : " + card_ids);
 
-        for (var id in clients){
-            if(clients[id].id == data.playerID){
+        var cards_toCheck = [];
 
-                var indexCard = clients[id].cards.indexOf(Number(card_id));
+        for(card_id in card_ids){
 
-                console.log("Player id : " + clients[id].id);
-                console.log("Player cards : " + clients[id].cards)
-                console.log("indexCard : " + indexCard);
+            for (var id in clients){
+                if(clients[id].id == data.playerID){
+
+                    var indexCard = clients[id].cards.indexOf(Number(card_id));
+
+                    console.log("Player id : " + clients[id].id);
+                    console.log("Player cards : " + clients[id].cards)
+                    console.log("indexCard : " + indexCard);
 
 
-                if(indexCard != -1)
-                {
-                    socket.emit("PLAY_CARD", data);
-                    socket.broadcast.emit("PLAY_CARD", data);
-                    clients[id].cards.splice(indexCard, 1);
+                    if(indexCard == -1){
 
-                }
-                else
-                {
-                    socket.emit("INVALID_PLAY_CARD", data);
-                    socket.broadcast.emit("INVALID_PLAY_CARD", data);
+                        socket.emit("INVALID_PLAY_CARD", {error: invalid_card});
+                        socket.broadcast.emit("INVALID_PLAY_CARD", {error: invalid_card});
+                        return;
+                    }
+
+                    cards_toCheck.push(cards[card_id]);
+
                 }
             }
         }
+
+        if(counter.checkLinks(cards_toCheck))
+            var point = counter.countPoints(cards_toCheck, "horror");
+        else
+            socket.emit("INVALID_PLAY_CARD", {error: invalid_link});
+
+        socket.emit("PLAY_CARD", data);
+        socket.broadcast.emit("PLAY_CARD", data);
+        clients[id].cards.splice(indexCard, 1)
     });
 
     socket.on("LIST_ROOMS", function(){
@@ -246,6 +270,10 @@ io.on('connection', function(socket){
 
 
 });
+
+loadDB();
+//console.log(cards);
+
 var port = process.env.port || 3000
 server.listen(port, function(){
 	console.log('listening on *:' + port);

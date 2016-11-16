@@ -14,7 +14,7 @@ module.exports = function checkLinks(cards){
         }
     });
 
-     var what = cards.every(function(element, index, arra){
+     var result = cards.every(function(element, index, arra){
         var array = element.theme;
         var array_base = cards[0].theme;
 
@@ -29,7 +29,7 @@ module.exports = function checkLinks(cards){
 
      });
 
-    return what;
+    return result;
 }
 
 module.exports = function countPoints(cards, theme){
