@@ -1,0 +1,322 @@
+[{
+	"id": 0,
+	"name": "Cloud",
+	"type": "pure",
+	"theme": ["nature"],
+	"point": "3",
+	"description": "I wandered lonely as a cloud, that floats on high oer vales and hills William Wordsworth ",
+	"img": "Asset/Pictures/cloud.jpg",
+	"title": "View of Monticelli, near Tivoli",
+	"author": "Simon Joseph Alexandre Clément Denis"
+}, {
+	"id": 1,
+	"name": "Wind",
+	"type": "pure",
+	"theme": ["nature"],
+	"point": "2",
+	"description": "Wind is the flow of gas. Whooosh!",
+	"img": "Asset/Pictures/wind.jpg",
+	"title": "Wanderer above the sea of fog",
+	"author": "Caspar David Friedrich"
+}, {
+	"id": 2,
+	"name": "Sky",
+	"type": "pure",
+	"theme": ["nature"],
+	"point": "2",
+	"description": "The stars they were among my dreams; In sleep did I behold theskies   William Wordsworth ",
+	"img": "Asset/Pictures/sky.jpg",
+	"title": "The Voyage of Life",
+	"author": "Thomas Cole"
+
+}, {
+	"id": 3,
+	"name": "Sea",
+	"type": "pure",
+	"theme": ["nature"],
+	"point": "2",
+	"description": "Inspiring both brilliant and novice poets alike.",
+	"img": "Asset/Pictures/sea.jpg",
+	"title": "A Packet Boat Under Sail in a Breeze off the South Foreland",
+	"author": "Thomas Lunyr"
+}, {
+	"id": 4,
+	"name": "Flower",
+	"type": "pure",
+	"theme": ["nature"],
+	"point": "2",
+	"description": "Sweet smelling (well, most of them anyway).",
+	"img": "Asset/Pictures/flower.jpg",
+	"title": "Still Life",
+	"author": "Paul Theodor van Brussel "
+}, {
+	"id": 5,
+	"name": "Ginger Bread",
+	"type": "pure",
+	"theme": ["folklore"],
+	"point": "3",
+	"description": "This is chocolate! gasped Hansel as he broke a lump of plaster from the wall. And this is icing!exclaimed Gretel, putting another piece of wall in her mouth.  Brothers Grimm ",
+	"img": "Asset/Pictures/gingerbread.jpg",
+	"title": "",
+	"author": "Luis Meléndez"
+}, {
+	"id": 6,
+	"name": "Witch",
+	"type": "pure",
+	"theme": ["folklore"],
+	"point": "2",
+	"description": "Flying to Blockula and building houses of gingerbread.",
+	"img": "Asset/Pictures/witch.jpg",
+	"title": "The Bewitched Man",
+	"author": "Francisco de Goya y Lucientes"
+}, {
+	"id": 7,
+	"name": "Mermaid",
+	"type": "pure",
+	"theme": ["folklore"],
+	"point": "2",
+	"description": "Half woman, half fish.",
+	"img": "Asset/Pictures/mermaid.jpg",
+	"title": "A Mermaid",
+	"author": "John William Waterhouse"
+}, {
+	"id": 8,
+	"name": "Mirror",
+	"type": "pure",
+	"theme": ["folklore"],
+	"point": "2",
+	"description": "Mirror, mirror, here I stand. Who is the fairest in the land?  Brothers Grimm",
+	"img": "Asset/Pictures/mirror.jpg",
+	"title": "Portrait of Catherine II before a Mirror",
+	"author": "Vigilius Eriksen"
+}, {
+	"id": 9,
+	"name": "Lost Shoe",
+	"type": "pure",
+	"theme": ["folklore"],
+	"point": "2",
+	"description": "Rook di goo, rook di goo! No bloods in the shoe. The shoes not too tight,This bride is right! Brothers Grimm ",
+	"img": "Asset/Pictures/lostshoe.jpg",
+	"title": "Cinderella",
+	"author": "Charles Landseer"
+}, {
+	"id": 10,
+	"name": "Musketeer",
+	"type": "pure",
+	"theme": ["history"],
+	"point": "3",
+	"description": "All for one and one for all, united we stand divided we fall  Alexandre Dumas ",
+	"img": "Asset/Pictures/musketeer.jpg",
+	"title": "Musketeer",
+	"author": "Jean Louis Ernest Meissonier"
+}, {
+	"id": 11,
+	"name": "French Revolution",
+	"type": "pure",
+	"theme": ["history"],
+	"point": "2",
+	"description": "Lasted from year 1789 to year 1799. The revolution overthrow the absolute monarchy in France.",
+	"img": "Asset/Pictures/frenchrevolution.jpg",
+	"title": "Liberty Leading the People",
+	"author": "Eugène Delacroix"
+}, {
+	"id": 12,
+	"name": "Letters",
+	"type": "pure",
+	"theme": ["history"],
+	"point": "2",
+	"description": "Tells of events between friends, business and family.",
+	"img": "Asset/Pictures/letters.jpg",
+	"title": "Lady Reading the Letters of Heloise and Abélard",
+	"author": "Bernard D’Agesci"
+}, {
+	"id": 13,
+	"name": "Nationalism",
+	"type": "pure",
+	"theme": ["history"],
+	"point": "2",
+	"description": "Being attached to one’s nation. Many countries during this period was associated with nationalism.",
+	"img": "Asset/Pictures/nationalism.jpg",
+	"title": "The Third of May, 1808: The Execution of the Defenders of Madrid",
+	"author": "Francisco de Goya y Lucientes"
+}, {
+	"id": 14,
+	"name": "Middle ages",
+	"type": "pure",
+	"theme": ["history"],
+	"point": "2",
+	"description": "Was very fashionable during the Romanticism period.",
+	"img": "Asset/Pictures/middleages.jpg",
+	"title": "Edward III Crossing the Somme",
+	"author": "Benjamin West"
+}, {
+	"id": 15,
+	"name": "Faint",
+	"type": "pure",
+	"theme": ["horror"],
+	"point": "3",
+	"description": "Loss of consciousness and muscle strength.",
+	"img": "Asset/Pictures/faint.jpg",
+	"title": "Roger Freeing Angelica",
+	"author": "Jean Auguste Dominique Ingres"
+}, {
+	"id": 16,
+	"name": "Hunting",
+	"type": "pure",
+	"theme": ["horror"],
+	"point": "2",
+	"description": "Hunting description",
+	"img": "Asset/Pictures/hunting.jpg",
+	"title": "Hunting Scene",
+	"author": "Horace Vernet"
+}, {
+	"id": 17,
+	"name": "Vampire",
+	"type": "pure",
+	"theme": ["horror"],
+	"point": "2",
+	"description": "It is impossible to say how first the idea entered my brain; but once conceived, it haunted me day and night   Edgar Allan Poe ",
+	"img": "Asset/Pictures/vampire.jpg",
+	"title": "The Nightmare",
+	"author": "Johann Heinrich Fuseli"
+}, {
+	"id": 18,
+	"name": "Night",
+	"type": "pure",
+	"theme": ["horror"],
+	"point": "2",
+	"description": "Who knows what lurks in the shadows..",
+	"img": "Asset/Pictures/night.jpg",
+	"title": "Knight before the Charcoal Burners Hut",
+	"author": "Carl Philipp Fohr"
+}, {
+	"id": 19,
+	"name": "The Hunchback",
+	"type": "pure",
+	"theme": ["horror"],
+	"point": "2",
+	"description": "A deformed man.",
+	"img": "Asset/Pictures/hunchback.jpg",
+	"title": "Quasimodo sauvant la Esmeralda des mains de ses bourreaux, illustrant un épisode de Notre Dame de Paris de Victor Hugo.",
+	"author": "Mlle Henry"
+}, {
+	"id": 20,
+	"name": "Scientist",
+	"type": "mixed",
+	"theme": ["horror", "history"],
+	"point": "1",
+	"description": "A person who craves for more knowledge. But is there a limit to what Man should know ? ",
+	"img": "Asset/Pictures/scientist.jpg",
+	"title": "Self Portrait with Doctor Arrieta",
+	"author": "Francisco de Goya y Lucientes"
+}, {
+	"id": 21,
+	"name": "Fallen Angel",
+	"type": "mixed",
+	"theme": ["horror", "history"],
+	"point": "1",
+	"description": "I ought to be thy Adam, but I am rather the fallen angel…  Mary Shelley ",
+	"img": "Asset/Pictures/fallenangel.jpg",
+	"title": "The Angel Standing in the Sun",
+	"author": "Joseph Mallord William Turner"
+}, {
+	"id": 22,
+	"name": "Death",
+	"type": "mixed",
+	"theme": ["horror", "folklore"],
+	"point": "1",
+	"description": "Im Death, and I make sure that everyone is equal.  Brothers Grimm",
+	"img": "Asset/Pictures/death.jpg",
+	"title": "Saturn Devouring One of his Children",
+	"author": "Francisco de Goya y Lucientes"
+}, {
+	"id": 23,
+	"name": "Grim",
+	"type": "mixed",
+	"theme": ["horror", "folklore"],
+	"point": "1",
+	"description": "Hopeless. Ghastly. Gloomy. What a cheerful word...",
+	"img": "Asset/Pictures/grim.jpg",
+	"title": "The Headless Horseman Pursuing Ichabod Crane",
+	"author": "John Quidor"
+}, {
+	"id": 24,
+	"name": "Raven",
+	"type": "mixed",
+	"theme": ["horror", "nature"],
+	"point": "1",
+	"description": " Quoth the Raven, Nevermore  Edgar Allan Poe",
+	"img": "Asset/Pictures/raven.jpg",
+	"title": "The Tree of Crows",
+	"author": "Caspar David Friedrich"
+}, {
+	"id": 25,
+	"name": "Cat",
+	"type": "mixed",
+	"theme": ["horror", "nature"],
+	"point": "1",
+	"description": "Upon its head, with red extended mouth and solitary eye of fire, sat the hideous beast whose craft had seduced me into murder   Edgar Allan Poe ",
+	"img": "Asset/Pictures/cat.jpg",
+	"title": "Una and the Lion",
+	"author": "Briton Rivière"
+}, {
+	"id": 26,
+	"name": "Train",
+	"type": "mixed",
+	"theme": ["nature", "history"],
+	"point": "1",
+	"description": "description",
+	"img": "Asset/Pictures/train.jpg",
+	"title": "Open carriages on the Liverpool and Manchester Railway in 1830",
+	"author": ""
+}, {
+	"id": 27,
+	"name": "Industry",
+	"type": "mixed",
+	"theme": ["nature", "history"],
+	"point": "1",
+	"description": "description",
+	"img": "Asset/Pictures/industry.jpg",
+	"title": "The Crystal Palace held the Great Exhibition of 1851",
+	"author": ""
+}, {
+	"id": 28,
+	"name": "Pure Heart",
+	"type": "mixed",
+	"theme": ["nature", "folklore"],
+	"point": "1",
+	"description": "She cannot receive any power from me greater than she now has, which consists in her own purity and innocence of heart   H.C.Andersen ",
+	"img": "Asset/Pictures/pureheart.jpg",
+	"title": "Ophelia",
+	"author": "John William Waterhouse "
+}, {
+	"id": 29,
+	"name": "Wolf",
+	"type": "mixed",
+	"theme": ["nature", "folklore"],
+	"point": "1",
+	"description": "A forest dwelling creature. Rumors say it eats children",
+	"img": "Asset/Pictures/wolf.jpg",
+	"title": "Dead Wolf",
+	"author": "Jean Baptiste Oudry"
+}, {
+	"id": 30,
+	"name": "Ossian",
+	"type": "mixed",
+	"theme": ["history", "folklore"],
+	"point": "1",
+	"description": "The narrator from The Work of Ossian",
+	"img": "Asset/Pictures/ossian.jpg",
+	"title": "Ossian’s Dream",
+	"author": "Jean Auguste Dominique Ingres "
+}, {
+	"id": 31,
+	"name": "Princess",
+	"type": "mixed",
+	"theme": ["history", "folklore"],
+	"point": "1",
+	"description": "There lived a king whose daughters were all beautiful, but the youngest daughter was so lovely that even the sun...was struck with wonder  Brothers Grimm ",
+	"img": "Asset/Pictures/princess.jpg",
+	"title": "Portrait of Princesse Albert de Broglie",
+	"author": "Jean Auguste Dominique Ingres"
+}]

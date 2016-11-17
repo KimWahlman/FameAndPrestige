@@ -16,8 +16,10 @@ public abstract class Card : MonoBehaviour
     public Sprite faceUpSprite;
     public Sprite faceDownSprite;
     SpriteRenderer currentSprite;
-
-    GameObject CardZoomed;
+  
+    public GameObject CardZoomed;
+    private Vector3 cardScale;
+    private Vector3 cardPosition;
 
     public bool isBeingDragged = false;
 
@@ -26,6 +28,8 @@ public abstract class Card : MonoBehaviour
     {
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
         deckPosition = this.transform.position;
+        cardScale = this.transform.localScale;
+        cardPosition = this.transform.position; 
     }
 
     void OnMouseEnter()
@@ -123,44 +127,53 @@ public abstract class Card : MonoBehaviour
 
     void ZoomCard(bool zoomed)
     {
-       if(zoomed && !isBeingDragged)
+    
+        if (zoomed && !isBeingDragged)
         {
-            //create new object to show the zoomed card
-            CardZoomed = new GameObject();
-
-            //create a new component on the zoomed card
-            SpriteRenderer newSprite = CardZoomed.AddComponent<SpriteRenderer>();
-            //add the current sprite (card faced up)
-            newSprite.sprite = currentSprite.sprite;
-            //change the order of layer in order to show it over other sprites
-            newSprite.sortingOrder = 1;
-
-            //set the new position and scal of the zoomed card
-            Transform goTransform = this.gameObject.transform;
-
-            //if card has been played then zoom it but without the offset on Y axis
-            if(!hasBeenPlayed)
-                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z);
-            else
-                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z);
-
-            CardZoomed.transform.localScale = goTransform.localScale * 2;
-
-            //hide the real card sprite
-            currentSprite.sprite = null;
-
+            
+            this.gameObject.transform.localScale = cardScale * 2;
+            //this.gameObject.transform.position = cardPosition + new Vector3(0,1,0);          
         }
-        else
+        else 
         {
-            if (CardZoomed)
-            {
-                //destroy the zoomed card
-                Destroy(CardZoomed);
-                //shwo the real card sprite
-                currentSprite.sprite = faceUpSprite;
-            }
-        }
-    }
+            this.gameObject.transform.localScale = cardScale;
+            this.gameObject.transform.position = cardPosition;
+        }  
+/*
+     //create new object to show the zoomed card
+     CardZoomed = new GameObject();
+
+     //create a new component on the zoomed card
+     SpriteRenderer newSprite = CardZoomed.AddComponent<SpriteRenderer>();
+     //add the current sprite (card faced up)
+     newSprite.sprite = currentSprite.sprite;
+     //change the order of layer in order to show it over other sprites
+     newSprite.sortingOrder = 1;
+
+     //set the new position and scal of the zoomed card
+     Transform goTransform = this.gameObject.transform;
+
+     CardZoomed.transform.localScale = goTransform.localScale * 2;
+
+     //hide the real card sprite
+     currentSprite.sprite = null;            
+
+     //if card has been played then zoom it but without the offset on Y axis
+     if (!hasBeenPlayed)
+         CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z);
+     else
+         CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z);
+ }
+ else
+ {
+     if (CardZoomed)
+     {
+         //destroy the zoomed card
+         Destroy(CardZoomed);
+         //shwo the real card sprite
+         currentSprite.sprite = faceUpSprite;
+     }*/
+}
 
     //change the layer order of the card
     public void putInFront(bool inFront)
