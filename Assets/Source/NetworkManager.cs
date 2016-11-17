@@ -88,7 +88,13 @@ public class NetworkManager : MonoBehaviour {
         int.TryParse(player, out playerID);
         int totPoints;
         int.TryParse(totalPoints, out totPoints);
-        
+
+		Debug.Log ("Point String " + totalPoints);
+		Debug.Log ("EARN point " + totPoints);
+
+		gameManager.pointsDictionnary [player] += totPoints;
+
+		gameManager.UpdatePoints ();
 
         gameManager.toPlay = new List<int>();
 

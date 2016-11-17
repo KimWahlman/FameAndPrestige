@@ -33,7 +33,26 @@ public class GameManager : MonoBehaviour {
         pointsDictionnary["1"] = 0;
         pointsDictionnary["2"] = 0;
         pointsDictionnary["3"] = 0;
+
+		UpdatePoints ();
     }
+
+	public void UpdatePoints(){
+		GameObject cv = GameObject.Find ("Canvas");
+		cv.GetComponentsInChildren<Text>()[0].text = "Player1: " + pointsDictionnary["0"].ToString() + " Player2: " + pointsDictionnary["1"].ToString() + " Player3: " + pointsDictionnary["2"].ToString() + " Player4: " + pointsDictionnary["3"].ToString();
+	}
+
+	public void CheckWinner(){
+		if (pointsDictionnary ["0"] >= 10) {
+		}
+		if (pointsDictionnary ["1"] >= 10) {
+		}
+		if (pointsDictionnary ["2"] >= 10) {
+		}
+		if (pointsDictionnary ["3"] >= 10) {
+		}
+
+	}
 
     public void initGame(int playerID)
     {
