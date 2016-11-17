@@ -54,7 +54,7 @@ var countPoints = function countPoints(cards, theme){
 		
 		for (var i = 0; i < mixed_cards.length; i++) {
             for (var j = 1; j < mixed_cards.length; j++) {
-                if(mixed_cards[i].theme == mixed_cards[j].theme){
+                if(mixed_cards[i].theme.toString() == mixed_cards[j].theme.toString()){
 
                     //console.log("IF :" + mixed_cards[i].theme == mixed_cards[j].theme);
                     mixed_cards.splice(i,1);
@@ -73,14 +73,16 @@ var countPoints = function countPoints(cards, theme){
 
 		
 		pure_cards.forEach(function(f){
-			if(pure_cards[0].theme != f.theme){
+			if(pure_cards[0].theme.toString() != f.theme.toString()){
+                console.log("CARD_i " + f.theme);
+                console.log("CARD_0 "+ pure_cards[0].theme);
 				result_pure = false;
 			}
 		});
 
         
-		//console.log("MIXED " + result_mixed);
-		//console.log("PURE " + result_pure);
+		console.log("MIXED " + result_mixed);
+		console.log("PURE " + result_pure);
         //console.log(result_mixed && mixed_cards.length != 0);
 
 		if(result_mixed && mixed_cards.length != 0){
