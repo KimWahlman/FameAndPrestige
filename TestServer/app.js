@@ -50,8 +50,8 @@ function drawInitialCards (socket, number) {
 function reShuffleDeck(){
 
     discard_cards.forEach(function(card){
-            available_cards[card] = cards[card];
-            var indexCard = available_cards.indexOf(card);
+            available_cards[card] = JSON.parse(JSON.stringify(cards[card]));
+            var indexCard = discard_cards.indexOf(card);
             discard_cards.splice(indexCard, 1);
         });
 }
