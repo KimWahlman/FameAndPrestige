@@ -242,6 +242,7 @@ io.on('connection', function(socket){
         console.log(counter.checkLinks(cards_toCheck));
 
         if(counter.checkLinks(cards_toCheck)){
+            console.log("CHECK POINT WITH " + themes[theme%4]);
             var point = counter.countPoints(cards_toCheck, themes[theme%4]);
             console.log(point);
 
@@ -321,9 +322,9 @@ io.on('connection', function(socket){
 
         turns += 1;
         if (turns == 8) {
+            theme++;
             socket.emit("CHANGE_THEME", { theme: theme % 4 });            
             socket.broadcast.emit("CHANGE_THEME", { theme: theme % 4 });
-            theme++;
             turns = 0;
         }
 

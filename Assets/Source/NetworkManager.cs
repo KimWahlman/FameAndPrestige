@@ -10,16 +10,21 @@ public class NetworkManager : MonoBehaviour {
     public GameManager gameManager;
     public SocketIOComponent socket;
 
+
     public int debugcardID;
     public int debugplayerID;
 
     public Player myPlayer;
 
     public string msg;
+	private string Server = "ws://193.11.161.137:3000/socket.io/?EIO=4&transport=websocket";
+	private string localServer = "ws://127.0.0.1:3000/socket.io/?EIO=4&transport=websocket";
 
     void Start()
     {
         StartCoroutine("ConnectToServer");
+
+		socket.url = localServer;
         
         socket.On("ASSIGN_ID", OnReceiveAssignID);
         socket.On("INIT_GAME", OnReceiveInitGame);
@@ -72,7 +77,7 @@ public class NetworkManager : MonoBehaviour {
 
     public void onChangeTheme(SocketIOEvent e)
     {
-        print("Change theme received");
+		print("Change theme received " + e.data);
         string a = e.data.GetField("theme").ToString();
         gameManager.ChangeTheme(a);
     }
