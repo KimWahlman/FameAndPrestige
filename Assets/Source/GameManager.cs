@@ -13,9 +13,11 @@ public class GameManager : MonoBehaviour {
     public bool debugMode;
     public PlayableZone playableZone;
     public Button EndTurnBt;
+    public Button PlayCardsBt;
     public Image currentImage;
     public Sprite[] Sprites;
     private NetworkManager networkManager;
+    public Dictionary<string, int> pointsDictionnary;
     void Start()
     {
         if(debugMode)
@@ -25,6 +27,12 @@ public class GameManager : MonoBehaviour {
         }
         currentImage.sprite = Sprites[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+
+        pointsDictionnary = new Dictionary<string, int>();
+        pointsDictionnary["0"] = 0;
+        pointsDictionnary["1"] = 0;
+        pointsDictionnary["2"] = 0;
+        pointsDictionnary["3"] = 0;
     }
 
     public void initGame(int playerID)
@@ -90,6 +98,7 @@ public class GameManager : MonoBehaviour {
     {
         myPlayer.canPlay = false;
         EndTurnBt.interactable = false;
+        PlayCardsBt.interactable = false;
 
     }
 
@@ -106,6 +115,7 @@ public class GameManager : MonoBehaviour {
     {
         myPlayer.canPlay = true;
         EndTurnBt.interactable = true;
+        PlayCardsBt.interactable = true;
     }
  
     //server side

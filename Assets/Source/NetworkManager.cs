@@ -66,6 +66,7 @@ public class NetworkManager : MonoBehaviour {
 
     public void SendEndTurn()
     {
+
         socket.Emit("END_TURN");
     }
 
