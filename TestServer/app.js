@@ -7,8 +7,8 @@ var fs = require('fs');
 var clients = {};
 var cards = {};
 var turns = 0;
-var theme = 1;
-var themes = ['nature','horror','folklore','history'];
+var theme = 0;
+var themes = ['nature','horror','history','folklore'];
 var tmp ;
 
 var available_cards;
@@ -236,15 +236,17 @@ io.on('connection', function(socket){
         
         console.log("cards_toCheck");
         console.log(cards_toCheck); 
+        console.log("themes " + themes);
+        console.log("theme " + theme);
         console.log("Current Theme " + themes[theme]);
         console.log(counter.checkLinks(cards_toCheck));
 
         if(counter.checkLinks(cards_toCheck)){
-            var point = counter.countPoints(cards_toCheck, themes[theme]);
+            var point = counter.countPoints(cards_toCheck, themes[theme%4]);
             console.log(point);
 
-            socket.emit("PLAY_CARD", point);
-            socket.broadcast.emit("PLAY_CARD", point);
+            socket.emit("PLAY_CARD", {cards : card_ids.join(), playerID : clients[playerId].id, totalPoints : point.normalPoint+point.comboPoint});
+            socket.broadcast.emit("PLAY_CARD", {cards : card_ids.join(), playerID : clients[playerId].id, totalPoints : point.normalPoint+point.comboPoint});
 
             console.log("clients[playerId].cards");
             console.log(clients[playerId].cards);
@@ -268,8 +270,8 @@ io.on('connection', function(socket){
             console.log(discard_cards);
         }
         else{
-            socket.emit("INVALID_PLAY_CARD", {error: "invalid_link"});
-            socket.broadcast.emit("INVALID_PLAY_CARD", {error: "invalid_card"});
+            socket.emit("INVALID_PLAY_CARD", {error: "invalid_link", cards: card_ids});
+            socket.broadcast.emit("INVALID_PLAY_CARD", {error: "invalid_card", cards: card_ids});
         }
 
        
