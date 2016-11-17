@@ -8,17 +8,13 @@ var clients = {};
 var cards = {};
 var turns = 0;
 var theme = 1;
+var themes = ['nature','horror','folklore','history'];
 var tmp ;
 
-var cards_id = [];
+var available_cards;
+var discard_cards=[];
 
 
-for (var i = 0; i < 40; i++) {
-    cards_id.push(i);
-};
-
-var available_cards = JSON.parse(JSON.stringify(cards));
-var discard_cars = {};
 
 function loadDB(){
 
@@ -29,6 +25,7 @@ function loadDB(){
         cards[line.id] = JSON.parse(JSON.stringify(line));
     });
 
+     available_cards = JSON.parse(JSON.stringify(cards));
 }
 
 function findCustomRooms() {
@@ -47,23 +44,43 @@ function findCustomRooms() {
 function drawInitialCards (socket, number) {
     for (var i = 0; i < number; i++) {
         sendDrawCard(socket, i%4);
-    };
+    }
+}
+
+function reShuffleDeck(){
+
+    discard_cards.forEach(function(card){
+            available_cards[card] = cards[card];
+            var indexCard = available_cards.indexOf(card);
+            discard_cards.splice(indexCard, 1);
+        });
 }
 
 
 
 function sendDrawCard (socket, playerId) {
 
-        var rdmID = Math.floor(Math.random() * (Object.keys(cards).length-1));
-        var keyId = Object.keys(cards)[rdmID];
-        var tosend = {id : Number(cards[keyId].id), playerId : playerId};
+        var rdmID;
+
+        if(Object.keys(available_cards).length == 1){
+            rdmID = Object.keys(available_cards).length - 1;
+
+           reShuffleDeck();
+
+        }else{
+
+            rdmID = Math.floor(Math.random() * (Object.keys(available_cards).length-1));
+        }
+        var keyId = Object.keys(available_cards)[rdmID];
+        var tosend = {id : Number(available_cards[keyId].id), playerId : playerId};
+        
 
         console.log(tosend);
 
 
         for (var id in clients){
             if(clients[id].id == playerId){
-                clients[id].cards.push(Number(cards[keyId].id));
+                clients[id].cards.push(Number(available_cards[keyId].id));
             }
         }
 
@@ -73,7 +90,7 @@ function sendDrawCard (socket, playerId) {
        /* console.log(rdmID);
         console.log(cards_id.length);
         console.log(tosend);*/
-        delete cards[keyId];
+        delete available_cards[keyId];
 }
 
 
@@ -189,7 +206,7 @@ io.on('connection', function(socket){
             for (var id in clients){
                 if(clients[id].id == data.playerID){
 
-                    playerId = data.playerID;
+                    playerId = id;
 
                     console.log("Played card id : " + card_id);
 
@@ -207,25 +224,48 @@ io.on('connection', function(socket){
                         return;
                     }
 
+                    console.log("CARD TO CHECK");
+                    console.log(card_id);
+                    //console.log(cards);
+                    console.log(cards[card_id]);
                     cards_toCheck.push(cards[card_id]);
 
                 }
             }
         });
-
+        
+        console.log("cards_toCheck");
+        console.log(cards_toCheck); 
+        console.log("Current Theme " + themes[theme]);
         console.log(counter.checkLinks(cards_toCheck));
-        console.log(cards_toCheck);
 
         if(counter.checkLinks(cards_toCheck)){
-            var point = counter.countPoints(cards_toCheck, "horror");
+            var point = counter.countPoints(cards_toCheck, themes[theme]);
             console.log(point);
 
             socket.emit("PLAY_CARD", point);
             socket.broadcast.emit("PLAY_CARD", point);
+
+            console.log("clients[playerId].cards");
+            console.log(clients[playerId].cards);
+
             card_ids.forEach(function(c){
                 var indexCard = clients[playerId].cards.indexOf(Number(c));
-                clients[id].cards.splice(indexCard, 1)
-            })
+                clients[playerId].cards.splice(indexCard, 1)
+            });
+
+            console.log("clients[playerId].cards");
+            console.log(clients[playerId].cards);
+
+            console.log("discard_cards");
+            console.log(discard_cards);
+
+            card_ids.forEach(function(card_id){
+                discard_cards.push(card_id);
+            });
+
+            console.log("discard_cards");
+            console.log(discard_cards);
         }
         else{
             socket.emit("INVALID_PLAY_CARD", {error: "invalid_link"});
