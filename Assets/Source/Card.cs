@@ -89,6 +89,8 @@ public abstract class Card : MonoBehaviour
         ownerID = playerID;
 
         isMine = cardIsMine;
+
+        hasBeenPlayed = false;
     }
 
     public void PositionOnTheHand(Transform posTransform, bool whileDrawing = false)
