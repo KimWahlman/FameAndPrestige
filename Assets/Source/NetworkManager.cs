@@ -78,49 +78,27 @@ public class NetworkManager : MonoBehaviour {
 
     public void OnReceivePlayCard(SocketIOEvent e)
     {
-        
-        string cards = e.data.GetField("cards").ToString();
-        string player = e.data.GetField("playerID").ToString();
-        string totalPoints = e.data.GetField("totalPoints").ToString();
 
+		Debug.Log ("PLAY CARD RECEVED " + e.data);
+
+        string card = JsonToString(e.data.GetField("cardID").ToString(), "\"");
+        string player = JsonToString(e.data.GetField("playerID").ToString(), "\"");
+        
+        int cardID;
+        int.TryParse(card, out cardID);
         int playerID;
         int.TryParse(player, out playerID);
-        int totPoints;
-        int.TryParse(totalPoints, out totPoints);
-        
+
 
         gameManager.toPlay = new List<int>();
-
-        print(cards);
-        var splitedCardsID = cards.Split(',');
-        List<int> cardsToRemoveFromHand = new List<int>();
-      
-        foreach ( var c in splitedCardsID )
-        {
-            string cc = c.Trim(new Char[] { ' ', '"', ',' });
-            print(cc);
-            int cardID;
-            int.TryParse(cc, out cardID);
-            print("received id card : " + cardID);
-            gameManager.playCard(cardID);
-
-            cardsToRemoveFromHand.Add(cardID);
-        }
-
-        gameManager.ReOrderPlayerHand(playerID, cardsToRemoveFromHand);
+        gameManager.playCard(cardID);
+        gameManager.ReOrderPlayerHand(playerID, cardID);
     }
 
     public void OnReceiveInvalidPlayCard(SocketIOEvent e)
     {
-        print("INVALID PLAY CARD RECEIVED   " + e.data.GetField("cards").ToString());
-
-        string[] cards = e.data.GetField("cards").ToString().Split(',');
-
-        foreach (var c in cards)
-        {
-            var cc = c.Trim(new Char[] { ' ', '"', ',', '[', ']' });
-            gameManager.InvalidCardPlayed(int.Parse(cc));
-        }
+        print("INVALID PLAY CARD RECEIVED");
+        gameManager.InvalidCardPlayed(int.Parse(e.data["cardID"].ToString()));
     }
 
     public void OnReceiveAssignID(SocketIOEvent e)

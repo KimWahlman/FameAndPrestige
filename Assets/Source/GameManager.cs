@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour {
     {
         if(playerID == myPlayer.idPlayer)
         {
-            print("DRAW CARD : player iD : " + playerID + " card id :  " + cardID);
+            print("player iD : " + playerID + " card id :  " + cardID);
             //add the card in the player hand
             myPlayer.cardsHeld.Add(cardID, Deck[cardID]);
 
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            print("DRAW CARD : player iD : " + playerID + " card id :  " + cardID);
+            print("player iD : " + playerID + " card id :  " + cardID);
             myPlayer.opponents[playerID].cardsHeld.Add(cardID, Deck[cardID]);
 
             Deck[cardID].popCard(false, playerHands[playerID].newCard(), playerID);
@@ -132,14 +132,13 @@ public class GameManager : MonoBehaviour {
 
 
     //should be called when a card is played/discarded
-    public void ReOrderPlayerHand(int playerID, List<int> cardIDs)
+    public void ReOrderPlayerHand(int playerID, int cardID)
     {
         print(" in reorderhand ");
 
         if (playerID == myPlayer.idPlayer)
         {
-            foreach (int cardID in cardIDs)
-                myPlayer.cardsHeld.Remove(cardID);
+            myPlayer.cardsHeld.Remove(cardID);
 
             int id = 0;
             foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
@@ -149,8 +148,7 @@ public class GameManager : MonoBehaviour {
         }
         else
         {
-            foreach (int cardID in cardIDs)
-                myPlayer.opponents[playerID].cardsHeld.Remove(cardID);
+            myPlayer.opponents[playerID].cardsHeld.Remove(cardID);
 
             int id = 0;
             foreach (KeyValuePair<int, Card> card in myPlayer.opponents[playerID].cardsHeld)
@@ -158,23 +156,13 @@ public class GameManager : MonoBehaviour {
                 card.Value.PositionOnTheHand(playerHands[playerID].posList[id++]);
             }
         }
-
-        foreach(var c in cardIDs)
-            playerHands[playerID].deadCard();
+        playerHands[playerID].deadCard();
     }
 
     public void storeCard(int cardID)
     {
         toPlay.Add(cardID);
 		playableZone.addCard ();
-    }
-
-    public void removeStoredCard(int cardID)
-    {
-        if(toPlay.Contains(cardID))
-            toPlay.Remove(cardID);
-
-        playableZone.removeCard();
     }
 
     public void sendStoredCards()
@@ -187,10 +175,9 @@ public class GameManager : MonoBehaviour {
         Deck[cardID].playCard();
         
         if(!Deck[cardID].isMine)
-        {
             Deck[cardID].PositionOnTheHand(playableZone.getSlot());
-            playableZone.addCard();
-        }
+
+        //playableZone.addCard();
     }
     
     public void InvalidCardPlayed(int cardID)

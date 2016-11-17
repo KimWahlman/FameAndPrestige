@@ -19,9 +19,7 @@ public class PlayableZone : MonoBehaviour {
 
     public void removeCard()
     {
-        if(nextEmptySlot != 0)
-            nextEmptySlot--;
-
+        nextEmptySlot--;
     }
 
     public void emptyZone()

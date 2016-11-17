@@ -12,8 +12,6 @@ public class DragAndDrop : MonoBehaviour
     private NetworkManager networkManager;
     private GameManager gameManager;
 
-    private PlayableZone pz;
-
     void Awake()
     {
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
@@ -74,8 +72,7 @@ public class DragAndDrop : MonoBehaviour
                 if (hit.transform.gameObject.name == "PlayableZone")
                 {
                     //get the script of the zone (contain the slots position)
-                    pz = hit.transform.gameObject.GetComponent<PlayableZone>();
-
+                    PlayableZone pz = hit.transform.gameObject.GetComponent<PlayableZone>();
                     //assign the free slot position to the card
                     draggedCard.PositionOnTheBoard(pz.getSlot());
 
@@ -94,7 +91,6 @@ public class DragAndDrop : MonoBehaviour
                 {
                     //return to hand if it's dropped in the void
                     draggedCard.returnBackToHand();
-                    gameManager.removeStoredCard(draggedCard.id);
                 }
             }
         }
