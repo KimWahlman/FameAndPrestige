@@ -94,7 +94,8 @@ var countPoints = function countPoints(cards, theme){
 			(pure_cards.length==2)? comboPoint += 2 : (number==3)? comboPoint += 4 : (number==4)? comboPoint += 6 : comboPoint = 0 ;
     
     }
-    	return {normalPoint: normalPoint, comboPoint: comboPoint}
+    	//return {normalPoint: normalPoint, comboPoint: comboPoint}
+        return normalPoint+comboPoint;
 }
 
 

@@ -17,15 +17,16 @@ public class NetworkManager : MonoBehaviour {
     public Player myPlayer;
 
     public string msg;
-	private string Server = "ws://193.11.161.137:3000/socket.io/?EIO=4&transport=websocket";
+	//private string Server = "ws://193.11.161.137:3000/socket.io/?EIO=4&transport=websocket";
 	private string localServer = "ws://127.0.0.1:3000/socket.io/?EIO=4&transport=websocket";
+
 
     void Start()
     {
         StartCoroutine("ConnectToServer");
 
-		socket.url = localServer;
-        
+        socket.url = localServer;
+
         socket.On("ASSIGN_ID", OnReceiveAssignID);
         socket.On("INIT_GAME", OnReceiveInitGame);
         socket.On("DRAW_CARD", OnReceiveDrawCard);
@@ -49,7 +50,6 @@ public class NetworkManager : MonoBehaviour {
 
     public void SendPlayCard(int playerID, List<int> cardIDs)
     {
-        
         Dictionary<string, string> data = new Dictionary<string, string>();
         data["playerID"] = playerID.ToString();
 		string st = "";
@@ -71,7 +71,6 @@ public class NetworkManager : MonoBehaviour {
 
     public void SendEndTurn()
     {
-
         socket.Emit("END_TURN");
     }
 
@@ -79,12 +78,12 @@ public class NetworkManager : MonoBehaviour {
     {
 		print("Change theme received " + e.data);
         string a = e.data.GetField("theme").ToString();
-        gameManager.ChangeTheme(a);
+        string themeName = a.Trim(new Char[] {'"'});
+        gameManager.ChangeTheme(themeName);
     }
 
     public void OnReceivePlayCard(SocketIOEvent e)
     {
-        
         string cards = e.data.GetField("cards").ToString();
         string player = e.data.GetField("playerID").ToString();
         string totalPoints = e.data.GetField("totalPoints").ToString();
@@ -92,7 +91,7 @@ public class NetworkManager : MonoBehaviour {
         int playerID;
         int.TryParse(player, out playerID);
         int totPoints;
-        int.TryParse(totalPoints, out totPoints);
+        int.TryParse(totalPoints.Trim(new Char[] {'"'}), out totPoints);
 
 		Debug.Log ("Point String " + totalPoints);
 		Debug.Log ("EARN point " + totPoints);
@@ -104,6 +103,7 @@ public class NetworkManager : MonoBehaviour {
         gameManager.toPlay = new List<int>();
 
         print(cards);
+
         var splitedCardsID = cards.Split(',');
         List<int> cardsToRemoveFromHand = new List<int>();
       
@@ -118,21 +118,39 @@ public class NetworkManager : MonoBehaviour {
 
             cardsToRemoveFromHand.Add(cardID);
         }
+        
+        if(gameManager.myPlayer.idPlayer == playerID)
+        {
+            gameManager.myPlayer.canPlay = false;
+            gameManager.PlayCardsBt.interactable = false;
+        } else
+        {
+            gameManager.ReOrderPlayerHandAfterPlay(playerID, cardsToRemoveFromHand);
+        }
 
-        gameManager.ReOrderPlayerHand(playerID, cardsToRemoveFromHand);
     }
 
     public void OnReceiveInvalidPlayCard(SocketIOEvent e)
     {
+        string player = e.data.GetField("playerID").ToString();
+        int playerID;
+        int.TryParse(player, out playerID);
+
         print("INVALID PLAY CARD RECEIVED   " + e.data.GetField("cards").ToString());
 
-        string[] cards = e.data.GetField("cards").ToString().Split(',');
+        if(myPlayer.idPlayer == playerID)
+        {
+            string[] cards = e.data.GetField("cards").ToString().Split(',');
+            gameManager.InvalidCardPlayed(cards);
+        }
 
+
+        /*
         foreach (var c in cards)
         {
             var cc = c.Trim(new Char[] { ' ', '"', ',', '[', ']' });
             gameManager.InvalidCardPlayed(int.Parse(cc));
-        }
+        }*/
     }
 
     public void OnReceiveAssignID(SocketIOEvent e)
@@ -170,7 +188,6 @@ public class NetworkManager : MonoBehaviour {
     string JsonToString(string target, string s)
     {
         string[] newString = Regex.Split(target, s);
-
         return newString[1];
     }
 }

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     public Player myPlayer;
     public Card[] Deck;
     public List<int> toPlay;
-    private Hands[] playerHands = new Hands[4];
+    public Hands[] playerHands = new Hands[4];
     public GameObject[] handsGO;
     public bool debugMode;
     public PlayableZone playableZone;
@@ -103,9 +103,9 @@ public class GameManager : MonoBehaviour {
 
     public void ChangeTheme(string theme)
     {
-
-        int a = int.Parse(theme);
-        currentImage.sprite = Sprites[a];
+        foreach (var sprite in Sprites)
+            if (sprite.name == theme)
+                currentImage.sprite = sprite;
     }
 
     public bool checkPlayerTurn()
@@ -128,6 +128,10 @@ public class GameManager : MonoBehaviour {
         {
             if (c.hasBeenPlayed)
                 c.hideCard();
+        }
+        foreach(var c in toPlay)
+        {
+            Deck[c].returnBackToHand();
         }
     }
     public void startTurn()
@@ -158,10 +162,24 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void ReOrderPlayerHandAfterDrop(int cardID)
+    {
+        //Card is removed from player 
+        myPlayer.cardsHeld.Remove(cardID);
+        playerHands[myPlayer.idPlayer].deadCard();      
 
+        int id = 0;
+        foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
+        {
+            Debug.Log("card held : " + card.Value);
+            card.Value.PositionOnTheHand(playerHands[myPlayer.idPlayer].posList[id++]);
+        }
 
-    //should be called when a card is played/discarded
-    public void ReOrderPlayerHand(int playerID, List<int> cardIDs)
+        
+    }
+
+    //should be called when the cards are played
+    public void ReOrderPlayerHandAfterPlay(int playerID, List<int> cardIDs)
     {
         print(" in reorderhand ");
 
@@ -201,14 +219,27 @@ public class GameManager : MonoBehaviour {
     public void removeStoredCard(int cardID)
     {
         if(toPlay.Contains(cardID))
+        {
             toPlay.Remove(cardID);
+            playableZone.removeCard();
+            reOrderPlayingZone();
+        }
+    }
 
-        playableZone.removeCard();
+    public void reOrderPlayingZone()
+    {
+        playableZone.emptyZone();
+        foreach ( var c in toPlay)
+        {
+            Deck[c].PositionOnTheBoard(playableZone.getSlot());
+            playableZone.addCard();
+        }
     }
 
     public void sendStoredCards()
     {
-        networkManager.SendPlayCard(myPlayer.idPlayer, toPlay);
+        if(toPlay.Count != 0)
+            networkManager.SendPlayCard(myPlayer.idPlayer, toPlay);
     }
 
     public void playCard(int cardID)
@@ -222,10 +253,22 @@ public class GameManager : MonoBehaviour {
         }
     }
     
-    public void InvalidCardPlayed(int cardID)
-    {   
-        Deck[cardID].returnBackToHand();
-        playableZone.removeCard();
+    public void InvalidCardPlayed(string[] cardIDs)
+    {
+        foreach (var c in cardIDs)
+        {
+            var cc = int.Parse(c.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
+
+            myPlayer.cardsHeld.Add(cc, Deck[cc]);
+
+            //get the next position available in the player hand
+            Deck[cc].handPosition = playerHands[myPlayer.idPlayer].newCard().position;
+            Deck[cc].returnBackToHand();
+            removeStoredCard(cc);
+        }
+       
+        playableZone.emptyZone();
+        
     }
 
     void opponentdrawCard(int cardID)

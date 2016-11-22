@@ -82,6 +82,7 @@ public class DragAndDrop : MonoBehaviour
                     //networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
                     gameManager.storeCard(draggedCard.id);
 
+                    gameManager.ReOrderPlayerHandAfterDrop(draggedCard.id);
                     //(should request to the server if i can play)
                     //if yes, use the card
                     //else, put the card back
@@ -92,9 +93,20 @@ public class DragAndDrop : MonoBehaviour
                 }
                 else
                 {
+                    //add the card to the player hand if it has been dragged on playable zone first
+                    if(!gameManager.myPlayer.cardsHeld.ContainsKey(draggedCard.id))
+                    {
+                        gameManager.myPlayer.cardsHeld.Add(draggedCard.id, draggedCard);
+                        
+                        //get the next position available in the player hand
+                        draggedCard.handPosition = gameManager.playerHands[gameManager.myPlayer.idPlayer].newCard().position;
+                    }
+
                     //return to hand if it's dropped in the void
                     draggedCard.returnBackToHand();
+                    //remove from playing zone and cars ToPlay
                     gameManager.removeStoredCard(draggedCard.id);
+
                 }
             }
         }
