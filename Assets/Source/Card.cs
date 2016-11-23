@@ -67,6 +67,9 @@ public abstract class Card : MonoBehaviour
     {
         currentSprite.sprite = faceDownSprite;
         this.gameObject.SetActive(false);
+
+        if(CardZoomed)
+            Destroy(CardZoomed);
     }
 
     public void popCard(bool cardIsMine, Transform posTransform, int playerID)

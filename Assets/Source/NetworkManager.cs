@@ -59,7 +59,6 @@ public class NetworkManager : MonoBehaviour {
 			else
 				st += cardIDs [i] + ",";
 		}
-		//Debug.Log (st);
         data["cardID"] = st;       
 
         JSONObject jso = new JSONObject(data);
@@ -101,19 +100,15 @@ public class NetworkManager : MonoBehaviour {
 		gameManager.UpdatePoints ();
 
         gameManager.toPlay = new List<int>();
-
-        print(cards);
-
+        
         var splitedCardsID = cards.Split(',');
         List<int> cardsToRemoveFromHand = new List<int>();
       
         foreach ( var c in splitedCardsID )
         {
             string cc = c.Trim(new Char[] { ' ', '"', ',' });
-            print(cc);
             int cardID;
             int.TryParse(cc, out cardID);
-            print("received id card : " + cardID);
             gameManager.playCard(cardID);
 
             cardsToRemoveFromHand.Add(cardID);
@@ -166,8 +161,6 @@ public class NetworkManager : MonoBehaviour {
     public void OnReceiveChangeTurn(SocketIOEvent e)
     {
         int playerIdTurn = int.Parse(e.data["playerId"].ToString());
-
-        print("Player Turn : " + playerIdTurn);
 
         if (myPlayer.idPlayer == playerIdTurn)
         {

@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour {
 
     public void initGame(int playerID)
     {
-        Debug.Log("game initialization");
         //assign the playerID 0 to 3
         myPlayer.idPlayer = playerID;
 
@@ -71,6 +70,7 @@ public class GameManager : MonoBehaviour {
                 GameObject tmpGO = new GameObject();
                 tmpGO.AddComponent<Player>();
                 myPlayer.opponents.Add(playerID, tmpGO.GetComponent<Player>());
+                Destroy(tmpGO);
             }
                
             if (playerID > 2)
@@ -169,6 +169,7 @@ public class GameManager : MonoBehaviour {
         playerHands[myPlayer.idPlayer].deadCard();      
 
         int id = 0;
+
         foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
         {
             Debug.Log("card held : " + card.Value);
@@ -258,15 +259,16 @@ public class GameManager : MonoBehaviour {
         foreach (var c in cardIDs)
         {
             var cc = int.Parse(c.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
-
             myPlayer.cardsHeld.Add(cc, Deck[cc]);
-
-            //get the next position available in the player hand
-            Deck[cc].handPosition = playerHands[myPlayer.idPlayer].newCard().position;
-            Deck[cc].returnBackToHand();
             removeStoredCard(cc);
         }
-       
+
+        foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
+        {
+            card.Value.handPosition = playerHands[myPlayer.idPlayer].newCard().position;
+            card.Value.returnBackToHand();
+        }
+        
         playableZone.emptyZone();
         
     }
