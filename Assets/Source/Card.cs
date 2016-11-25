@@ -16,6 +16,15 @@ public abstract class Card : MonoBehaviour
     public Sprite faceUpSprite;
     public Sprite faceDownSprite;
     SpriteRenderer currentSprite;
+	SpriteRenderer currentArt;
+
+	public TextMesh title;
+	public TextMesh description;
+	public GameObject cardArt;
+	public float xPixel;
+	public float yPixel;
+
+    private Vector3 localScale;
 
     GameObject CardZoomed;
 
@@ -24,13 +33,62 @@ public abstract class Card : MonoBehaviour
 
     void Awake()
     {
+        localScale = this.transform.localScale;
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
         deckPosition = this.transform.position;
     }
 
+	public void LoadResource(string cardTitle, string cardDescription, string imgPath){
+
+
+		Debug.Log ("--------LOADING RESOURCES---------");
+		title.text = cardTitle;
+
+		var originaltext = cardDescription;
+		description.text = TextWrap(originaltext,30);
+		//Debug.Log (imgPath);
+
+		//Debug.Log ("picture/" + imgPath);
+
+		Sprite[] testTexture = Resources.LoadAll<Sprite>("picture/"+imgPath);
+		Debug.Log (testTexture [0]);
+		cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
+		xPixel = 7;
+		yPixel = 8;
+
+
+		var xScale = xPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
+		var yScale = yPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
+		//Debug.Log(cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size);
+
+		cardArt.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(xScale,yScale,0);
+	}
+
+	public static string TextWrap(string originaltext, int LineLimit)
+	{
+		string output = "";
+		string[] words = originaltext.Split(' ');
+		int line = 0;
+		foreach (string word in words)
+		{
+			if ((line + word.Length + 1) <= LineLimit)
+			{
+				output += " " + word;
+				line += word.Length + 1;
+			}
+			else
+			{
+				output += "\n" + word;
+				line = word.Length;
+			}
+		}
+		return output;
+	}
+
+
     void OnMouseEnter()
-    {
-        if(currentSprite.sprite == faceUpSprite && !Input.GetKey(KeyCode.Mouse0))
+    {        
+		if(currentSprite.sprite == faceUpSprite && !Input.GetKey(KeyCode.Mouse0))
         {
             ZoomCard(true);
         }
@@ -38,12 +96,14 @@ public abstract class Card : MonoBehaviour
 
     void OnMouseExit()
     {
+		Debug.Log ("MouseExit");
         ZoomCard(false);
     }
 
     void OnMouseDown()
     {
-        ZoomCard(false);
+		Debug.Log ("MouseDown");
+       	ZoomCard(false);
     }
 
 
@@ -66,6 +126,10 @@ public abstract class Card : MonoBehaviour
     public void hideCard()
     {
         currentSprite.sprite = faceDownSprite;
+		currentSprite.sprite = null;
+		cardArt.SetActive (false);
+		title.gameObject.SetActive (false);
+		description.gameObject.SetActive (false);
         this.gameObject.SetActive(false);
     }
 
@@ -75,10 +139,14 @@ public abstract class Card : MonoBehaviour
         this.gameObject.SetActive(true);
 
         //show it faceup if it's mine
-        if (cardIsMine)
-            currentSprite.sprite = faceUpSprite;
-        else
-            currentSprite.sprite = faceDownSprite;
+		if (cardIsMine) {
+			currentSprite.sprite = faceUpSprite;
+		} else {
+			currentSprite.sprite = faceDownSprite;
+			cardArt.SetActive (false);
+			title.gameObject.SetActive (false);
+			description.gameObject.SetActive (false);
+		}
 
 
         //StartCoroutine("PositionOnTheHand", posTransform);
@@ -123,19 +191,35 @@ public abstract class Card : MonoBehaviour
         this.gameObject.transform.rotation = posTransform.rotation;
     }
 
+    
     void ZoomCard(bool zoomed)
     {
        if(zoomed && !isBeingDragged)
         {
             //create new object to show the zoomed card
-            CardZoomed = new GameObject();
+			CardZoomed = new GameObject();
+
+
+			GameObject zoomedCardArt = (GameObject)Instantiate (cardArt, cardArt.transform.localPosition, cardArt.transform.rotation); 
+			TextMesh zoomedTitle = (TextMesh)Instantiate (title, title.transform.localPosition, title.transform.rotation);
+			TextMesh zoomedDescription = (TextMesh)Instantiate (description, description.transform.localPosition, description.transform.rotation); 
+
+
+			zoomedCardArt.transform.SetParent (CardZoomed.transform);
+			zoomedTitle.transform.SetParent (CardZoomed.transform);
+			zoomedDescription.transform.SetParent (CardZoomed.transform);
 
             //create a new component on the zoomed card
             SpriteRenderer newSprite = CardZoomed.AddComponent<SpriteRenderer>();
             //add the current sprite (card faced up)
             newSprite.sprite = currentSprite.sprite;
+
+
             //change the order of layer in order to show it over other sprites
-            newSprite.sortingOrder = 1;
+            //newSprite.sortingOrder = 1;
+
+
+//			Debug.Log (zoomedTitle.transform.position);
 
             //set the new position and scal of the zoomed card
             Transform goTransform = this.gameObject.transform;
@@ -146,23 +230,45 @@ public abstract class Card : MonoBehaviour
             else
                 CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z);
 
+//			Debug.Log (zoomedTitle.transform.position);
+
             CardZoomed.transform.localScale = goTransform.localScale * 2;
+
 
             //hide the real card sprite
             currentSprite.sprite = null;
-
+			cardArt.SetActive (false);
+			title.gameObject.SetActive (false);
+			description.gameObject.SetActive (false);
+			//this.gameObject.SetActive(false);
         }
         else
         {
-            if (CardZoomed)
+			
+			if (CardZoomed)
             {
                 //destroy the zoomed card
                 Destroy(CardZoomed);
                 //shwo the real card sprite
                 currentSprite.sprite = faceUpSprite;
+				cardArt.SetActive (true);
+				title.gameObject.SetActive (true);
+				description.gameObject.SetActive (true);
             }
         }
     }
+
+	/*
+    void ZoomCard(bool zoomed) {
+        if (zoomed && !isBeingDragged)
+        {
+            this.transform.localScale = localScale * 2;
+        }
+        else {
+            this.transform.localScale = localScale;
+        }
+    }
+	*/
 
     //change the layer order of the card
     public void putInFront(bool inFront)
@@ -175,6 +281,7 @@ public abstract class Card : MonoBehaviour
 
     public void returnBackToHand()
     {
+		Debug.Log (handPosition);
         this.transform.position = handPosition;
     }
 }

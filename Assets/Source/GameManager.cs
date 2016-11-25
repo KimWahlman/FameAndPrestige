@@ -17,9 +17,15 @@ public class GameManager : MonoBehaviour {
     public Image currentImage;
     public Sprite[] Sprites;
     private NetworkManager networkManager;
+	private LoadCards loadCards;
     public Dictionary<string, int> pointsDictionnary;
-    void Start()
+    
+	void Start()
     {
+
+		loadCards = GameObject.Find("LoadCards").GetComponent<LoadCards>();
+		loadCards.Load ();
+
         if(debugMode)
         {
             initGame(0);

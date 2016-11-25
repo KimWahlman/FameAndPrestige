@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 public class ShowCard : MonoBehaviour {
 
@@ -9,32 +10,43 @@ public class ShowCard : MonoBehaviour {
     public GameObject cardArt;
     public float xPixel;
     public float yPixel;
-     
-    public GameObject card; 
+    
 	// Use this for initialization
+
+
+
+
+	public void LoadResource(string cardTitle, string cardDescription, string imgPath){
+
+
+		Debug.Log ("--------LOADING RESOURCES---------");
+		title.text = cardTitle;
+
+		var originaltext = cardDescription;
+		description.text = TextWrap(originaltext,30);
+		//Debug.Log (imgPath);
+
+
+		Sprite[] testTexture = Resources.LoadAll<Sprite>(imgPath);
+		//Debug.Log (testTexture [0]);
+		cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
+		xPixel = 7;
+		yPixel = 8;
+
+
+		var xScale = xPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
+		var yScale = yPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
+		//Debug.Log(cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size);
+
+		cardArt.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(xScale,yScale,0);
+	}
+
+
 	void Start () {
-        xPixel = 7;
-        yPixel = 8;
-  
-        title.text = card.GetComponent<Card>().cardName;
 
-        var originaltext = "Word cards are the type of cards that the players play out during the game. Each player should always have three cards on their hand";
-        description.text = TextWrap(originaltext,30);
 
-        Sprite[] testTexture = Resources.LoadAll<Sprite>("picture");
-        cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
-                 
-        //Debug.Log("anchorMax" + (cardArt.GetComponent<RectTransform>().anchorMax));
-        /*var anchorMax = cardArt.GetComponent<RectTransform>().anchorMax;
-        var anchorMin = cardArt.GetComponent<RectTransform>().anchorMin;
-        var x = anchorMax.x - anchorMin.x;
-        var y = anchorMax.y - anchorMin.y;*/
-
-        var xScale = xPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
-        var yScale = yPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
-        //Debug.Log(cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size);
-                
-        cardArt.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(xScale,yScale,0);
+		Debug.Log ("--------STARTING OF GAMEOBJECT---------");
+        
     }
 
     public static string TextWrap(string originaltext, int LineLimit)
