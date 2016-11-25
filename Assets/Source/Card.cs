@@ -17,6 +17,8 @@ public abstract class Card : MonoBehaviour
     public Sprite faceDownSprite;
     SpriteRenderer currentSprite;
 
+    private Vector3 localScale;
+
     GameObject CardZoomed;
 
     public bool isBeingDragged = false;
@@ -24,12 +26,13 @@ public abstract class Card : MonoBehaviour
 
     void Awake()
     {
+        localScale = this.transform.localScale;
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
         deckPosition = this.transform.position;
     }
 
     void OnMouseEnter()
-    {
+    {        
         if(currentSprite.sprite == faceUpSprite && !Input.GetKey(KeyCode.Mouse0))
         {
             ZoomCard(true);
@@ -123,6 +126,7 @@ public abstract class Card : MonoBehaviour
         this.gameObject.transform.rotation = posTransform.rotation;
     }
 
+    /*
     void ZoomCard(bool zoomed)
     {
        if(zoomed && !isBeingDragged)
@@ -163,6 +167,18 @@ public abstract class Card : MonoBehaviour
             }
         }
     }
+    */
+
+    void ZoomCard(bool zoomed) {
+        if (zoomed && !isBeingDragged)
+        {
+            this.transform.localScale = localScale * 2;
+        }
+        else {
+            this.transform.localScale = localScale;
+        }
+    }
+
 
     //change the layer order of the card
     public void putInFront(bool inFront)
