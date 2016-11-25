@@ -7,68 +7,44 @@ public class ShowCard : MonoBehaviour {
     public TextMesh title;
     public TextMesh description;
     public GameObject cardArt;
+    public float xPixel;
+    public float yPixel;
      
-    public GameObject card;
-
+    public GameObject card; 
 	// Use this for initialization
 	void Start () {
+        xPixel = 7;
+        yPixel = 8;
   
         title.text = card.GetComponent<Card>().cardName;
 
         var originaltext = "Word cards are the type of cards that the players play out during the game. Each player should always have three cards on their hand";
         description.text = TextWrap(originaltext,30);
 
-        // Debug.Log("datapath:"+Application.dataPath+ "persistentDataPath:" + Application.persistentDataPath);
-        GameObject test = GameObject.Find("Image");
-        RectTransform testTransform = test.GetComponent<RectTransform>();
-        Vector3 a = testTransform.transform.localScale;
-        Debug.Log(a);
-
-
-        Debug.Log(Resources.Load("picture/tree"));
-        Sprite[] testTexture = Resources.LoadAll<Sprite>("picture/tree");
-
-
-
+        Sprite[] testTexture = Resources.LoadAll<Sprite>("picture");
         cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
-        
-        //cardArt.transform.localScale = this.transform.localScale;
-        Debug.Log(testTexture[0]);
+                 
+        //Debug.Log("anchorMax" + (cardArt.GetComponent<RectTransform>().anchorMax));
+        /*var anchorMax = cardArt.GetComponent<RectTransform>().anchorMax;
+        var anchorMin = cardArt.GetComponent<RectTransform>().anchorMin;
+        var x = anchorMax.x - anchorMin.x;
+        var y = anchorMax.y - anchorMin.y;*/
 
-
-        cardArt.transform.localScale = new Vector2(testTransform.rect.width,testTransform.rect.height);
-
-        //cardArt.transform.localScale = a;
-
-        Debug.Log(test);
-        /*
-        string builder = "";
-
-        float rowLimit = 1.9f; //find the sweet spot    
-        string text = "This is some text we'll use to demonstrate word wrapping. It would be too easy if a proper wrapping was already implemented in Unity :)";
-        string[] parts = text.Split(' ');
-        for (int i = 0; i < parts.Length; i++)
-        {
-            Debug.Log(parts[i]);
-            description.text += parts[i] + " ";
-           // description.renderer
-            if (description.GetComponent<Renderer>().bounds.extents.x > rowLimit)
-            {
-                description.text = builder.TrimEnd() + System.Environment.NewLine + parts[i] + " ";
-            }
-            builder = description.text;
-        }*/
-
+        var xScale = xPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
+        var yScale = yPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
+        //Debug.Log(cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size);
+                
+        cardArt.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(xScale,yScale,0);
     }
 
-    public static string TextWrap(string originaltext, int LowLimit)
+    public static string TextWrap(string originaltext, int LineLimit)
     {
         string output = "";
         string[] words = originaltext.Split(' ');
         int line = 0;
         foreach (string word in words)
         {
-            if ((line + word.Length + 1) <= LowLimit)
+            if ((line + word.Length + 1) <= LineLimit)
             {
                 output += " " + word;
                 line += word.Length + 1;
