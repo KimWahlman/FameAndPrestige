@@ -24,6 +24,7 @@ public class DragAndDrop : MonoBehaviour
 
     void OnMouseDown()
     {
+        //Debug.Log("OnMouseDrag");
         grabCard();
     }
     void OnMouseUp()
@@ -48,7 +49,7 @@ public class DragAndDrop : MonoBehaviour
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
 
         draggedCard = gameObject.GetComponent<Card>();
-
+        
         //if it's mine allow the player to drag it
         if (!draggedCard.hasBeenPlayed && draggedCard.isMine && gameManager.checkPlayerTurn())
         {
@@ -57,16 +58,12 @@ public class DragAndDrop : MonoBehaviour
             draggedCard.putInFront(true);
 			this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         }
-        else
-        {
-            dragging = false;
-			this.gameObject.layer = l;
-        }
     }
 
     //when the card is dropped
     void releaseCard()
     {
+        Debug.Log("draggedCard hasBeenPlayed:"+draggedCard.hasBeenPlayed+ draggedCard.isMine+ gameManager.checkPlayerTurn());
         if (!draggedCard.hasBeenPlayed && draggedCard.isMine && gameManager.checkPlayerTurn())
         {
             RaycastHit hit;
@@ -76,14 +73,12 @@ public class DragAndDrop : MonoBehaviour
 			Debug.Log (Physics.Raycast (ray, out hit));
             if (Physics.Raycast(ray, out hit))
             {
-				Debug.Log (hit.collider.name);
-				Debug.Log (hit.transform.gameObject.name);
-				Debug.Log (ray);			
+				Debug.Log ("Ray Cast in:"+hit.collider.name);             		
 
                 //if the card is dropped on the zone
                 if (hit.transform.gameObject.name == "PlayableZone")
                 {
-					Debug.Log ("DROPPED INTO PLAYZONE");
+                    Debug.Log("DROPPED INTO PLAYZONE");
                     //get the script of the zone (contain the slots position)
                     pz = hit.transform.gameObject.GetComponent<PlayableZone>();
 
@@ -92,56 +87,72 @@ public class DragAndDrop : MonoBehaviour
 
                     //networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
                     gameManager.storeCard(draggedCard.id);
-
                     gameManager.ReOrderPlayerHandAfterDrop(draggedCard.id);
-					this.gameObject.layer = l;
+
                     //(should request to the server if i can play)
                     //if yes, use the card
                     //else, put the card back
-					this.gameObject.layer = l;
-					dragging = false;
-					draggedCard.isBeingDragged = false;
-					draggedCard.putInFront(false);
-					return;
+                    draggedCard.hasBeenPlayed = true;
+                    setDraggingFlag(false);
+                    return;
 
                     //use the dropped card 
                     //draggedCard.playCard();
                     //gameManager.ReOrderPlayerHand(draggedCard.ownerID, draggedCard.id);
                 }
-                else
-                {
-					Debug.Log ("add the card to the player hand if it has been dragged on playable zone first");
-                    //add the card to the player hand if it has been dragged on playable zone first
-                    if(!gameManager.myPlayer.cardsHeld.ContainsKey(draggedCard.id))
+                else {
+                    //this is for collider with other cards;
+                    Debug.Log("collider with other cards");
+                   
+                    if (!gameManager.myPlayer.cardsHeld.ContainsKey(draggedCard.id))
                     {
-                        gameManager.myPlayer.cardsHeld.Add(draggedCard.id, draggedCard);
-                        
-                        //get the next position available in the player hand
-                        draggedCard.handPosition = gameManager.playerHands[gameManager.myPlayer.idPlayer].newCard().position;
-						this.gameObject.layer = l;
-						gameManager.removeStoredCard(draggedCard.id);
-						dragging = false;
-						draggedCard.isBeingDragged = false;
-						draggedCard.putInFront(false);
-						return;
+                        //return from PlayZone
+                        draggedCard.hasBeenPlayed = false;
+                        gameManager.removeStoredCard(draggedCard.id);
+                        gameManager.ReOrderPlayerHandAfterReturn(draggedCard.id, draggedCard);                        
                     }
-
-					draggedCard.returnBackToHand();
-					this.gameObject.layer = l;
-					dragging = false;
-					draggedCard.isBeingDragged = false;
-					draggedCard.putInFront(false);
-					return;
-
-                }
+                    else {
+                        //return from voidZone
+                        draggedCard.returnBackToHand();
+                    }
+                    setDraggingFlag(false);
+                }                         
+            }else
+            {
+                Debug.Log("-------------NO RAY OUTPUT--------------");
+                CheckFrom();
+                return;
             }
         }
-		Debug.Log ("DROPPED INTO VOID");
+		//Debug.Log ("DROPPED INTO VOID");
 		//return to hand if it's dropped in the void
-		draggedCard.returnBackToHand();
-		//remove from playing zone and cars ToPlay
+		//draggedCard.returnBackToHand();
+		//remove from playing zone and cars ToPlay        
+    }
 
+    void CheckFrom() {
+        if (!gameManager.myPlayer.cardsHeld.ContainsKey(draggedCard.id))
+        {
+            Debug.Log("--Return back to hand--");
+            gameManager.removeStoredCard(draggedCard.id);
+            gameManager.ReOrderPlayerHandAfterReturn(draggedCard.id, draggedCard);                 
+            setDraggingFlag(false);
 
+            //return;
+        }
+        else
+        {
+            Debug.Log("--has in hand--");
+            draggedCard.returnBackToHand();            
+            setDraggingFlag(false);
+        }
+    }
+
+    void setDraggingFlag(bool flag) {
+        draggedCard.gameObject.layer = l;
+        dragging = flag;
+        draggedCard.isBeingDragged = flag;
+        draggedCard.putInFront(flag);
     }
 
 

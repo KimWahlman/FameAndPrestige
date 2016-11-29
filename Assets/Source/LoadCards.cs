@@ -19,9 +19,9 @@ public class LoadCards : MonoBehaviour {
 		string json = Resources.LoadAll("card_text")[0].ToString();
 		JSONObject cards = new JSONObject(json);
 		int size = cards.list.Count;
-		Debug.Log (size);
+		//Debug.Log (size);
 		foreach(JSONObject card_json in cards.list){
-			Debug.Log (card_json["id"]);
+			//Debug.Log (card_json["id"]);
 			GameObject card = (GameObject)Instantiate (cardPrefab, new Vector3 (0, 0, 0), Quaternion.identity);
 			card.transform.SetParent(Parent.transform);
 			card.name = "Card_"+card_json ["id"].ToString();

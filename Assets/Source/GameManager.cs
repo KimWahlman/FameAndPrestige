@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour {
     private NetworkManager networkManager;
 	private LoadCards loadCards;
     public Dictionary<string, int> pointsDictionnary;
-    
+
+    public int TempCardId; 
 	void Start()
     {
 
@@ -177,11 +178,27 @@ public class GameManager : MonoBehaviour {
         int id = 0;
         foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
         {
-            Debug.Log("card held : " + card.Value);
+            //Debug.Log("card held : " + card.Value);
             card.Value.PositionOnTheHand(playerHands[myPlayer.idPlayer].posList[id++]);
         }
 
         
+    }
+
+    public void ReOrderPlayerHandAfterReturn(int cardID,Card draggedCard)
+    {        
+        //Card is back to player 
+        myPlayer.cardsHeld.Add(cardID, draggedCard);
+        draggedCard.handPosition = playerHands[myPlayer.idPlayer].newCard().position;
+        draggedCard.gameObject.layer = 1;
+        Debug.Log("draggedcard position::"+ draggedCard.handPosition);    
+
+        int id = 0;
+        foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
+        {
+            Debug.Log("card held : " + card.Value);
+            card.Value.PositionOnTheHand(playerHands[myPlayer.idPlayer].posList[id++]);
+        }
     }
 
     //should be called when the cards are played

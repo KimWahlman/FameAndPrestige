@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public abstract class Card : MonoBehaviour
@@ -8,7 +9,7 @@ public abstract class Card : MonoBehaviour
     public int cost;
     public bool hasBeenPlayed = false;
     public int ownerID;
-    public bool isMine;
+    public bool isMine;    
 
     public Vector3 handPosition;
     public Vector3 deckPosition;
@@ -35,13 +36,13 @@ public abstract class Card : MonoBehaviour
     {
         localScale = this.transform.localScale;
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
-        deckPosition = this.transform.position;
+        deckPosition = this.transform.position;        
     }
 
 	public void LoadResource(string cardTitle, string cardDescription, string imgPath){
 
 
-		Debug.Log ("--------LOADING RESOURCES---------");
+		//Debug.Log ("--------LOADING RESOURCES---------");
 		title.text = cardTitle;
 
 		var originaltext = cardDescription;
@@ -51,7 +52,7 @@ public abstract class Card : MonoBehaviour
 		//Debug.Log ("picture/" + imgPath);
 
 		Sprite[] testTexture = Resources.LoadAll<Sprite>("picture/"+imgPath);
-		Debug.Log (testTexture [0]);
+		//Debug.Log (testTexture [0]);
 		cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
 		xPixel = 7;
 		yPixel = 8;
@@ -96,14 +97,13 @@ public abstract class Card : MonoBehaviour
 
     void OnMouseExit()
     {
-		Debug.Log ("MouseExit");
         ZoomCard(false);
     }
 
     void OnMouseDown()
     {
-		Debug.Log ("MouseDown");
-       	ZoomCard(false);
+        Debug.Log("OnMouseDown");
+       	//ZoomCard(false);
     }
 
 
@@ -125,12 +125,18 @@ public abstract class Card : MonoBehaviour
 
     public void hideCard()
     {
-        currentSprite.sprite = faceDownSprite;
+        //currentSprite.sprite = faceDownSprite;
 		currentSprite.sprite = null;
+        /*
 		cardArt.SetActive (false);
 		title.gameObject.SetActive (false);
 		description.gameObject.SetActive (false);
+        */
         this.gameObject.SetActive(false);
+
+        if (CardZoomed) {
+            Destroy(CardZoomed);
+        }
     }
 
     public void popCard(bool cardIsMine, Transform posTransform, int playerID)
@@ -226,10 +232,11 @@ public abstract class Card : MonoBehaviour
 
             //if card has been played then zoom it but without the offset on Y axis
             if(!hasBeenPlayed)
-                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z);
+                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z - 1);
             else
-                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z);
+                CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z - 1);
 
+            CardZoomed.gameObject.layer = 1;
 //			Debug.Log (zoomedTitle.transform.position);
 
             CardZoomed.transform.localScale = goTransform.localScale * 2;
@@ -240,7 +247,8 @@ public abstract class Card : MonoBehaviour
 			cardArt.SetActive (false);
 			title.gameObject.SetActive (false);
 			description.gameObject.SetActive (false);
-			//this.gameObject.SetActive(false);
+
+            //this.gameObject.SetActive(false);           
         }
         else
         {
@@ -254,8 +262,10 @@ public abstract class Card : MonoBehaviour
 				cardArt.SetActive (true);
 				title.gameObject.SetActive (true);
 				description.gameObject.SetActive (true);
+                
             }
         }
+        //Debug.Log("this.position:"+ this.transform.localPosition);
     }
 
 	/*
@@ -281,7 +291,7 @@ public abstract class Card : MonoBehaviour
 
     public void returnBackToHand()
     {
-		Debug.Log (handPosition);
+		Debug.Log ("handPosition:"+handPosition);
         this.transform.position = handPosition;
     }
 }
