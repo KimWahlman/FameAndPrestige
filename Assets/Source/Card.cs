@@ -148,6 +148,11 @@ public abstract class Card : MonoBehaviour
         useCard();
     }
 
+    public void discardCard()
+    {
+
+    }
+
     public void revealCard()
     {
         currentSprite.sprite = faceUpSprite;
@@ -164,10 +169,9 @@ public abstract class Card : MonoBehaviour
 		description.gameObject.SetActive (false);
         */
         this.gameObject.SetActive(false);
-
-        if (CardZoomed) {
+        if(CardZoomed)
             Destroy(CardZoomed);
-        }
+
     }
 
     public void popCard(bool cardIsMine, Transform posTransform, int playerID)

@@ -17,4 +17,10 @@ public class Hands : MonoBehaviour {
     {
         amountOfCards--;
     }
+
+    public void emptyHand()
+    {
+        amountOfCards = 0;
+    }
+    
 }

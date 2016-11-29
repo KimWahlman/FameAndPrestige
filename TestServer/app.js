@@ -10,6 +10,8 @@ var turns = 0;
 var theme = 0;
 var themes = ['nature','horror','history','folklore'];
 shuffleArray(themes);
+var charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
+shuffleArray(charactersAvailable);
 var tmp ;
 
 var available_cards;
@@ -17,13 +19,13 @@ var discard_cards=[];
 
 
 console.log(themes);
+console.log(charactersAvailable)
 
 function loadDB(){
 
     
     tmp = JSON.parse(fs.readFileSync('./deck.json','utf-8'));
     tmp.forEach(function(line){
-        //console.log(line);
         cards[line.id] = JSON.parse(JSON.stringify(line));
     });
 
@@ -102,6 +104,67 @@ function sendDrawCard (socket, playerId) {
         delete available_cards[keyId];
 }
 
+function Power_Mary(socket, playerId)
+{
+    var pointsEarned = 0;
+
+    for(var id in clients)
+    {
+        console.log("current player checked " + clients[id].id)
+
+        var indexToRemove = [];
+
+        if(clients[id].id != playerId)
+        {
+            for (var i = 0; i < 4; i++) {
+
+                for (var y = cards[clients[id].cards[i]].theme.length - 1; y >= 0; y--) {
+
+                    var thToCheck = cards[clients[id].cards[i]].theme[y];
+
+                    if(thToCheck == "horror")
+                    {
+
+                        socket.emit("DISCARD_CARD", {playerID: clients[id].id, cardID: clients[id].cards[i]})
+                        socket.broadcast.emit("DISCARD_CARD", {playerID: clients[id].id, cardID: clients[id].cards[i]})
+                        pointsEarned++;
+
+                        var indexCard = clients[id].cards.indexOf(Number(clients[id].cards[i]));
+                        indexToRemove.push(indexCard);
+                    }
+                };
+            };
+        }
+
+        for (var idToRmv = indexToRemove.length - 1; idToRmv >= 0; idToRmv--) {
+            clients[id].cards.splice(indexToRemove[idToRmv], 1)
+        };
+
+    }
+    
+    UpdateScore(socket, playerId, pointsEarned);
+
+    socket.emit("REFILL_HAND");
+    socket.broadcast.emit("REFILL_HAND");
+
+}
+
+function UpdateScore(socket, playerID, points)
+{
+        clients[socket.client.id].score = clients[socket.client.id].score + points;
+        clients[socket.client.id].ink = clients[socket.client.id].ink + points;
+
+        if(clients[socket.client.id].ink > 16)
+        {
+           clients[socket.client.id].ink = 16; 
+        }
+
+        socket.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });
+        socket.broadcast.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });
+
+}
+
+
 
 io.on('connection', function(socket){ 
 
@@ -123,6 +186,8 @@ io.on('connection', function(socket){
         clients[socket.client.id] = {};
         clients[socket.client.id].name = data.name;
         clients[socket.client.id].id = Object.keys(clients).indexOf(socket.client.id);
+        clients[socket.client.id].score = 0;
+        clients[socket.client.id].ink = 0;
         clients[socket.client.id].cards = [];
 
         socket.emit("ASSIGN_ID", {id : Object.keys(clients).indexOf(socket.client.id)});
@@ -140,6 +205,9 @@ io.on('connection', function(socket){
 
             socket.emit("CHANGE_THEME", { theme: themes[0] });            
             socket.broadcast.emit("CHANGE_THEME", { theme: themes[0]});
+
+            socket.emit("ASSIGN_CHARACTER", {chars: charactersAvailable})
+            socket.broadcast.emit("ASSIGN_CHARACTER", {chars: charactersAvailable})
 
         }
 	});
@@ -163,7 +231,6 @@ io.on('connection', function(socket){
 
     	socket.emit("ROLL_DICE",{roll: Math.floor(Math.random() * 20)+""})
   	});*/
-
 
 
   	/*
@@ -256,10 +323,11 @@ io.on('connection', function(socket){
         if(counter.checkLinks(cards_toCheck)){
             console.log("CHECK POINT WITH " + themes[theme%4]);
             var point = counter.countPoints(cards_toCheck, themes[theme%4]);
-            console.log(point);
 
-            socket.emit("PLAY_CARD", {cards : card_ids.join(), playerID : clients[playerId].id, totalPoints : point});
-            socket.broadcast.emit("PLAY_CARD", {cards : card_ids.join(), playerID : clients[playerId].id, totalPoints : point});
+            socket.emit("PLAY_CARD", {cards : card_ids.join(), playerID : clients[playerId].id});
+            socket.broadcast.emit("PLAY_CARD", {cards : card_ids.join(), playerID : clients[playerId].id});
+
+            UpdateScore(socket, clients[playerId].id, point);
 
             console.log("clients[playerId].cards");
             console.log(clients[playerId].cards);
@@ -288,6 +356,157 @@ io.on('connection', function(socket){
         }
 
        
+    });
+
+    socket.on("USE_POWER", function(data){
+
+        console.log("power received");
+        console.log(data);
+
+        switch(data["Power_Name"]) {
+    case "BETT":
+        break;
+    case "WILL":
+        break;
+    case "GRIM":
+        break;
+    case "MARY":
+        Power_Mary(socket, data["player_ID"]);
+        break;
+    default:
+        break;
+    } 
+
+    });
+
+    socket.on("SHAME", function(data)
+    {
+        var player_ID = data["Player_ID"];
+        var Opponent_ID = data["Opponent_ID"];
+        var Theme = data["Theme"];
+        var earnedPoints = data["EarnedPoints"];
+        var cost = data["Cost"];
+
+        var ptHorr = 0, ptFolk = 0, ptHist = 0, ptNat = 0;
+
+        console.log ("SHAME  >>> PlayerID : " + player_ID + "  OpponentID : " + Opponent_ID + "  Theme : "  + Theme);
+
+        for(var id in clients)
+        {
+            if(clients[id].id == Opponent_ID)
+            {
+                var savedClientID = id;
+
+                for (var i = 0; i < 4; i++) {
+
+                    for (var y = cards[clients[id].cards[i]].theme.length - 1; y >= 0; y--) {
+
+                        var thToCheck = cards[clients[id].cards[i]].theme[y];
+                        var cardPoint = parseInt(cards[clients[id].cards[i]].point);
+
+                        switch(thToCheck)
+                        {
+                            case "horror":
+                                ptHorr += cardPoint;
+                                break;
+                            case "folklore":
+                                ptFolk += cardPoint;
+                                break;
+                            case "history":
+                                ptHist += cardPoint;
+                                break;  
+                            case "nature":
+                                ptNat += cardPoint;
+                                break;
+                        }
+                    };
+                };
+            }
+        }
+
+        console.log ("horror = " + ptHorr+ " folklore = " + ptFolk+  " history = " +ptHist + " nature = " + ptNat);
+
+       // var dictPoints = {parseInt(ptHorr): "horror", parseInt(ptFolk): "folklore", parseInt(ptHist): "history", parseInt(ptNat): "nature"};
+        var highestThemes = [];
+        var dictPoints = {"horror" : ptHorr, "folklore" : ptFolk, "history" : ptHist, "nature" : ptNat};
+        var bestTheme = Object.keys(dictPoints).reduce(function(a, b){ return dictPoints[a] > dictPoints[b] ? a : b });
+        var bestResult = dictPoints[bestTheme];
+        
+        highestThemes.push(bestTheme);
+        delete dictPoints[bestTheme];
+
+        console.log("bestTheme = " +bestTheme);
+
+        console.log("____");
+
+
+        for(var y = Object.keys(dictPoints).length - 1; y >= 0; y--)
+        {
+            var tmpBestTheme = Object.keys(dictPoints).reduce(function(a, b){ return dictPoints[a] > dictPoints[b] ? a : b }); 
+            var tmpBestResult = dictPoints[tmpBestTheme];
+            console.log("tmpBest = " +tmpBestTheme);
+            if(bestResult == tmpBestResult)
+            {
+                highestThemes.push(tmpBestTheme);
+                delete dictPoints[tmpBestTheme];
+            } 
+        }
+
+        console.log("____");
+
+
+        for (var i = highestThemes.length - 1; i >= 0; i--) {
+            if(Theme == highestThemes[i])
+            {
+                console.log(highestThemes[i]);
+
+                var indexToRemove = [];
+
+                for (var i = clients[savedClientID].cards.length - 1; i >= 0; i--) {
+                    socket.emit("DISCARD_CARD", {playerID: clients[savedClientID].id, cardID: clients[savedClientID].cards[i]})
+                    socket.broadcast.emit("DISCARD_CARD", {playerID: clients[savedClientID].id, cardID: clients[savedClientID].cards[i]})
+
+                    //var indexCard = clients[savedClientID].cards.indexOf(Number(clients[savedClientID].cards[i]));
+                    //indexToRemove.push(indexCard);
+
+                    //console.log(indexToRemove);
+                };
+
+               /* for (var idToRmv = indexToRemove.length - 1; idToRmv >= 0; idToRmv--) {
+                    clients[savedClientID].cards.splice(indexToRemove[idToRmv], 1)
+                    console.log( clients[savedClientID].cards);
+                };*/
+                clients[savedClientID].cards = [];
+                clients[socket.client.id].score = clients[socket.client.id].score + parseInt(earnedPoints);
+
+                break;
+            }
+        };
+
+        clients[socket.client.id].ink = clients[socket.client.id].ink - parseInt(cost);
+        UpdateScore(socket, player_ID, 0);
+
+        socket.emit("REFILL_HAND");
+        socket.broadcast.emit("REFILL_HAND");
+
+
+        //var thPoints = { ptHorr : "horror", ptFolk: "folklore", ptHist: "history", ptNat: "nature"};
+        
+
+
+                        /*if(thToCheck == "horror")
+                        {
+
+                            socket.emit("DISCARD_CARD", {playerID: clients[id].id, cardID: clients[id].cards[i]})
+                            socket.broadcast.emit("DISCARD_CARD", {playerID: clients[id].id, cardID: clients[id].cards[i]})
+                            pointsEarned++;
+
+                            var indexCard = clients[id].cards.indexOf(Number(clients[id].cards[i]));
+                            indexToRemove.push(indexCard);
+                        }*/
+
+
+
     });
 
     socket.on("LIST_ROOMS", function(){
@@ -340,6 +559,16 @@ io.on('connection', function(socket){
             turns = 0;
         }
 
+    });
+
+    socket.on("ASK_FOR_CARDS", function()
+    {
+        var id = socket.client.id;
+        var playerId = Object.keys(clients).indexOf(socket.client.id);
+
+        for (var i = clients[id].cards.length; i < 4; i++) {
+            sendDrawCard(socket, playerId)
+        };
     });
 
 
