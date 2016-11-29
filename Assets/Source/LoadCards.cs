@@ -18,7 +18,6 @@ public class LoadCards : MonoBehaviour {
 
 		string json = Resources.LoadAll("card_text")[0].ToString();
 		JSONObject cards = new JSONObject(json);
-		int size = cards.list.Count;
 		//Debug.Log (size);
 		foreach(JSONObject card_json in cards.list){
 			//Debug.Log (card_json["id"]);
@@ -44,6 +43,13 @@ public class LoadCards : MonoBehaviour {
 			int.TryParse(card_json ["id"].ToString(), out cardID);
 
 			cardScript.id = cardID;
+			string toolTip = "";
+			foreach (JSONObject theme in card_json["theme"].list) {
+				toolTip += theme.ToString().Trim(new Char[] { ' ', '"' }) +" ";
+			}
+			toolTip += "\n"+card_json ["point"].ToString().Trim(new Char[] { ' ', '"' });
+
+			cardScript.toolTipText = toolTip;
 			tempDeck.Add (cardScript);
 
 		}

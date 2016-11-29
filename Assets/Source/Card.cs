@@ -22,21 +22,40 @@ public abstract class Card : MonoBehaviour
 	public TextMesh title;
 	public TextMesh description;
 	public GameObject cardArt;
+
 	public float xPixel;
 	public float yPixel;
 
     private Vector3 localScale;
+	public bool toShowPoint = true;
+
 
     GameObject CardZoomed;
 
     public bool isBeingDragged = false;
 
 
+	public string toolTipText ; // set this in the Inspector
+
+
+	private string currentToolTipText = "";
+	private GUIStyle guiStyleFore;
+	private GUIStyle guiStyleBack;
+
+
+
     void Awake()
     {
         localScale = this.transform.localScale;
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
-        deckPosition = this.transform.position;        
+        deckPosition = this.transform.position;       
+
+		guiStyleFore = new GUIStyle();
+		guiStyleFore.fontSize = 16;
+		guiStyleFore.normal.textColor = Color.white;
+		guiStyleFore.alignment = TextAnchor.UpperCenter ;
+		guiStyleFore.wordWrap = true;
+
     }
 
 	public void LoadResource(string cardTitle, string cardDescription, string imgPath){
@@ -95,9 +114,21 @@ public abstract class Card : MonoBehaviour
         }
     }
 
+	void OnMouseUp(){
+
+		if (toShowPoint) {
+			Debug.Log ("SHOW POINT");
+			currentToolTipText = toolTipText;
+			StartCoroutine (stopToolTip(1));
+		}
+	}
+
+
     void OnMouseExit()
     {
+		Debug.Log ("ON MOUSE EXIT");
         ZoomCard(false);
+		currentToolTipText = "";
     }
 
     void OnMouseDown()
@@ -209,12 +240,12 @@ public abstract class Card : MonoBehaviour
 			GameObject zoomedCardArt = (GameObject)Instantiate (cardArt, cardArt.transform.localPosition, cardArt.transform.rotation); 
 			TextMesh zoomedTitle = (TextMesh)Instantiate (title, title.transform.localPosition, title.transform.rotation);
 			TextMesh zoomedDescription = (TextMesh)Instantiate (description, description.transform.localPosition, description.transform.rotation); 
-
+	
 
 			zoomedCardArt.transform.SetParent (CardZoomed.transform);
 			zoomedTitle.transform.SetParent (CardZoomed.transform);
 			zoomedDescription.transform.SetParent (CardZoomed.transform);
-
+		
             //create a new component on the zoomed card
             SpriteRenderer newSprite = CardZoomed.AddComponent<SpriteRenderer>();
             //add the current sprite (card faced up)
@@ -239,7 +270,8 @@ public abstract class Card : MonoBehaviour
             CardZoomed.gameObject.layer = 1;
 //			Debug.Log (zoomedTitle.transform.position);
 
-            CardZoomed.transform.localScale = goTransform.localScale * 2;
+			this.localScale *= 1.5f;
+            CardZoomed.transform.localScale = goTransform.localScale * 1.8f;
 
 
             //hide the real card sprite
@@ -247,7 +279,7 @@ public abstract class Card : MonoBehaviour
 			cardArt.SetActive (false);
 			title.gameObject.SetActive (false);
 			description.gameObject.SetActive (false);
-
+		
             //this.gameObject.SetActive(false);           
         }
         else
@@ -256,17 +288,29 @@ public abstract class Card : MonoBehaviour
 			if (CardZoomed)
             {
                 //destroy the zoomed card
+				this.localScale /= 1.5f;
                 Destroy(CardZoomed);
                 //shwo the real card sprite
                 currentSprite.sprite = faceUpSprite;
 				cardArt.SetActive (true);
 				title.gameObject.SetActive (true);
 				description.gameObject.SetActive (true);
-                
-            }
+			}
         }
         //Debug.Log("this.position:"+ this.transform.localPosition);
     }
+
+
+	void OnGUI()
+	{
+		if (currentToolTipText != "")
+		{
+			var x = Event.current.mousePosition.x;
+			var y = Event.current.mousePosition.y;
+			GUI.Label (new Rect (x-149,y+21,300,60), currentToolTipText, guiStyleBack);
+			GUI.Label (new Rect (x-150,y+20,300,60), currentToolTipText, guiStyleFore);
+		}
+	}
 
 	/*
     void ZoomCard(bool zoomed) {
@@ -294,4 +338,11 @@ public abstract class Card : MonoBehaviour
 		Debug.Log ("handPosition:"+handPosition);
         this.transform.position = handPosition;
     }
+
+	IEnumerator stopToolTip(float time)
+	{
+		yield return new WaitForSeconds(time);
+
+		currentToolTipText = "";
+	}
 }

@@ -9,7 +9,6 @@ public class DragAndDrop : MonoBehaviour
     private float distance;
     private Card draggedCard;
 
-    private NetworkManager networkManager;
     private GameManager gameManager;
 
     private PlayableZone pz;
@@ -17,19 +16,22 @@ public class DragAndDrop : MonoBehaviour
 
     void Awake()
     {
-        networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 		l = this.gameObject.layer;
     }
 
-    void OnMouseDown()
+    void OnMouseDrag()
     {
-        //Debug.Log("OnMouseDrag");
+        Debug.Log("OnMouseDrag");
+		draggedCard = gameObject.GetComponent<Card>();
+		draggedCard.toShowPoint = false;
         grabCard();
     }
     void OnMouseUp()
     {
         releaseCard();
+		draggedCard = gameObject.GetComponent<Card>();
+		draggedCard.toShowPoint = true;
     }
 
     void Update()
