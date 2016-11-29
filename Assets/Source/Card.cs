@@ -8,6 +8,7 @@ public abstract class Card : MonoBehaviour
     public string cardName;
     public int cost;
     public bool hasBeenPlayed = false;
+    public bool isOnTheBoard = false;
     public int ownerID;
     public bool isMine;    
 
@@ -200,6 +201,7 @@ public abstract class Card : MonoBehaviour
         isMine = cardIsMine;
 
         hasBeenPlayed = false;
+        isOnTheBoard = false;
     }
 
     public void PositionOnTheHand(Transform posTransform, bool whileDrawing = false)
@@ -239,8 +241,7 @@ public abstract class Card : MonoBehaviour
         {
             //create new object to show the zoomed card
 			CardZoomed = new GameObject();
-
-
+            
 			GameObject zoomedCardArt = (GameObject)Instantiate (cardArt, cardArt.transform.localPosition, cardArt.transform.rotation); 
 			TextMesh zoomedTitle = (TextMesh)Instantiate (title, title.transform.localPosition, title.transform.rotation);
 			TextMesh zoomedDescription = (TextMesh)Instantiate (description, description.transform.localPosition, description.transform.rotation); 
@@ -255,28 +256,18 @@ public abstract class Card : MonoBehaviour
             //add the current sprite (card faced up)
             newSprite.sprite = currentSprite.sprite;
 
-
-            //change the order of layer in order to show it over other sprites
-            //newSprite.sortingOrder = 1;
-
-
-//			Debug.Log (zoomedTitle.transform.position);
-
-            //set the new position and scal of the zoomed card
             Transform goTransform = this.gameObject.transform;
 
             //if card has been played then zoom it but without the offset on Y axis
-            if(!hasBeenPlayed)
+            if(!isOnTheBoard)
                 CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z - 1);
             else
                 CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z - 1);
 
             CardZoomed.gameObject.layer = 1;
-//			Debug.Log (zoomedTitle.transform.position);
 
 			this.localScale *= 1.5f;
             CardZoomed.transform.localScale = goTransform.localScale * 1.8f;
-
 
             //hide the real card sprite
             currentSprite.sprite = null;
@@ -339,6 +330,7 @@ public abstract class Card : MonoBehaviour
     public void returnBackToHand()
     {
 		Debug.Log ("handPosition:"+handPosition);
+        isOnTheBoard = false;
         this.transform.position = handPosition;
     }
 

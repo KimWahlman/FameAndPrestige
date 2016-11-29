@@ -69,7 +69,7 @@ public class DragAndDrop : MonoBehaviour
         Debug.Log("draggedCard hasBeenPlayed:"+draggedCard.hasBeenPlayed+ draggedCard.isMine+ gameManager.checkPlayerTurn());
 		//draggedCard.transform.localPosition += new Vector3(0,0,1);
 
-        if (draggedCard.isMine && gameManager.checkPlayerTurn())
+        if (!draggedCard.hasBeenPlayed && draggedCard.isMine && gameManager.checkPlayerTurn())
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -80,7 +80,7 @@ public class DragAndDrop : MonoBehaviour
             {
 				Debug.Log ("Ray Cast in:"+hit.collider.name);             		
                 //if the card is dropped on the zone
-                if (hit.transform.gameObject.name == "PlayableZone")
+                if (hit.transform.gameObject.name == "PlayableZone" && !gameManager.checkStoredCard(draggedCard.id))
                 {
                     Debug.Log("DROPPED INTO PLAYZONE");
                     //get the script of the zone (contain the slots position)
@@ -88,31 +88,24 @@ public class DragAndDrop : MonoBehaviour
 
                     //assign the free slot position to the card
                     draggedCard.PositionOnTheBoard(pz.getSlot());
-
-                    //networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
+                    draggedCard.isOnTheBoard = true;
+                    
                     gameManager.storeCard(draggedCard.id);
 					gameManager.checkEndTurnButton ();
                     gameManager.ReOrderPlayerHandAfterDrop(draggedCard.id);
-
-                    //(should request to the server if i can play)
-                    //if yes, use the card
-                    //else, put the card back
-                    draggedCard.hasBeenPlayed = true;
+                    
                     setDraggingFlag(false);
                     return;
 
-                    //use the dropped card 
-                    //draggedCard.playCard();
-                    //gameManager.ReOrderPlayerHand(draggedCard.ownerID, draggedCard.id);
                 }
-                else {
+                else
+                {
                     //this is for collider with other cards;
                     Debug.Log("collider with other cards");
                    
                     if (!gameManager.myPlayer.cardsHeld.ContainsKey(draggedCard.id))
                     {
                         //return from PlayZone
-                        draggedCard.hasBeenPlayed = false;
                         gameManager.removeStoredCard(draggedCard.id);
                         gameManager.ReOrderPlayerHandAfterReturn(draggedCard.id, draggedCard);                        
                     }
@@ -120,12 +113,15 @@ public class DragAndDrop : MonoBehaviour
                         //return from voidZone
                         draggedCard.returnBackToHand();
                     }
-					gameManager.checkEndTurnButton ();
+
+                    
+                    gameManager.checkEndTurnButton ();
                     setDraggingFlag(false);
                 }                         
             }else
             {
                 Debug.Log("-------------NO RAY OUTPUT--------------");
+                
                 CheckFrom();
                 return;
             }

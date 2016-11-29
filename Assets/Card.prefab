@@ -216,7 +216,7 @@ TextMesh:
     three cards on their hand'
   m_OffsetZ: 0
   m_CharacterSize: 0.77
-  m_LineSpacing: 1
+  m_LineSpacing: 0.654655
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 1
@@ -242,6 +242,7 @@ MonoBehaviour:
   cardName: 
   cost: 0
   hasBeenPlayed: 0
+  isOnTheBoard: 0
   ownerID: 0
   isMine: 0
   handPosition: {x: 0, y: 0, z: 0}

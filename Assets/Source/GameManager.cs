@@ -80,9 +80,9 @@ public class GameManager : MonoBehaviour {
 	public void checkEndTurnButton(){
 	
 		if (playableZone.nextEmptySlot != 0) {
-			EndTurnBt.interactable = false;
+            UIManager.EndTurnBt.interactable = false;
 		} else {
-			EndTurnBt.interactable = true;
+            UIManager.EndTurnBt.interactable = true;
 		}
 	}
 
@@ -261,14 +261,15 @@ public class GameManager : MonoBehaviour {
             Debug.Log("card held : " + card.Value);
             card.Value.PositionOnTheHand(playerHands[myPlayer.idPlayer].posList[id++]);
         }
+
+        draggedCard.isOnTheBoard = false;
     }
 
     //should be called when the cards are played
     public void ReOrderPlayerHands(int playerID, List<int> cardIDs)
     {
         print(" in reorderhand , id player  == " + playerID);
-
-
+        
         foreach (var c in cardIDs)
             playerHands[playerID].deadCard();
 
@@ -303,6 +304,11 @@ public class GameManager : MonoBehaviour {
 		playableZone.addCard ();
     }
 
+    public bool checkStoredCard(int cardID)
+    {
+        return toPlay.IndexOf(cardID) != -1;
+    }
+
     public void removeStoredCard(int cardID)
     {
         if(toPlay.Contains(cardID))
@@ -327,7 +333,8 @@ public class GameManager : MonoBehaviour {
     {
         if(toPlay.Count != 0)
             networkManager.SendPlayCard(myPlayer.idPlayer, toPlay);
-		EndTurnBt.interactable = true;
+
+        UIManager.EndTurnBt.interactable = true;
     }
 
     public void playCard(int cardID)

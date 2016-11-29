@@ -9,12 +9,10 @@ public class LoadCards : MonoBehaviour {
 	public GameObject cardPrefab;
 	public GameObject Parent;
 	private Card showCard;
-	private GameManager gameManager;
+	public GameManager gameManager;
 
 	public void Load(){
 		List<Card> tempDeck = new List<Card> ();
-
-		gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
 		string json = Resources.LoadAll("card_text")[0].ToString();
 		JSONObject cards = new JSONObject(json);
@@ -30,7 +28,7 @@ public class LoadCards : MonoBehaviour {
 			//Debug.Log (showCard);
 
 			string title = card_json ["name"].ToString().Trim(new Char[] { ' ', '"' });
-			string description = card_json ["description"].ToString().Trim(new Char[] { ' ', '"' });
+			string description = card_json ["description"].ToString().Trim(new Char[] { ' ', '"', '\n' });
 			string path = card_json ["img"].ToString().Trim(new Char[] { ' ', '"' });
 
 			showCard.LoadResource (title, description, path);
