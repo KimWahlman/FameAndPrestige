@@ -77,6 +77,15 @@ public class GameManager : MonoBehaviour {
     public void CheckWinner(){
 
 	}
+		
+	public void checkEndTurnButton(){
+	
+		if (playableZone.nextEmptySlot != 0) {
+			EndTurnBt.interactable = false;
+		} else {
+			EndTurnBt.interactable = true;
+		}
+	}
 
     public void initGame(int playerID)
     {
@@ -317,6 +326,7 @@ public class GameManager : MonoBehaviour {
     {
         if(toPlay.Count != 0)
             networkManager.SendPlayCard(myPlayer.idPlayer, toPlay);
+		EndTurnBt.interactable = true;
     }
 
     public void playCard(int cardID)
