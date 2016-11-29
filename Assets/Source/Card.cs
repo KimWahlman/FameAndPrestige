@@ -66,7 +66,7 @@ public abstract class Card : MonoBehaviour
 
 		var originaltext = cardDescription;
 		description.text = TextWrap(originaltext,30);
-		//Debug.Log (imgPath);
+		Debug.Log (imgPath);
 
 		//Debug.Log ("picture/" + imgPath);
 

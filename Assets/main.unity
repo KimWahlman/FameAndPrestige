@@ -3211,6 +3211,7 @@ MonoBehaviour:
   - {fileID: 1568545691}
   - {fileID: 702141882}
   - {fileID: 549214153}
+  nextEmptySlot: 0
 --- !u!1 &1121904934
 GameObject:
   m_ObjectHideFlags: 0

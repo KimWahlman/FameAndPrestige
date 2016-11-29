@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PlayableZone : MonoBehaviour {
 
     public List<Transform> slotList = new List<Transform>();
-    int nextEmptySlot = 0;
+    public int nextEmptySlot = 0;
 
     public Transform getSlot()
     {

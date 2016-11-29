@@ -58,6 +58,7 @@ public class DragAndDrop : MonoBehaviour
             dragging = true;
             draggedCard.isBeingDragged = true;
             draggedCard.putInFront(true);
+			//draggedCard.transform.localPosition += new Vector3(0,0,-1);
 			this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         }
     }
@@ -66,7 +67,9 @@ public class DragAndDrop : MonoBehaviour
     void releaseCard()
     {
         Debug.Log("draggedCard hasBeenPlayed:"+draggedCard.hasBeenPlayed+ draggedCard.isMine+ gameManager.checkPlayerTurn());
-        if (!draggedCard.hasBeenPlayed && draggedCard.isMine && gameManager.checkPlayerTurn())
+		//draggedCard.transform.localPosition += new Vector3(0,0,1);
+
+        if (draggedCard.isMine && gameManager.checkPlayerTurn())
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -76,7 +79,6 @@ public class DragAndDrop : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
 				Debug.Log ("Ray Cast in:"+hit.collider.name);             		
-
                 //if the card is dropped on the zone
                 if (hit.transform.gameObject.name == "PlayableZone")
                 {
@@ -89,6 +91,7 @@ public class DragAndDrop : MonoBehaviour
 
                     //networkManager.SendPlayCard(draggedCard.ownerID, draggedCard.id);
                     gameManager.storeCard(draggedCard.id);
+					gameManager.checkEndTurnButton ();
                     gameManager.ReOrderPlayerHandAfterDrop(draggedCard.id);
 
                     //(should request to the server if i can play)
@@ -117,6 +120,7 @@ public class DragAndDrop : MonoBehaviour
                         //return from voidZone
                         draggedCard.returnBackToHand();
                     }
+					gameManager.checkEndTurnButton ();
                     setDraggingFlag(false);
                 }                         
             }else

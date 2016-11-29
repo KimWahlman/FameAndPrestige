@@ -24,7 +24,7 @@ console.log(charactersAvailable)
 function loadDB(){
 
     
-    tmp = JSON.parse(fs.readFileSync('./deck.json','utf-8'));
+    tmp = JSON.parse(fs.readFileSync('./card_text.json','utf-8'));
     tmp.forEach(function(line){
         cards[line.id] = JSON.parse(JSON.stringify(line));
     });
