@@ -7,14 +7,21 @@ public class PlayableZone : MonoBehaviour {
     public List<Transform> slotList = new List<Transform>();
     int nextEmptySlot = 0;
 
-    public Vector3 getSlot()
+    public Transform getSlot()
     {
-        return slotList[nextEmptySlot].position;
+        return slotList[nextEmptySlot];
     }
 
     public void addCard()
     {
         nextEmptySlot++;
+    }
+
+    public void removeCard()
+    {
+        if(nextEmptySlot != 0)
+            nextEmptySlot--;
+
     }
 
     public void emptyZone()

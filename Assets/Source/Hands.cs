@@ -13,8 +13,8 @@ public class Hands : MonoBehaviour {
         return posList[amountOfCards++];
     }
 
-    public Transform deadCard()
+    public void deadCard()
     {
-        return posList[amountOfCards--];
+        amountOfCards--;
     }
 }
