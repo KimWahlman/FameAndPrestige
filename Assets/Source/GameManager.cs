@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public GameObject[] handsGO;
     public PlayableZone playableZone;
     private NetworkManager networkManager;
+	private LoadCards loadCards;
     public Dictionary<string, int> pointsDictionnary;
 
     public bool debugMode;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
 
-		loadCards = GameObject.Find("LoadCards").GetComponent<LoadCards>();
+		loadCards = GameObject.Find("LoadManager").GetComponent<LoadCards>();
 		loadCards.Load ();
 
         if(debugMode)

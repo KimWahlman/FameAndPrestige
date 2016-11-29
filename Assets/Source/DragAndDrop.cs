@@ -102,7 +102,6 @@ public class DragAndDrop : MonoBehaviour
                     //draggedCard.playCard();
                     //gameManager.ReOrderPlayerHand(draggedCard.ownerID, draggedCard.id);
                 }
-<<<<<<< HEAD
                 else {
                     //this is for collider with other cards;
                     Debug.Log("collider with other cards");

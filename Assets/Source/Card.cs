@@ -311,7 +311,6 @@ public abstract class Card : MonoBehaviour
 		{
 			var x = Event.current.mousePosition.x;
 			var y = Event.current.mousePosition.y;
-			GUI.Label (new Rect (x-149,y+21,300,60), currentToolTipText, guiStyleBack);
 			GUI.Label (new Rect (x-150,y+20,300,60), currentToolTipText, guiStyleFore);
 		}
 	}
