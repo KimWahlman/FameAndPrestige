@@ -8,8 +8,7 @@ var clients = {};
 var cards = {};
 var turns = 0;
 var theme = 0;
-var themes = ['nature','horror','history','folklore'];
-shuffleArray(themes);
+var themes = ['folklore','history','horror','nature'];
 var charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
 shuffleArray(charactersAvailable);
 var tmp ;
@@ -98,9 +97,6 @@ function sendDrawCard (socket, playerId) {
         socket.emit("DRAW_CARD", tosend);
         socket.broadcast.emit("DRAW_CARD", tosend);
 
-       /* console.log(rdmID);
-        console.log(cards_id.length);
-        console.log(tosend);*/
         delete available_cards[keyId];
 }
 
@@ -470,7 +466,7 @@ io.on('connection', function(socket){
                     //indexToRemove.push(indexCard);
 
                     //console.log(indexToRemove);
-                };
+                }
 
                /* for (var idToRmv = indexToRemove.length - 1; idToRmv >= 0; idToRmv--) {
                     clients[savedClientID].cards.splice(indexToRemove[idToRmv], 1)
@@ -581,8 +577,8 @@ io.on('connection', function(socket){
 
 loadDB();
 //console.log(cards);
-
-var port = process.env.port || 3000
+var input_port = process.argv[2] || 3000
+var port = process.env.port || input_port
 server.listen(port, function(){
 	console.log('listening on *:' + port);
 });

@@ -344,6 +344,10 @@ public class GameManager : MonoBehaviour {
         if(!Deck[cardID].isMine)
         {
             Deck[cardID].PositionOnTheHand(playableZone.getSlot());
+			Deck [cardID].title.gameObject.SetActive (true);
+			Deck [cardID].description.gameObject.SetActive (true);
+			Deck [cardID].cardArt.SetActive (true);
+			Deck [cardID].isOnTheBoard = true;
             playableZone.addCard();
         }
     }
