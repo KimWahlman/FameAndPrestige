@@ -483,10 +483,15 @@ io.on('connection', function(socket){
             }
         };
 
+        console.log("cost " + cost);
+        console.log("cost parse" + parseInt(cost));
+        console.log("earned " + earnedPoints);
+        console.log("earned parse " + parseInt(earnedPoints));
+        console.log("ink before " +  clients[socket.client.id].ink );
         clients[socket.client.id].ink = clients[socket.client.id].ink - parseInt(cost);
+        console.log("ink after " +  clients[socket.client.id].ink );
         UpdateScore(socket, player_ID, 0);
 
-        socket.emit("REFILL_HAND");
         socket.broadcast.emit("REFILL_HAND");
 
 

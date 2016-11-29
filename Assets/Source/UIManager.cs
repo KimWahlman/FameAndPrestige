@@ -20,6 +20,10 @@ public class UIManager : MonoBehaviour {
     private GameObject selectedAction;
     Actions actionScript;
 
+    public Button EndTurnBt;
+    public Button PlayCardsBt;
+    public Button ActionBt;
+
     public void ShowSelectButtons()
     {
         SelectionPanel.SetActive(!SelectionPanel.activeInHierarchy);
@@ -84,7 +88,10 @@ public class UIManager : MonoBehaviour {
 
     public void CheckAvailableActions()
     {
-        if(gameManager.myPlayer.Ink >= shameAction.cost)
+
+        Debug.Log("my ink = " + gameManager.myPlayer.Ink + " shame cost : " + shameAction.getCost() + " duel cost : " + duelAction.getCost());
+
+        if(gameManager.myPlayer.Ink >= shameAction.getCost())
         {
             foreach (var bt in ShameButtons)
                 bt.interactable = true;
@@ -95,7 +102,7 @@ public class UIManager : MonoBehaviour {
                 bt.interactable = false;
         }
 
-        if (gameManager.myPlayer.Ink >= duelAction.cost)
+        if (gameManager.myPlayer.Ink >= duelAction.getCost())
         {
             foreach (var bt in DuelButtons)
                 bt.interactable = true;

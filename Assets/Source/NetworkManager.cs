@@ -144,6 +144,7 @@ public class NetworkManager : MonoBehaviour {
 
         gameManager.UpdatePoints(playerID, totPoints);
         gameManager.UpdateInk(playerID, totInk);
+
         UIManager.CheckAvailableActions();
     }
 
@@ -184,7 +185,7 @@ public class NetworkManager : MonoBehaviour {
         if(gameManager.myPlayer.idPlayer == playerID)
         {
             gameManager.myPlayer.canPlay = false;
-            gameManager.PlayCardsBt.interactable = false;
+            UIManager.PlayCardsBt.interactable = false;
         } else
         {
             gameManager.ReOrderPlayerHands(playerID, cardsToRemoveFromHand);

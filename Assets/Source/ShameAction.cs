@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ShameAction : Actions {
 
 
-    public int cost = 2;
+    int cost = 2;
     int earnedPoints = 5;
 
     public override void useAction(string theme)
@@ -17,6 +17,12 @@ public class ShameAction : Actions {
         Debug.Log("theme is " + theme);
 
         networkManager.SendShame(gameManager.myPlayer.idPlayer, SelectedPlayerId, theme, cost, earnedPoints);
+        gameManager.UIManager.ActionBt.interactable = false;
+    }
+
+    public int getCost()
+    {
+        return cost;
     }
 
 }

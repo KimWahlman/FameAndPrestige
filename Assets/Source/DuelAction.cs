@@ -4,7 +4,7 @@ using System.Collections;
 public class DuelAction : Actions{
 
 
-    public int cost = 2;
+    int cost = 4;
     int earnedPoints = 8;
 
     public override void useAction(string theme)
@@ -14,5 +14,10 @@ public class DuelAction : Actions{
 
 
         //networkManager.
+    }
+
+    public int getCost()
+    {
+        return cost;
     }
 }

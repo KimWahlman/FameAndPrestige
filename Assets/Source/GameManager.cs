@@ -19,8 +19,7 @@ public class GameManager : MonoBehaviour {
     public bool debugMode;
 
     //UI
-    public Button EndTurnBt;
-    public Button PlayCardsBt;
+    public UIManager UIManager;
     public Image currentImage;
     public Sprite[] SpritesTheme;
     public Sprite[] SpriteCharacters;
@@ -142,8 +141,9 @@ public class GameManager : MonoBehaviour {
     public void endTurn()
     {
         myPlayer.canPlay = false;
-        EndTurnBt.interactable = false;
-        PlayCardsBt.interactable = false;
+        UIManager.EndTurnBt.interactable = false;
+        UIManager.PlayCardsBt.interactable = false;
+        UIManager.ActionBt.interactable = false;
 
     }
 
@@ -163,8 +163,9 @@ public class GameManager : MonoBehaviour {
     public void startTurn()
     {
         myPlayer.canPlay = true;
-        EndTurnBt.interactable = true;
-        PlayCardsBt.interactable = true;
+        UIManager.EndTurnBt.interactable = true;
+        UIManager.PlayCardsBt.interactable = true;
+        UIManager.ActionBt.interactable = true;
     }
 
     public void AssignCharacters(List<String> characters)
