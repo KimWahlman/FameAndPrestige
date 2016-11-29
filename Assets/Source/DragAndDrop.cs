@@ -94,8 +94,7 @@ public class DragAndDrop : MonoBehaviour
                 else
                 {
                     //add the card to the player hand if it has been dragged on playable zone first
-
-
+                    
                     //if (!gameManager.myPlayer.cardsHeld.Contains(draggedCard.id))
                     if(!gameManager.myPlayer.cardsHeld.ContainsKey(draggedCard.id))
                     {

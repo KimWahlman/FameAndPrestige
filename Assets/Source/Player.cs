@@ -9,14 +9,10 @@ public class Player : MonoBehaviour {
     public int idPlayer;
     public bool canPlay = false;
     public Dictionary<int, Card> cardsHeld = new Dictionary<int, Card>();
-
-   // public OrderedDictionary cardsHeld = new OrderedDictionary();
-
+    public int Score = 0;
+    public int Ink = 0;
+    public Character character;
     public Dictionary<int, Player> opponents = new Dictionary<int, Player>();
 
-    void Start()
-    {
 
-    }
-   
 }

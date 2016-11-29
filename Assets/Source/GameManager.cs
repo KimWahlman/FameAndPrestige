@@ -2,22 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : MonoBehaviour {
 
     public Player myPlayer;
     public Card[] Deck;
-    public List<int> toPlay;
+    public List<int> toPlay; //cards to play before clicking on play cards
     public Hands[] playerHands = new Hands[4];
     public GameObject[] handsGO;
-    public bool debugMode;
     public PlayableZone playableZone;
+    private NetworkManager networkManager;
+    public Dictionary<string, int> pointsDictionnary;
+
+    public bool debugMode;
+
+    //UI
     public Button EndTurnBt;
     public Button PlayCardsBt;
     public Image currentImage;
-    public Sprite[] Sprites;
-    private NetworkManager networkManager;
-    public Dictionary<string, int> pointsDictionnary;
+    public Sprite[] SpritesTheme;
+    public Sprite[] SpriteCharacters;
+    public SpriteRenderer[] RendererCharacters;
+
+    public Text[] scoreText;
+    public Dictionary<int, Text> scoreDictionnary = new Dictionary<int, Text>();
+    public Text[] inkText;
+    public Dictionary<int, Text> inkDictionnary = new Dictionary<int, Text>();
+
     void Start()
     {
         if(debugMode)
@@ -25,32 +37,39 @@ public class GameManager : MonoBehaviour {
             initGame(0);
             StartCoroutine("firstDrawToEveryone", 0);
         }
-        currentImage.sprite = Sprites[0];
+        currentImage.sprite = SpritesTheme[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
-
-        pointsDictionnary = new Dictionary<string, int>();
-        pointsDictionnary["0"] = 0;
-        pointsDictionnary["1"] = 0;
-        pointsDictionnary["2"] = 0;
-        pointsDictionnary["3"] = 0;
-
-		UpdatePoints ();
     }
 
-	public void UpdatePoints(){
-		GameObject cv = GameObject.Find ("Canvas");
-		cv.GetComponentsInChildren<Text>()[0].text = "Player1: " + pointsDictionnary["0"].ToString() + " Player2: " + pointsDictionnary["1"].ToString() + " Player3: " + pointsDictionnary["2"].ToString() + " Player4: " + pointsDictionnary["3"].ToString();
-	}
+	public void UpdatePoints(int PlayerID, int Score){
 
-	public void CheckWinner(){
-		if (pointsDictionnary ["0"] >= 10) {
-		}
-		if (pointsDictionnary ["1"] >= 10) {
-		}
-		if (pointsDictionnary ["2"] >= 10) {
-		}
-		if (pointsDictionnary ["3"] >= 10) {
-		}
+        if(myPlayer.idPlayer == PlayerID)
+        {
+            myPlayer.Score = Score;
+            scoreDictionnary[PlayerID].text = "Score : " + myPlayer.Score;
+        }
+        else
+        {
+            myPlayer.opponents[PlayerID].Score = Score;
+            scoreDictionnary[PlayerID].text = "Score : " + myPlayer.opponents[PlayerID].Score;
+        }
+    }
+
+    public void UpdateInk(int PlayerID, int totInk)
+    {
+        if (myPlayer.idPlayer == PlayerID)
+        {
+            myPlayer.Ink = totInk;
+            inkDictionnary[PlayerID].text = "Ink : " + myPlayer.Ink + "/16";
+        }
+        else
+        {
+            myPlayer.opponents[PlayerID].Ink = totInk;
+            inkDictionnary[PlayerID].text = "Ink : " + myPlayer.opponents[PlayerID].Ink + "/16";
+        }
+    }
+
+    public void CheckWinner(){
 
 	}
 
@@ -63,9 +82,11 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < 4; i++)
         {
             playerHands[playerID] = handsGO[i].GetComponent<Hands>();
+            scoreDictionnary.Add(playerID, scoreText[i]);
+            inkDictionnary.Add(playerID, inkText[i]);
 
             //assign the opponents to the player
-            if(playerID != myPlayer.idPlayer)
+            if (playerID != myPlayer.idPlayer)
             {
                 GameObject tmpGO = new GameObject();
                 tmpGO.AddComponent<Player>();
@@ -88,7 +109,7 @@ public class GameManager : MonoBehaviour {
             int rdmCard;
             do
             {
-                rdmCard = Random.Range(0, Deck.Length-1);
+                rdmCard = UnityEngine.Random.Range(0, Deck.Length-1);
             }
             while (Deck[rdmCard].gameObject.activeSelf);
 
@@ -103,7 +124,7 @@ public class GameManager : MonoBehaviour {
 
     public void ChangeTheme(string theme)
     {
-        foreach (var sprite in Sprites)
+        foreach (var sprite in SpritesTheme)
             if (sprite.name == theme)
                 currentImage.sprite = sprite;
     }
@@ -140,7 +161,43 @@ public class GameManager : MonoBehaviour {
         EndTurnBt.interactable = true;
         PlayCardsBt.interactable = true;
     }
- 
+
+    public void AssignCharacters(List<String> characters)
+    {
+        for(int i = 0; i < 4; ++i)
+        {
+            if(i == myPlayer.idPlayer)
+            {
+                myPlayer.character = new Character();
+                myPlayer.character.selectChar(characters[i]);
+            } else
+            {
+                myPlayer.opponents[i].character = new Character();
+                myPlayer.opponents[i].character.selectChar(characters[i]);
+            }
+        }
+
+        var id = myPlayer.idPlayer;
+        foreach(SpriteRenderer charRend in RendererCharacters)
+        {
+            if (id == myPlayer.idPlayer)
+            {
+                foreach (Sprite charSprite in SpriteCharacters)
+                    if (charSprite.name == myPlayer.character.assignedCharacter.ToString())
+                        charRend.sprite = charSprite;
+            } else
+            {
+                foreach (Sprite charSprite in SpriteCharacters)
+                    if (charSprite.name == myPlayer.opponents[id].character.assignedCharacter.ToString())
+                        charRend.sprite = charSprite;
+            }
+
+            id++;
+            if (id > 3)
+                id = 0;
+        }
+    }
+
     //server side
     public void drawCard(int cardID, int playerID)
     {
@@ -161,7 +218,7 @@ public class GameManager : MonoBehaviour {
             Deck[cardID].popCard(false, playerHands[playerID].newCard(), playerID);
         }
     }
-
+    
     public void ReOrderPlayerHandAfterDrop(int cardID)
     {
         //Card is removed from player 
@@ -169,20 +226,20 @@ public class GameManager : MonoBehaviour {
         playerHands[myPlayer.idPlayer].deadCard();      
 
         int id = 0;
-
         foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
         {
-            Debug.Log("card held : " + card.Value);
             card.Value.PositionOnTheHand(playerHands[myPlayer.idPlayer].posList[id++]);
         }
-
-        
     }
 
     //should be called when the cards are played
-    public void ReOrderPlayerHandAfterPlay(int playerID, List<int> cardIDs)
+    public void ReOrderPlayerHands(int playerID, List<int> cardIDs)
     {
-        print(" in reorderhand ");
+        print(" in reorderhand , id player  == " + playerID);
+
+
+        foreach (var c in cardIDs)
+            playerHands[playerID].deadCard();
 
         if (playerID == myPlayer.idPlayer)
         {
@@ -207,8 +264,6 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        foreach(var c in cardIDs)
-            playerHands[playerID].deadCard();
     }
 
     public void storeCard(int cardID)
@@ -255,7 +310,7 @@ public class GameManager : MonoBehaviour {
     }
     
     public void InvalidCardPlayed(string[] cardIDs)
-    {
+    {        
         foreach (var c in cardIDs)
         {
             var cc = int.Parse(c.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
@@ -263,8 +318,11 @@ public class GameManager : MonoBehaviour {
             removeStoredCard(cc);
         }
 
+        playerHands[myPlayer.idPlayer].emptyHand();
+
         foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
         {
+            Debug.Log("card to return : " + card.Value.id);
             card.Value.handPosition = playerHands[myPlayer.idPlayer].newCard().position;
             card.Value.returnBackToHand();
         }
@@ -278,8 +336,17 @@ public class GameManager : MonoBehaviour {
        
     }
 
-    void discardCard(int cardID)
+    public void discardCard(int cardID, int playerID)
     {
-        myPlayer.cardsHeld.Remove(cardID);
+        Deck[cardID].hasBeenPlayed = true;
+        Deck[cardID].hideCard();
+        List<int> cardIDtoRemove = new List<int>();
+        cardIDtoRemove.Add(cardID);
+        ReOrderPlayerHands(playerID, cardIDtoRemove);
+    }
+
+    public void usePower()
+    {
+        myPlayer.character.usePower();
     }
 }

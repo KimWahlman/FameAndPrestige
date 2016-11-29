@@ -1,26 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Character : MonoBehaviour {
+public class Character {
     
-    public character MyCharacter;
+    public character assignedCharacter;
+    public NetworkManager networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 
     public enum character
     {
         MARY_SHELLEY = 0,
-        THE_GRIM_BROTHER = 1,
+        THE_GRIM_BROTHERS = 1,
         WILLIAM_WORDSWORTH = 2,
         BETTINA_VON_ARMIN = 3
     };
 
+    public void selectChar(string charName)
+    {
+        character c = (character)character.Parse(typeof(character), charName, true);
+        assignedCharacter = c;
+    }
+
     public void usePower()
     {
-        switch (MyCharacter)
+        Debug.Log("POWER USED " + assignedCharacter);
+        switch (assignedCharacter)
         {
             case character.MARY_SHELLEY:
                 Power_Mary();
                 break;
-            case character.THE_GRIM_BROTHER:
+            case character.THE_GRIM_BROTHERS:
                 Power_GrimBrother();
                 break;
             case character.WILLIAM_WORDSWORTH:
@@ -32,9 +40,21 @@ public class Character : MonoBehaviour {
         }
     }
 
-    public void Power_Mary() { }
-    public void Power_GrimBrother() { }
-    public void Power_William() { }
-    public void Power_Bettina() { }
+    public void Power_Mary()
+    {
+        networkManager.SendPower("MARY");
+    }
+    public void Power_GrimBrother()
+    {
+        networkManager.SendPower("MARY");
+    }
+    public void Power_William()
+    {
+        networkManager.SendPower("MARY");
+    }
+    public void Power_Bettina()
+    {
+        networkManager.SendPower("MARY");
+    }
 
 }

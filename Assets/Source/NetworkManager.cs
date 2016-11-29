@@ -8,9 +8,10 @@ using System.Text.RegularExpressions;
 public class NetworkManager : MonoBehaviour {
    
     public GameManager gameManager;
+    public UIManager UIManager;
     public SocketIOComponent socket;
 
-
+    
     public int debugcardID;
     public int debugplayerID;
 
@@ -33,7 +34,12 @@ public class NetworkManager : MonoBehaviour {
         socket.On("PLAY_CARD", OnReceivePlayCard);
         socket.On("INVALID_PLAY_CARD", OnReceiveInvalidPlayCard);
         socket.On("CHANGE_TURN", OnReceiveChangeTurn);
-        socket.On("CHANGE_THEME", onChangeTheme);
+        socket.On("CHANGE_THEME", OnChangeTheme);
+        socket.On("ASSIGN_CHARACTER", OnReceiveAssignCharacter);
+        socket.On("DISCARD_CARD", OnReceiveDiscard);
+        socket.On("UPDATE_SCORE", OnReceiveUpdateScore);
+        socket.On("REFILL_HAND", OnReceiveRefillHand);
+
     }
 
     IEnumerator ConnectToServer()
@@ -73,7 +79,49 @@ public class NetworkManager : MonoBehaviour {
         socket.Emit("END_TURN");
     }
 
-    public void onChangeTheme(SocketIOEvent e)
+    public void SendPower(string powerName)
+    {
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        data["Power_Name"] = powerName;
+        data["player_ID"] = gameManager.myPlayer.idPlayer.ToString();
+        JSONObject jso = new JSONObject(data);
+
+        socket.Emit("USE_POWER", jso);
+    }
+
+    public void SendShame(int playerID, int opponentID, string theme, int cost, int ePoints)
+    {
+        Dictionary<string, string> data = new Dictionary<string, string>();
+        data["Player_ID"] = playerID.ToString();
+        data["Opponent_ID"] = opponentID.ToString();
+        data["Theme"] = theme;
+        data["Cost"] = cost.ToString();
+        data["EarnedPoints"] = ePoints.ToString();
+
+        JSONObject jso = new JSONObject(data);
+
+        socket.Emit("SHAME", jso);
+    }
+
+    public void OnReceiveDiscard(SocketIOEvent e)
+    {
+        string playerID = e.data.GetField("playerID").ToString().Trim(new Char[] { '"' });
+        string cardID = e.data.GetField("cardID").ToString();
+
+        int pID;
+        int.TryParse(playerID, out pID);
+        int cID;
+        int.TryParse(cardID, out cID);
+        
+        gameManager.discardCard(cID, pID);
+    }
+
+    public void OnReceiveRefillHand(SocketIOEvent e)
+    {
+        socket.Emit("ASK_FOR_CARDS");
+    }
+
+    public void OnChangeTheme(SocketIOEvent e)
     {
 		print("Change theme received " + e.data);
         string a = e.data.GetField("theme").ToString();
@@ -81,23 +129,42 @@ public class NetworkManager : MonoBehaviour {
         gameManager.ChangeTheme(themeName);
     }
 
-    public void OnReceivePlayCard(SocketIOEvent e)
+    public void OnReceiveUpdateScore(SocketIOEvent e)
     {
-        string cards = e.data.GetField("cards").ToString();
-        string player = e.data.GetField("playerID").ToString();
         string totalPoints = e.data.GetField("totalPoints").ToString();
+        string totalInk = e.data.GetField("ink").ToString();
+        string player = e.data.GetField("playerID").ToString();
 
         int playerID;
         int.TryParse(player, out playerID);
         int totPoints;
+        int.TryParse(totalPoints.Trim(new Char[] { '"' }), out totPoints);
+        int totInk;
+        int.TryParse(totalInk.Trim(new Char[] { '"' }), out totInk);
+
+        gameManager.UpdatePoints(playerID, totPoints);
+        gameManager.UpdateInk(playerID, totInk);
+        UIManager.CheckAvailableActions();
+    }
+
+    public void OnReceivePlayCard(SocketIOEvent e)
+    {
+        string cards = e.data.GetField("cards").ToString();
+        string player = e.data.GetField("playerID").ToString();
+        //string totalPoints = e.data.GetField("totalPoints").ToString();
+        //string totalInk = e.data.GetField("ink").ToString();
+
+        int playerID;
+        int.TryParse(player, out playerID);
+        /*int totPoints;
         int.TryParse(totalPoints.Trim(new Char[] {'"'}), out totPoints);
+        int totInk;
+        int.TryParse(totalInk.Trim(new Char[] { '"' }), out totInk);*/
+        
+        //gameManager.pointsDictionnary [player] += totPoints;
 
-		Debug.Log ("Point String " + totalPoints);
-		Debug.Log ("EARN point " + totPoints);
-
-		gameManager.pointsDictionnary [player] += totPoints;
-
-		gameManager.UpdatePoints ();
+        //gameManager.UpdatePoints (playerID, totPoints);
+        //gameManager.UpdateInk (playerID, totInk);
 
         gameManager.toPlay = new List<int>();
         
@@ -120,7 +187,7 @@ public class NetworkManager : MonoBehaviour {
             gameManager.PlayCardsBt.interactable = false;
         } else
         {
-            gameManager.ReOrderPlayerHandAfterPlay(playerID, cardsToRemoveFromHand);
+            gameManager.ReOrderPlayerHands(playerID, cardsToRemoveFromHand);
         }
 
     }
@@ -139,13 +206,6 @@ public class NetworkManager : MonoBehaviour {
             gameManager.InvalidCardPlayed(cards);
         }
 
-
-        /*
-        foreach (var c in cards)
-        {
-            var cc = c.Trim(new Char[] { ' ', '"', ',', '[', ']' });
-            gameManager.InvalidCardPlayed(int.Parse(cc));
-        }*/
     }
 
     public void OnReceiveAssignID(SocketIOEvent e)
@@ -156,6 +216,19 @@ public class NetworkManager : MonoBehaviour {
     public void OnReceiveInitGame(SocketIOEvent e)
     {
         gameManager.initGame(myPlayer.idPlayer);
+    }
+
+    public void OnReceiveAssignCharacter(SocketIOEvent e)
+    {
+
+        List<string> charList = new List<string>();
+
+        foreach (JSONObject character in e.data["chars"].list)
+        {
+            charList.Add(character.ToString().Trim(new Char[] { '"' }));
+        }
+
+        gameManager.AssignCharacters(charList);
     }
 
     public void OnReceiveChangeTurn(SocketIOEvent e)

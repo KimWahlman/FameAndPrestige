@@ -57,6 +57,11 @@ public abstract class Card : MonoBehaviour
         useCard();
     }
 
+    public void discardCard()
+    {
+
+    }
+
     public void revealCard()
     {
         currentSprite.sprite = faceUpSprite;
