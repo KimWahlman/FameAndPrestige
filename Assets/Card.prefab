@@ -252,11 +252,12 @@ MonoBehaviour:
   title: {fileID: 102000010197996304}
   description: {fileID: 102000011446644606}
   cardArt: {fileID: 1000013483040094}
+  texture: {fileID: 2800000, guid: 4d8bf65d289ec574f84f85524c28a087, type: 3}
   xPixel: 0
   yPixel: 0
   toShowPoint: 1
   isBeingDragged: 0
-  toolTipText: 
+  toolTipText: Tsdasdasdasd
   value: 0
   MyCardThemes: 
 --- !u!114 &114000013804691256

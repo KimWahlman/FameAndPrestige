@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     public PlayableZone playableZone;
     private NetworkManager networkManager;
 	private LoadCards loadCards;
+	public int TotalTurn  = 32;
     public Dictionary<string, int> pointsDictionnary;
 
     public bool debugMode;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour {
 		currentText.text = SpritesTheme[0].name;
 		playableZone.GetComponent<SpriteRenderer> ().sprite =  SpritesTheme[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
-		Turns.text = "16";
+		Turns.text = "8";
     }
 
 	public void UpdatePoints(int PlayerID, int Score){

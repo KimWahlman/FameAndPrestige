@@ -18,12 +18,13 @@ public class NetworkManager : MonoBehaviour {
     public Player myPlayer;
 
     public string msg;
+	private string externalServer = "ws://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:2000/socket.io/?EIO=4&transport=websocket";
 	private string localServer = "ws://127.0.0.1:2000/socket.io/?EIO=4&transport=websocket";
 
 	void Awake(){
 		
 		SocketIOComponent sic = socket.GetComponents<SocketIOComponent> ()[0];
-		sic.url = localServer;
+		sic.url = externalServer;
 	}
 
     void Start()
@@ -142,9 +143,9 @@ public class NetworkManager : MonoBehaviour {
         int playerID;
         int.TryParse(player, out playerID);
         int totPoints;
-        int.TryParse(totalPoints.Trim(new Char[] { '"' }), out totPoints);
+        int.TryParse(totalPoints.Trim(new Char[] { '"', ' ', ',' }), out totPoints);
         int totInk;
-        int.TryParse(totalInk.Trim(new Char[] { '"' }), out totInk);
+		int.TryParse(totalInk.Trim(new Char[] { '"', ' ', ',' }), out totInk);
 
         gameManager.UpdatePoints(playerID, totPoints);
         gameManager.UpdateInk(playerID, totInk);
@@ -249,10 +250,14 @@ public class NetworkManager : MonoBehaviour {
         }
 
         gameManager.cleanBoard();
-		int turn = int.Parse(gameManager.Turns.text);
-		turn -= 1;
-		string text = turn.ToString (); 
-		gameManager.Turns.text = text;
+		gameManager.TotalTurn--;
+		if(gameManager.TotalTurn%4 == 0){
+			int turn = int.Parse(gameManager.Turns.text);
+			turn -= 1;
+			string text = turn.ToString (); 
+			gameManager.Turns.text = text;
+		}
+
     }
 
     public void OnReceiveDrawCard(SocketIOEvent e)

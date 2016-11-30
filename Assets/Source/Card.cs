@@ -52,8 +52,9 @@ public abstract class Card : MonoBehaviour
         deckPosition = this.transform.position;       
 
 		guiStyleFore = new GUIStyle();
-		guiStyleFore.fontSize = 16;
-		guiStyleFore.normal.textColor = Color.white;
+
+		guiStyleFore.fontSize = 22;
+		guiStyleFore.normal.textColor = Color.black;
 		guiStyleFore.alignment = TextAnchor.UpperCenter ;
 		guiStyleFore.wordWrap = true;
 

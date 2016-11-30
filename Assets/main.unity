@@ -837,10 +837,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1850863295}
   m_RootOrder: 14
-  m_AnchorMin: {x: 0.4335625, y: 0.31116667}
-  m_AnchorMax: {x: 0.59365624, y: 0.41533345}
-  m_AnchoredPosition: {x: 0.0000019073486, y: 1}
-  m_SizeDelta: {x: 1.1199999, y: -1}
+  m_AnchorMin: {x: 0.4255625, y: 0.31116667}
+  m_AnchorMax: {x: 0.58721876, y: 0.41244444}
+  m_AnchoredPosition: {x: 0.26002407, y: 1.5003052}
+  m_SizeDelta: {x: -0.8800001, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &428052961
 MonoBehaviour:
@@ -2954,6 +2954,7 @@ MonoBehaviour:
   - {fileID: 660194579}
   - {fileID: 201211088}
   playableZone: {fileID: 1100256758}
+  TotalTurn: 32
   debugMode: 0
   UIManager: {fileID: 1786435433}
   currentText: {fileID: 325806149}

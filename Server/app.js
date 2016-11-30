@@ -575,6 +575,8 @@ io.on('connection', function(socket){
         turns += 1;
         totalTurns += 1;
 
+        console.log("Total turns " + totalTurns + " endTurns " + endTurns);
+
         if (totalTurns == endTurns){
 
             checkWinner(socket);
