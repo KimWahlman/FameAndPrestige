@@ -20,10 +20,13 @@ public class GameManager : MonoBehaviour {
 
     //UI
     public UIManager UIManager;
-    public Image currentImage;
+    public Text currentText;
     public Sprite[] SpritesTheme;
     public Sprite[] SpriteCharacters;
     public SpriteRenderer[] RendererCharacters;
+	public Text WinText;
+	public Image WinImage;
+	public Text Turns;
 
     public Text[] scoreText;
     public Dictionary<int, Text> scoreDictionnary = new Dictionary<int, Text>();
@@ -41,9 +44,10 @@ public class GameManager : MonoBehaviour {
             initGame(0);
             StartCoroutine("firstDrawToEveryone", 0);
         }
-        currentImage.sprite = SpritesTheme[0];
+		currentText.text = SpritesTheme[0].name;
 		playableZone.GetComponent<SpriteRenderer> ().sprite =  SpritesTheme[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+		Turns.text = "16";
     }
 
 	public void UpdatePoints(int PlayerID, int Score){
@@ -79,9 +83,15 @@ public class GameManager : MonoBehaviour {
 		int id = int.Parse(string_id.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
 		if (id == myPlayer.idPlayer) {
 			Debug.Log ("------I WIN-------");
+			WinText.text = "You Won";
+
 		} else {
 			Debug.Log ("---------I LOST---------");
+			id += 1;
+			WinText.text = "Player " + id.ToString() + " won!" ;
 		}
+		WinText.gameObject.SetActive (true);
+		WinImage.gameObject.SetActive (true);
 
 	}
 		
@@ -147,7 +157,7 @@ public class GameManager : MonoBehaviour {
     {
 		foreach (var sprite in SpritesTheme)
 			if (sprite.name == theme) {
-				currentImage.sprite = sprite;
+				currentText.text = sprite.name;
 				playableZone.GetComponent<SpriteRenderer> ().sprite = sprite;
 			}
 
