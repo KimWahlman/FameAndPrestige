@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
             StartCoroutine("firstDrawToEveryone", 0);
         }
         currentImage.sprite = SpritesTheme[0];
+		playableZone.GetComponent<SpriteRenderer> ().sprite =  SpritesTheme[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
     }
 
@@ -137,9 +138,12 @@ public class GameManager : MonoBehaviour {
 
     public void ChangeTheme(string theme)
     {
-        foreach (var sprite in SpritesTheme)
-            if (sprite.name == theme)
-                currentImage.sprite = sprite;
+		foreach (var sprite in SpritesTheme)
+			if (sprite.name == theme) {
+				currentImage.sprite = sprite;
+				playableZone.GetComponent<SpriteRenderer> ().sprite = sprite;
+			}
+
     }
 
     public bool checkPlayerTurn()
