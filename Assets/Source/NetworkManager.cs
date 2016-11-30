@@ -250,13 +250,14 @@ public class NetworkManager : MonoBehaviour {
         }
 
         gameManager.cleanBoard();
-		gameManager.TotalTurn--;
+
 		if(gameManager.TotalTurn%4 == 0){
 			int turn = int.Parse(gameManager.Turns.text);
 			turn -= 1;
 			string text = turn.ToString (); 
 			gameManager.Turns.text = text;
 		}
+		gameManager.TotalTurn--;
 
     }
 

@@ -190,6 +190,7 @@ public abstract class Card : MonoBehaviour
 			cardArt.SetActive (false);
 			title.gameObject.SetActive (false);
 			description.gameObject.SetActive (false);
+			toShowPoint = false;
 		}
 
 
