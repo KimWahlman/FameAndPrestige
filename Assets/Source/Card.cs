@@ -57,6 +57,7 @@ public abstract class Card : MonoBehaviour
 		guiStyleFore.normal.textColor = Color.black;
 		guiStyleFore.alignment = TextAnchor.UpperCenter ;
 		guiStyleFore.wordWrap = true;
+		guiStyleFore.active.background = Texture2D.blackTexture;
 
     }
 

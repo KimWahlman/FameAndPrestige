@@ -5646,6 +5646,7 @@ GameObject:
   - 92: {fileID: 2037381206}
   - 124: {fileID: 2037381205}
   - 81: {fileID: 2037381204}
+  - 114: {fileID: 2037381209}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5721,6 +5722,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &2037381209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2037381203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbeab73e5410c9746ba377ef55fb4172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalGameplay: {fileID: 24500003, guid: ace77df964dfb6745a9bcfe5883e5580, type: 2}
+  duelGameplay: {fileID: 24510204, guid: ace77df964dfb6745a9bcfe5883e5580, type: 2}
+  shameGameplay: {fileID: 24559430, guid: ace77df964dfb6745a9bcfe5883e5580, type: 2}
+  silence: {fileID: 24586146, guid: ace77df964dfb6745a9bcfe5883e5580, type: 2}
+  mSource: []
+  bpm: 128
+  mCurrentGameMode: Normal
 --- !u!1 &2113391615
 GameObject:
   m_ObjectHideFlags: 0
