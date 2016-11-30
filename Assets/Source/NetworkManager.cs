@@ -147,6 +147,8 @@ public class NetworkManager : MonoBehaviour {
         int totInk;
 		int.TryParse(totalInk.Trim(new Char[] { '"', ' ', ',' }), out totInk);
 
+
+		Debug.Log (totalPoints);
         gameManager.UpdatePoints(playerID, totPoints);
         gameManager.UpdateInk(playerID, totInk);
 
@@ -251,7 +253,7 @@ public class NetworkManager : MonoBehaviour {
 
         gameManager.cleanBoard();
 
-		if(gameManager.TotalTurn%4 == 0){
+		if(gameManager.TotalTurn%4 == 0 && gameManager.TotalTurn!= 32){
 			int turn = int.Parse(gameManager.Turns.text);
 			turn -= 1;
 			string text = turn.ToString (); 

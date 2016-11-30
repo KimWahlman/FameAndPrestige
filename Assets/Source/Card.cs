@@ -119,7 +119,7 @@ public abstract class Card : MonoBehaviour
 
 	void OnMouseUp(){
 
-		if (toShowPoint) {
+		if (toShowPoint && isMine) {
 			Debug.Log ("SHOW POINT");
 			currentToolTipText = toolTipText;
 			StartCoroutine (stopToolTip(1));

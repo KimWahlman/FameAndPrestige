@@ -149,13 +149,15 @@ function Power_Mary(socket, playerId)
 
 function UpdateScore(socket, playerID, points)
 {
-        clients[socket.client.id].score = clients[socket.client.id].score + points;
-        clients[socket.client.id].ink = clients[socket.client.id].ink + points;
+        clients[socket.client.id].score = Number(clients[socket.client.id].score) + Number(points);
+        clients[socket.client.id].ink = Number(clients[socket.client.id].ink) + Number(points);
 
         if(clients[socket.client.id].ink > 16)
         {
            clients[socket.client.id].ink = 16; 
         }
+
+        console.log("SCORE " + clients[socket.client.id].score);
 
         socket.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });
         socket.broadcast.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });

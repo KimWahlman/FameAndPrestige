@@ -56,11 +56,13 @@ public class GameManager : MonoBehaviour {
         if(myPlayer.idPlayer == PlayerID)
         {
             myPlayer.Score = Score;
+			scoreDictionnary [PlayerID].text = "";
             scoreDictionnary[PlayerID].text = "Score : " + myPlayer.Score;
         }
         else
         {
             myPlayer.opponents[PlayerID].Score = Score;
+			scoreDictionnary[PlayerID].text = "";
             scoreDictionnary[PlayerID].text = "Score : " + myPlayer.opponents[PlayerID].Score;
         }
     }
