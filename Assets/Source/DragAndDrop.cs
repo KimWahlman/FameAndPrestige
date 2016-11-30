@@ -41,7 +41,7 @@ public class DragAndDrop : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 rayPoint = ray.GetPoint(distance);
-            transform.position = new Vector3(rayPoint.x, rayPoint.y, this.transform.position.z);
+            transform.position = new Vector3(rayPoint.x, rayPoint.y, -1.0f);
         }
     }
 
@@ -57,9 +57,7 @@ public class DragAndDrop : MonoBehaviour
         {
             dragging = true;
             draggedCard.isBeingDragged = true;
-            draggedCard.putInFront(true);
-			//draggedCard.transform.localPosition += new Vector3(0,0,-1);
-			this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+          	this.gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
         }
     }
 

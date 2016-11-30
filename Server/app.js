@@ -7,6 +7,8 @@ var fs = require('fs');
 var clients = {};
 var cards = {};
 var turns = 0;
+var totalTurns = 0;
+var endTurns = 4;
 var theme = 0;
 var themes = ['folklore','history','horror','nature'];
 var charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
@@ -157,6 +159,24 @@ function UpdateScore(socket, playerID, points)
 
         socket.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });
         socket.broadcast.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });
+
+}
+
+
+function checkWinner(socket){
+    maxScore = {id:null, score: -1}
+    for (client in clients){
+        if(clients[client].score > maxScore.score){
+            maxScore.id = clients[client].id;
+            maxScore.score= clients[client].score
+        }
+    }
+    
+    console.log("WINNER");
+    console.log(maxScore);
+
+    socket.emit("END_GAME",maxScore);
+    socket.broadcast.emit("END_GAME",maxScore);
 
 }
 
@@ -553,6 +573,13 @@ io.on('connection', function(socket){
         socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn });
 
         turns += 1;
+        totalTurns += 1;
+
+        if (totalTurns == endTurns){
+
+            checkWinner(socket);
+        }
+
         if (turns == 8) {
             theme++;
             socket.emit("CHANGE_THEME", { theme: themes[theme % 4] });            

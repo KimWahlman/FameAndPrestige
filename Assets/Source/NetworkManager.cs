@@ -18,15 +18,18 @@ public class NetworkManager : MonoBehaviour {
     public Player myPlayer;
 
     public string msg;
-	//private string Server = "ws://193.11.161.137:3000/socket.io/?EIO=4&transport=websocket";
-	private string localServer = "ws://127.0.0.1:3000/socket.io/?EIO=4&transport=websocket";
+	private string localServer = "ws://127.0.0.1:2000/socket.io/?EIO=4&transport=websocket";
 
+	void Awake(){
+		
+		SocketIOComponent sic = socket.GetComponents<SocketIOComponent> ()[0];
+		sic.url = localServer;
+	}
 
     void Start()
     {
+		
         StartCoroutine("ConnectToServer");
-
-        socket.url = localServer;
 
         socket.On("ASSIGN_ID", OnReceiveAssignID);
         socket.On("INIT_GAME", OnReceiveInitGame);
@@ -39,6 +42,7 @@ public class NetworkManager : MonoBehaviour {
         socket.On("DISCARD_CARD", OnReceiveDiscard);
         socket.On("UPDATE_SCORE", OnReceiveUpdateScore);
         socket.On("REFILL_HAND", OnReceiveRefillHand);
+		socket.On("END_GAME", OnReceiveEndGame);
 
     }
 
@@ -251,6 +255,13 @@ public class NetworkManager : MonoBehaviour {
     {
         gameManager.drawCard(int.Parse(e.data["id"].ToString()), int.Parse(e.data["playerId"].ToString()));
     }
+
+	public void OnReceiveEndGame(SocketIOEvent e){
+
+		Debug.Log ("OnReceiveEndGame " + e.data); 
+		gameManager.CheckWinner (e.data ["id"].ToString());
+	}
+
 
     string JsonToString(string target, string s)
     {

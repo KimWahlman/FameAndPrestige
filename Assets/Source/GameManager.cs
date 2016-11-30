@@ -73,7 +73,14 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void CheckWinner(){
+	public void CheckWinner(string string_id){
+
+		int id = int.Parse(string_id.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
+		if (id == myPlayer.idPlayer) {
+			Debug.Log ("------I WIN-------");
+		} else {
+			Debug.Log ("---------I LOST---------");
+		}
 
 	}
 		
