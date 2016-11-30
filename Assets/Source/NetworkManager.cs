@@ -81,10 +81,6 @@ public class NetworkManager : MonoBehaviour {
     public void SendEndTurn()
     {
         socket.Emit("END_TURN");
-		int turn = int.Parse(gameManager.Turns.text);
-		turn -= 1;
-		string text = turn.ToString (); 
-		gameManager.Turns.text = text;
     }
 
     public void SendPower(string powerName)
@@ -253,6 +249,10 @@ public class NetworkManager : MonoBehaviour {
         }
 
         gameManager.cleanBoard();
+		int turn = int.Parse(gameManager.Turns.text);
+		turn -= 1;
+		string text = turn.ToString (); 
+		gameManager.Turns.text = text;
     }
 
     public void OnReceiveDrawCard(SocketIOEvent e)
