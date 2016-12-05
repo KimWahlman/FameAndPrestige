@@ -35,9 +35,10 @@ public class GameManager : MonoBehaviour {
     public Text[] inkText;
     public Dictionary<int, Text> inkDictionnary = new Dictionary<int, Text>();
 
-    void Start()
-    {
 
+	void Start()
+    {
+		
 		loadCards = GameObject.Find("LoadManager").GetComponent<LoadCards>();
 		loadCards.Load ();
 
