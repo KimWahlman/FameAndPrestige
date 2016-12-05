@@ -47,6 +47,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000011882007016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011815748304}
+  - 23: {fileID: 23000014031899422}
+  - 102: {fileID: 102000011943511958}
+  m_Layer: 0
+  m_Name: Description
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000012163520766
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +75,7 @@ GameObject:
   - 23: {fileID: 23000011808967786}
   - 102: {fileID: 102000011446644606}
   m_Layer: 0
-  m_Name: Description
+  m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 1000011538156980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -2.3, z: -0.01}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.01}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 224000010241239108}
@@ -100,9 +117,22 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012163520766}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -5, z: -0.01}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.01}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 224000010241239108}
+  m_RootOrder: 3
+--- !u!4 &4000011815748304
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011882007016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.8, z: -0.01}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.01}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 224000010241239108}
@@ -165,6 +195,35 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23000014031899422
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011882007016}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: a870a00a1b38b4d3b998cda8a3d8e6de, type: 3}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!65 &65000012882003472
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -186,7 +245,7 @@ TextMesh:
   m_GameObject: {fileID: 1000011538156980}
   m_Text: Tree
   m_OffsetZ: 0
-  m_CharacterSize: 1.32
+  m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -205,17 +264,34 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012163520766}
-  m_Text: ' Word cards are the type of
+  m_Text: 2
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 0.654655
+  m_Anchor: 4
+  m_Alignment: 1
+  m_TabSize: 1
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: a870a00a1b38b4d3b998cda8a3d8e6de, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278913803
+--- !u!102 &102000011943511958
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011882007016}
+  m_Text: 'Word cards are the type of
 
     cards that the players play
 
-    out during the game. Each
-
-    player should always have
-
-    three cards on their hand'
+    out during the game. '
   m_OffsetZ: 0
-  m_CharacterSize: 0.77
+  m_CharacterSize: 1
   m_LineSpacing: 0.654655
   m_Anchor: 4
   m_Alignment: 1
@@ -250,9 +326,9 @@ MonoBehaviour:
   faceUpSprite: {fileID: 21300000, guid: ac56db031c9e349bf96bcf5dc1e4dc5d, type: 3}
   faceDownSprite: {fileID: 21300000, guid: 001fb3c5e3d53d54db55944af9c519a5, type: 3}
   title: {fileID: 102000010197996304}
-  description: {fileID: 102000011446644606}
+  description: {fileID: 102000011943511958}
+  point: {fileID: 102000011446644606}
   cardArt: {fileID: 1000013483040094}
-  texture: {fileID: 2800000, guid: 4d8bf65d289ec574f84f85524c28a087, type: 3}
   xPixel: 0
   yPixel: 0
   toShowPoint: 1
@@ -356,12 +432,13 @@ RectTransform:
   m_Children:
   - {fileID: 224000013571266848}
   - {fileID: 4000010053233006}
+  - {fileID: 4000011815748304}
   - {fileID: 4000010402271246}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5.9, y: 0}
   m_SizeDelta: {x: 7.32, y: 12.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000013571266848

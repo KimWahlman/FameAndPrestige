@@ -1,27 +1,3 @@
-var app = require('express')();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-var counter = require('./pointCounter.js');
-var fs = require('fs');
-
-var clients = {};
-var cards = {};
-var turns = 0;
-var totalTurns = 0;
-var endTurns = 31;
-var theme = 0;
-var themes = ['folklore','history','horror','nature'];
-var charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
-shuffleArray(charactersAvailable);
-var tmp ;
-
-var available_cards;
-var discard_cards=[];
-
-
-console.log(themes);
-console.log(charactersAvailable)
-
 function loadDB(){
 
     
@@ -180,20 +156,50 @@ function checkWinner(socket){
     socket.emit("END_GAME",maxScore);
     socket.broadcast.emit("END_GAME",maxScore);
 
+    console.log("Game endend, closing server");
+    server.close()
 }
 
+
+const app = require('express')();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+const counter = require('./pointCounter.js');
+const fs = require('fs');
+
+var clients = {};
+var cards = {};
+var turns = 0;
+var totalTurns = 0;
+const endTurns = 31;
+const maxCard = 4;
+var theme = 0;
+const themes = ['folklore','history','horror','nature'];
+const charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
+shuffleArray(charactersAvailable);
+var tmp ;
+
+var available_cards;
+var discard_cards=[];
+
+
+//console.log(themes);
+//console.log(charactersAvailable)
+var StartServer = function startServer(inPort){
+    loadDB();
+    //console.log(cards);
+    var port = inPort || 3000
+    server.listen(port, function(){
+        console.log('listening on *:' + port);
+    });
+}
+
+module.exports = StartServer;
 
 
 io.on('connection', function(socket){ 
 
 	var currentUser;
-
-	socket.on("HI ROOM",function(){
-
-		socket.broadcast.to("pippo").emit("HI");
-
-
-	});
 
 	socket.on("USER_CONNECT", function (data){
 		console.log("-----On USER_CONNECT-----");
@@ -236,21 +242,6 @@ io.on('connection', function(socket){
         //give everyone cards (loop with draw function)
     });
 
-  	/*socket.on('PLAY', function (data) {
-  		console.log("-----On PLAY-----");
-        console.log(data);
-  		currentUser = {
-  			name: data.name
-  		};
-  		clients[socket.client.id]= currentUser;
-    	console.log("his name is " + currentUser.name);
-    	socket.emit("USER_CONNECTED", currentUser);
-    	socket.broadcast.emit("USER_CONNECTED", currentUser);
-
-    	socket.emit("ROLL_DICE",{roll: Math.floor(Math.random() * 20)+""})
-  	});*/
-
-
   	/*
 	socket.on('disconnect', function(){
 		console.log("-----On USER_DISCONNECTED-----");
@@ -263,72 +254,56 @@ io.on('connection', function(socket){
 		}
     });
 	*/
-	
-    socket.on("DRAW_CARDS", function(data){
-    	console.log("-----On DRAW_CARDS-----");
-    	console.log(data);
-    	card_number = Number(data.number);
-    	var send_card = {cards:[]};
-    	for (var i = 0; i < card_number; i++) {
-    		keys = Object.keys(available_cards);
-    		do 
-    			rand = keys[Math.floor(Math.random() * keys.length)];
-    		while(available_cards[rand].type !== data.type)
-
-    		console.log("Sending");
-    		console.log(available_cards[rand])
-    		send_card.cards.push(available_cards[rand]);
-    		delete available_cards[rand];
-    	}
-    	console.log("--------SEND_CARDS-------");
-    	console.log("Sending");
-    	console.log(JSON.stringify(send_card));
-    	socket.emit("SEND_CARDS", send_card);
-    	socket.broadcast.to(clients[socket.id]).emit("SEND_CARDS", send_card);
-    	console.log("--------SEND_CARDS_DONE-------");
-    });
-
 
     socket.on("PLAY_CARD", function(data){
     	console.log("-----On PLAY_CARDS-----");
     	var card_ids = data.cardID.split(",");
 
-        var playerId; 
+        /*
+        console.log(data.playerID);
+        console.log(socket.client.id);
+        console.log(clients);
+        */
+        var playerId =  socket.client.id; 
         console.log("PlayedCards " + card_ids);
 
         var cards_toCheck = [];
 
+        /*
+        for (var id in clients){
+            if(clients[id].id == data.playerID){
+
+                playerId = id;
+                break;
+            }
+        }
+        */
+
         card_ids.forEach(function(card_id){
 
-            for (var id in clients){
-                if(clients[id].id == data.playerID){
 
-                    playerId = id;
+            console.log("Played card id : " + card_id);
 
-                    console.log("Played card id : " + card_id);
+            var indexCard = clients[playerId].cards.indexOf(Number(card_id));
 
-                    var indexCard = clients[id].cards.indexOf(Number(card_id));
-
-                    console.log("Player id : " + clients[id].id);
-                    console.log("Player cards : " + clients[id].cards)
-                    console.log("indexCard : " + indexCard);
+            console.log("Player id : " + clients[playerId].id);
+            console.log("Player cards : " + clients[playerId].cards)
+            console.log("indexCard : " + indexCard);
 
 
-                    if(indexCard == -1){
+            if(indexCard == -1){
 
-                        socket.emit("INVALID_PLAY_CARD", {error: "invalid_card", playerID : clients[playerId].id});
-                        socket.broadcast.emit("INVALID_PLAY_CARD", {error: "invalid_card", playerID : clients[playerId].id});
-                        return;
-                    }
-
-                    console.log("CARD TO CHECK");
-                    console.log(card_id);
-                    //console.log(cards);
-                    console.log(cards[card_id]);
-                    cards_toCheck.push(cards[card_id]);
-
-                }
+                socket.emit("INVALID_PLAY_CARD", {error: "invalid_card", playerID : clients[playerId].id});
+                socket.broadcast.emit("INVALID_PLAY_CARD", {error: "invalid_card", playerID : clients[playerId].id});
+                return;
             }
+
+            console.log("CARD TO CHECK");
+            console.log(card_id);
+            //console.log(cards);
+            console.log(cards[card_id]);
+            cards_toCheck.push(cards[card_id]);
+
         });
         
         console.log("cards_toCheck");
@@ -376,29 +351,42 @@ io.on('connection', function(socket){
        
     });
 
+
+    socket.on("SHOW_THEME",function(data){
+
+        var show = false;
+        if(clients[socket.client.id].score > 0){
+            clients[socket.client.id].score -= 1;
+            show = true;
+        }
+
+        socket.emit("TO_SHOW_THEME", {thShow: show});
+
+    });
+
+
     socket.on("USE_POWER", function(data){
 
         console.log("power received");
         console.log(data);
 
         switch(data["Power_Name"]) {
-    case "BETT":
-        break;
-    case "WILL":
-        break;
-    case "GRIM":
-        break;
-    case "MARY":
-        Power_Mary(socket, data["player_ID"]);
-        break;
-    default:
-        break;
-    } 
+            case "BETT":
+                break;
+            case "WILL":
+                break;
+            case "GRIM":
+                break;
+            case "MARY":
+                Power_Mary(socket, data["player_ID"]);
+                break;
+            default:
+                break;
+        } 
 
     });
 
-    socket.on("SHAME", function(data)
-    {
+    socket.on("SHAME", function(data){
         var player_ID = data["Player_ID"];
         var Opponent_ID = data["Opponent_ID"];
         var Theme = data["Theme"];
@@ -415,7 +403,7 @@ io.on('connection', function(socket){
             {
                 var savedClientID = id;
 
-                for (var i = 0; i < 4; i++) {
+                for (var i = 0; i < maxCard; i++) {
 
                     for (var y = cards[clients[id].cards[i]].theme.length - 1; y >= 0; y--) {
 
@@ -499,7 +487,7 @@ io.on('connection', function(socket){
 
                 break;
             }
-        };
+        }
 
         console.log("cost " + cost);
         console.log("cost parse" + parseInt(cost));
@@ -532,32 +520,6 @@ io.on('connection', function(socket){
 
     });
 
-    socket.on("LIST_ROOMS", function(){
-    	console.log("LIST ROOM");
-    	//console.log(JSON.stringify(io.sockets.adapter.rooms));
-    	socket.emit("ROOMS",{rooms: findCustomRooms()})
-
-    });
-
-    socket.on("CREATE_ROOM", function(data){
-    	console.log("CREATE ROOM");
-    	//console.log(data);
-    	socket.join(data.name);
-    	clients[socket.id].room = data.name;
-    	console.log(clients[socket.id]);
-    	//console.log(JSON.stringify(io.sockets.adapter.rooms));
-    	//console.log(findCustomRooms());
-
-    });
-
-    socket.on("JOIN_ROOM", function(data){
-    	console.log("JOIN ROOM");
-    	socket.join(data.name);
-    	clients[socket.id].room = data.name;
-    	console.log(clients[socket.id]);
-
-    });
-
     socket.on("END_TURN", function(){
 
         var id = socket.client.id;
@@ -565,7 +527,7 @@ io.on('connection', function(socket){
 
         console.log("player cards : " + clients[id].cards + "  amount : " + clients[id].cards.length);
 
-        for (var i = clients[id].cards.length; i < 4; i++) {
+        for (var i = clients[id].cards.length; i < maxCard; i++) {
             console.log("player id : " + playerId + "  card number : " + i);
             sendDrawCard(socket, playerId)
         };
@@ -598,18 +560,9 @@ io.on('connection', function(socket){
         var id = socket.client.id;
         var playerId = Object.keys(clients).indexOf(socket.client.id);
 
-        for (var i = clients[id].cards.length; i < 4; i++) {
+        for (var i = clients[id].cards.length; i < maxCard; i++) {
             sendDrawCard(socket, playerId)
         };
     });
 
-
-});
-
-loadDB();
-//console.log(cards);
-var input_port = process.argv[2] || 3000
-var port = process.env.port || input_port
-server.listen(port, function(){
-	console.log('listening on *:' + port);
 });

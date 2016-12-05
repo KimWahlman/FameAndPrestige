@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public List<int> toPlay; //cards to play before clicking on play cards
     public Hands[] playerHands = new Hands[4];
     public GameObject[] handsGO;
+	public Animator themeBar;
     public PlayableZone playableZone;
     private NetworkManager networkManager;
 	private LoadCards loadCards;
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour {
             StartCoroutine("firstDrawToEveryone", 0);
         }
 		currentText.text = SpritesTheme[0].name;
-		playableZone.GetComponent<SpriteRenderer> ().sprite =  SpritesTheme[0];
+		//playableZone.GetComponent<SpriteRenderer> ().sprite =  SpritesTheme[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 		Turns.text = "8";
     }
@@ -158,12 +159,17 @@ public class GameManager : MonoBehaviour {
 
     public void ChangeTheme(string theme)
     {
-		foreach (var sprite in SpritesTheme)
+		int index = 0;
+		foreach (var sprite in SpritesTheme) {
 			if (sprite.name == theme) {
 				currentText.text = sprite.name;
-				playableZone.GetComponent<SpriteRenderer> ().sprite = sprite;
+				//playableZone.GetComponent<SpriteRenderer> ().sprite = sprite;
+				break;
 			}
-
+			index++;
+		}
+		Debug.Log (index);
+		themeBar.SetInteger ("theme", index);
     }
 
     public bool checkPlayerTurn()
@@ -371,6 +377,7 @@ public class GameManager : MonoBehaviour {
 			Deck [cardID].title.gameObject.SetActive (true);
 			Deck [cardID].description.gameObject.SetActive (true);
 			Deck [cardID].cardArt.SetActive (true);
+			Deck [cardID].point.gameObject.SetActive (true);
 			Deck [cardID].isOnTheBoard = true;
             playableZone.addCard();
         }

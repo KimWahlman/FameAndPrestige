@@ -18,13 +18,13 @@ public class NetworkManager : MonoBehaviour {
     public Player myPlayer;
 
     public string msg;
-	private string externalServer = "ws://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:2000/socket.io/?EIO=4&transport=websocket";
+	private string externalServer = "ws://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:3000/socket.io/?EIO=4&transport=websocket";
 	private string localServer = "ws://127.0.0.1:2000/socket.io/?EIO=4&transport=websocket";
 
 	void Awake(){
 		
 		SocketIOComponent sic = socket.GetComponents<SocketIOComponent> ()[0];
-		sic.url = externalServer;
+		sic.url = localServer;
 	}
 
     void Start()

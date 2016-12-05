@@ -22,6 +22,7 @@ public abstract class Card : MonoBehaviour
 
 	public TextMesh title;
 	public TextMesh description;
+	public TextMesh point;
 	public GameObject cardArt;
 
 	public float xPixel;
@@ -61,11 +62,12 @@ public abstract class Card : MonoBehaviour
 
     }
 
-	public void LoadResource(string cardTitle, string cardDescription, string imgPath){
+	public void LoadResource(string cardTitle, string cardDescription, string point_text, string imgPath){
 
 
 		//Debug.Log ("--------LOADING RESOURCES---------");
 		title.text = cardTitle;
+		point.text = point_text;
 
 		var originaltext = cardDescription;
 		description.text = TextWrap(originaltext,30);
@@ -190,6 +192,7 @@ public abstract class Card : MonoBehaviour
 			cardArt.SetActive (false);
 			title.gameObject.SetActive (false);
 			description.gameObject.SetActive (false);
+			point.gameObject.SetActive (false);
 			toShowPoint = false;
 		}
 
@@ -248,11 +251,13 @@ public abstract class Card : MonoBehaviour
 			GameObject zoomedCardArt = (GameObject)Instantiate (cardArt, cardArt.transform.localPosition, cardArt.transform.rotation); 
 			TextMesh zoomedTitle = (TextMesh)Instantiate (title, title.transform.localPosition, title.transform.rotation);
 			TextMesh zoomedDescription = (TextMesh)Instantiate (description, description.transform.localPosition, description.transform.rotation); 
-	
+			TextMesh zoomedPoint = (TextMesh)Instantiate (point, point.transform.localPosition, point.transform.rotation); 
+
 
 			zoomedCardArt.transform.SetParent (CardZoomed.transform);
 			zoomedTitle.transform.SetParent (CardZoomed.transform);
 			zoomedDescription.transform.SetParent (CardZoomed.transform);
+			zoomedPoint.transform.SetParent (CardZoomed.transform);
 		
             //create a new component on the zoomed card
             SpriteRenderer newSprite = CardZoomed.AddComponent<SpriteRenderer>();
@@ -277,6 +282,7 @@ public abstract class Card : MonoBehaviour
 			cardArt.SetActive (false);
 			title.gameObject.SetActive (false);
 			description.gameObject.SetActive (false);
+			point.gameObject.SetActive (false);
 		
             //this.gameObject.SetActive(false);           
         }
@@ -293,6 +299,7 @@ public abstract class Card : MonoBehaviour
 				cardArt.SetActive (true);
 				title.gameObject.SetActive (true);
 				description.gameObject.SetActive (true);
+				point.gameObject.SetActive (true);
 			}
         }
         //Debug.Log("this.position:"+ this.transform.localPosition);
