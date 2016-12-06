@@ -225,6 +225,8 @@ public class NetworkManager : MonoBehaviour {
             gameManager.InvalidCardPlayed(cards);
         }
 
+		UIManager.ShowBubble ("I can't play this cards");
+		UIManager.HideBubble ();
     }
 
     public void OnReceiveAssignID(SocketIOEvent e)

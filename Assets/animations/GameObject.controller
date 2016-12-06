@@ -92,7 +92,7 @@ MonoBehaviour:
   enter_2: 0.75
   enter_3: 0.75
   enter_4: 0.75
-  yPos: 0.3
+  yPos: 0.19
   xPos: 0
 --- !u!114 &11450670
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   enter_2: 0.75
   enter_3: 0.75
   enter_4: 0
-  yPos: 0.3
+  yPos: 0.19
   xPos: 0
 --- !u!114 &11450876
 MonoBehaviour:
@@ -164,7 +164,7 @@ MonoBehaviour:
   enter_2: 0.75
   enter_3: 0
   enter_4: 0.75
-  yPos: 0.3
+  yPos: 0.19
   xPos: 0
 --- !u!114 &11491996
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   enter_2: 0
   enter_3: 0.75
   enter_4: 0.75
-  yPos: 0.3
+  yPos: 0.19
   xPos: 0
 --- !u!206 &20673564
 BlendTree:

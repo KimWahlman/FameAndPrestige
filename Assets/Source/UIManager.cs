@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour {
     public Button PlayCardsBt;
     public Button ActionBt;
 
+	public Image bubble;
+
+
     public void ShowSelectButtons()
     {
         SelectionPanel.SetActive(!SelectionPanel.activeInHierarchy);
@@ -114,7 +117,22 @@ public class UIManager : MonoBehaviour {
 
     }
 
+	public void ShowBubble(string message){
+	
+		bubble.gameObject.SetActive (true);
+		bubble.GetComponentsInChildren<Text>()[0].text = message;
+	}
 
+	public void HideBubble(){
 
+		StartCoroutine (hideBubble ());
+	}
+
+	IEnumerator hideBubble(){
+
+		yield return new WaitForSeconds (2f);
+		bubble.GetComponentsInChildren<Text> () [0].text = "";
+		bubble.gameObject.SetActive (false);
+	}
 
 }

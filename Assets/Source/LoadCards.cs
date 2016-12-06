@@ -32,8 +32,9 @@ public class LoadCards : MonoBehaviour {
 			string path = card_json ["img"].ToString().Trim(new Char[] { ' ', '"' });
 			string point = card_json ["point"].ToString().Trim(new Char[] { ' ', '"' });
 			string type = card_json ["type"].ToString().Trim(new Char[] { ' ', '"' });
+			string theme_st =  card_json["theme"].ToString().Trim(new Char[] { ' ', '"', '[', ',' ,']'});
 
-			Card.LoadResource (title, description, point, type,path);
+			Card.LoadResource (title, description, point, type, theme_st, path);
 			card.SetActive (false);
 
 			Card cardScript = card.GetComponents<Card> ()[0];

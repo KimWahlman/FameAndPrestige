@@ -29,7 +29,8 @@ public abstract class Card : MonoBehaviour
 	public float yPixel;
 
     private Vector3 localScale;
-	public bool toShowPoint = true;
+	private string Theme;
+	public bool toShowPoint = false;
 
 
     GameObject CardZoomed;
@@ -62,7 +63,7 @@ public abstract class Card : MonoBehaviour
 
     }
 
-	public void LoadResource(string cardTitle, string cardDescription, string point_text, string type, string imgPath){
+	public void LoadResource(string cardTitle, string cardDescription, string point_text, string type, string theme, string imgPath){
 
 
 		if (type.Equals("pure")) {
@@ -74,6 +75,8 @@ public abstract class Card : MonoBehaviour
 			currentSprite.sprite = card_board;
 			faceUpSprite = card_board;
 		}
+
+		Theme = theme;
 
 		//Debug.Log ("--------LOADING RESOURCES---------");
 		title.text = cardTitle;
@@ -131,11 +134,13 @@ public abstract class Card : MonoBehaviour
 
 	void OnMouseUp(){
 
+		/*
 		if (toShowPoint && isMine) {
 			Debug.Log ("SHOW POINT");
 			currentToolTipText = toolTipText;
 			StartCoroutine (stopToolTip(1));
 		}
+		*/
 	}
 
 
@@ -152,6 +157,34 @@ public abstract class Card : MonoBehaviour
        	//ZoomCard(false);
     }
 
+	void OnMouseOver(){
+		Debug.Log("OnMouseOver");
+
+		if (Input.GetMouseButton (1) && isMine) {
+
+			Debug.Log("Right Click on the card ");
+
+			if (!toShowPoint) {
+				Debug.Log("Warning");
+				UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
+				Debug.Log (man);
+
+				man.ShowBubble ("Are you sure?\n This will cost 1 point");
+				man.HideBubble ();
+				toShowPoint = true;
+				return;
+
+			} else {
+				Debug.Log("Showing theme");
+				UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
+				Debug.Log (man);
+				man.ShowBubble ("This is for sure: " + Theme + "!");
+				man.HideBubble ();
+			}
+		}
+	}
+
+
 
     abstract public void useCard();
 
@@ -167,7 +200,7 @@ public abstract class Card : MonoBehaviour
     {
 
     }
-
+		
     public void revealCard()
     {
         currentSprite.sprite = faceUpSprite;
