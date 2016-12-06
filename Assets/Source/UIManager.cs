@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour {
 
@@ -24,6 +24,11 @@ public class UIManager : MonoBehaviour {
     public Button PlayCardsBt;
     public Button ActionBt;
 
+    public GameObject YourTurnToPlayText;
+    public GameObject TimeLeft;
+    public Text TimeLeftText;
+    float timerDelay = 10.0f;
+
     public void ShowSelectButtons()
     {
         SelectionPanel.SetActive(!SelectionPanel.activeInHierarchy);
@@ -33,25 +38,9 @@ public class UIManager : MonoBehaviour {
     {
         ThemeBtPanel.SetActive(false);
     }
-
+    
     public void ActionsBt()
     {
-        /*Debug.Log(gameManager.myPlayer.Ink + " ink cost shame : " + shameAction.InkCost);
-        if(gameManager.myPlayer.Ink >= shameAction.InkCost)
-            foreach(var bt in ShameButtons)
-                bt.interactable = true;
-        else
-            foreach (var bt in ShameButtons)
-                bt.interactable = false;
-
-        Debug.Log(gameManager.myPlayer.Ink + " ink cost duel : " + duelAction.InkCost);
-        if (gameManager.myPlayer.Ink >= duelAction.InkCost)
-            foreach (var bt in DuelButtons)
-                bt.interactable = true;
-        else
-            foreach (var bt in DuelButtons)
-                bt.interactable = false;*/
-
         ShowSelectButtons();
         CloseThemeUI();
     }
@@ -114,6 +103,26 @@ public class UIManager : MonoBehaviour {
 
     }
 
+    public void StartTime()
+    {
+        timerDelay = 10.0f;
+        TimeLeft.SetActive(true);
+    }
+
+    public void StopTimer()
+    {
+        TimeLeft.SetActive(false);
+    }
+    
+    void Update()
+    {
+        if(TimeLeft.activeInHierarchy)
+        {
+            timerDelay -= Time.deltaTime;
+
+            TimeLeftText.text = "Time Left : " + Mathf.Round(timerDelay);
+        }
+    }
 
 
 
