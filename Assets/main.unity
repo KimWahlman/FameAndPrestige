@@ -5678,7 +5678,7 @@ MonoBehaviour:
   bubble: {fileID: 47315926}
   YourTurnToPlayText: {fileID: 182679862}
   TimeLeft: {fileID: 723298875}
-  TimeLeftText: {fileID: 723298877}
+  TimeLeftText: {fileID: 0}
 --- !u!4 &1786435434
 Transform:
   m_ObjectHideFlags: 0

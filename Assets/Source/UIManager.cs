@@ -103,8 +103,7 @@ public class UIManager : MonoBehaviour {
         }
 
     }
-
-<<<<<<< HEAD
+		
 	public void ShowBubble(string message){
 	
 		bubble.gameObject.SetActive (true);
@@ -115,7 +114,7 @@ public class UIManager : MonoBehaviour {
 
 		StartCoroutine (hideBubble ());
 	}
-=======
+
     public void StartTime()
     {
         timerDelay = 10.0f;
@@ -136,7 +135,6 @@ public class UIManager : MonoBehaviour {
             TimeLeftText.text = "Time Left : " + Mathf.Round(timerDelay);
         }
     }
->>>>>>> origin/Iann
 
 	IEnumerator hideBubble(){
 
