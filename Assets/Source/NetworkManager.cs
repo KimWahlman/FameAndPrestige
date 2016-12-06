@@ -55,6 +55,7 @@ public class NetworkManager : MonoBehaviour {
         socket.On("REFILL_HAND", OnReceiveRefillHand);
 		socket.On("END_GAME", OnReceiveEndGame);
 		socket.On ("TO_SHOW_THEME", OnToShowTheme);
+        socket.On("TIME_LEFT", OnReceiveTimeLeft);
 
     }
 
@@ -289,6 +290,16 @@ public class NetworkManager : MonoBehaviour {
 		Debug.Log ("OnReceiveEndGame " + e.data); 
 		gameManager.CheckWinner (e.data ["id"].ToString());
 	}
+    
+    public void OnReceiveTimeLeft(SocketIOEvent e)
+    {
+
+        if(int.Parse(e.data["id"].ToString()) == gameManager.myPlayer.idPlayer)
+        {
+            UIManager.StartTime();
+        }
+        
+    }
 
 	public void OnToShowTheme(SocketIOEvent e){
 

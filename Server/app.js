@@ -167,12 +167,23 @@ function startCounter(socket, playerID){
 
 	timerHandler = setTimeout(function()
 	{
-		console.log("END TURN FOR TIME WASTE");
-		currentTurn = (currentTurn+1)%4;
-        socket.emit("CHANGE_TURN", {playerId: currentTurn, reason: "Timeout", id: playerID});
-        socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn, reason: "Timeout", id: playerID});
-        startCounter(socket, currentTurn);
+
+        console.log("10 second left")
+        socket.emit("TIME_LEFT", {id: playerID});
+        socket.broadcast.emit("TIME_LEFT", {id: playerID});
+
+		timerHandler = setTimeout(function()
+        {
+            console.log("END TURN FOR TIME WASTE");
+            currentTurn = (currentTurn+1)%4;
+            socket.emit("CHANGE_TURN", {playerId: currentTurn, reason: "Timeout", id: playerID});
+            socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn, reason: "Timeout", id: playerID});
+            startCounter(socket, currentTurn);
+        }, timeLeft)
+
 	}, timer);
+
+
 
 }
 
@@ -194,7 +205,8 @@ var totalTurns = 0;
 var timerHandler = null;
 const endTurns = 31;
 const maxCard = 4;
-const timer = 60000;
+const timer = 20000;
+const timeLeft = 10000;
 var theme = 0;
 const themes = ['folklore','history','horror','nature'];
 const charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];

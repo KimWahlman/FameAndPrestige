@@ -176,14 +176,27 @@ public class GameManager : MonoBehaviour {
     {
         return myPlayer.canPlay;
     }
+
     
     public void endTurn()
     {
+        if (toPlay.Count > 0)
+        {
+            string[] cardIdToRemove = new string[toPlay.Count];
+            for (int i = 0; i < toPlay.Count; i++)
+            {
+                cardIdToRemove[i] = toPlay[i].ToString();
+                Debug.Log("i :" + i);
+            }
+            InvalidCardPlayed(cardIdToRemove);
+        }
+
         myPlayer.canPlay = false;
         UIManager.EndTurnBt.interactable = false;
         UIManager.PlayCardsBt.interactable = false;
         UIManager.ActionBt.interactable = false;
-
+        UIManager.YourTurnToPlayText.SetActive(false);
+        UIManager.StopTimer();
     }
 
     public void cleanBoard()
@@ -205,6 +218,9 @@ public class GameManager : MonoBehaviour {
         UIManager.EndTurnBt.interactable = true;
         UIManager.PlayCardsBt.interactable = true;
         UIManager.ActionBt.interactable = true;
+        UIManager.YourTurnToPlayText.SetActive(true);
+
+
     }
 
     public void AssignCharacters(List<String> characters)
@@ -387,9 +403,12 @@ public class GameManager : MonoBehaviour {
     {        
         foreach (var c in cardIDs)
         {
-            var cc = int.Parse(c.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
-            myPlayer.cardsHeld.Add(cc, Deck[cc]);
-            removeStoredCard(cc);
+            if(c != "")
+            {
+                var cc = int.Parse(c.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
+                myPlayer.cardsHeld.Add(cc, Deck[cc]);
+                removeStoredCard(cc);
+            }
         }
 
         playerHands[myPlayer.idPlayer].emptyHand();
