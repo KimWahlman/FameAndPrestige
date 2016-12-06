@@ -171,7 +171,7 @@ function startCounter(socket, playerID){
 		currentTurn = (currentTurn+1)%4;
         socket.emit("CHANGE_TURN", {playerId: currentTurn, reason: "Timeout", id: playerID});
         socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn, reason: "Timeout", id: playerID});
-
+        startCounter(socket, currentTurn);
 	}, timer);
 
 }
@@ -561,7 +561,7 @@ io.on('connection', function(socket){
         socket.emit("CHANGE_TURN", {playerId: currentTurn});
         socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn });
 
-        startCounter(socket, id);
+        startCounter(socket, clients[id]);
 
         turns += 1;
         totalTurns += 1;

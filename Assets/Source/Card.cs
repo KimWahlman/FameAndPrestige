@@ -89,7 +89,7 @@ public abstract class Card : MonoBehaviour
 		//Debug.Log (testTexture [0]);
 		cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
 		xPixel = 7;
-		yPixel = 8.5f;
+		yPixel = 8.2f;
 
 
 		var xScale = xPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.x;

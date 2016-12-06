@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour {
 		int index = 0;
 		foreach (var sprite in SpritesTheme) {
 			if (sprite.name == theme) {
-				themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[0].name;
+				themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[index].name;
 				//playableZone.GetComponent<SpriteRenderer> ().sprite = sprite;
 				break;
 			}

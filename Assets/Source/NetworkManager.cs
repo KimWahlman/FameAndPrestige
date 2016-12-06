@@ -54,6 +54,7 @@ public class NetworkManager : MonoBehaviour {
         socket.On("UPDATE_SCORE", OnReceiveUpdateScore);
         socket.On("REFILL_HAND", OnReceiveRefillHand);
 		socket.On("END_GAME", OnReceiveEndGame);
+		socket.On ("TO_SHOW_THEME", OnToShowTheme);
 
     }
 
@@ -285,6 +286,12 @@ public class NetworkManager : MonoBehaviour {
 
 		Debug.Log ("OnReceiveEndGame " + e.data); 
 		gameManager.CheckWinner (e.data ["id"].ToString());
+	}
+
+	public void OnToShowTheme(SocketIOEvent e){
+
+		Debug.Log ("OnToShowTheme" + e.data);
+
 	}
 
 

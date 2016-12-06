@@ -245,12 +245,12 @@ TextMesh:
   m_GameObject: {fileID: 1000011538156980}
   m_Text: Tree
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.45
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 60
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: ec95274f86f8d495f871028aba69375f, type: 3}
@@ -266,12 +266,12 @@ TextMesh:
   m_GameObject: {fileID: 1000012163520766}
   m_Text: 2
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.35
   m_LineSpacing: 0.654655
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 1
-  m_FontSize: 0
+  m_FontSize: 60
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: a870a00a1b38b4d3b998cda8a3d8e6de, type: 3}
@@ -291,12 +291,12 @@ TextMesh:
 
     out during the game. '
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.28
   m_LineSpacing: 0.654655
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 1
-  m_FontSize: 0
+  m_FontSize: 60
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: a870a00a1b38b4d3b998cda8a3d8e6de, type: 3}
@@ -324,7 +324,7 @@ MonoBehaviour:
   handPosition: {x: 0, y: 0, z: 0}
   deckPosition: {x: 0, y: 0, z: 0}
   faceUpSprite: {fileID: 21300000, guid: ac56db031c9e349bf96bcf5dc1e4dc5d, type: 3}
-  faceDownSprite: {fileID: 21300000, guid: 001fb3c5e3d53d54db55944af9c519a5, type: 3}
+  faceDownSprite: {fileID: 21300000, guid: ac48c04a36c6d47968f3f5bdbbcad202, type: 3}
   title: {fileID: 102000010197996304}
   description: {fileID: 102000011943511958}
   point: {fileID: 102000011446644606}
