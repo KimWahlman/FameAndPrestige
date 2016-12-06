@@ -8,7 +8,7 @@ public class LoadCards : MonoBehaviour {
 
 	public GameObject cardPrefab;
 	public GameObject Parent;
-	private Card showCard;
+	private Card Card;
 	public GameManager gameManager;
 
 	public void Load(){
@@ -24,15 +24,16 @@ public class LoadCards : MonoBehaviour {
 			card.name = "Card_"+card_json ["id"].ToString();
 
 
-			showCard = card.GetComponent<Card> ();
+			Card = card.GetComponent<Card> ();
 			//Debug.Log (showCard);
 
 			string title = card_json ["name"].ToString().Trim(new Char[] { ' ', '"' });
 			string description = card_json ["description"].ToString().Trim(new Char[] { ' ', '"', '\n' });
 			string path = card_json ["img"].ToString().Trim(new Char[] { ' ', '"' });
 			string point = card_json ["point"].ToString().Trim(new Char[] { ' ', '"' });
+			string type = card_json ["type"].ToString().Trim(new Char[] { ' ', '"' });
 
-			showCard.LoadResource (title, description, point, path);
+			Card.LoadResource (title, description, point, type,path);
 			card.SetActive (false);
 
 			Card cardScript = card.GetComponents<Card> ()[0];

@@ -25,7 +25,11 @@ public class NetworkManager : MonoBehaviour {
 
 
 	void Awake(){
-		port = GameObject.Find ("Global").GetComponent<globalvar> ().port;
+		if(GameObject.Find ("Global") == null){ 
+			port = 2000;
+		}else{
+			port = GameObject.Find ("Global").GetComponent<globalvar> ().port;
+		}
 		externalServer = "ws://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
 		localServer = "ws://127.0.0.1:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
 		Debug.Log (externalServer + "\n" + localServer);
@@ -248,6 +252,9 @@ public class NetworkManager : MonoBehaviour {
     public void OnReceiveChangeTurn(SocketIOEvent e)
     {
         int playerIdTurn = int.Parse(e.data["playerId"].ToString());
+		if (e.data ["reason"] != null) {
+			Debug.Log ("---------------ENDED FOR TIME WASTE-----------");
+		}
 
         if (myPlayer.idPlayer == playerIdTurn)
         {

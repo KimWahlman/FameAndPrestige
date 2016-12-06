@@ -161,6 +161,26 @@ function checkWinner(socket){
 }
 
 
+function startCounter(socket, playerID){
+
+	console.log("------- STARTING COUNTER FOR "+ playerID +"------------")
+
+	timerHandler = setTimeout(function()
+	{
+		console.log("END TURN FOR TIME WASTE");
+		currentTurn = (currentTurn+1)%4;
+        socket.emit("CHANGE_TURN", {playerId: currentTurn, reason: "Timeout", id: playerID});
+        socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn, reason: "Timeout", id: playerID});
+
+	}, timer);
+
+}
+
+function stopCounter(){
+	if(timerHandler)
+		clearTimeout(timerHandler);
+}
+
 const app = require('express')();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
@@ -171,8 +191,10 @@ var clients = {};
 var cards = {};
 var turns = 0;
 var totalTurns = 0;
+var timerHandler = null;
 const endTurns = 31;
 const maxCard = 4;
+const timer = 60000;
 var theme = 0;
 const themes = ['folklore','history','horror','nature'];
 const charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
@@ -232,6 +254,8 @@ io.on('connection', function(socket){
 
             socket.emit("ASSIGN_CHARACTER", {chars: charactersAvailable})
             socket.broadcast.emit("ASSIGN_CHARACTER", {chars: charactersAvailable})
+
+            startCounter(socket, currentTurn);
 
         }
 	});
@@ -522,6 +546,7 @@ io.on('connection', function(socket){
 
     socket.on("END_TURN", function(){
 
+    	stopCounter();
         var id = socket.client.id;
         var playerId = Object.keys(clients).indexOf(socket.client.id);
 
@@ -535,6 +560,8 @@ io.on('connection', function(socket){
         currentTurn = (currentTurn+1)%4;
         socket.emit("CHANGE_TURN", {playerId: currentTurn});
         socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn });
+
+        startCounter(socket, id);
 
         turns += 1;
         totalTurns += 1;

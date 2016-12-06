@@ -62,8 +62,18 @@ public abstract class Card : MonoBehaviour
 
     }
 
-	public void LoadResource(string cardTitle, string cardDescription, string point_text, string imgPath){
+	public void LoadResource(string cardTitle, string cardDescription, string point_text, string type, string imgPath){
 
+
+		if (type.Equals("pure")) {
+			Sprite card_board = Resources.LoadAll<Sprite>("card_board")[0];
+			currentSprite.sprite = card_board;
+			faceUpSprite = card_board;
+		} else {
+			Sprite card_board = Resources.LoadAll<Sprite>("mixed_card_board")[0];
+			currentSprite.sprite = card_board;
+			faceUpSprite = card_board;
+		}
 
 		//Debug.Log ("--------LOADING RESOURCES---------");
 		title.text = cardTitle;
@@ -79,7 +89,7 @@ public abstract class Card : MonoBehaviour
 		//Debug.Log (testTexture [0]);
 		cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
 		xPixel = 7;
-		yPixel = 8;
+		yPixel = 8.5f;
 
 
 		var xScale = xPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
