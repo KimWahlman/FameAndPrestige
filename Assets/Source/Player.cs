@@ -13,6 +13,6 @@ public class Player : MonoBehaviour {
     public int Ink = 0;
     public Character character;
     public Dictionary<int, Player> opponents = new Dictionary<int, Player>();
-
+    public int Tries = 0;
 
 }

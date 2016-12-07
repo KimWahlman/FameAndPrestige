@@ -33,6 +33,7 @@ public abstract class Card : MonoBehaviour
 
 
     GameObject CardZoomed;
+    LastPlayZone lastPlayZone;
 
     public bool isBeingDragged = false;
 
@@ -45,14 +46,21 @@ public abstract class Card : MonoBehaviour
 	private GUIStyle guiStyleBack;
 
 
+    void Start()
+    {
+        lastPlayZone = GameObject.Find("LastPlayZone").GetComponent<LastPlayZone>();
+    }
 
     void Awake()
     {
         localScale = this.transform.localScale;
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
-        deckPosition = this.transform.position;       
+        deckPosition = this.transform.position;
 
-		guiStyleFore = new GUIStyle();
+        
+
+
+        guiStyleFore = new GUIStyle();
 
 		guiStyleFore.fontSize = 22;
 		guiStyleFore.normal.textColor = Color.black;
@@ -74,19 +82,15 @@ public abstract class Card : MonoBehaviour
 			currentSprite.sprite = card_board;
 			faceUpSprite = card_board;
 		}
-
-		//Debug.Log ("--------LOADING RESOURCES---------");
+        
 		title.text = cardTitle;
 		point.text = point_text;
 
 		var originaltext = cardDescription;
 		description.text = TextWrap(originaltext,30);
-		//Debug.Log (imgPath);
-
-		//Debug.Log ("picture/" + imgPath);
 
 		Sprite[] testTexture = Resources.LoadAll<Sprite>("picture/"+imgPath);
-		//Debug.Log (testTexture [0]);
+
 		cardArt.GetComponent<SpriteRenderer>().sprite = testTexture[0];
 		xPixel = 7;
 		yPixel = 8.5f;
@@ -94,7 +98,6 @@ public abstract class Card : MonoBehaviour
 
 		var xScale = xPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
 		var yScale = yPixel / cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
-		//Debug.Log(cardArt.GetComponent<SpriteRenderer>().sprite.bounds.size);
 
 		cardArt.GetComponent<SpriteRenderer>().transform.localScale = new Vector3(xScale,yScale,0);
 	}
@@ -132,7 +135,6 @@ public abstract class Card : MonoBehaviour
 	void OnMouseUp(){
 
 		if (toShowPoint && isMine) {
-			Debug.Log ("SHOW POINT");
 			currentToolTipText = toolTipText;
 			StartCoroutine (stopToolTip(1));
 		}
@@ -141,24 +143,16 @@ public abstract class Card : MonoBehaviour
 
     void OnMouseExit()
     {
-		Debug.Log ("ON MOUSE EXIT");
         ZoomCard(false);
 		currentToolTipText = "";
     }
-
-    void OnMouseDown()
-    {
-        Debug.Log("OnMouseDown");
-       	//ZoomCard(false);
-    }
-
 
     abstract public void useCard();
 
     public void playCard()
     {
-        print("card played");
         hasBeenPlayed = true;
+        isOnTheBoard = true;
         revealCard();
         useCard();
     }
@@ -176,17 +170,21 @@ public abstract class Card : MonoBehaviour
 
     public void hideCard()
     {
-        //currentSprite.sprite = faceDownSprite;
+        Debug.Log("hide card");
 		currentSprite.sprite = null;
-        /*
-		cardArt.SetActive (false);
-		title.gameObject.SetActive (false);
-		description.gameObject.SetActive (false);
-        */
+        isOnTheBoard = false;
         this.gameObject.SetActive(false);
         if(CardZoomed)
             Destroy(CardZoomed);
 
+    }
+
+    public void destroyCard()
+    {
+        if (CardZoomed)
+            Destroy(CardZoomed);
+
+        Destroy(this.gameObject);
     }
 
     public void popCard(bool cardIsMine, Transform posTransform, int playerID)
@@ -285,7 +283,16 @@ public abstract class Card : MonoBehaviour
             CardZoomed.gameObject.layer = 1;
 
 			this.localScale *= 1.5f;
-            CardZoomed.transform.localScale = goTransform.localScale * 1.8f;
+
+            
+            
+            if (lastPlayZone.CheckContainCard(this.id)) 
+            {
+                CardZoomed.transform.localScale = goTransform.localScale * 2.5f;
+            } else
+            {
+                CardZoomed.transform.localScale = goTransform.localScale * 1.8f;
+            }
 
             //hide the real card sprite
             currentSprite.sprite = null;
@@ -312,7 +319,6 @@ public abstract class Card : MonoBehaviour
 				point.gameObject.SetActive (true);
 			}
         }
-        //Debug.Log("this.position:"+ this.transform.localPosition);
     }
 
 
@@ -349,7 +355,6 @@ public abstract class Card : MonoBehaviour
 
     public void returnBackToHand()
     {
-		Debug.Log ("handPosition:"+handPosition);
         isOnTheBoard = false;
         this.transform.position = handPosition;
     }

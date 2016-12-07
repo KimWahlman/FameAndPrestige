@@ -24,10 +24,15 @@ public class UIManager : MonoBehaviour {
     public Button PlayCardsBt;
     public Button ActionBt;
 
-    public GameObject YourTurnToPlayText;
+    public GameObject YourTurnToPlayMessage;
+    public GameObject PassMessage;
+    public GameObject ComboFailedMessage;
+
     public GameObject TimeLeft;
     public Text TimeLeftText;
     float timerDelay = 10.0f;
+
+    public Text TriesLeftText;
 
     public void ShowSelectButtons()
     {
@@ -103,9 +108,9 @@ public class UIManager : MonoBehaviour {
 
     }
 
-    public void StartTime()
+    public void StartTime(int time)
     {
-        timerDelay = 10.0f;
+        timerDelay = time;
         TimeLeft.SetActive(true);
     }
 
@@ -114,13 +119,18 @@ public class UIManager : MonoBehaviour {
         TimeLeft.SetActive(false);
     }
     
+    public void UpdateTries()
+    {
+        TriesLeftText.text = "Tries left : " + gameManager.myPlayer.Tries.ToString();
+    }
+
     void Update()
     {
         if(TimeLeft.activeInHierarchy)
         {
             timerDelay -= Time.deltaTime;
 
-            TimeLeftText.text = "Time Left : " + Mathf.Round(timerDelay);
+            TimeLeftText.text = "Time left : " + Mathf.Round(timerDelay);
         }
     }
 
