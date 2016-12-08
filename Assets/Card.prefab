@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011538156980}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.3, z: -0.01}
+  m_LocalPosition: {x: 0, y: -2.1, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012163520766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: -0.01}
+  m_LocalPosition: {x: 0, y: -4.9, z: -0.01}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.01}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -245,7 +245,7 @@ TextMesh:
   m_GameObject: {fileID: 1000011538156980}
   m_Text: Tree
   m_OffsetZ: 0
-  m_CharacterSize: 0.45
+  m_CharacterSize: 0.35
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -266,7 +266,7 @@ TextMesh:
   m_GameObject: {fileID: 1000012163520766}
   m_Text: 2
   m_OffsetZ: 0
-  m_CharacterSize: 0.35
+  m_CharacterSize: 0.3
   m_LineSpacing: 0.654655
   m_Anchor: 4
   m_Alignment: 1
@@ -291,7 +291,7 @@ TextMesh:
 
     out during the game. '
   m_OffsetZ: 0
-  m_CharacterSize: 0.28
+  m_CharacterSize: 0.25
   m_LineSpacing: 0.654655
   m_Anchor: 4
   m_Alignment: 1
