@@ -224,8 +224,20 @@ public class NetworkManager : MonoBehaviour {
         {
             string[] cards = e.data.GetField("cards").ToString().Split(',');
             gameManager.InvalidCardPlayed(cards);
-        }
+            
+            gameManager.myPlayer.Tries--;
+            UIManager.UpdateTries();
+            
 
+            if (gameManager.myPlayer.Tries == 0)
+            {
+                UIManager.PassMessage.SetActive(true);
+                SendEndTurn();
+            } else
+            {
+                UIManager.ComboFailedMessage.SetActive(true);
+            }
+        }
 		UIManager.ShowBubble ("I can't play this cards");
 		UIManager.HideBubble ();
     }
@@ -293,10 +305,9 @@ public class NetworkManager : MonoBehaviour {
     
     public void OnReceiveTimeLeft(SocketIOEvent e)
     {
-
         if(int.Parse(e.data["id"].ToString()) == gameManager.myPlayer.idPlayer)
         {
-            UIManager.StartTime();
+            UIManager.StartTime(int.Parse(e.data["time"].ToString()));
         }
         
     }

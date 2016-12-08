@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public GameObject[] handsGO;
 	public Animator themeBar;
     public PlayableZone playableZone;
+    public LastPlayZone lastPlayZone;
     private NetworkManager networkManager;
 	private LoadCards loadCards;
 	public int TotalTurn  = 32;
@@ -82,23 +83,23 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+
+    
 	public void CheckWinner(string string_id){
 
 		int id = int.Parse(string_id.Trim(new System.Char[] { ' ', '"', ',', '[', ']' }));
 		if (id == myPlayer.idPlayer) {
-			Debug.Log ("------I WIN-------");
 			WinText.text = "You Won";
 
 		} else {
-			Debug.Log ("---------I LOST---------");
-			id += 1;
-			WinText.text = "Player " + id.ToString() + " won!" ;
+			//id += 1;
+			WinText.text = myPlayer.opponents[id].character.name + " won!" ;
 		}
 		WinText.gameObject.SetActive (true);
 		WinImage.gameObject.SetActive (true);
 
 	}
-		
+
 	public void checkEndTurnButton(){
 	
 		if (playableZone.nextEmptySlot != 0) {
@@ -168,7 +169,6 @@ public class GameManager : MonoBehaviour {
 			}
 			index++;
 		}
-		Debug.Log (index);
 		themeBar.SetInteger ("theme", index);
     }
 
@@ -186,7 +186,6 @@ public class GameManager : MonoBehaviour {
             for (int i = 0; i < toPlay.Count; i++)
             {
                 cardIdToRemove[i] = toPlay[i].ToString();
-                Debug.Log("i :" + i);
             }
             InvalidCardPlayed(cardIdToRemove);
         }
@@ -195,19 +194,29 @@ public class GameManager : MonoBehaviour {
         UIManager.EndTurnBt.interactable = false;
         UIManager.PlayCardsBt.interactable = false;
         UIManager.ActionBt.interactable = false;
-        UIManager.YourTurnToPlayText.SetActive(false);
+        UIManager.YourTurnToPlayMessage.SetActive(false);
         UIManager.StopTimer();
     }
 
     public void cleanBoard()
     {
+        List<Card> cardsToLastPlayedZone = new List<Card>();
+
         playableZone.emptyZone();
         foreach(var c in Deck)
         {
-            if (c.hasBeenPlayed)
-                c.hideCard();
+           // if (c.isOnTheBoard)
+               // c.hideCard();
+            if (c.isOnTheBoard)
+            {
+                Debug.Log("IS ON BOARD " + c);
+                cardsToLastPlayedZone.Add(c);
+            }
         }
-        foreach(var c in toPlay)
+
+        lastPlayZone.FillZone(cardsToLastPlayedZone);
+
+        foreach (var c in toPlay)
         {
             Deck[c].returnBackToHand();
         }
@@ -218,7 +227,10 @@ public class GameManager : MonoBehaviour {
         UIManager.EndTurnBt.interactable = true;
         UIManager.PlayCardsBt.interactable = true;
         UIManager.ActionBt.interactable = true;
-        UIManager.YourTurnToPlayText.SetActive(true);
+        UIManager.YourTurnToPlayMessage.SetActive(true);
+
+        myPlayer.Tries = 2;
+        UIManager.UpdateTries();
 
 
     }
@@ -298,13 +310,11 @@ public class GameManager : MonoBehaviour {
         //Card is back to player 
         myPlayer.cardsHeld.Add(cardID, draggedCard);
         draggedCard.handPosition = playerHands[myPlayer.idPlayer].newCard().position;
-        draggedCard.gameObject.layer = 1;
-        Debug.Log("draggedcard position::"+ draggedCard.handPosition);    
+        draggedCard.gameObject.layer = 1; 
 
         int id = 0;
         foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
         {
-            Debug.Log("card held : " + card.Value);
             card.Value.PositionOnTheHand(playerHands[myPlayer.idPlayer].posList[id++]);
         }
 
@@ -389,7 +399,7 @@ public class GameManager : MonoBehaviour {
         
         if(!Deck[cardID].isMine)
         {
-            Deck[cardID].PositionOnTheHand(playableZone.getSlot());
+            Deck [cardID].PositionOnTheHand(playableZone.getSlot());
 			Deck [cardID].title.gameObject.SetActive (true);
 			Deck [cardID].description.gameObject.SetActive (true);
 			Deck [cardID].cardArt.SetActive (true);
@@ -397,6 +407,9 @@ public class GameManager : MonoBehaviour {
 			Deck [cardID].isOnTheBoard = true;
             playableZone.addCard();
         }
+
+        myPlayer.Tries--;
+        UIManager.UpdateTries();
     }
     
     public void InvalidCardPlayed(string[] cardIDs)
@@ -415,12 +428,12 @@ public class GameManager : MonoBehaviour {
 
         foreach (KeyValuePair<int, Card> card in myPlayer.cardsHeld)
         {
-            Debug.Log("card to return : " + card.Value.id);
             card.Value.handPosition = playerHands[myPlayer.idPlayer].newCard().position;
             card.Value.returnBackToHand();
         }
         
         playableZone.emptyZone();
+
         
     }
 

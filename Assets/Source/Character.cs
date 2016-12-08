@@ -5,6 +5,7 @@ public class Character {
     
     public character assignedCharacter;
     public NetworkManager networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+    public string name;
 
     public enum character
     {
@@ -18,6 +19,26 @@ public class Character {
     {
         character c = (character)character.Parse(typeof(character), charName, true);
         assignedCharacter = c;
+        chooseName();
+
+    }
+    public void chooseName()
+    {
+        switch (assignedCharacter)
+        {
+            case character.MARY_SHELLEY:
+                name = "Mary Shelley";
+                break;
+            case character.THE_GRIM_BROTHERS:
+                name = "The Grim Brothers";
+                break;
+            case character.WILLIAM_WORDSWORTH:
+                name = "William Wordsworth";
+                break;
+            case character.BETTINA_VON_ARMIN:
+                name = "Bettina Von Armin";
+                break;
+        }
     }
 
     public void usePower()

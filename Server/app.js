@@ -165,12 +165,8 @@ function startCounter(socket, playerID){
 
 	console.log("------- STARTING COUNTER FOR "+ playerID +"------------")
 
-	timerHandler = setTimeout(function()
-	{
-
-        console.log("10 second left")
-        socket.emit("TIME_LEFT", {id: playerID});
-        socket.broadcast.emit("TIME_LEFT", {id: playerID});
+    socket.emit("TIME_LEFT", {id: playerID, time: (timer/1000)});
+    socket.broadcast.emit("TIME_LEFT", {id: playerID, time: (timer/1000)});
 
 		timerHandler = setTimeout(function()
         {
@@ -179,11 +175,7 @@ function startCounter(socket, playerID){
             socket.emit("CHANGE_TURN", {playerId: currentTurn, reason: "Timeout", id: playerID});
             socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn, reason: "Timeout", id: playerID});
             startCounter(socket, currentTurn);
-        }, timeLeft)
-
-	}, timer);
-
-
+        }, timer)
 
 }
 
@@ -205,8 +197,7 @@ var totalTurns = 0;
 var timerHandler = null;
 const endTurns = 31;
 const maxCard = 4;
-const timer = 20000;
-const timeLeft = 10000;
+const timer = 30000;
 var theme = 0;
 const themes = ['folklore','history','horror','nature'];
 const charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
