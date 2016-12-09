@@ -104,7 +104,7 @@ public class CardBook : MonoBehaviour {
 				card.transform.Find ("Description").GetComponent<Text> ().text = description;
 				card.transform.Find ("painting").GetComponent<RawImage> ().texture = testTexture [0];
 				card.GetComponent<ShowInformation> ().informationList = informationList;
-				card.GetComponent<ShowInformation> ().authoPainting = author;
+				card.GetComponent<ShowInformation> ().namePainter = author;
 				card.GetComponent<ShowInformation> ().namePainting = titles;
 				card.GetComponent<ShowInformation> ().name = card.name;
 				card.GetComponent<ShowInformation> ().titleCard = title;

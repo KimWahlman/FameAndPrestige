@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: 47841e52befd6004f9250292cd661ad4
-timeCreated: 1481152768
+timeCreated: 1481311769
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cardButton: {instanceID: 0}
+  - informationList: {instanceID: 0}
+  - h1preb: {instanceID: 0}
+  - h2preb: {instanceID: 0}
+  - h3preb: {instanceID: 0}
+  - parpreb: {instanceID: 0}
+  - content: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
