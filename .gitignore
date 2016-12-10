@@ -31,6 +31,6 @@ sysinfo.txt
 *.unitypackage
 
 #For Connection to Server
-.sh
-.bat
-.pem
+*.sh
+*.bat
+*.pem
