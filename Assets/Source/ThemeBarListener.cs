@@ -5,6 +5,7 @@ public class ThemeBarListener : MonoBehaviour {
 
 	private bool flag = true;
 	public TextMesh text;
+	public float wait = 0.7f;
 
 	void OnMouseDown(){
 		if (flag) {
@@ -19,7 +20,7 @@ public class ThemeBarListener : MonoBehaviour {
 	}
 
 	IEnumerator showText(){
-		yield return new WaitForSeconds(0.4f);
+		yield return new WaitForSeconds(wait);
 		text.gameObject.SetActive (true);
 	}
 		

@@ -24,6 +24,8 @@ public class NetworkManager : MonoBehaviour {
 	private int port;
 
 
+	private Card currentCard;
+
 	void Awake(){
 		if(GameObject.Find ("Global") == null){ 
 			port = 2000;
@@ -54,7 +56,7 @@ public class NetworkManager : MonoBehaviour {
         socket.On("UPDATE_SCORE", OnReceiveUpdateScore);
         socket.On("REFILL_HAND", OnReceiveRefillHand);
 		socket.On("END_GAME", OnReceiveEndGame);
-		socket.On ("TO_SHOW_THEME", OnToShowTheme);
+		socket.On("TO_SHOW_THEME", OnToShowTheme);
         socket.On("TIME_LEFT", OnReceiveTimeLeft);
 
     }
@@ -314,11 +316,33 @@ public class NetworkManager : MonoBehaviour {
 
 	public void OnToShowTheme(SocketIOEvent e){
 
-		Debug.Log ("OnToShowTheme" + e.data);
+		Debug.Log ("OnToShowTheme " + e.data); 
 
+		bool flag = Convert.ToBoolean(e.data ["toShow"].ToString());
+		Debug.Log (flag);
+		Debug.Log (currentCard);
+		if (flag && currentCard)
+			currentCard.showTheme ();
+		else
+			currentCard.showErroTheme();
+
+		currentCard = null; 
 	}
 
 
+	public void AskTheme(Card currentCardAsking, string name, string id, int PlayerID){
+
+		Debug.Log (name);
+		Debug.Log (id);
+	
+		Dictionary<string, string> data = new Dictionary<string, string>();
+		data ["PlayerID"] = PlayerID.ToString ();
+		data ["CardName"] = id.ToString();
+		JSONObject jso = new JSONObject(data);
+		socket.Emit ("SHOW_THEME", jso);
+		currentCard = currentCardAsking;
+	}
+		
     string JsonToString(string target, string s)
     {
         string[] newString = Regex.Split(target, s);

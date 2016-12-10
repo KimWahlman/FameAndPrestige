@@ -23,14 +23,12 @@ public class DragAndDrop : MonoBehaviour
     void OnMouseDrag()
     {
 		draggedCard = gameObject.GetComponent<Card>();
-		draggedCard.toShowPoint = false;
         grabCard();
     }
     void OnMouseUp()
     {
         releaseCard();
 		draggedCard = gameObject.GetComponent<Card>();
-		draggedCard.toShowPoint = true;
     }
 
     void Update()

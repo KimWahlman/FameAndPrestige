@@ -31,7 +31,7 @@ public abstract class Card : MonoBehaviour
     private Vector3 localScale;
 	private string Theme;
 	public bool toShowPoint = false;
-
+	public bool alreadyShowed = false;
 
     GameObject CardZoomed;
     LastPlayZone lastPlayZone;
@@ -166,25 +166,48 @@ public abstract class Card : MonoBehaviour
 			Debug.Log("Right Click on the card ");
 
 			if (!toShowPoint) {
-				Debug.Log("Warning");
+				Debug.Log ("Warning");
 				UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
 				Debug.Log (man);
 
 				man.ShowBubble ("Are you sure?\n This will cost 1 point");
 				man.HideBubble ();
-				toShowPoint = true;
+				StartCoroutine (setVariableTrue ());
 				return;
-
 			} else {
-				Debug.Log("Showing theme");
-				UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
-				Debug.Log (man);
-				man.ShowBubble ("This is for sure: " + Theme + "!");
-				man.HideBubble ();
+				Debug.Log ("Showing theme");
+				if (alreadyShowed) {
+					showTheme ();
+				} else {
+					NetworkManager nm = GameObject.Find ("NetworkManager").GetComponent<NetworkManager> ();
+					nm.AskTheme (this, cardName, id, ownerID);
+					alreadyShowed = true;
+				}
 			}
 		}
 	}
 
+	public void showTheme(){
+
+		UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
+		Debug.Log (man);
+		man.ShowBubble ("This is for sure: " + Theme + "!");
+		man.HideBubble ();
+	}
+
+	public void showErroTheme(){
+
+		UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
+		Debug.Log (man);
+		man.ShowBubble ("Not enough points for showing the theme");
+		man.HideBubble ();
+	}
+
+	IEnumerator setVariableTrue(){
+
+		yield return new WaitForSeconds(0.5f);
+		toShowPoint = true;
+	}
 
     abstract public void useCard();
 
@@ -241,6 +264,7 @@ public abstract class Card : MonoBehaviour
 			description.gameObject.SetActive (false);
 			point.gameObject.SetActive (false);
 			toShowPoint = false;
+			alreadyShowed = false;
 		}
 
 

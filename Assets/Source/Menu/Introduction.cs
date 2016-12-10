@@ -13,7 +13,8 @@ public class Introduction : MonoBehaviour {
 	public GameObject intro;
 	public GameObject menu;
 	public GameObject globalVar;
-	private string url = "http://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:8080/connect";
+	private string externalurl = "http://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:8080/connect";
+	private string localurl = "http://127.0.0.1:8080/connect";
 	private int count = 0;
 
 	private string[] descriptionArray = {"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
@@ -61,7 +62,7 @@ public class Introduction : MonoBehaviour {
 
 
 	IEnumerator requestPort() {
-		WWW www = new WWW(url);
+		WWW www = new WWW(localurl);
 		yield return www;
 		Debug.Log (www.text);
 		JSONObject jso = new JSONObject (www.text);

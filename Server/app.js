@@ -157,6 +157,7 @@ function checkWinner(socket){
     socket.broadcast.emit("END_GAME",maxScore);
 
     console.log("Game endend, closing server");
+    stopCounter();
     server.close()
 }
 
@@ -269,18 +270,18 @@ io.on('connection', function(socket){
         //give everyone cards (loop with draw function)
     });
 
-  	/*
+    
 	socket.on('disconnect', function(){
-		console.log("-----On USER_DISCONNECTED-----");
-		socket.broadcast.emit("USER_DISCONNECTED", currentUser);
-		for (var i = 0; i < clients.length; i++) {
-			if(clients[i].name === currentUser.name){
-				console.log("User " + currentUser.name +  " disconnect");
-				clients.splice(i,1);
-			}
-		}
+		console.log("-----USER_DISCONNECTED-----");
+        delete clients[socket.client.id];
+		socket.broadcast.emit("USER_DISCONNECTED");
+		if(Object.keys(clients) == 0){
+            console.log("-----GAME SERVER CLOSE-----");
+            stopCounter();
+            server.close();
+        }
     });
-	*/
+   
 
     socket.on("PLAY_CARD", function(data){
     	console.log("-----On PLAY_CARDS-----");
@@ -381,13 +382,19 @@ io.on('connection', function(socket){
 
     socket.on("SHOW_THEME",function(data){
 
+        console.log(data);
+
         var show = false;
         if(clients[socket.client.id].score > 0){
-            clients[socket.client.id].score -= 1;
+            console.log("SCORE OF THE CLIENT BEFORE UPDATE " + Number(clients[socket.client.id].score));
+            score = Number(clients[socket.client.id].score) - 1;
+            clients[socket.client.id].score = score;
             show = true;
+            socket.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });
+            socket.broadcast.emit("UPDATE_SCORE", {playerID : clients[socket.client.id].id, totalPoints : clients[socket.client.id].score, ink : clients[socket.client.id].ink });
         }
 
-        socket.emit("TO_SHOW_THEME", {thShow: show});
+        socket.emit("TO_SHOW_THEME", {toShow: show});
 
     });
 

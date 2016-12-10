@@ -51,6 +51,8 @@ public class LoadCards : MonoBehaviour {
 			toolTip += "\n"+card_json ["point"].ToString().Trim(new Char[] { ' ', '"' });
 
 			cardScript.toolTipText = toolTip;
+			cardScript.toShowPoint = false;
+			cardScript.alreadyShowed = false;
 			tempDeck.Add (cardScript);
 
 		}
