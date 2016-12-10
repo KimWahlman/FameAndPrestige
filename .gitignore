@@ -29,3 +29,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#For Connection to Server
+.sh
+.bat
+.pem
