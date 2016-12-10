@@ -220,6 +220,8 @@ var StartServer = function startServer(inPort){
     });
 }
 
+StartServer(process.argv[2]);
+
 module.exports = StartServer;
 
 

@@ -32,11 +32,11 @@ public class NetworkManager : MonoBehaviour {
 		}else{
 			port = GameObject.Find ("Global").GetComponent<globalvar> ().port;
 		}
-		externalServer = "ws://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
+		externalServer = "ws://ec2-52-48-140-226.eu-west-1.compute.amazonaws.com:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
 		localServer = "ws://127.0.0.1:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
 		Debug.Log (externalServer + "\n" + localServer);
 		SocketIOComponent sic = socket.GetComponents<SocketIOComponent> ()[0];
-		sic.url = localServer;
+		sic.url = externalServer;
 	}
 
     void Start()
@@ -330,7 +330,7 @@ public class NetworkManager : MonoBehaviour {
 	}
 
 
-	public void AskTheme(Card currentCardAsking, string name, string id, int PlayerID){
+	public void AskTheme(Card currentCardAsking, string name, int id, int PlayerID){
 
 		Debug.Log (name);
 		Debug.Log (id);
