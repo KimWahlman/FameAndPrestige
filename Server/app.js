@@ -172,10 +172,12 @@ function startCounter(socket, playerID){
 		timerHandler = setTimeout(function()
         {
             console.log("END TURN FOR TIME WASTE");
-            currentTurn = (currentTurn+1)%4;
-            socket.emit("CHANGE_TURN", {playerId: currentTurn, reason: "Timeout", id: playerID});
-            socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn, reason: "Timeout", id: playerID});
-            startCounter(socket, currentTurn);
+            //currentTurn = (currentTurn+1)%4;
+            //socket.emit("CHANGE_TURN", {playerId: currentTurn, reason: "Timeout", id: playerID});
+            //socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn, reason: "Timeout", id: playerID});
+            socket.emit("TIME_OVER", {id: playerID});
+            socket.broadcast.emit("TIME_OVER", {id: playerID});
+            //startCounter(socket, currentTurn);
         }, timer)
 
 }
@@ -571,7 +573,7 @@ io.on('connection', function(socket){
         socket.emit("CHANGE_TURN", {playerId: currentTurn});
         socket.broadcast.emit("CHANGE_TURN", { playerId: currentTurn });
 
-        startCounter(socket, clients[id]);
+        startCounter(socket, currentTurn);
 
         turns += 1;
         totalTurns += 1;

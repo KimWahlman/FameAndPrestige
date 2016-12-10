@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour {
     public GameObject ComboFailedMessage;
     public GameObject TimeLeft;
     public Text TimeLeftText;
-    float timerDelay = 10.0f;
+    float timerDelay = 30.0f;
 
     public Text TriesLeftText;
 
@@ -109,19 +109,23 @@ public class UIManager : MonoBehaviour {
 
     }
 		
-	public void ShowBubble(string message){
+	public void ShowBubble(string message, float displaytime = 2.0f){
 	
 		bubble.gameObject.SetActive (true);
 		bubble.GetComponentsInChildren<Text>()[0].text = message;
+
+        HideBubble(displaytime);
 	}
 
-	public void HideBubble(){
+    private void HideBubble(float delay)
+    {
+        StartCoroutine(hideBubble(delay));
+    }
 
-		StartCoroutine (hideBubble ());
-	}
 
     public void StartTime(int time)
     {
+        Debug.Log("StartTime");
         timerDelay = time;
         TimeLeft.SetActive(true);
     }
@@ -146,11 +150,11 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-	IEnumerator hideBubble(){
+	IEnumerator hideBubble(float delay){
 
-		yield return new WaitForSeconds (2f);
-		bubble.GetComponentsInChildren<Text> () [0].text = "";
-		bubble.gameObject.SetActive (false);
+		yield return new WaitForSeconds (delay);
+		bubble.GetComponentsInChildren<Text>()[0].text = "";
+		bubble.gameObject.SetActive(false);
 	}
 
 }

@@ -407,9 +407,8 @@ public class GameManager : MonoBehaviour {
 			Deck [cardID].isOnTheBoard = true;
             playableZone.addCard();
         }
-
-        myPlayer.Tries--;
-        UIManager.UpdateTries();
+        
+        
     }
     
     public void InvalidCardPlayed(string[] cardIDs)
