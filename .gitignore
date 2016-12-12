@@ -18,7 +18,7 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
-
+*.exe
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -29,3 +29,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#For Connection to Server
+*.sh
+*.bat
+*.pem
