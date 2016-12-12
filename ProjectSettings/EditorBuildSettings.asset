@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Menu.unity
   - enabled: 1
     path: Assets/main.unity
+  - enabled: 0
+    path: Assets/introduction.unity
+  - enabled: 0
+    path: Assets/cardbook.unity

@@ -46,10 +46,14 @@ public abstract class Card : MonoBehaviour
 	private GUIStyle guiStyleFore;
 	private GUIStyle guiStyleBack;
 
+    public UIManager UImanager;
+    public NetworkManager networkManager;
 
     void Start()
     {
         lastPlayZone = GameObject.Find("LastPlayZone").GetComponent<LastPlayZone>();
+        UImanager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
     }
 
     void Awake()
@@ -57,6 +61,7 @@ public abstract class Card : MonoBehaviour
         localScale = this.transform.localScale;
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
         deckPosition = this.transform.position;
+
 
         
 
@@ -152,55 +157,42 @@ public abstract class Card : MonoBehaviour
 		currentToolTipText = "";
     }
 
-    void OnMouseDown()
+    void Update()
     {
-        Debug.Log("OnMouseDown");
-       	//ZoomCard(false);
+        if (!isMine)
+        {
+            return;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (!toShowPoint)
+            {
+                UImanager.ShowBubble("Are you sure?\n This will cost 1 point");
+                StartCoroutine(setVariableTrue());
+                return;
+            }
+            else
+            {
+                if (alreadyShowed)
+                {
+                    showTheme();
+                }
+                else
+                {
+                    networkManager.AskTheme(this, cardName, id, ownerID);
+                    alreadyShowed = true;
+                }
+            }
+        }
     }
 
-	void OnMouseOver(){
-		Debug.Log("OnMouseOver");
-
-		if (Input.GetMouseButton (1) && isMine) {
-
-			Debug.Log("Right Click on the card ");
-
-			if (!toShowPoint) {
-				Debug.Log ("Warning");
-				UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
-				Debug.Log (man);
-
-				man.ShowBubble ("Are you sure?\n This will cost 1 point");
-				man.HideBubble ();
-				StartCoroutine (setVariableTrue ());
-				return;
-			} else {
-				Debug.Log ("Showing theme");
-				if (alreadyShowed) {
-					showTheme ();
-				} else {
-					NetworkManager nm = GameObject.Find ("NetworkManager").GetComponent<NetworkManager> ();
-					nm.AskTheme (this, cardName, id, ownerID);
-					alreadyShowed = true;
-				}
-			}
-		}
-	}
-
 	public void showTheme(){
-
-		UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
-		Debug.Log (man);
-		man.ShowBubble ("This is for sure: " + Theme + "!");
-		man.HideBubble ();
+        UImanager.ShowBubble ("The theme of this card is : "+ Theme +" !");
 	}
 
-	public void showErroTheme(){
-
-		UIManager man = GameObject.Find ("UIManager").GetComponent<UIManager> ();
-		Debug.Log (man);
-		man.ShowBubble ("Not enough points for showing the theme");
-		man.HideBubble ();
+	public void showErrorTheme(){
+        UImanager.ShowBubble ("Not enough points to show the theme.");
 	}
 
 	IEnumerator setVariableTrue(){
@@ -217,11 +209,6 @@ public abstract class Card : MonoBehaviour
         isOnTheBoard = true;
         revealCard();
         useCard();
-    }
-
-    public void discardCard()
-    {
-
     }
 		
     public void revealCard()
@@ -374,6 +361,7 @@ public abstract class Card : MonoBehaviour
                 //destroy the zoomed card
 				this.localScale /= 1.5f;
                 Destroy(CardZoomed);
+
                 //shwo the real card sprite
                 currentSprite.sprite = faceUpSprite;
 				cardArt.SetActive (true);
@@ -383,29 +371,7 @@ public abstract class Card : MonoBehaviour
 			}
         }
     }
-
-
-	void OnGUI()
-	{
-		if (currentToolTipText != "")
-		{
-			var x = Event.current.mousePosition.x;
-			var y = Event.current.mousePosition.y;
-			GUI.Label (new Rect (x-150,y+20,300,60), currentToolTipText, guiStyleFore);
-		}
-	}
-
-	/*
-    void ZoomCard(bool zoomed) {
-        if (zoomed && !isBeingDragged)
-        {
-            this.transform.localScale = localScale * 2;
-        }
-        else {
-            this.transform.localScale = localScale;
-        }
-    }
-	*/
+    
 
     //change the layer order of the card
     public void putInFront(bool inFront)

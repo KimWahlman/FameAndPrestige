@@ -58,6 +58,7 @@ public class NetworkManager : MonoBehaviour {
 		socket.On("END_GAME", OnReceiveEndGame);
 		socket.On("TO_SHOW_THEME", OnToShowTheme);
         socket.On("TIME_LEFT", OnReceiveTimeLeft);
+        socket.On("TIME_OVER", OnReceiveTimeOver);
 
     }
 
@@ -207,6 +208,9 @@ public class NetworkManager : MonoBehaviour {
         {
             gameManager.myPlayer.canPlay = false;
             UIManager.PlayCardsBt.interactable = false;
+
+            gameManager.myPlayer.Tries--;
+            UIManager.UpdateTries();
         } else
         {
             gameManager.ReOrderPlayerHands(playerID, cardsToRemoveFromHand);
@@ -241,7 +245,6 @@ public class NetworkManager : MonoBehaviour {
             }
         }
 		UIManager.ShowBubble ("I can't play this cards");
-		UIManager.HideBubble ();
     }
 
     public void OnReceiveAssignID(SocketIOEvent e)
@@ -311,10 +314,19 @@ public class NetworkManager : MonoBehaviour {
         {
             UIManager.StartTime(int.Parse(e.data["time"].ToString()));
         }
-        
     }
 
-	public void OnToShowTheme(SocketIOEvent e){
+    public void OnReceiveTimeOver(SocketIOEvent e)
+    {
+        int id = int.Parse(e.data["id"].ToString());
+        Debug.Log("end turn by time over, id = "+ id + " my id = " + gameManager.myPlayer.idPlayer);
+
+        if(int.Parse(e.data["id"].ToString()) == gameManager.myPlayer.idPlayer)
+            SendEndTurn();
+    }
+
+
+    public void OnToShowTheme(SocketIOEvent e){
 
 		Debug.Log ("OnToShowTheme " + e.data); 
 
@@ -324,7 +336,7 @@ public class NetworkManager : MonoBehaviour {
 		if (flag && currentCard)
 			currentCard.showTheme ();
 		else
-			currentCard.showErroTheme();
+			currentCard.showErrorTheme();
 
 		currentCard = null; 
 	}
