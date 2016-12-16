@@ -14,7 +14,7 @@
 	"type": "pure",
 	"theme": ["nature"],
 	"point": "2",
-	"description": "Wind is the flow of gas. Whooosh!",
+	"description": "The winds that will be howling at all hour - William Wordsworth",
 	"img": "wind",
 	"title": "Wanderer above the Sea of Fog",
 	"author": "Caspar David Friedrich"
@@ -28,8 +28,6 @@
 	"img": "sky",
 	"title": "The Voyage of Life",
 	"author": "Thomas Cole"
-
-
 }, {
 	"id": 3,
 	"name": "Sea",
@@ -46,7 +44,7 @@
 	"type": "pure",
 	"theme": ["nature"],
 	"point": "2",
-	"description": "Sweet smelling (well, most of them anyway).",
+	"description": "Though nothing can bring back the hour of splendor in the grass, of glory in the flower - William Wordsworth",
 	"img": "flower",
 	"title": "Still-Life",
 	"author": "Paul Theodor van Brussel "
@@ -152,14 +150,14 @@
 	"author": "Benjamin West"
 }, {
 	"id": 15,
-	"name": "Faint",
+	"name": "Darkness",
 	"type": "pure",
 	"theme": ["horror"],
 	"point": "3",
-	"description": "Loss of consciousness and muscle strength.",
-	"img": "faint",
-	"title": "Roger Freeing Angelica",
-	"author": "Jean-Auguste-Dominique Ingres"
+	"description": "Deep into that darkness peering, long I stood there, wondering, fearing, doubting, dreaming dreams no mortal ever dared to dream before - Edgar Allan Poe",
+	"img": "darkness",
+	"title": "Procession in the Fog",
+	"author": "Ernst Ferdinand Oehme"
 }, {
 	"id": 16,
 	"name": "Hunting",
@@ -176,7 +174,7 @@
 	"type": "pure",
 	"theme": ["horror"],
 	"point": "2",
-	"description": "So on his Nightmare through the evening fog... - Erasmus Darwin",
+	"description": "Beware; for I am fearless, and therefore powerful - Mary Shelley",
 	"img": "thenightmare",
 	"title": "The Nightmare",
 	"author": "Johann Heinrich Füssli"
@@ -186,7 +184,7 @@
 	"type": "pure",
 	"theme": ["horror"],
 	"point": "2",
-	"description": "Who knows what lurks in the shadows..",
+	"description": "The night is dark and full of terrors, old man, but the fire burns them all away - Melisandre",
 	"img": "night",
 	"title": "Knight before the Charcoal Burner's Hut",
 	"author": "Carl Philipp Fohr"
@@ -226,7 +224,7 @@
 	"type": "mixed",
 	"theme": ["horror", "history"],
 	"point": "1",
-	"description": "I'm Death, and I make sure that everyone is equal. -Brothers Grimm",
+	"description": "Life and death appeared to me ideal bounds, which I should first break through, and pour a torrent of light into our dark world - Mary Shelley",
 	"img": "death",
 	"title": ["Saturn Devouring One of his Children", "The Death of Marat"],
 	"author": ["Francisco de Goya y Lucientes", "Jacques-Louis David"]
@@ -238,8 +236,8 @@
 	"point": "1",
 	"description": "Hopeless. Ghastly. Gloomy. What a cheerful word...",
 	"img": "grim",
-	"title": ["The Headless Horseman Pursuing Ichabod Crane","Death on a Pale Horse"],
-	"author": ["John Quidor"," Benjamin West "]
+	"title": ["The Headless Horseman Pursuing Ichabod Crane", "Death on a Pale Horse"],
+	"author": ["John Quidor", " Benjamin West "]
 }, {
 	"id": 24,
 	"name": "Raven",
@@ -248,8 +246,8 @@
 	"point": "1",
 	"description": "Quoth the Raven, Nevermore -Edgar Allan Poe",
 	"img": "raven",
-	"title": ["The Tree of Crows","Wheatfield with Crows"],
-	"author": ["Caspar David Friedrich","Vincent van Gogh"]
+	"title": ["The Tree of Crows", "Wheatfield with Crows"],
+	"author": ["Caspar David Friedrich", "Vincent van Gogh"]
 }, {
 	"id": 25,
 	"name": "Cat",
@@ -258,7 +256,7 @@
 	"point": "1",
 	"description": "Upon its head, ..., sat the hideous beast, …, seduced me into murder - Edgar Allan Poe ",
 	"img": "cat",
-	"title": ["Una and the Lion","Milo of Croton Attacked by a Lion"],
+	"title": ["Una and the Lion", "Milo of Croton Attacked by a Lion"],
 	"author": ["Briton Rivière", "Meynier Charles "]
 }, {
 	"id": 26,
@@ -278,7 +276,7 @@
 	"point": "1",
 	"description": "Technology is moving forward",
 	"img": "industry",
-	"title": ["The Crystal Palace held the Great Exhibition of 1851","River Scene"],
+	"title": ["The Crystal Palace held the Great Exhibition of 1851", "River Scene"],
 	"author": ["Unknown", "Armand Guillaumin"]
 }, {
 	"id": 28,
@@ -306,7 +304,7 @@
 	"type": "mixed",
 	"theme": ["history", "folklore"],
 	"point": "1",
-	"description": "The narrator from the mystical work of Ossian, has become a legend",
+	"description": "Claimed to be old Scottish epic poems, debated if it was a fraud",
 	"img": "ossian",
 	"title": ["Ossian’s Dream", " Ossian Receiving the Ghosts of Fallen French Heroes "],
 	"author": ["Jean Auguste Dominique Ingres ", "Anne-Louis Girodet "]
@@ -336,7 +334,7 @@
 	"type": "pure",
 	"theme": ["horror"],
 	"point": "2",
-	"description": "Faust: Who holds the devil, let him hold him well, He hardly will be caught a second time. - Johann Wolfgang von Goethe",
+	"description": "Who holds the devil, let him hold him well, He hardly will be caught a second time. - Johann Wolfgang von Goethe",
 	"img": "faust",
 	"title": "Faust",
 	"author": "William Henry Margetson"
@@ -361,5 +359,3 @@
 	"title": "The Massacre at Chios",
 	"author": "Eugène Delacroix"
 }]
-
-

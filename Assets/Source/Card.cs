@@ -10,7 +10,7 @@ public abstract class Card : MonoBehaviour
     public bool hasBeenPlayed = false;
     public bool isOnTheBoard = false;
     public int ownerID;
-    public bool isMine;    
+    public bool isMine;  
 
     public Vector3 handPosition;
     public Vector3 deckPosition;
@@ -215,6 +215,7 @@ public abstract class Card : MonoBehaviour
     {
         currentSprite.sprite = faceUpSprite;
         this.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
+        this.gameObject.transform.localScale += new Vector3(0.155f, 0.155f, 0.0f);
     }
 
     public void hideCard()
@@ -246,6 +247,7 @@ public abstract class Card : MonoBehaviour
 			currentSprite.sprite = faceUpSprite;
 		} else {
 			currentSprite.sprite = faceDownSprite;
+            currentSprite.transform.localScale = new Vector3(0.145f, 0.145f, 0.0f);
 			cardArt.SetActive (false);
 			title.gameObject.SetActive (false);
 			description.gameObject.SetActive (false);
@@ -329,7 +331,6 @@ public abstract class Card : MonoBehaviour
                 CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z - 1);
             else
                 CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z - 1);
-
             CardZoomed.gameObject.layer = 1;
 
 			this.localScale *= 1.5f;
@@ -339,6 +340,7 @@ public abstract class Card : MonoBehaviour
             if (lastPlayZone.CheckContainCard(this.id)) 
             {
                 CardZoomed.transform.localScale = goTransform.localScale * 2.5f;
+                description.gameObject.SetActive(true);
             } else
             {
                 CardZoomed.transform.localScale = goTransform.localScale * 1.8f;

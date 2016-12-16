@@ -17,14 +17,7 @@ public class Introduction : MonoBehaviour {
 	private string localurl = "http://127.0.0.1:8080/connect";
 	private int count = 0;
 
-	private string[] descriptionArray = {"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-								"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-								"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip" +
-								" ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit " +
-								"esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non " +
-								"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
-		"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna " +
-		"aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\" +"};
+	private string[] descriptionArray = {"To create a work that will stand the test of time, one must know when to play their cards at the right time… Combine your cards to create a successful book. But, you need to figure out yourself which category the cards belong in. Everyone will have to use their wits when they are playing Fame and Prestige: The Romanticism Edition!"};
 
 
 	void Start () {
