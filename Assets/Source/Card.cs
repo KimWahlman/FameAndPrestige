@@ -176,7 +176,7 @@ public abstract class Card : MonoBehaviour
 						else
 						{
 							networkManager.AskTheme(this, cardName, id, ownerID);
-							alreadyShowed = true;
+
 						}
 					}
 				}
@@ -196,7 +196,7 @@ public abstract class Card : MonoBehaviour
 
 	IEnumerator setVariableTrue(){
 
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.4f);
 		toShowPoint = true;
 	}
 

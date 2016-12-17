@@ -33,6 +33,7 @@ public class LoadCards : MonoBehaviour {
 			string point = card_json ["point"].ToString().Trim(new Char[] { ' ', '"' });
 			string type = card_json ["type"].ToString().Trim(new Char[] { ' ', '"' });
 			string theme_st =  card_json["theme"].ToString().Trim(new Char[] { ' ', '"', '[', ',' ,']'});
+			theme_st = theme_st.Replace ("\",\"","-");
 
 			Card.LoadResource (title, description, point, type, theme_st, path);
 			card.SetActive (false);

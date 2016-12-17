@@ -342,10 +342,12 @@ public class NetworkManager : MonoBehaviour {
 		bool flag = Convert.ToBoolean(e.data ["toShow"].ToString());
 		Debug.Log (flag);
 		Debug.Log (currentCard);
-		if (flag && currentCard != null)
+		if (flag && currentCard != null) {
 			currentCard.showTheme ();
-		else
-			currentCard.showErrorTheme();
+			currentCard.alreadyShowed = true;
+		} else {
+			currentCard.showErrorTheme ();
+		}
 
 		currentCard = null; 
 	}
