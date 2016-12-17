@@ -36,7 +36,7 @@ public class NetworkManager : MonoBehaviour {
 		localServer = "ws://127.0.0.1:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
 		Debug.Log (externalServer + "\n" + localServer);
 		SocketIOComponent sic = socket.GetComponents<SocketIOComponent> ()[0];
-		sic.url = externalServer;
+		sic.url = localServer;
 	}
 
     void Start()

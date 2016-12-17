@@ -210,6 +210,7 @@ public class GameManager : MonoBehaviour {
             if (c.isOnTheBoard)
             {
                 Debug.Log("IS ON BOARD " + c);
+
                 cardsToLastPlayedZone.Add(c);
             }
         }

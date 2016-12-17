@@ -61,11 +61,7 @@ public abstract class Card : MonoBehaviour
         localScale = this.transform.localScale;
         currentSprite = gameObject.GetComponent<SpriteRenderer>();
         deckPosition = this.transform.position;
-
-
         
-
-
         guiStyleFore = new GUIStyle();
 
 		guiStyleFore.fontSize = 22;
@@ -139,17 +135,7 @@ public abstract class Card : MonoBehaviour
             ZoomCard(true);
         }
     }
-
-	void OnMouseUp(){
-
-		/*
-		if (toShowPoint && isMine) {
-			currentToolTipText = toolTipText;
-			StartCoroutine (stopToolTip(1));
-		}
-		*/
-	}
-
+    
 
     void OnMouseExit()
     {
@@ -215,7 +201,7 @@ public abstract class Card : MonoBehaviour
     {
         currentSprite.sprite = faceUpSprite;
         this.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
-        this.gameObject.transform.localScale += new Vector3(0.155f, 0.155f, 0.0f);
+        //this.gameObject.transform.localScale += new Vector3(0.155f, 0.155f, 0.0f);
     }
 
     public void hideCard()
@@ -247,7 +233,9 @@ public abstract class Card : MonoBehaviour
 			currentSprite.sprite = faceUpSprite;
 		} else {
 			currentSprite.sprite = faceDownSprite;
-            currentSprite.transform.localScale = new Vector3(0.145f, 0.145f, 0.0f);
+
+            currentSprite.transform.localScale /= 2;
+
 			cardArt.SetActive (false);
 			title.gameObject.SetActive (false);
 			description.gameObject.SetActive (false);
@@ -331,15 +319,15 @@ public abstract class Card : MonoBehaviour
                 CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y + 2, goTransform.position.z - 1);
             else
                 CardZoomed.transform.position = new Vector3(goTransform.position.x, goTransform.position.y, goTransform.position.z - 1);
+
             CardZoomed.gameObject.layer = 1;
 
-			this.localScale *= 1.5f;
-
+			this.localScale *= 1.25f;
             
             
             if (lastPlayZone.CheckContainCard(this.id)) 
             {
-                CardZoomed.transform.localScale = goTransform.localScale * 2.5f;
+                CardZoomed.transform.localScale = goTransform.localScale * 3.0f;
                 description.gameObject.SetActive(true);
             } else
             {
@@ -359,7 +347,7 @@ public abstract class Card : MonoBehaviour
         {
 			
 			if (CardZoomed)
-            {
+            {   
                 //destroy the zoomed card
 				this.localScale /= 1.5f;
                 Destroy(CardZoomed);
