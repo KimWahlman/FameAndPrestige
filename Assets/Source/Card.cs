@@ -130,6 +130,7 @@ public abstract class Card : MonoBehaviour
 
     void OnMouseEnter()
     {        
+
 		if(currentSprite.sprite == faceUpSprite && !Input.GetKey(KeyCode.Mouse0))
         {
             ZoomCard(true);
@@ -145,32 +146,44 @@ public abstract class Card : MonoBehaviour
 
     void Update()
     {
-        if (!isMine)
-        {
-            return;
-        }
+		if (!isMine)
+		{
+			return;
+		}
+		if (Input.GetMouseButtonDown(1)) {
+			Debug.Log ("ON RIGHT CLICK");
 
-        if(Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if (!toShowPoint)
-            {
-                UImanager.ShowBubble("Are you sure?\n This will cost 1 point");
-                StartCoroutine(setVariableTrue());
-                return;
-            }
-            else
-            {
-                if (alreadyShowed)
-                {
-                    showTheme();
-                }
-                else
-                {
-                    networkManager.AskTheme(this, cardName, id, ownerID);
-                    alreadyShowed = true;
-                }
-            }
-        }
+			RaycastHit hit;
+			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+			if (Physics.Raycast (ray, out hit)) {       		
+				//if the card is dropped on the zone
+				Debug.Log("CardName: " +hit.transform.gameObject.name );
+				if (hit.transform.gameObject.name == this.gameObject.name) {
+
+					if (!toShowPoint)
+					{
+						UImanager.ShowBubble("Are you sure?\n This will cost 1 point");
+						StartCoroutine(setVariableTrue());
+						return;
+					}
+					else
+					{
+						if (alreadyShowed)
+						{
+							showTheme();
+						}
+						else
+						{
+							networkManager.AskTheme(this, cardName, id, ownerID);
+							alreadyShowed = true;
+						}
+					}
+				}
+			}
+
+		}
+
     }
 
 	public void showTheme(){
@@ -201,7 +214,6 @@ public abstract class Card : MonoBehaviour
     {
         currentSprite.sprite = faceUpSprite;
         this.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
-        //this.gameObject.transform.localScale += new Vector3(0.155f, 0.155f, 0.0f);
     }
 
     public void hideCard()
