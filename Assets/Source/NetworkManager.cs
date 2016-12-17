@@ -34,7 +34,7 @@ public class NetworkManager : MonoBehaviour {
 		}
 		externalServer = "ws://ec2-52-48-140-226.eu-west-1.compute.amazonaws.com:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
 		localServer = "ws://127.0.0.1:"+port.ToString()+"/socket.io/?EIO=4&transport=websocket";
-		Debug.Log (externalServer + "\n" + localServer);
+		//Debug.Log (externalServer + "\n" + localServer);
 		SocketIOComponent sic = socket.GetComponents<SocketIOComponent> ()[0];
 		sic.url = externalServer;
 	}
@@ -333,7 +333,7 @@ public class NetworkManager : MonoBehaviour {
 		bool flag = Convert.ToBoolean(e.data ["toShow"].ToString());
 		Debug.Log (flag);
 		Debug.Log (currentCard);
-		if (flag && currentCard)
+		if (flag && currentCard != null)
 			currentCard.showTheme ();
 		else
 			currentCard.showErrorTheme();
