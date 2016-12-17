@@ -285,6 +285,15 @@ public class NetworkManager : MonoBehaviour {
             gameManager.endTurn();
         }
 
+        for(int i = 0; i < 4; ++i)
+        {
+            if(i == playerIdTurn)
+                gameManager.playerHands[i].quill.SetActive(true);
+            else
+                gameManager.playerHands[i].quill.SetActive(false);
+        }
+        
+
         gameManager.cleanBoard();
 
 		if(gameManager.TotalTurn%4 == 0 && gameManager.TotalTurn!= 32){

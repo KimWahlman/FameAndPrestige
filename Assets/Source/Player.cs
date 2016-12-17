@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -14,5 +15,7 @@ public class Player : MonoBehaviour {
     public Character character;
     public Dictionary<int, Player> opponents = new Dictionary<int, Player>();
     public int Tries = 0;
+    public GameObject quillSprite;
+    
 
 }

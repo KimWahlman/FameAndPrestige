@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
     public UIManager UIManager;
     public Sprite[] SpritesTheme;
     public Sprite[] SpriteCharacters;
+    public GameObject[] QuillsSprite;
     public SpriteRenderer[] RendererCharacters;
 	public Text WinText;
 	public Image WinImage;
@@ -135,6 +136,7 @@ public class GameManager : MonoBehaviour {
             else
                 playerID++;
         }
+        
     }
 
     //server side
@@ -234,6 +236,21 @@ public class GameManager : MonoBehaviour {
         UIManager.UpdateTries();
 
 
+    }
+
+    public void AssignQuill(GameObject[] quills)
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            if (i == myPlayer.idPlayer)
+            {
+                myPlayer.quillSprite = quills[i];
+            }
+            else
+            {
+                myPlayer.opponents[i].quillSprite = quills[i];
+            }
+        }
     }
 
     public void AssignCharacters(List<String> characters)
