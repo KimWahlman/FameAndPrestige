@@ -59,8 +59,8 @@ public class opacityScript : StateMachineBehaviour
     {
 
 
-        if (mThemebar.GetComponent<Animator>().GetBool("openMe")) mObj.GetComponentInChildren<Animator>().SetBool("Up", true);
-        if (!mThemebar.GetComponent<Animator>().GetBool("openMe")) mObj.GetComponentInChildren<Animator>().SetBool("Up", false);
+        //if (mThemebar.GetComponent<Animator>().GetBool("openMe")) mObj.GetComponentInChildren<Animator>().SetBool("Up", true);
+        //if (!mThemebar.GetComponent<Animator>().GetBool("openMe")) mObj.GetComponentInChildren<Animator>().SetBool("Up", false);
         //Vector3 pos = new Vector3(100, 100, 100);
         //mFolkloreBlack.transform.position = pos;
         //Debug.Log(mFolkloreBlack.transform.position);

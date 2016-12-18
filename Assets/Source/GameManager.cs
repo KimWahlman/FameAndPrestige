@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
 
     //UI
     public UIManager UIManager;
-    public Sprite[] SpritesTheme;
+    public String[] SpritesTheme;
     public Sprite[] SpriteCharacters;
     public GameObject[] QuillsSprite;
     public SpriteRenderer[] RendererCharacters;
@@ -48,7 +48,9 @@ public class GameManager : MonoBehaviour {
             initGame(0);
             StartCoroutine("firstDrawToEveryone", 0);
         }
-		themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[0].name;
+		Debug.Log (themeBar);
+		Debug.Log (themeBar.GetComponent<ThemeBarListener> ().text.text);
+		themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[0];
 		//playableZone.GetComponent<SpriteRenderer> ().sprite =  SpritesTheme[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 		Turns.text = "8";
@@ -164,8 +166,8 @@ public class GameManager : MonoBehaviour {
     {
 		int index = 0;
 		foreach (var sprite in SpritesTheme) {
-			if (sprite.name == theme) {
-				themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[index].name;
+			if (sprite == theme) {
+				themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[index];
 				//playableZone.GetComponent<SpriteRenderer> ().sprite = sprite;
 				break;
 			}

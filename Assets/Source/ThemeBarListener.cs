@@ -6,22 +6,21 @@ public class ThemeBarListener : MonoBehaviour {
 	private bool flag = true;
 	public TextMesh text;
 	public float wait = 0.7f;
+	public UIManager manager;
 
 	void OnMouseDown(){
-		if (flag) {
-			GetComponent<Animator> ().SetBool ("openMe", true);
-			StartCoroutine (showText ());
+		Debug.Log ("Clicked");
+		Debug.Log (text.text);
+		manager.ShowBubble (text.text);
+		/*if (flag) {
+			//GetComponent<Animator> ().SetBool ("openMe", true);
+
 			flag = false;
 		} else {
-			GetComponent<Animator> ().SetBool ("openMe", false);
-			text.gameObject.SetActive (false);
+			//GetComponent<Animator> ().SetBool ("openMe", false);
+			//text.gameObject.SetActive (false);
 			flag = true;
-		}
-	}
-
-	IEnumerator showText(){
-		yield return new WaitForSeconds(wait);
-		text.gameObject.SetActive (true);
+		}*/
 	}
 		
 }

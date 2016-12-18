@@ -34,3 +34,6 @@ sysinfo.txt
 *.sh
 *.bat
 *.pem
+
+#Shit of windows
+desktop.ini

@@ -4300,10 +4300,10 @@ RectTransform:
   m_Father: {fileID: 47315925}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22661121, y: 0.351}
-  m_AnchorMax: {x: 0.8176944, y: 0.7978447}
-  m_AnchoredPosition: {x: 0.000002861023, y: -0.000002861023}
-  m_SizeDelta: {x: 0, y: 0.0000076294}
+  m_AnchorMin: {x: 0.041, y: 0.11573351}
+  m_AnchorMax: {x: 0.94100004, y: 0.9110001}
+  m_AnchoredPosition: {x: 2.5, y: 6.5}
+  m_SizeDelta: {x: 5, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1028322308
 MonoBehaviour:
@@ -4325,19 +4325,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: ec95274f86f8d495f871028aba69375f, type: 3}
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Folklore
 --- !u!222 &1028322309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4584,10 +4584,10 @@ MonoBehaviour:
   debugMode: 0
   UIManager: {fileID: 1786435433}
   SpritesTheme:
-  - {fileID: 21300000, guid: 6ce876e57713c4f70a39ed5fb2cd4cd9, type: 3}
-  - {fileID: 21300000, guid: f939e88f8ec2849258fd797337399b1b, type: 3}
-  - {fileID: 21300000, guid: 75beb7d0261bc45b3babd3cc1543022d, type: 3}
-  - {fileID: 21300000, guid: 064ffec0d75f346e08c4758806cc7788, type: 3}
+  - Folklore
+  - History
+  - Horror
+  - Nature
   SpriteCharacters:
   - {fileID: 21300000, guid: 83afe303d982f2b419b95beecaa2ca85, type: 3}
   - {fileID: 21300000, guid: 71ca35c41f5fea64696c7d9b1547631d, type: 3}
@@ -5362,6 +5362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 489089808}
   wait: 0.7
+  manager: {fileID: 1786435433}
 --- !u!1 &1243558162
 GameObject:
   m_ObjectHideFlags: 0
@@ -6288,6 +6289,10 @@ Prefab:
     - target: {fileID: 21253524, guid: 79622ce938549014a94af7fcc654cc84, type: 2}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 192342, guid: 79622ce938549014a94af7fcc654cc84, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79622ce938549014a94af7fcc654cc84, type: 2}
