@@ -16,14 +16,17 @@ public class Introduction : MonoBehaviour {
 	private string url = "http://ec2-52-17-161-123.eu-west-1.compute.amazonaws.com:8080/connect";
 	private int count = 0;
 
-	private string[] descriptionArray = {"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-								"sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. " +
-								"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip" +
-								" ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit " +
-								"esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non " +
-								"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"",
-		"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna " +
-		"aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip\" +"};
+	private string[] descriptionArray = {"Fame and prestige to you, great author of Romanticism, writer of strong emotions.\nRomanticism" +
+		" is a period of great changes and rebellions, the Europe need new operas to escape from the reality.\nThis movement " +
+		"emphasized intense emotion as an authentic source of aesthetic experience, leaded by four principal themes " +
+		"Folklore, Nature, History and Nature.",
+		"Take the role as one of this famous authors and relieve the feeling of creating something great during the Romanticism era.\n" +
+		"Who know which writer you will have...\nMary Shelley? Grimm Brothers? William Wordsworth? Bettina von Armin?\n",
+		"Write about different theme,recount about legends using the  popular Folklore, glorify the History, admires wonders of the Nature, " +
+		"recount scary and creepy Horror stories.\nYou are in competition against other tree writers " +
+		"who must use their wits and knowledge to chain various words together to create their next masterpiece.\n" +
+		"Can you create a masterpiece that will stand the test of time?\n",
+		"This is \nFame and Prestige: The Romanticism Edition!\n"};
 
 
 	void Start () {
@@ -86,16 +89,20 @@ public class Introduction : MonoBehaviour {
 	}
 
 	void Description(){
+		
 		count++;
+		if( count == 1)
+			images.SetActive (true);
+
 		if (count >= descriptionArray.Length - 1) {
 			nextButton.interactable = false;
-			images.SetActive (true);
 			playButton.interactable = true;
 			skipButton.interactable = false; 
+			images.SetActive (false);
 		}
 		description.text = descriptionArray [count];
 
-
+		Debug.Log (count);
 		
 
 	}
