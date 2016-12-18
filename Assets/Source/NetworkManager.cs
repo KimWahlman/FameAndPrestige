@@ -241,10 +241,11 @@ public class NetworkManager : MonoBehaviour {
                 SendEndTurn();
             } else
             {
-                UIManager.ComboFailedMessage.SetActive(true);
+                //UIManager.ComboFailedMessage.SetActive(true);
+				UIManager.ShowBubble ("I can t play this cards");
             }
         }
-		UIManager.ShowBubble ("I can't play this cards");
+
     }
 
     public void OnReceiveAssignID(SocketIOEvent e)
