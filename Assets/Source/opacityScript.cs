@@ -35,22 +35,22 @@ public class opacityScript : StateMachineBehaviour
         if (enter_1 == 0)
         {
             Vector3 tempVec = new Vector3(mFolkloreBlack.transform.position.x + xPos, mFolkloreBlack.transform.position.y + yPos, mFolkloreBlack.transform.position.z+1);
-            mPaperParent.transform.localPosition = tempVec;
+            //mPaperParent.transform.localPosition = tempVec;
         }
         if (enter_2 == 0)
         {
             Vector3 tempVec = new Vector3(mHorrorBlack.transform.position.x + xPos, mHorrorBlack.transform.position.y + yPos, mHorrorBlack.transform.position.z+1);
-            mPaperParent.transform.localPosition = tempVec;
+            //mPaperParent.transform.localPosition = tempVec;
         }
         if (enter_3 == 0)
         {
             Vector3 tempVec = new Vector3(mHistoryBlack.transform.position.x + xPos, mHistoryBlack.transform.position.y + yPos, mHistoryBlack.transform.position.z+1);
-            mPaperParent.transform.localPosition = tempVec;
+            //mPaperParent.transform.localPosition = tempVec;
         }
         if (enter_4 == 0)
         {
             Vector3 tempVec = new Vector3(mNatureBlack.transform.position.x + xPos, mNatureBlack.transform.position.y + yPos, mNatureBlack.transform.position.z+1);
-            mPaperParent.transform.localPosition = tempVec;
+            //mPaperParent.transform.localPosition = tempVec;
         }
     }
 

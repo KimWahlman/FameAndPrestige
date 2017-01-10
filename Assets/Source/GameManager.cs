@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour {
 		Debug.Log (themeBar);
 		Debug.Log (themeBar.GetComponent<ThemeBarListener> ().text.text);
 		themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[0];
+		//themeBar.SetInteger ("theme", 0);
 		//playableZone.GetComponent<SpriteRenderer> ().sprite =  SpritesTheme[0];
         networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
 		Turns.text = "8";
@@ -166,9 +167,12 @@ public class GameManager : MonoBehaviour {
     {
 		int index = 0;
 		foreach (var sprite in SpritesTheme) {
-			if (sprite == theme) {
+			//Debug.Log("String sprite: "+  sprite);
+			//Debug.Log("String theme: "+  theme);
+			//Debug.Log ("Comparison:" + String.Compare (sprite, theme));
+			if(String.Compare(sprite, theme) == 0){
+				//Debug.Log("SpritesTheme[index]"+SpritesTheme[index]);
 				themeBar.GetComponent<ThemeBarListener>().text.text = SpritesTheme[index];
-				//playableZone.GetComponent<SpriteRenderer> ().sprite = sprite;
 				break;
 			}
 			index++;

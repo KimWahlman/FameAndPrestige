@@ -4584,10 +4584,10 @@ MonoBehaviour:
   debugMode: 0
   UIManager: {fileID: 1786435433}
   SpritesTheme:
-  - Folklore
-  - History
-  - Horror
-  - Nature
+  - folklore
+  - history
+  - horror
+  - nature
   SpriteCharacters:
   - {fileID: 21300000, guid: 83afe303d982f2b419b95beecaa2ca85, type: 3}
   - {fileID: 21300000, guid: 71ca35c41f5fea64696c7d9b1547631d, type: 3}
