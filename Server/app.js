@@ -200,10 +200,12 @@ var totalTurns = 0;
 var timerHandler = null;
 const endTurns = 31;
 const maxCard = 4;
-const timer = 30000;
+const timer = 60000;
 var theme = 0;
 const themes = ['folklore','history','horror','nature'];
 const charactersAvailable = ['MARY_SHELLEY','THE_GRIM_BROTHERS','WILLIAM_WORDSWORTH','BETTINA_VON_ARMIN'];
+var cb;
+var port; 
 shuffleArray(charactersAvailable);
 var tmp ;
 
@@ -213,10 +215,11 @@ var discard_cards=[];
 
 //console.log(themes);
 //console.log(charactersAvailable)
-var StartServer = function startServer(inPort){
+var StartServer = function startServer(inPort, callback){
     loadDB();
     //console.log(cards);
-    var port = inPort || 3000
+    port = inPort || 3000
+    cb = callback;
     server.listen(port, function(){
         console.log('listening on *:' + port);
     });
@@ -282,6 +285,8 @@ io.on('connection', function(socket){
 		if(Object.keys(clients) == 0){
             console.log("-----GAME SERVER CLOSE-----");
             stopCounter();
+            console.log("Closing with port: " + port);
+            process.send({'port': port });
             server.close();
         }
     });
