@@ -288,6 +288,8 @@ io.on('connection', function(socket){
             console.log("Closing with port: " + port);
             process.send({'port': port });
             server.close();
+        }else{
+            process.send({'mex': 'disconnect' });
         }
     });
    

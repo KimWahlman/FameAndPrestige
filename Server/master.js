@@ -17,9 +17,12 @@ function onInstanceClose(port){
     if (index > -1) {
         ports.busy.splice(index, 1);
         ports.free.push(port);
+    }else{
+        connection = 0; 
     }
-    console.log(ports.free)
-    console.log(ports.busy)
+    console.log(ports.free);
+    console.log(ports.busy);
+    console.log(connection);
 }
 
 function onRequest(request, response) {
@@ -35,7 +38,13 @@ function onRequest(request, response) {
                 const server = cp.fork(__dirname + '/app.js', [port]);
         
                 server.on('message', (code) => {
-                    onInstanceClose(code.port);
+                    if(code.port)
+                        onInstanceClose(code.port);
+                    if(code.mex){
+                        if(connection>0)
+                            connection--;
+                        console.log("Removed one connection: " + connection);
+                    }
                 });
 
                 console.log("Started instance of the server on: " + port);
