@@ -52,23 +52,29 @@ var countPoints = function countPoints(cards, theme){
     if(number >= 2){    
 
 		
-		for (var i = 0; i < mixed_cards.length; i++) {
-            for (var j = 1; j < mixed_cards.length; j++) {
-                if(mixed_cards[i].theme.toString() == mixed_cards[j].theme.toString()){
+		
 
-                    //console.log("IF :" + mixed_cards[i].theme == mixed_cards[j].theme);
-                    mixed_cards.splice(i,1);
-                    mixed_cards.splice(j,1);
-                    multi ++;
-                    if(mixed_cards[j] === undefined || mixed_cards[j] === undefined){
-                        //console.log("UNDEFINED");
-                        break;
-                    }
-                    //console.log(mixed_cards[i]);
-                    //console.log(mixed_cards[j]);
-                    result_mixed = true;
-                }
-            }
+        if (mixed_cards.length==1){
+        	result_mixed = false;
+        }else{
+        	for (var i = 0; i < mixed_cards.length; i++) {
+	            for (var j = 1; j < mixed_cards.length; j++) {
+	                if(mixed_cards[i].theme.toString() == mixed_cards[j].theme.toString()){
+
+	                    //console.log("IF :" + mixed_cards[i].theme == mixed_cards[j].theme);
+	                    mixed_cards.splice(i,1);
+	                    mixed_cards.splice(j,1);
+	                    multi ++;
+	                    if(mixed_cards[j] === undefined || mixed_cards[j] === undefined){
+	                        //console.log("UNDEFINED");
+	                        break;
+	                    }
+	                    //console.log(mixed_cards[i]);
+	                    //console.log(mixed_cards[j]);
+	                    result_mixed = true;
+	                }
+	            }
+        	}
         }
 
 		
